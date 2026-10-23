@@ -6,12 +6,19 @@ using System.Web.Script.Serialization;
 using System.Collections.Generic;
 
 sealed class StartupProbe:LauncherOperations {
- public string Capture,Self,Runtime;public int Starts,Pid;public bool Crash;
+ public string Capture,Self,Runtime;public int Starts,Pid;public bool Crash;public Process Completion;
  public override Process LaunchGameProcess(ProcessStartInfo game){
   Starts++;
   string arguments="--fake-game \""+Capture+"\" "+(Crash?"--fail-boot ":"")+game.Arguments;
   var start=new ProcessStartInfo(Runtime==null?Self:Runtime,(Runtime==null?"":"\""+Self+"\" ")+arguments){UseShellExecute=false,CreateNoWindow=true};
-  var process=Process.Start(start);Pid=process.Id;return process;
+  var process=Process.Start(start);Pid=process.Id;
+  if(!Crash){
+   // The launcher disposes its own Process. Retain a separate OS handle while
+   // this child is alive: Framework cannot recover its exit code by PID later.
+   Completion=Process.GetProcessById(Pid);
+   if(Completion.Handle==IntPtr.Zero)throw new IOException("Cannot retain the child completion handle.");
+  }
+  return process;
  }
 }
 static class VerifierLauncherStartup {
@@ -28,7 +35,7 @@ static class VerifierLauncherStartup {
   var clock=Stopwatch.StartNew();while(!File.Exists(marker+".release")&&clock.ElapsedMilliseconds<6000)Thread.Sleep(20);
   return File.Exists(marker+".release")?0:9;
  }
- static void Complete(int pid){try{using(var process=Process.GetProcessById(pid)){Check(process.WaitForExit(10000),"Child did not finish");Check(process.ExitCode==0,"Child failed: "+process.ExitCode);}}catch(ArgumentException){}}
+ static void Complete(Process process){using(process){Check(process.WaitForExit(10000),"Child did not finish");Check(process.ExitCode==0,"Child failed: "+process.ExitCode);}}
  static int Main(string[] args){
   if(args.Length>1&&args[0]=="--fake-game")return Fake(args);
   try{
@@ -42,10 +49,10 @@ static class VerifierLauncherStartup {
     Check((captured["marker"]!=null)==modern,"Wrong handoff protocol for "+version);
     Check(probe.Starts==1,"More than one child started");
     Check(clock.ElapsedMilliseconds<5000,"Startup waited for an unsupported handoff");
-    using(var child=Process.GetProcessById(probe.Pid))Check(!child.HasExited,"Closing the launcher process handle terminated the game");
+    Check(!probe.Completion.HasExited,"Closing the launcher process handle terminated the game");
     if(modern){string marker=Convert.ToString(captured["marker"]);Check(!File.Exists(marker+".release"),"Game was released before explicit handoff");probe.ReleaseGame();Check(File.Exists(marker+".release"),"Explicit handoff did not release the existing child");}
     else probe.ReleaseGame();
-    Complete(probe.Pid);
+    Complete(probe.Completion);
    }
    foreach(string version in new[]{"0.14.8","0.14.9"}){
     var probe=new StartupProbe{Self=self,Runtime=runtime,Capture=Path.Combine(root,version+"-failed.json"),Crash=true};bool rejected=false;

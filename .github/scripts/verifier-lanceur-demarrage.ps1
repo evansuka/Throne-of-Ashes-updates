@@ -21,5 +21,9 @@ $process=[Diagnostics.Process]::Start($start)
 $stdout=$process.StandardOutput.ReadToEndAsync();$stderr=$process.StandardError.ReadToEndAsync()
 if(-not $process.WaitForExit(60000)){$process.Kill();throw 'Le test de demarrage a depasse 60 secondes.'}
 $process.WaitForExit();$details=($stdout.Result+' '+$stderr.Result).Trim();Write-Output $details
-if($process.ExitCode -ne 0){throw ('Le test de demarrage des anciens et nouveaux jeux a echoue : '+$details)}
+if($process.ExitCode -ne 0){
+ $summary=($details -replace '[\r\n]+',' | ')
+ if($summary.Length -gt 5000){$summary=$summary.Substring($summary.Length-5000)}
+ throw ('Le test de demarrage des anciens et nouveaux jeux a echoue : '+$summary)
+}
 Remove-Item -LiteralPath $fixture -Recurse -Force
