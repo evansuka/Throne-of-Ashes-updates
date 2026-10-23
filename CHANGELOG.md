@@ -1,6 +1,8 @@
 # Modifications des versions Windows
 
-## 0.14.2 — préparation du correctif du lanceur
+## 0.14.2 — publiée le 23 octobre 2026
+
+[Télécharger le nouveau lanceur](https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v0.14.2/Throne-of-Ashes.exe). [Notes de la release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.2). Validation Windows réussie, dont 32 contrôles de la vraie fenêtre du lanceur ; quatre fichiers publics vérifiés par SHA-256.
 
 - Opérations lourdes du lanceur en arrière-plan et affichage précis de la vérification, de l’extraction, de l’activation et du démarrage.
 - Une erreur de lancement n’entraîne plus une seconde tentative automatique.
