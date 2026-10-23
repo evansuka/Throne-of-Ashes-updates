@@ -1,5 +1,15 @@
 # Modifications des versions Windows
 
+## 0.14.2 — préparation du correctif du lanceur
+
+- Opérations lourdes du lanceur en arrière-plan et affichage précis de la vérification, de l’extraction, de l’activation et du démarrage.
+- Une erreur de lancement n’entraîne plus une seconde tentative automatique.
+- Le jeu affiche les mises à jour disponibles sans se fermer ni ouvrir automatiquement le lanceur.
+- Journaux de diagnostic `launcher.log` et `game.log` dans `%LOCALAPPDATA%/ThroneOfAshes`.
+- Validation de la véritable fenêtre sur Windows, avec installation lente, panne de connexion, archive corrompue et erreur de démarrage ; sauvegardes conservées.
+
+**Important :** remplacer l’ancien fichier du lanceur par le nouveau `Throne-of-Ashes.exe` de la release. Le jeu ne remplace pas automatiquement ce fichier sur le bureau. Ne pas supprimer les sauvegardes pour dépanner.
+
 ## 0.14.1 — 23 octobre 2026
 
 [Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.1).

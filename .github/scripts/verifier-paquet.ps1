@@ -56,6 +56,7 @@ foreach($machine in @('pc-a','pc-b')){
  $current.sha256=$manifest.sha256
 }
 if(-not $SkipGameLaunch){
+ & (Join-Path $PSScriptRoot 'verifier-lanceur-interface.ps1') -Assembly $launcher
  $log=Join-Path $fixture 'game.log';$stderr=Join-Path $fixture 'game.err'
  $start=New-Object Diagnostics.ProcessStartInfo
  $start.FileName=$game;$start.WorkingDirectory=Split-Path -Parent $game
