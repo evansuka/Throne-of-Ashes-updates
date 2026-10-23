@@ -1,5 +1,17 @@
 # Modifications des versions Windows
 
+## 0.14.5 — publiée le 23 octobre 2026
+
+[Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.5).
+
+- Quelques cendres grises tombent du ciel lentement, avec une dérive et une apparition aléatoires, uniquement dans le village de Havrebrume.
+- Petits flocons espacés et peu opaques pour préserver la visibilité du décor et des personnages.
+- Aucun effet à l’accueil ni en donjon ; suspension pendant la pause et reprise au retour au village.
+- Densité liée aux réglages de qualité existants, encore réduite avec Effets réduits ; maximum de 36 particules, sans collisions, lumières ni ombres supplémentaires.
+- Contrôles des changements de zone et de la pause, captures Godot inspectées, archives et lanceur vérifiés sur Windows. Sauvegardes conservées.
+
+L’incident de fermeture après environ 30 secondes de partie reste en cours de diagnostic ; aucun correctif de cet arrêt n’est annoncé ici.
+
 ## 0.14.4 — publiée le 23 octobre 2026
 
 [Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.4).
