@@ -8,7 +8,7 @@ using System.Windows.Forms;
 // Runs the real launcher form and update workflow. Only external services are
 // replaced; package verification, activation, cleanup and UI dispatch stay real.
 sealed class FixtureOperations:LauncherOperations {
- public string Zip;public UpdateManifest Manifest;public bool Offline,FailStart,Corrupt;public int Starts,UiThread;
+ public string Zip;public UpdateManifest Manifest;public bool Offline,FailStart,Corrupt;public int Starts,UiThread,Releases;public Func<bool> IsLauncherVisible;
  public void Worker() {if(Thread.CurrentThread.ManagedThreadId==UiThread)throw new Exception("Blocking work ran on the UI thread.");Thread.Sleep(1500);}
  public override void Prepare(string root) {Worker();Directory.CreateDirectory(root);}
  public override string Installed(string root) {Worker();return base.Installed(root);}
@@ -16,6 +16,7 @@ sealed class FixtureOperations:LauncherOperations {
  public override UpdateManifest ReadManifest() {Worker();if(Offline)throw new IOException("Offline fixture");return Manifest;}
  public override void Download(UpdateManifest m,string zip,Action<int> progress) {Worker();File.Copy(Zip,zip);if(Corrupt)File.AppendAllText(zip,"damaged");progress(100);}
  public override void Install(UpdateManifest m,string zip,string root) {Worker();base.Install(m,zip,root);}
+ public override void ReleaseGame(){if(IsLauncherVisible())throw new Exception("Game released before launcher hidden");Releases++;}
  public override void StartGame(string root,string version) {Starts++;Worker();if(FailStart)throw new IOException("Startup fixture failure");if(base.Installed(root)!=version)throw new Exception("Started an unverified version.");}
 }
 static class VerifierLauncherUi {
@@ -35,6 +36,7 @@ static class VerifierLauncherUi {
   bool errorShown=false,timedOut=false;long gap=0,last=0;int ticks=0;
   var clock=Stopwatch.StartNew();
   using(var form=new Launcher(root,ops))using(var timer=new System.Windows.Forms.Timer{Interval=30}) {
+   ops.IsLauncherVisible=()=>form.Visible;
    timer.Tick+=(s,e)=>{
     long now=clock.ElapsedMilliseconds;if(last>0)gap=Math.Max(gap,now-last);last=now;ticks++;
     foreach(Control control in form.Controls)if(control is Button&&control.Visible&&control.Text=="Réessayer"){errorShown=true;form.Close();}
@@ -45,6 +47,7 @@ static class VerifierLauncherUi {
   Check(!timedOut,name+": update did not finish");
   Check(ticks>40&&gap<1100,name+": unresponsive UI, gap="+gap+", ticks="+ticks);
   Check(errorShown==failStart,name+": unexpected error/retry state");
+  Check(ops.Releases==(failStart?0:1),name+": exactly one release after launcher hidden");
   Check(ops.Starts==1,name+": startup was retried or never attempted");
   Check(UpdateLogic.Installed(root)==((offline||corrupt)?old.version:current.version),name+": wrong active version");
   Check(UpdateLogic.Hash(save)==saveHash,name+": save changed");

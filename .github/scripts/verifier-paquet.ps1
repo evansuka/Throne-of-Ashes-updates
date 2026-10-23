@@ -60,17 +60,29 @@ if(-not $SkipGameLaunch){
  $log=Join-Path $fixture 'game.log';$stderr=Join-Path $fixture 'game.err'
  $start=New-Object Diagnostics.ProcessStartInfo
  $start.FileName=$game;$start.WorkingDirectory=Split-Path -Parent $game
- $start.Arguments='--headless --audio-driver Dummy --fixed-fps 60 --quit-after 600 -- --smoke-test'
+ $handoff=Join-Path $fixture 'handoff-smoke'
+ $start.Arguments='--headless --audio-driver Dummy --fixed-fps 60 --max-fps 60 --quit-after 600 -- --smoke-test "--launcher-handoff='+$handoff+'"'
  $start.UseShellExecute=$false;$start.CreateNoWindow=$true
  $start.RedirectStandardOutput=$true;$start.RedirectStandardError=$true
  $process=[Diagnostics.Process]::Start($start)
  $stdoutTask=$process.StandardOutput.ReadToEndAsync();$stderrTask=$process.StandardError.ReadToEndAsync()
+ $readyClock=[Diagnostics.Stopwatch]::StartNew()
+ while(-not (Test-Path -LiteralPath ($handoff+'.ready')) -and -not $process.HasExited -and $readyClock.Elapsed.TotalSeconds -lt 60){Start-Sleep -Milliseconds 100}
+ if(-not (Test-Path -LiteralPath ($handoff+'.ready')) -or [IO.File]::ReadAllText($handoff+'.ready').Trim() -ne [string]$process.Id){throw 'Le jeu ne confirme pas le PID du processus lance.'}
+ [IO.File]::WriteAllText($handoff+'.release','show')
  if(-not $process.WaitForExit(90000)){$process.Kill();throw 'Le jeu Windows ne termine pas le test de demarrage.'}
  $process.WaitForExit()
  [IO.File]::WriteAllText($log,$stdoutTask.Result);[IO.File]::WriteAllText($stderr,$stderrTask.Result)
  if($null -eq $process.ExitCode -or $process.ExitCode -ne 0){throw "Le jeu Windows termine en erreur $($process.ExitCode)."}
  $output=(Get-Content -LiteralPath $log -Raw)+(Get-Content -LiteralPath $stderr -Raw)
  Write-Output $output
+ if($output -notmatch 'LAUNCHER_RELEASE:.*fallback=false'){throw 'Le jeu ne termine pas la transmission sans relance.'}
  if($output -notmatch 'VILLAGE_READY' -or $output -match 'SCRIPT ERROR|ERROR:|Parse Error'){throw 'Le jeu Windows ne demarre pas proprement.'}
+ $start.Arguments='--headless -- --verify-audio-bridge'
+ $audioProcess=[Diagnostics.Process]::Start($start)
+ $audioOut=$audioProcess.StandardOutput.ReadToEndAsync();$audioErr=$audioProcess.StandardError.ReadToEndAsync()
+ if(-not $audioProcess.WaitForExit(30000)){$audioProcess.Kill();throw 'Le controle du secours audio exporte ne termine pas.'}
+ $audioProcess.WaitForExit();Write-Output $audioOut.Result;Write-Output $audioErr.Result
+ if($audioProcess.ExitCode -ne 0 -or $audioOut.Result -notmatch 'WINDOWS_AUDIO_BRIDGE_CHECKS' -or $audioErr.Result -match 'SCRIPT ERROR|ERROR:'){throw 'Le secours audio Windows est absent ou invalide dans le jeu exporte.'}
 }
 Write-Output "WINDOWS_PACKAGE_OK: $version; checksums, archives, exact launcher binding, two independent installations, save preservation, corrupt download rejection."
