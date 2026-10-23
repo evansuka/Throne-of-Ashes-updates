@@ -8,7 +8,7 @@ using System.Windows.Forms;
 // Runs the real launcher form and update workflow. Only external services are
 // replaced; package verification, activation, cleanup and UI dispatch stay real.
 sealed class FixtureOperations:LauncherOperations {
- public string Zip;public UpdateManifest Manifest;public bool Offline,FailStart,Corrupt;public int Starts,UiThread,Releases;public Func<bool> IsLauncherVisible;
+ public string Zip;public UpdateManifest Manifest;public bool Offline,FailStart,Corrupt,FailRelease;public int Starts,UiThread,Releases;public Func<bool> IsLauncherVisible;
  public void Worker() {if(Thread.CurrentThread.ManagedThreadId==UiThread)throw new Exception("Blocking work ran on the UI thread.");Thread.Sleep(1500);}
  public override void Prepare(string root) {Worker();Directory.CreateDirectory(root);}
  public override string Installed(string root) {Worker();return base.Installed(root);}
@@ -16,7 +16,7 @@ sealed class FixtureOperations:LauncherOperations {
  public override UpdateManifest ReadManifest() {Worker();if(Offline)throw new IOException("Offline fixture");return Manifest;}
  public override void Download(UpdateManifest m,string zip,Action<int> progress) {Worker();File.Copy(Zip,zip);if(Corrupt)File.AppendAllText(zip,"damaged");progress(100);}
  public override void Install(UpdateManifest m,string zip,string root) {Worker();base.Install(m,zip,root);}
- public override void ReleaseGame(){if(IsLauncherVisible())throw new Exception("Game released before launcher hidden");Releases++;}
+ public override void ReleaseGame(){if(IsLauncherVisible())throw new Exception("Game released before launcher hidden");Releases++;if(FailRelease)throw new IOException("Handoff fixture failure");}
  public override void StartGame(string root,string version) {Starts++;Worker();if(FailStart)throw new IOException("Startup fixture failure");if(base.Installed(root)!=version)throw new Exception("Started an unverified version.");}
 }
 static class VerifierLauncherUi {
@@ -28,11 +28,11 @@ static class VerifierLauncherUi {
   using(var archive=ZipFile.Open(zip,ZipArchiveMode.Create))ZipFileExtensions.CreateEntryFromFile(archive,game,UpdateLogic.Game);
   return new UpdateManifest{version=version,url="https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v"+version+"/game.zip",sha256=UpdateLogic.Hash(zip),exeSha256=UpdateLogic.Hash(game)};
  }
- static void Scenario(string folder,string name,UpdateManifest old,string oldZip,UpdateManifest current,string zip,bool installed,bool offline,bool failStart,bool corrupt) {
+ static void Scenario(string folder,string name,UpdateManifest old,string oldZip,UpdateManifest current,string zip,bool installed,bool offline,bool failStart,bool corrupt,bool failRelease=false) {
   var root=Path.Combine(folder,name);Directory.CreateDirectory(root);
   if(installed)UpdateLogic.Install(old,oldZip,root);
   var save=Path.Combine(root,"campagne-v1.json");File.WriteAllText(save,"SAVE-MUST-STAY-UNCHANGED");var saveHash=UpdateLogic.Hash(save);
-  var ops=new FixtureOperations{UiThread=Thread.CurrentThread.ManagedThreadId,Manifest=current,Zip=zip,Offline=offline,FailStart=failStart,Corrupt=corrupt};
+  var ops=new FixtureOperations{UiThread=Thread.CurrentThread.ManagedThreadId,Manifest=current,Zip=zip,Offline=offline,FailStart=failStart,Corrupt=corrupt,FailRelease=failRelease};
   bool errorShown=false,timedOut=false;long gap=0,last=0;int ticks=0;
   var clock=Stopwatch.StartNew();
   using(var form=new Launcher(root,ops))using(var timer=new System.Windows.Forms.Timer{Interval=30}) {
@@ -65,6 +65,7 @@ static class VerifierLauncherUi {
    Scenario(folder,"offline-fallback",old,oldZip,current,zip,true,true,false,false);
    Scenario(folder,"startup-failure-no-loop",old,oldZip,current,zip,true,false,true,false);
    Scenario(folder,"corrupt-update-fallback",old,oldZip,current,zip,true,false,false,true);
+   Scenario(folder,"handoff-write-failure-no-crash",old,oldZip,current,zip,true,false,false,false,true);
    Console.WriteLine("LAUNCHER_UI_OK: "+checks+" checks; real WinForms loop, responsive slow verification/install/start, offline fallback, startup failure without retry loop, save preservation.");return 0;
   }catch(Exception error){Console.Error.WriteLine(error);return 1;}
  }

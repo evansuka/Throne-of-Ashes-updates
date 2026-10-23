@@ -57,6 +57,7 @@ foreach($machine in @('pc-a','pc-b')){
 }
 if(-not $SkipGameLaunch){
  & (Join-Path $PSScriptRoot 'verifier-lanceur-interface.ps1') -Assembly $launcher
+ & (Join-Path $PSScriptRoot 'verifier-lanceur-demarrage.ps1') -Assembly $launcher
  $log=Join-Path $fixture 'game.log';$stderr=Join-Path $fixture 'game.err'
  $start=New-Object Diagnostics.ProcessStartInfo
  $start.FileName=$game;$start.WorkingDirectory=Split-Path -Parent $game
