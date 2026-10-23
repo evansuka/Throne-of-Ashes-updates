@@ -1,5 +1,26 @@
 # Modifications des versions Windows
 
+## 0.14.10 — publiée le 23 octobre 2026
+
+[Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.10).
+
+- Mort du héros : suppression du bouton qui pouvait fermer le message tout en laissant une interface bloquée. Le retour au village reste accessible.
+- Inventaire : utiliser une potion après avoir refermé le contenu du sac ne rouvre plus ce dernier involontairement.
+- Sauvegardes : récupération de la copie de secours même si le fichier principal manque ; un fichier principal endommagé ne remplace plus une copie de secours valide lors de la sauvegarde suivante.
+- Validation des données imbriquées avant chargement, complétion des anciens champs manquants et conservation des métadonnées inconnues. Les fichiers illisibles sont conservés pour diagnostic.
+- Import web : migration des armes contenues dans le sac à dos et des identifiants des objets de quête ; un import refusé conserve la partie existante.
+- Marche : raccord du pantalon et de la botte corrigé au niveau du genou, notamment de profil pour le Sorcier et le Rôdeur, sans modifier les mains ni les prises des armes.
+- Butin au sol : proportions originales des icônes respectées, véritable icône pour l’or et espacement des noms révélés avec ALT afin de limiter leur chevauchement. Placement mis en cache lorsque la scène et la caméra restent fixes.
+- Équipement : comparaison des bonus de base et des gemmes additionnés correctement, notamment pour les boucliers ; affichage des bonus de compétences de classe et de la propriété indestructible.
+- Nouvelle icône autonome de la Corne du Souverain dans l’inventaire et le butin.
+- Lanceur : démarrage visible des versions antérieures à 0.14.9 lors d’un repli hors ligne ; une erreur de transmission de fenêtre est journalisée sans fermer ni relancer le jeu.
+- Secours audio Windows : détection de l’arrêt du lecteur et des erreurs de communication, commandes vérifiées et cache distinct pour les sons sans chemin. Options affiche l’interruption ; RÉINITIALISER LA SORTIE AUDIO permet un nouvel essai sans redémarrer le jeu.
+- Audit étendu et contrôles de régression ajoutés : sauvegardes, mort et fenêtres, affichage multitailles, butin, vrais sous-processus du lanceur et cycle du secours audio. Rapport et captures conservés dans le dépôt de développement pour la continuité cloud/PC.
+
+**Remplacer manuellement l’ancien lanceur par le fichier `Throne-of-Ashes.exe` de cette release**, toutes ses fenêtres fermées. La mise à jour du jeu ne remplace pas la copie du lanceur sur le bureau. Les sauvegardes sont conservées.
+
+Les essais cloud ne reproduisent pas le refus Windows d’accéder à la copie du bureau OneDrive et ne valident pas les haut-parleurs du PC. Les anciens journaux reçus ne suffisent pas à établir la cause d’une fermeture réelle. Le multijoueur natif et la synchronisation des sauvegardes avec les comptes web restent à porter.
+
 ## 0.14.9 — publiée le 23 octobre 2026
 
 [Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.9).
