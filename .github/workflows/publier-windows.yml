@@ -1,0 +1,57 @@
+name: Verifier et publier Windows
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publication-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      RELEASE_TAG: ${{ github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Recuperer uniquement les paquets de distribution
+        uses: actions/checkout@v4
+        with:
+          ref: livraison/${{ github.ref_name }}
+          path: .publication
+          persist-credentials: false
+      - name: Verifier les paquets et le lanceur sur Windows
+        shell: powershell
+        run: .github/scripts/verifier-paquet.ps1 -Directory .publication -Tag $env:RELEASE_TAG
+      - name: Creer la release et verifier les fichiers transferes
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $version=$env:RELEASE_TAG.Substring(1)
+          $short=($version -split '\.')[0..1] -join '.'
+          $names=@("Throne-of-Ashes-$version-update.zip", "Throne-of-Ashes-Godot-$short-Windows.zip", 'Throne-of-Ashes.exe', 'update.json')
+          $assets=@($names | ForEach-Object { Join-Path .publication $_ })
+          & gh release create $env:RELEASE_TAG @assets --repo $env:GITHUB_REPOSITORY --draft --title "Throne of Ashes $version" --notes-file .publication/RELEASE.md
+          if($LASTEXITCODE -ne 0){throw 'Creation de la release refusee; aucune activation.'}
+          $download=Join-Path $env:RUNNER_TEMP ('relecture-'+[Guid]::NewGuid().ToString('N'))
+          & gh release download $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY --dir $download
+          if($LASTEXITCODE -ne 0){throw 'Relecture des assets impossible; release conservee en brouillon.'}
+          foreach($name in $names){
+            $expected=(Get-FileHash -LiteralPath (Join-Path .publication $name) -Algorithm SHA256).Hash
+            $actual=(Get-FileHash -LiteralPath (Join-Path $download $name) -Algorithm SHA256).Hash
+            if($expected -ne $actual){throw "Empreinte distante incorrecte : $name"}
+          }
+          & gh release edit $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY --draft=false --latest
+          if($LASTEXITCODE -ne 0){throw 'Activation de la release interrompue.'}
+          Write-Output "PUBLISHED_RELEASE: https://github.com/$env:GITHUB_REPOSITORY/releases/tag/$env:RELEASE_TAG"
+          & gh api --method DELETE "repos/$env:GITHUB_REPOSITORY/git/refs/heads/livraison/$env:RELEASE_TAG"
+          if($LASTEXITCODE -ne 0){Write-Warning 'Release publiee; branche temporaire a nettoyer.'}
