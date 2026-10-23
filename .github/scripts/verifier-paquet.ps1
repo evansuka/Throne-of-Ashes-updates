@@ -57,9 +57,17 @@ foreach($machine in @('pc-a','pc-b')){
 }
 if(-not $SkipGameLaunch){
  $log=Join-Path $fixture 'game.log';$stderr=Join-Path $fixture 'game.err'
- $process=Start-Process -FilePath $game -ArgumentList @('--headless','--audio-driver','Dummy','--fixed-fps','60','--quit-after','600','--','--smoke-test') -RedirectStandardOutput $log -RedirectStandardError $stderr -PassThru
+ $start=New-Object Diagnostics.ProcessStartInfo
+ $start.FileName=$game;$start.WorkingDirectory=Split-Path -Parent $game
+ $start.Arguments='--headless --audio-driver Dummy --fixed-fps 60 --quit-after 600 -- --smoke-test'
+ $start.UseShellExecute=$false;$start.CreateNoWindow=$true
+ $start.RedirectStandardOutput=$true;$start.RedirectStandardError=$true
+ $process=[Diagnostics.Process]::Start($start)
+ $stdoutTask=$process.StandardOutput.ReadToEndAsync();$stderrTask=$process.StandardError.ReadToEndAsync()
  if(-not $process.WaitForExit(90000)){$process.Kill();throw 'Le jeu Windows ne termine pas le test de demarrage.'}
- if($process.ExitCode -ne 0){throw "Le jeu Windows termine en erreur $($process.ExitCode)."}
+ $process.WaitForExit()
+ [IO.File]::WriteAllText($log,$stdoutTask.Result);[IO.File]::WriteAllText($stderr,$stderrTask.Result)
+ if($null -eq $process.ExitCode -or $process.ExitCode -ne 0){throw "Le jeu Windows termine en erreur $($process.ExitCode)."}
  $output=(Get-Content -LiteralPath $log -Raw)+(Get-Content -LiteralPath $stderr -Raw)
  Write-Output $output
  if($output -notmatch 'VILLAGE_READY' -or $output -match 'SCRIPT ERROR|ERROR:|Parse Error'){throw 'Le jeu Windows ne demarre pas proprement.'}
