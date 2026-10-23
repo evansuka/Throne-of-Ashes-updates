@@ -2,6 +2,8 @@ name: Verifier et publier Windows
 
 on:
   push:
+    branches:
+      - 'publication/**'
     tags:
       - 'v*'
 
@@ -20,18 +22,26 @@ jobs:
       RELEASE_TAG: ${{ github.ref_name }}
       GH_TOKEN: ${{ github.token }}
     steps:
+      - name: Identifier la version
+        shell: powershell
+        run: |
+          $tag=$env:RELEASE_TAG -replace '^publication/',''
+          if($tag -notmatch '^v\d+\.\d+\.\d+$'){throw 'Version invalide.'}
+          "RELEASE_TAG=$tag" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - name: Recuperer uniquement les paquets de distribution
         uses: actions/checkout@v4
         with:
-          ref: livraison/${{ github.ref_name }}
+          ref: livraison/${{ env.RELEASE_TAG }}
           path: .publication
           persist-credentials: false
       - name: Verifier les paquets et le lanceur sur Windows
         shell: powershell
-        run: .github/scripts/verifier-paquet.ps1 -Directory .publication -Tag $env:RELEASE_TAG
+        run: |
+          try{.github/scripts/verifier-paquet.ps1 -Directory .publication -Tag $env:RELEASE_TAG}
+          catch{Write-Output "::error::$($_.Exception.Message)";throw}
       - name: Creer la release et verifier les fichiers transferes
         shell: powershell
         run: |
