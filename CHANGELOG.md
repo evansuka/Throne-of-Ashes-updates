@@ -1,5 +1,19 @@
 # Modifications des versions Windows
 
+## 0.14.4 — publiée le 23 octobre 2026
+
+[Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.4).
+
+- Voix du prêtre au clic : « Que les dieux soient avec vous ».
+- Voix du marchand au clic : « Bonjour, comment puis-je vous aider ? ».
+- Lecture à l’ouverture du dialogue du PNJ sélectionné, après l’approche si nécessaire ; aucune salutation au simple contact ni pendant la marche maintenue.
+- Une seule voix de PNJ à la fois. Les clics répétés ne superposent pas les phrases et les sous-menus ne les rejouent pas.
+- La phrase du marchand peut se terminer pendant l’ouverture du commerce. Les voix s’arrêtent au retour à l’accueil ou au changement de zone.
+- Volume réglé par Bruitages et par le volume général. Les deux MP3 fournis sont conservés sans altération.
+- Tests supplémentaires de lecture, de volume, de ciblage des PNJ et de fin sans boucle ; paquet vérifié sur Windows et sauvegardes conservées.
+
+L’incident de fermeture après environ 30 secondes de partie reste en cours de diagnostic ; aucun correctif de cet arrêt n’est annoncé ici.
+
 ## 0.14.3 — publiée le 23 octobre 2026
 
 [Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.3).
