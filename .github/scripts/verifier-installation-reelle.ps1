@@ -1,12 +1,15 @@
 # Runs only on a disposable Windows CI runner. Exercises the published EXE's
 # real entry point, installation, installed bootstrap, launcher and real game.
-param([string]$Version='0.14.16')
+param([string]$Version='0.14.16',[string]$ExpectedSetupSha='')
 $ErrorActionPreference='Stop';$ProgressPreference='SilentlyContinue'
 if($env:OS -ne 'Windows_NT' -or $env:GITHUB_ACTIONS -ne 'true'){throw 'Reserve au runner Windows CI jetable.'}
-if($Version -ne '0.14.16'){throw 'Ce diagnostic est lie aux empreintes de la version 0.14.16.'}
+if($Version -notmatch '^\d+\.\d+\.\d+$'){throw 'Version invalide.'}
+if(-not $ExpectedSetupSha -and $Version -eq '0.14.16'){$ExpectedSetupSha='743d82f6789ac90e556a02c73fa098a4220395b7013d42a85c24f002d1a7ab28'}
+if($ExpectedSetupSha -notmatch '^[a-f0-9]{64}$'){throw 'Empreinte de la version exigee.'}
+$pattern=[regex]::Escape($Version)
 $repo=Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
-$reportPath=Join-Path $repo 'verification/installation-01416-e2e.json'
-$screenshot=Join-Path $repo 'verification/installation-01416-e2e.png'
+$reportPath=Join-Path $repo ('verification/installation-'+$Version.Replace('.','')+'-e2e.json')
+$screenshot=Join-Path $repo ('verification/installation-'+$Version.Replace('.','')+'-e2e.png')
 $app='C:\Games\Throne of Ashes'
 $data=Join-Path $env:LOCALAPPDATA 'ThroneOfAshes'
 $desktop=[Environment]::GetFolderPath('DesktopDirectory')
@@ -50,8 +53,8 @@ try{
  $owned=$true
  New-Item -ItemType Directory -Path $fixture -Force | Out-Null
  $source=Join-Path $fixture 'Throne-of-Ashes-Setup.exe'
- Invoke-WebRequest 'https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v0.14.16/Throne-of-Ashes-Setup.exe' -OutFile $source -UseBasicParsing
- Check ((Get-FileHash $source -Algorithm SHA256).Hash.ToLowerInvariant() -eq '743d82f6789ac90e556a02c73fa098a4220395b7013d42a85c24f002d1a7ab28') 'Exact published Setup SHA256'
+ Invoke-WebRequest ("https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v$Version/Throne-of-Ashes-Setup.exe") -OutFile $source -UseBasicParsing
+ Check ((Get-FileHash $source -Algorithm SHA256).Hash.ToLowerInvariant() -eq $ExpectedSetupSha) 'Exact published Setup SHA256'
  $info=New-Object Diagnostics.ProcessStartInfo
  $info.FileName=$source;$info.WorkingDirectory=$fixture;$info.UseShellExecute=$true
  $setup=[Diagnostics.Process]::Start($info)
@@ -72,7 +75,14 @@ try{
   $games=@(Get-Process -Name 'Throne-of-Ashes-Game' -ErrorAction SilentlyContinue)
   if($games.Count -eq 1){
    $games[0].Refresh();$handle=$games[0].MainWindowHandle
-   $ready=$launcherText -match 'Jeu lanc. : 0\.14\.16' -and $handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle)
+   $ready=$launcherText -match ('Jeu lanc. : '+$pattern) -and $handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle)
+   $visible=$handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle)
+   if($visible){
+    foreach($launcher in Get-Process -Name 'Throne-of-Ashes','Throne-of-Ashes-Start','Throne-of-Ashes-Setup' -ErrorAction SilentlyContinue){
+     $launcher.Refresh();$window=$launcher.MainWindowHandle
+     Check (-not ($window -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($window) -and -not [ToaWindowProbe]::IsIconic($window))) 'Game never overlaps a visible installer or launcher window'
+    }
+   }
    if($ready){$result.gameWindow=[ordered]@{pid=$games[0].Id;title=$games[0].MainWindowTitle;visible=$true;minimized=$false}}
   }
   if(-not $ready){Start-Sleep -Milliseconds 500}
@@ -87,15 +97,16 @@ try{
  $shortcut=$shell.CreateShortcut((Join-Path $desktop 'Throne of Ashes.lnk'))
  Check ($shortcut.TargetPath -eq $installed) 'Actual desktop shortcut targets local bootstrap'
  Check $ready 'Real public game is visible after launcher startup'
+ Check (@($result.observedProcesses | Where-Object {$_.name -eq 'Throne-of-Ashes-Game'}).Count -eq 1) 'Only one game PID observed throughout startup'
  $games=@(Get-Process -Name 'Throne-of-Ashes-Game' -ErrorAction SilentlyContinue)
  Check ($games.Count -eq 1) 'Exactly one real game process'
- Check ($games[0].MainModule.FileName -eq (Join-Path $data 'versions/0.14.16/Throne-of-Ashes-Game.exe')) 'Visible game is the actual installed 0.14.16 executable'
+ Check ($games[0].MainModule.FileName -eq (Join-Path $data ("versions/$Version/Throne-of-Ashes-Game.exe"))) ("Visible game is the actual installed $Version executable")
  Start-Sleep -Seconds 30
  Check (-not $games[0].HasExited) 'Real game remains open thirty seconds after launcher startup'
  Check (@(Get-Process -Name 'Throne-of-Ashes','Throne-of-Ashes-Start','Throne-of-Ashes-Setup' -ErrorAction SilentlyContinue).Count -eq 0) 'Setup, bootstrap and launcher have all exited while game stays open'
  Capture-Desktop
  $launcherLog=Read-SharedText (Join-Path $data 'launcher.log')
- Check ($launcherLog -match 'Lanceur 0\.14\.16' -and $launcherLog -match 'Jeu lanc. : 0\.14\.16') 'Published launcher completes startup'
+ Check ($launcherLog -match ('Lanceur '+$pattern) -and $launcherLog -match ('Jeu lanc. : '+$pattern)) 'Published launcher completes startup'
  $text=Read-SharedText (Join-Path $data 'game.log')
  Check ($text -notmatch 'SCRIPT ERROR|Parse Error') 'No script or parse error'
  $lines=$text -split '\r?\n';$unexpected=@();$expectedAudio=@()
