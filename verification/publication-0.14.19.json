@@ -2,9 +2,9 @@
     "version":  "0.14.19",
     "status":  "failed",
     "published":  false,
-    "sourceCommit":  "4da080ca4631d90ae84439ae44082d9413b793ab",
-    "completedUtc":  "2026-10-24T15:07:58.8216137Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40105392948",
+    "sourceCommit":  "461cb9e1ae33587e9d892b844d7d4d22632173d8",
+    "completedUtc":  "2026-10-24T15:15:32.0393364Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40106017285",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19",
     "windowCheck":  {
                         "version":  "0.14.19",
@@ -13,13 +13,19 @@
                                        "Real exported game process created",
                                        "Game survives graphical initialization",
                                        "Game survives graphical initialization",
-                                       "Game survives graphical initialization",
-                                       "Game survives graphical initialization",
-                                       "Game survives graphical initialization",
                                        "Game survives graphical initialization"
                                    ],
-                        "sourceCommit":  "4da080ca4631d90ae84439ae44082d9413b793ab",
+                        "sourceCommit":  "461cb9e1ae33587e9d892b844d7d4d22632173d8",
+                        "earlyWindow":  {
+                                            "title":  "",
+                                            "bounds":  [
+                                                           -8,
+                                                           -31,
+                                                           1036,
+                                                           728
+                                                       ]
+                                        },
                         "error":  "System.Management.Automation.RuntimeException: Game appeared on screen before readiness",
-                        "completedUtc":  "2026-10-24T15:07:58.3164986Z"
+                        "completedUtc":  "2026-10-24T15:15:31.7413362Z"
                     }
 }
