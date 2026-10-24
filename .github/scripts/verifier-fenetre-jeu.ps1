@@ -73,7 +73,7 @@ function Check($value,[string]$label){if(-not $value){throw $label};$script:resu
  $result.gamePid=$gamePid;$result.initializationSamples=$samples;$result.status='passed'
 }catch{$result.status='failed';$result.error=$_.Exception.ToString();throw}
 finally{
- $guardLog=Join-Path $fixture 'startup-guard.log';if(Test-Path $guardLog){$result['startupLog']=Get-Content $guardLog -Raw};$gameLog=Join-Path $fixture 'game.log';if(Test-Path $gameLog){$result['gameLogTail']=@(Get-Content $gameLog -Tail 15)}
+ try{$guardLog=Join-Path $fixture 'startup-guard.log';if(Test-Path $guardLog){$result['startupLog']=Get-Content $guardLog -Raw}}catch{$result['startupLogReadError']=$_.Exception.Message};try{$gameLog=Join-Path $fixture 'game.log';if(Test-Path $gameLog){$result['gameLogTail']=@(Get-Content $gameLog -Tail 15)}}catch{$result['gameLogReadError']=$_.Exception.Message}
  $result.completedUtc=[DateTime]::UtcNow.ToString('o')
  [IO.File]::WriteAllText($reportPath,($result|ConvertTo-Json -Depth 6),[Text.UTF8Encoding]::new($false))
  if($null -ne $process){try{if(-not $process.HasExited){$process.Kill();$process.WaitForExit(10000)|Out-Null}}catch{};$process.Dispose()}
