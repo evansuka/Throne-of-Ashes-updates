@@ -7,6 +7,7 @@ New-Item -ItemType Directory $fixture | Out-Null
 $reportPath=Join-Path $pwd 'verification/game-window.json'
 $result=[ordered]@{version=$version;status='running';checks=@();sourceCommit=$env:GITHUB_SHA}
 $process=$null
+try{
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $launcher=Join-Path $directory 'Throne-of-Ashes.exe'
 Add-Type -Path $launcher
@@ -34,7 +35,6 @@ public static class GameWindowProbe {
 }
 '@
 function Check($value,[string]$label){if(-not $value){throw $label};$script:result.checks+=,$label;Write-Output ('GAME_WINDOW_CHECK: '+$label)}
-try{
  $gameDirectory=Join-Path $fixture ("versions/"+$version);New-Item -ItemType Directory $gameDirectory -Force | Out-Null
  [IO.Compression.ZipFile]::ExtractToDirectory((Join-Path $directory "Throne-of-Ashes-$version-update.zip"),$gameDirectory)
  $log=Join-Path $fixture 'game.log'
