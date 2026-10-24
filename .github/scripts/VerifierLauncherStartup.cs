@@ -26,9 +26,9 @@ static class VerifierLauncherStartup {
  static void Check(bool ok,string message){checks++;if(!ok)throw new Exception(message);}
  static Dictionary<string,object> Read(string path){return new JavaScriptSerializer().Deserialize<Dictionary<string,object>>(File.ReadAllText(path));}
  static int Fake(string[] args){
-  string capture=args[1],marker=null;bool minimized=false,crash=false;
-  foreach(string arg in args){if(arg.StartsWith("--launcher-handoff="))marker=arg.Substring("--launcher-handoff=".Length);if(arg=="--minimized")minimized=true;if(arg=="--fail-boot")crash=true;}
-  File.WriteAllText(capture,new JavaScriptSerializer().Serialize(new {pid=Process.GetCurrentProcess().Id,minimized=minimized,marker=marker}));
+  string capture=args[1],marker=null;int launcherPid=0;bool minimized=false,crash=false;
+  foreach(string arg in args){if(arg.StartsWith("--launcher-handoff="))marker=arg.Substring("--launcher-handoff=".Length);if(arg.StartsWith("--launcher-pid="))launcherPid=int.Parse(arg.Substring("--launcher-pid=".Length));if(arg=="--minimized")minimized=true;if(arg=="--fail-boot")crash=true;}
+  File.WriteAllText(capture,new JavaScriptSerializer().Serialize(new {pid=Process.GetCurrentProcess().Id,minimized=minimized,marker=marker,launcherPid=launcherPid}));
   if(crash)return 7;
   if(marker==null){Thread.Sleep(3800);return 0;}
   File.WriteAllText(marker+".ready.tmp",Process.GetCurrentProcess().Id.ToString());File.Move(marker+".ready.tmp",marker+".ready");
@@ -47,6 +47,7 @@ static class VerifierLauncherStartup {
     probe.StartGame(root,version);var captured=Read(probe.Capture);bool modern=version=="0.14.9";
     Check(Convert.ToBoolean(captured["minimized"])==modern,"Wrong visibility mode for "+version);
     Check((captured["marker"]!=null)==modern,"Wrong handoff protocol for "+version);
+    Check(Convert.ToInt32(captured["launcherPid"])==(modern?Process.GetCurrentProcess().Id:0),"Modern game receives the original launcher PID");
     Check(probe.Starts==1,"More than one child started");
     Check(clock.ElapsedMilliseconds<5000,"Startup waited for an unsupported handoff");
     Check(!probe.Completion.HasExited,"Closing the launcher process handle terminated the game");

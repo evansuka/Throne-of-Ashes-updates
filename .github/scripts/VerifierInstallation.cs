@@ -109,6 +109,17 @@ public static class VerifierInstallation {
     }
     manifest.launcherVersion="99.0.0";manifest.launcherUrl=url;
    }
+   var rejectedRoot=Path.Combine(fixture,"rejected-start");Directory.CreateDirectory(rejectedRoot);var probeHash=LocalInstall.Hash(probe);
+   LocalInstall.Activate(rejectedRoot,probe,"98.0.0",probeHash);LocalInstall.Activate(rejectedRoot,probe,"99.0.0",probeHash);
+   int starts=0;
+   using(var child=LocalInstall.StartVerified(rejectedRoot,"99.0.0",info=>{starts++;if(starts==1)throw new System.ComponentModel.Win32Exception(5,"Access denied fixture");return Process.Start(info);})){
+    Check(child.WaitForExit(10000)&&child.ExitCode==0&&starts==2,"Rejected update falls back once to a real verified previous process");
+   }
+   Check(LocalInstall.Current(rejectedRoot)=="98.0.0"&&LocalInstall.Rejected(rejectedRoot,"99.0.0",probeHash),"Rejected version excluded from activation pointer");
+   var repeated=new LauncherFeed{launcherVersion="99.0.0",launcherUrl=url,launcherSha256=probeHash};int repeatedDownloads=0;
+   Check(LocalInstall.Refresh(rejectedRoot,repeated,(u,p)=>{repeatedDownloads++;File.Copy(probe,p);})=="98.0.0"&&repeatedDownloads==0,"Rejected identical version is never downloaded again");
+   repeated.launcherVersion="100.0.0";repeated.launcherUrl=url.Replace("99.0.0","100.0.0");
+   Check(LocalInstall.Refresh(rejectedRoot,repeated,(u,p)=>{repeatedDownloads++;File.Copy(probe,p);})=="100.0.0"&&repeatedDownloads==1,"A genuinely new version can still update after a rejected version");
    Console.WriteLine("LOCAL_INSTALLATION_OK: "+count+" checks; isolated installs, launcher update/hash/rollback/offline/no downgrade, real child process and saves; Windows shortcuts="+(Environment.OSVersion.Platform==PlatformID.Win32NT));return 0;
   }catch(Exception e){Console.Error.WriteLine(e);return 1;}finally{try{Directory.Delete(fixture,true);}catch{}}
  }
