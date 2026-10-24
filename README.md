@@ -2,7 +2,7 @@
 
 Ce dépôt public contient les téléchargements du jeu. Le code de développement est conservé dans un dépôt privé.
 
-La version **[0.14.13](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.13)** ajoute une installation Windows dans Program Files, un raccourci Bureau stable et la vérification automatique des nouvelles versions du lanceur. Les changements sont détaillés dans [l’historique](CHANGELOG.md).
+La version **[0.14.14](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.14)** corrige la fabrication de l’installateur : composant administrateur avec manifeste Windows explicite et démarreur normal sans élévation. Les manifestes embarqués sont contrôlés sous Windows avant publication. Le consentement UAC reste à confirmer sur le PC concerné. Détails dans [l’historique](CHANGELOG.md).
 
 ## Installation
 
@@ -27,4 +27,4 @@ Les anciens extraits du lanceur reçus montrent plusieurs démarrages séparés 
 
 Une boîte Windows refusant l’accès au fichier du bureau OneDrive a également été signalée ; sa cause locale n’est pas établie. Tester une copie fraîche du lanceur dans Téléchargements permet de poursuivre ce diagnostic. Les contrôles cloud et Windows automatisés ne garantissent pas la disparition de tout arrêt propre au PC du joueur. Certains coffres/portails, les animations ennemies et la lisibilité des cadavres nécessitent encore une finition artistique ; multijoueur natif et synchronisation des parties restent à porter.
 
-[Validation Windows 0.14.13 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40084645449) : installation/raccourcis, mise à jour et repli du lanceur, fenêtre, démarrage, intégrité, vrai jeu et secours audio embarqué. Les cinq fichiers publics ont été retéléchargés et contrôlés par SHA-256. Le consentement UAC et la désinstallation interactive restent à vérifier sur le PC.
+[Validation Windows 0.14.14 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40086140642) : 49 contrôles installation/raccourcis/manifestes, mise à jour et repli du lanceur, fenêtre, démarrage, intégrité, jeu et secours audio embarqué. Les cinq fichiers publics ont été retéléchargés et contrôlés par SHA-256. Le consentement UAC et la désinstallation interactive restent à vérifier sur le PC.
