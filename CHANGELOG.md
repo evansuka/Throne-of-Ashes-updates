@@ -1,5 +1,27 @@
 # Modifications des versions Windows
 
+## 0.14.19 — publiée le 24 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40113346850). Les cinq fichiers publics, leurs empreintes et les liens latest ont été vérifiés. [Installation neuve complète validée](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40113587797) : Setup public, installation dans C:\Games\Throne of Ashes, raccourci réel, un seul PID de jeu et jeu toujours ouvert trente secondes après la fermeture du Setup, du démarreur et du lanceur.
+
+- Le jeu se minimise explicitement avant de signaler qu’il est prêt, puis sa fenêtre est restaurée et recentrée à la transmission du lanceur.
+- Un signal périodique du lanceur remplace le contrôle incorrect du processus parent sous Windows. Le jeu reste caché tant que le lanceur prépare la transmission, même au-delà de quinze secondes.
+- Contrôle sur le vrai jeu exporté : dix-huit secondes d’attente sans affichage de l’accueil, puis même PID visible et toujours actif ; aucun redémarrage.
+- Les corrections d’accueil, de performances et de repli du lanceur de la 0.14.18 sont incluses.
+
+Lancer une fois le nouveau Setup pour remplacer un démarreur installé 0.14.16. Sauvegardes conservées. Le refus Windows code 5 du PC reste de cause externe non identifiée ; une version de lanceur refusée n’est plus téléchargée à chaque lancement. Une fenêtre du moteur peut apparaître pendant son initialisation graphique avant le chargement du jeu ; le contrôle du jeu prêt reste distinct. Aucun réglage de protection ou de droits Windows n’est modifié.
+
+## 0.14.18 — publiée le 24 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.18) et [validation Windows standard réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40104034950). Cinq fichiers publics et empreintes vérifiés. Le contrôle graphique supplémentaire du Setup a ensuite observé une fenêtre avant la fin du lanceur ; la transmission a été renforcée en 0.14.19.
+
+- Les quatre classes de présentation gardent leur équipement fixe ; sélectionner un héros affiche uniquement ce héros et son équipement personnel.
+- Une nouvelle installation commence avec une liste de héros vide ; les sauvegardes existantes sont conservées.
+- Le monde du village n’est plus rendu derrière l’accueil ; seuls les aperçus visibles sont animés.
+- Cache des paramètres de pose et découpage spatial du rendu des donjons, en conservant les attaches, les sols, les murs et les collisions.
+- Qualité adaptative désactivable dans Options, dans la limite de la qualité choisie. Les FPS du testeur restent à confirmer.
+- Repli sur un ancien lanceur vérifié après un refus Windows, si disponible ; la même version refusée n’est plus téléchargée systématiquement.
+
 ## 0.14.17 — publiée le 24 octobre 2026
 
 [Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.17). [Validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40101135405) ; cinq fichiers publics, empreintes et flux de mise à jour vérifiés.

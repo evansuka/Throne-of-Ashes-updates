@@ -2,11 +2,13 @@
 
 Ce dépôt public contient les téléchargements du jeu. Le code de développement est conservé dans un dépôt privé.
 
-La version **[0.14.17](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.17)** apporte des équipements mieux proportionnés, une garde de combat en donjon, une interface plus compacte, seize icônes de compétences, une épée divine animée et des cadavres avec épaisseur. Les vues diagonales d’Éléane au village sont corrigées. Détails dans [l’historique](CHANGELOG.md).
+La version **[0.14.19](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19)** corrige la transmission entre le lanceur et le jeu. Elle inclut les aperçus de personnages indépendants, la sélection d’un héros seul, une liste initiale vide et les optimisations d’accueil, de poses et de donjons. Détails dans [l’historique](CHANGELOG.md).
 
 ## Installation
 
 Télécharger [**Throne-of-Ashes-Setup.exe**](https://github.com/evansuka/Throne-of-Ashes-updates/releases/latest/download/Throne-of-Ashes-Setup.exe), puis le lancer normalement. L’application s’installe pour votre compte dans `C:\Games\Throne of Ashes`, avec un raccourci personnel **Throne of Ashes** sur le Bureau et une entrée dans la liste des applications Windows. Le compte doit pouvoir écrire dans ce dossier.
+
+**Si le démarreur installé affiche encore 0.14.16, lancer une fois le nouveau Setup pour le remplacer.** Les sauvegardes sont conservées.
 
 Utiliser ensuite le raccourci Bureau pour jouer. Le démarreur vérifie les versions du lanceur et du jeu et récupère leurs mises à jour. Si une mise à jour échoue ou si la connexion est indisponible, une version déjà vérifiée reste utilisable.
 
@@ -18,4 +20,6 @@ Les journaux `installation.log`, `launcher.log` et `game.log` servent au diagnos
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.17 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40101135405) : archives, intégrité, lanceur, démarrage du jeu, installation utilisateur et raccourcis contrôlés. Les cinq fichiers publics ont été retéléchargés et comparés par SHA-256. Le flux de mise à jour et le dernier installateur correspondent à la 0.14.17.
+[Validation Windows 0.14.19 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40113346850) : archives, intégrité, installation et raccourcis contrôlés. Le vrai jeu reste minimisé pendant dix-huit secondes après son signal prêt, puis le même processus devient visible et reste actif. Les cinq fichiers publics ont été retéléchargés et comparés par SHA-256 ; le flux et le dernier Setup correspondent à la 0.14.19. Une fenêtre du moteur peut apparaître pendant son initialisation graphique, avant le chargement du jeu.
+
+[Installation neuve complète validée](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40113587797) : Setup public, installation dans C:\Games\Throne of Ashes, raccourci réel, un seul PID de jeu et jeu toujours ouvert trente secondes après la fermeture du Setup, du démarreur et du lanceur.
