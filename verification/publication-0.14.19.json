@@ -2,29 +2,59 @@
     "version":  "0.14.19",
     "status":  "failed",
     "published":  false,
-    "sourceCommit":  "1edd991ee720ad5ed69eb3707275409c621f1b90",
-    "completedUtc":  "2026-10-24T15:46:40.9834440Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40108374979",
+    "sourceCommit":  "dcec55bc0768cd6d62163dd83208cab9e1d8a6d2",
+    "completedUtc":  "2026-10-24T16:35:06.5820577Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40112050400",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19",
     "windowCheck":  {
                         "version":  "0.14.19",
                         "status":  "failed",
+                        "sourceCommit":  "dcec55bc0768cd6d62163dd83208cab9e1d8a6d2",
                         "checks":  [
-                                       "Game survives graphical initialization",
-                                       "Game survives graphical initialization",
-                                       "Game survives graphical initialization"
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness",
+                                       "Only an untitled graphics initialization window may precede game readiness"
                                    ],
-                        "sourceCommit":  "1edd991ee720ad5ed69eb3707275409c621f1b90",
-                        "earlyWindow":  {
-                                            "title":  "",
-                                            "bounds":  [
-                                                           -8,
-                                                           -31,
-                                                           1036,
-                                                           728
-                                                       ]
-                                        },
-                        "error":  "System.Management.Automation.RuntimeException: Startup window suppressed within 50 ms",
-                        "completedUtc":  "2026-10-24T15:46:40.5929091Z"
+                        "initializationWindow":  {
+                                                     "title":  "Throne of Ashes â€” Campagne native",
+                                                     "bounds":  [
+                                                                    -8,
+                                                                    -31,
+                                                                    1036,
+                                                                    728
+                                                                ],
+                                                     "beforeReadiness":  true
+                                                 },
+                        "error":  "System.Exception: Only an untitled graphics initialization window may precede game readiness\r\n   at VerifierGameWindow.Check(Boolean value, String message)\r\n   at VerifierGameWindow.Main(String[] args)",
+                        "startupLog":  "2026-10-24T16:35:02.6921442Z CrÃ©ation du processus du jeu 0.14.19â€¦\r\n2026-10-24T16:35:02.7279439Z Jeu crÃ©Ã© : PID 5472 ; crÃ©ation 35 ms. ContrÃ´le du dÃ©marrageâ€¦\r\n",
+                        "gameLogTail":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nWARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\nERROR: Condition \"hr != ((HRESULT)0x00000000)\" is true. Returning: ERR_CANT_OPEN\n   at: audio_device_init (drivers/wasapi/audio_driver_wasapi.cpp:275)\nERROR: WASAPI: init_output_device error.\n   at: init (drivers/wasapi/audio_driver_wasapi.cpp:600)\nWARNING: All audio drivers failed, falling back to the dummy driver.\n   at: initialize (servers/audio/audio_server.cpp:258)\n",
+                        "completedUtc":  "2026-10-24T16:35:06.0524372Z"
                     }
 }
