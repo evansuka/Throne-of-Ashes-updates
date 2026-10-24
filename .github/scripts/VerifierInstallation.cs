@@ -54,12 +54,13 @@ public static class VerifierInstallation {
    using(var input=Assembly.LoadFile(setup).GetManifestResourceStream("LauncherSeed"))using(var output=File.Create(seed))input.CopyTo(output);
    Check(LocalInstall.Hash(seed)==LocalInstall.SeedHash,"Embedded launcher exact hash");
    Check((string)Assembly.LoadFile(seed).GetType("UpdateLogic").GetField("BundledVersion").GetRawConstantValue()==LocalInstall.SeedVersion,"Embedded launcher version matches installer");
-   var helper=LocalInstall.ExtractHelper();
+   var helper=Path.Combine(fixture,"Uninstaller.exe");
+   using(var input=Assembly.LoadFile(setup).GetManifestResourceStream("UninstallerSeed"))using(var output=File.Create(helper))input.CopyTo(output);
    try{
-    Check(File.Exists(helper),"Administrator helper embedded and extractable");
-    using(var input=File.OpenRead(helper))Check(input.ReadByte()==77&&input.ReadByte()==90,"Administrator helper is a Windows PE");
+    Check(File.Exists(helper),"Normal uninstaller embedded and extractable");
+    using(var input=File.OpenRead(helper))Check(input.ReadByte()==77&&input.ReadByte()==90,"Uninstaller is a Windows PE");
     if(Environment.OSVersion.Platform==PlatformID.Win32NT){
-     Check(Manifest(helper).Contains("level=\"requireAdministrator\""),"Helper PE manifest requires Windows elevation");
+     Check(Manifest(helper).Contains("level=\"asInvoker\""),"Uninstaller PE manifest requires no elevation");
      Check(Manifest(setup).Contains("level=\"asInvoker\""),"Normal launcher PE manifest does not elevate the game");
     }
    }finally{File.Delete(helper);}
@@ -84,12 +85,25 @@ public static class VerifierInstallation {
     Check(File.ReadAllText(save)=="SAVE MUST STAY","Save preservation");Check(Directory.GetFiles(root,"*.download").Length==0,"Download cleanup");
     File.WriteAllText(LocalInstall.LauncherPath(root,"99.0.0"),"corrupt");Check(LocalInstall.Current(root)==LocalInstall.SeedVersion,"Hash failure falls back to previous launcher");
     if(Environment.OSVersion.Platform==PlatformID.Win32NT){
-     var app=Path.Combine(root,"Program Files","Throne of Ashes");var desktop=Path.Combine(root,"Bureau");LocalInstall.Install(app,setup,seed,desktop);
+     var app=Path.Combine(root,"Games","Throne of Ashes");var desktop=Path.Combine(root,"Bureau");LocalInstall.Install(app,setup,seed,desktop);
      Check(LocalInstall.Hash(Path.Combine(app,LocalInstall.HostName))==LocalInstall.Hash(setup),"Exact local host installation");Check(LocalInstall.Hash(Path.Combine(app,"Throne-of-Ashes.exe"))==LocalInstall.SeedHash,"Base launcher installed");
      var type=Type.GetTypeFromProgID("WScript.Shell",true);object shell=Activator.CreateInstance(type),link=null;
      try{link=type.InvokeMember("CreateShortcut",BindingFlags.InvokeMethod,null,shell,new object[]{Path.Combine(desktop,"Throne of Ashes.lnk")});var target=(string)link.GetType().InvokeMember("TargetPath",BindingFlags.GetProperty,null,link,null);Check(String.Equals(target,Path.Combine(app,LocalInstall.HostName),StringComparison.OrdinalIgnoreCase),"Desktop shortcut targets installed host");}
      finally{if(link!=null)System.Runtime.InteropServices.Marshal.FinalReleaseComObject(link);System.Runtime.InteropServices.Marshal.FinalReleaseComObject(shell);}
      LocalInstall.Install(app,setup,seed,desktop);Check(File.Exists(Path.Combine(desktop,"Throne of Ashes.lnk")),"Reinstallation repairs shortcut");
+     Check(File.Exists(Path.Combine(app,LocalInstall.UninstallerName)),"Per-user uninstaller installed next to host");
+     var keyPath=@"Software\ThroneOfAshes-QA-"+Guid.NewGuid().ToString("N");
+     try{using(var key=Microsoft.Win32.Registry.CurrentUser.CreateSubKey(keyPath)){
+      LocalInstall.WriteRegistration(key,app);
+      Check((string)key.GetValue("InstallLocation")==app,"Registration uses the user application location");
+      Check((string)key.GetValue("UninstallString")=="\""+Path.Combine(app,LocalInstall.UninstallerName)+"\"","Registration points to normal installed uninstaller");
+     }}finally{Microsoft.Win32.Registry.CurrentUser.DeleteSubKeyTree(keyPath,false);}
+     var beforeHost=LocalInstall.Hash(Path.Combine(app,LocalInstall.HostName));
+     var personal=Path.Combine(app,"personal-save.keep");File.WriteAllText(personal,"PRESERVE");
+     using(var cleanup=UserUninstaller.DeferredSelfRemoval(app))Check(cleanup.WaitForExit(15000),"Deferred normal-user cleanup terminates");
+     Check(!File.Exists(Path.Combine(app,LocalInstall.UninstallerName)),"Deferred cleanup removes only its own uninstaller");
+     Check(File.ReadAllText(personal)=="PRESERVE"&&LocalInstall.Hash(Path.Combine(app,LocalInstall.HostName))==beforeHost,"Cleanup never recursively deletes other app or personal files");
+     Reject(()=>UserUninstaller.DeferredSelfRemoval(app+"&unsafe"),"Shell metacharacter paths rejected");
     }
     manifest.launcherVersion="99.0.0";manifest.launcherUrl=url;
    }
