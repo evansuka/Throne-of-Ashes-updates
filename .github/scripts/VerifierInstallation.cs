@@ -63,7 +63,7 @@ public static class VerifierInstallation {
      Check(Manifest(setup).Contains("level=\"asInvoker\""),"Normal launcher PE manifest does not elevate the game");
     }
    }finally{File.Delete(helper);}
-   Check(LocalInstall.ProgramRoot==Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),"Throne of Ashes"),"Program Files target");
+   Check(LocalInstall.ProgramRoot==@"C:\Games\Throne of Ashes","Requested C Games installation target");
    foreach(var bad in new[]{"../escape","1.2","1.2.3/escape","v1.2.3","1.2.3.4"})Reject(()=>LocalInstall.LauncherPath(fixture,bad),"Unsafe version path");
    var manifest=new LauncherFeed{launcherVersion="99.0.0",launcherUrl="https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v99.0.0/Throne-of-Ashes.exe",launcherSha256=LocalInstall.Hash(probe)};
    LocalInstall.Validate(manifest);count++;
