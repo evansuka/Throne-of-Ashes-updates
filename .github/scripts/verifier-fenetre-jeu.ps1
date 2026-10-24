@@ -11,7 +11,9 @@ try{
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $launcher=Join-Path $directory 'Throne-of-Ashes.exe'
 [Reflection.Assembly]::LoadFile($launcher) | Out-Null
-Add-Type -ReferencedAssemblies $launcher,'System.dll','System.Core.dll' -TypeDefinition @'
+$bridgeSource=Join-Path $fixture 'RealWindowStartup.cs'
+$bridgeAssembly=Join-Path $fixture 'RealWindowStartup.dll'
+[IO.File]::WriteAllText($bridgeSource,@'
 using System.Diagnostics;
 using System.Threading.Tasks;
 public class RealWindowStartup:LauncherOperations {
@@ -19,7 +21,10 @@ public class RealWindowStartup:LauncherOperations {
  public override Process LaunchGameProcess(ProcessStartInfo start){var process=base.LaunchGameProcess(start);Child=Process.GetProcessById(process.Id);return process;}
  public void Begin(string root,string version){Work=Task.Factory.StartNew(()=>StartGame(root,version));}
 }
-'@
+'@)
+& 'C:/Windows/Microsoft.NET/Framework64/v4.0.30319/csc.exe' /nologo /target:library /out:$bridgeAssembly /reference:$launcher $bridgeSource
+if($LASTEXITCODE -ne 0){throw 'Compilation du pont de controle graphique refusee.'}
+[Reflection.Assembly]::LoadFile($bridgeAssembly) | Out-Null
 Add-Type -TypeDefinition @'
 using System;
 using System.Runtime.InteropServices;
