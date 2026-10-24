@@ -2,13 +2,15 @@ name: Diagnostiquer la fenetre du jeu sans publication
 on:
   push:
     branches: ['diagnostic/windows-window-019']
-    paths-ignore: ['verification/game-window.json', 'verification/window-script-error.json']
+    paths-ignore: ['verification/game-window.json', 'verification/window-script-error.json', 'verification/window-started.json']
 permissions:
   contents: write
 jobs:
   diagnostic:
     runs-on: windows-latest
-    timeout-minutes: 5
+    timeout-minutes: 6
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/checkout@v4
@@ -16,16 +18,28 @@ jobs:
           ref: livraison/v0.14.19
           path: .publication
           persist-credentials: false
+      - name: Accuser le demarrage du diagnostic
+        shell: powershell
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config credential.helper '!gh auth git-credential'
+          [IO.File]::WriteAllText((Join-Path $pwd 'verification/window-started.json'),('{"sourceCommit":"'+$env:GITHUB_SHA+'","status":"running"}'))
+          git add -- verification/window-started.json
+          git commit -m 'Demarrer le diagnostic graphique'
+          if($LASTEXITCODE -ne 0){throw 'Accuse non enregistre.'}
+          git push origin ("HEAD:"+$env:GITHUB_REF_NAME)
+          if($LASTEXITCODE -ne 0){throw 'Accuse non synchronise.'}
       - name: Observer le vrai jeu et le lanceur
         shell: powershell
         run: |
           $output=Join-Path $env:RUNNER_TEMP 'window-control-output.log'
-          $ErrorActionPreference='Continue'
-          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File .github/scripts/verifier-fenetre-jeu.ps1 -Directory .publication -Tag v0.14.19 *> $output
-          $code=$LASTEXITCODE
-          $ErrorActionPreference='Stop'
+          $stderr=Join-Path $env:RUNNER_TEMP 'window-control-error.log'
+          $control=Start-Process powershell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File .github/scripts/verifier-fenetre-jeu.ps1 -Directory .publication -Tag v0.14.19' -PassThru -RedirectStandardOutput $output -RedirectStandardError $stderr
+          if(-not $control.WaitForExit(180000)){$control.Kill();$control.WaitForExit();$code=124}else{$code=$control.ExitCode}
+          $tail=@(Get-Content $output -Tail 50)+@(Get-Content $stderr -Tail 50)
           if($code -ne 0 -or -not (Test-Path verification/game-window.json)){
-            $failure=[ordered]@{status='failed';exitCode=$code;output=@(Get-Content $output -Tail 80);sourceCommit=$env:GITHUB_SHA}
+            $failure=[ordered]@{status='failed';exitCode=$code;output=$tail;sourceCommit=$env:GITHUB_SHA}
             $json=$failure|ConvertTo-Json -Depth 5
             [IO.File]::WriteAllText((Join-Path $pwd 'verification/window-script-error.json'),$json,[Text.UTF8Encoding]::new($false))
             if(-not (Test-Path verification/game-window.json)){[IO.File]::WriteAllText((Join-Path $pwd 'verification/game-window.json'),$json,[Text.UTF8Encoding]::new($false))}
@@ -38,7 +52,12 @@ jobs:
           $ErrorActionPreference='Stop'
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          if(-not (Test-Path verification/game-window.json)){throw 'Rapport graphique absent.'}
+          git config credential.helper '!gh auth git-credential'
+          if(-not (Test-Path verification/game-window.json)){
+            $failure=[ordered]@{status='failed';error='Rapport du controle enfant absent';sourceCommit=$env:GITHUB_SHA}
+            foreach($name in @('window-control-output.log','window-control-error.log')){$log=Join-Path $env:RUNNER_TEMP $name;if(Test-Path $log){$failure[$name]=@(Get-Content $log -Tail 80)}}
+            [IO.File]::WriteAllText((Join-Path $pwd 'verification/game-window.json'),($failure|ConvertTo-Json -Depth 5),[Text.UTF8Encoding]::new($false))
+          }
           git add -- verification/game-window.json
           if(Test-Path verification/window-script-error.json){git add -- verification/window-script-error.json}
           git commit -m 'Consigner le diagnostic graphique Windows'
