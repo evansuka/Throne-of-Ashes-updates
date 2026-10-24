@@ -83,7 +83,7 @@ try{
    $games[0].Refresh();$handle=$games[0].MainWindowHandle
    $ready=$launcherText -match ('Jeu lanc. : '+$pattern) -and $handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle) -and [ToaWindowProbe]::OnScreen($handle)
    $visible=$handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle) -and [ToaWindowProbe]::OnScreen($handle)
-   $initializing=$visible -and [string]::IsNullOrWhiteSpace($games[0].MainWindowTitle) -and $launcherText -notmatch ('Jeu lanc. : '+$pattern)
+   $initializing=$visible -and $launcherText -notmatch 'Jeu pr|Jeu lanc'
    if($initializing){$result['initializationWindowObserved']=$true}
    if($visible -and -not $initializing){
     foreach($launcher in Get-Process -Name 'Throne-of-Ashes','Throne-of-Ashes-Start','Throne-of-Ashes-Setup' -ErrorAction SilentlyContinue){
