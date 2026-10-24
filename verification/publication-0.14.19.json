@@ -2,8 +2,18 @@
     "version":  "0.14.19",
     "status":  "failed",
     "published":  false,
-    "sourceCommit":  "edb8bf3d0d82da085edf23159fbdeac3053b37dc",
-    "completedUtc":  "2026-10-24T15:28:48.1781682Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40107021791",
-    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19"
+    "sourceCommit":  "ca1c02ee42dcd320bd3a0dd48bbef36262e14d0d",
+    "completedUtc":  "2026-10-24T15:37:37.4075866Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40107718523",
+    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19",
+    "windowCheck":  {
+                        "version":  "0.14.19",
+                        "status":  "failed",
+                        "checks":  [
+
+                                   ],
+                        "sourceCommit":  "ca1c02ee42dcd320bd3a0dd48bbef36262e14d0d",
+                        "error":  "System.Exception: Cannot add type. The \".EXE\" extension is not supported.\r\n   at System.Management.Automation.MshCommandRuntime.ThrowTerminatingError(ErrorRecord errorRecord)",
+                        "completedUtc":  "2026-10-24T15:37:37.1368172Z"
+                    }
 }
