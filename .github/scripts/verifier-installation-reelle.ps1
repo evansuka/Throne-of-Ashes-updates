@@ -25,7 +25,8 @@ public static class ToaWindowProbe {
  [StructLayout(LayoutKind.Sequential)]public struct Rect {public int left,top,right,bottom;}
  [DllImport("user32.dll")]static extern bool GetWindowRect(IntPtr window,out Rect rect);
  [DllImport("user32.dll")]static extern int GetSystemMetrics(int index);
- public static bool OnScreen(IntPtr window){Rect r;if(window==IntPtr.Zero||!GetWindowRect(window,out r))return false;int x=GetSystemMetrics(76),y=GetSystemMetrics(77);return r.right>x&&r.bottom>y&&r.left<x+GetSystemMetrics(78)&&r.top<y+GetSystemMetrics(79);}
+ [DllImport("dwmapi.dll")]static extern int DwmGetWindowAttribute(IntPtr window,int attribute,out int value,int size);
+ public static bool OnScreen(IntPtr window){int cloaked;if(DwmGetWindowAttribute(window,14,out cloaked,4)==0&&cloaked!=0)return false;Rect r;if(window==IntPtr.Zero||!GetWindowRect(window,out r))return false;int x=GetSystemMetrics(76),y=GetSystemMetrics(77);return r.right>x&&r.bottom>y&&r.left<x+GetSystemMetrics(78)&&r.top<y+GetSystemMetrics(79);}
 
  [DllImport("user32.dll")] public static extern bool IsWindowVisible(IntPtr handle);
  [DllImport("user32.dll")] public static extern bool IsIconic(IntPtr handle);

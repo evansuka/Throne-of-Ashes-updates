@@ -8,6 +8,17 @@ $reportPath=Join-Path $pwd 'verification/game-window.json'
 $result=[ordered]@{version=$version;status='running';checks=@();sourceCommit=$env:GITHUB_SHA}
 $process=$null
 Add-Type -AssemblyName System.IO.Compression.FileSystem
+$launcher=Join-Path $directory 'Throne-of-Ashes.exe'
+Add-Type -Path $launcher
+Add-Type -ReferencedAssemblies $launcher,'System.dll','System.Core.dll' -TypeDefinition @'
+using System.Diagnostics;
+using System.Threading.Tasks;
+public class RealWindowStartup:LauncherOperations {
+ public volatile Process Child;public Task Work;
+ public override Process LaunchGameProcess(ProcessStartInfo start){var process=base.LaunchGameProcess(start);Child=Process.GetProcessById(process.Id);return process;}
+ public void Begin(string root,string version){Work=Task.Factory.StartNew(()=>StartGame(root,version));}
+}
+'@
 Add-Type -TypeDefinition @'
 using System;
 using System.Runtime.InteropServices;
@@ -17,30 +28,36 @@ public static class GameWindowProbe {
  [DllImport("user32.dll")]static extern int GetSystemMetrics(int index);
  [DllImport("user32.dll")]static extern bool IsWindowVisible(IntPtr window);
  [DllImport("user32.dll")]static extern bool IsIconic(IntPtr window);
+ [DllImport("dwmapi.dll")]static extern int DwmGetWindowAttribute(IntPtr window,int attribute,out int value,int size);
  public static int[] Bounds(IntPtr window){Rect r;GetWindowRect(window,out r);return new[]{r.left,r.top,r.right,r.bottom};}
- public static bool OnScreen(IntPtr window){Rect r;if(window==IntPtr.Zero||!IsWindowVisible(window)||IsIconic(window)||!GetWindowRect(window,out r))return false;int x=GetSystemMetrics(76),y=GetSystemMetrics(77);return r.right>x&&r.bottom>y&&r.left<x+GetSystemMetrics(78)&&r.top<y+GetSystemMetrics(79);}
+ public static bool OnScreen(IntPtr window){int cloaked;if(DwmGetWindowAttribute(window,14,out cloaked,4)==0&&cloaked!=0)return false;Rect r;if(window==IntPtr.Zero||!IsWindowVisible(window)||IsIconic(window)||!GetWindowRect(window,out r))return false;int x=GetSystemMetrics(76),y=GetSystemMetrics(77);return r.right>x&&r.bottom>y&&r.left<x+GetSystemMetrics(78)&&r.top<y+GetSystemMetrics(79);}
 }
 '@
 function Check($value,[string]$label){if(-not $value){throw $label};$script:result.checks+=,$label;Write-Output ('GAME_WINDOW_CHECK: '+$label)}
 try{
- [IO.Compression.ZipFile]::ExtractToDirectory((Join-Path $directory "Throne-of-Ashes-$version-update.zip"),$fixture)
- $exe=Join-Path $fixture 'Throne-of-Ashes-Game.exe';$marker=Join-Path $fixture 'handoff';$log=Join-Path $fixture 'game.log'
- $start=New-Object Diagnostics.ProcessStartInfo
- $start.FileName=$exe;$start.UseShellExecute=$false;$start.WindowStyle=[Diagnostics.ProcessWindowStyle]::Hidden;$start.WorkingDirectory=$fixture
- $start.Arguments='--position -32000,-32000 --minimized --log-file "'+$log+'" -- --updates-checked --launcher-offscreen "--launcher-handoff='+$marker+'" --launcher-pid='+$PID
- $process=[Diagnostics.Process]::Start($start);$gamePid=$process.Id
- Check ($null -ne $process) 'Real exported game process created'
+ $gameDirectory=Join-Path $fixture ("versions/"+$version);New-Item -ItemType Directory $gameDirectory -Force | Out-Null
+ [IO.Compression.ZipFile]::ExtractToDirectory((Join-Path $directory "Throne-of-Ashes-$version-update.zip"),$gameDirectory)
+ $log=Join-Path $fixture 'game.log'
+ $ops=New-Object RealWindowStartup;$ops.Begin($fixture,$version)
  $clock=[Diagnostics.Stopwatch]::StartNew();$samples=0
- while(-not (Test-Path -LiteralPath ($marker+'.ready'))){
-  $process.Refresh();Check (-not $process.HasExited) 'Game survives graphical initialization'
-  if([GameWindowProbe]::OnScreen($process.MainWindowHandle)){$result['earlyWindow']=[ordered]@{title=$process.MainWindowTitle;bounds=[GameWindowProbe]::Bounds($process.MainWindowHandle)};throw 'Game appeared on screen before readiness'}
+ while(-not $ops.Work.IsCompleted){
+  $process=$ops.Child
+  if($null -ne $process){
+   $process.Refresh();Check (-not $process.HasExited) 'Game survives graphical initialization'
+   if([GameWindowProbe]::OnScreen($process.MainWindowHandle)){$result['earlyWindow']=[ordered]@{title=$process.MainWindowTitle;bounds=[GameWindowProbe]::Bounds($process.MainWindowHandle)};throw 'Game appeared on screen before readiness'}
+  }
   $samples++
-  if($clock.Elapsed.TotalSeconds -gt 90){throw 'Game readiness timed out'}
+  if($clock.Elapsed.TotalSeconds -gt 95){throw 'Game readiness timed out'}
   Start-Sleep -Milliseconds 100
  }
+ $ops.Work.GetAwaiter().GetResult();$process=$ops.Child;$gamePid=$process.Id
+ Check ($null -ne $process) 'Real exported game started by actual launcher operations'
+ $readyFile=Get-ChildItem -LiteralPath $fixture -Filter 'handoff-*.ready' | Select-Object -First 1
+ Check ($null -ne $readyFile) 'Actual launcher handshake file exists'
+ $marker=$readyFile.FullName -replace '\.ready$',''
  Check (([IO.File]::ReadAllText($marker+'.ready')).Trim() -eq [string]$gamePid) 'Ready handshake identifies the real game PID'
- for($i=0;$i -lt 12;$i++){$process.Refresh();Check (-not [GameWindowProbe]::OnScreen($process.MainWindowHandle)) 'No on-screen game before explicit launcher release';Start-Sleep -Milliseconds 100}
- [IO.File]::WriteAllText($marker+'.release','show')
+ for($i=0;$i -lt 180;$i++){$process.Refresh();Check (-not [GameWindowProbe]::OnScreen($process.MainWindowHandle)) 'No on-screen game before explicit launcher release';Start-Sleep -Milliseconds 100}
+ $ops.ReleaseGame()
  $visible=$false;$clock.Restart()
  do{$process.Refresh();$visible=[GameWindowProbe]::OnScreen($process.MainWindowHandle);if(-not $visible){Start-Sleep -Milliseconds 100}}while(-not $visible -and $clock.Elapsed.TotalSeconds -lt 20)
  Check $visible 'Same exported game becomes visible on screen after release'
