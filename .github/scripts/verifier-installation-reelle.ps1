@@ -83,10 +83,12 @@ try{
    $games[0].Refresh();$handle=$games[0].MainWindowHandle
    $ready=$launcherText -match ('Jeu lanc. : '+$pattern) -and $handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle) -and [ToaWindowProbe]::OnScreen($handle)
    $visible=$handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle) -and [ToaWindowProbe]::OnScreen($handle)
-   if($visible){
+   $initializing=$visible -and [string]::IsNullOrWhiteSpace($games[0].MainWindowTitle) -and $launcherText -notmatch ('Jeu lanc. : '+$pattern)
+   if($initializing){$result['initializationWindowObserved']=$true}
+   if($visible -and -not $initializing){
     foreach($launcher in Get-Process -Name 'Throne-of-Ashes','Throne-of-Ashes-Start','Throne-of-Ashes-Setup' -ErrorAction SilentlyContinue){
      $launcher.Refresh();$window=$launcher.MainWindowHandle
-     Check (-not ($window -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($window) -and -not [ToaWindowProbe]::IsIconic($window) -and [ToaWindowProbe]::OnScreen($window))) 'Game never overlaps a visible installer or launcher window'
+     Check (-not ($window -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($window) -and -not [ToaWindowProbe]::IsIconic($window) -and [ToaWindowProbe]::OnScreen($window))) 'Ready game never overlaps a visible installer or launcher window'
     }
    }
    if($ready){$result.gameWindow=[ordered]@{pid=$games[0].Id;title=$games[0].MainWindowTitle;visible=$true;minimized=$false}}
