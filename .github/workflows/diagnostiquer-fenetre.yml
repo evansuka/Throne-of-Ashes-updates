@@ -2,7 +2,7 @@ name: Diagnostiquer la fenetre du jeu sans publication
 on:
   push:
     branches: ['diagnostic/windows-window-019']
-    paths-ignore: ['verification/game-window.json']
+    paths-ignore: ['verification/game-window.json', 'verification/window-script-error.json']
 permissions:
   contents: write
 jobs:
@@ -18,7 +18,15 @@ jobs:
           persist-credentials: false
       - name: Observer le vrai jeu et le lanceur
         shell: powershell
-        run: .github/scripts/verifier-fenetre-jeu.ps1 -Directory .publication -Tag v0.14.19
+        run: |
+          try{.github/scripts/verifier-fenetre-jeu.ps1 -Directory .publication -Tag v0.14.19}
+          catch{
+            $failure=[ordered]@{status='failed';error=$_.Exception.ToString();details=($_|Format-List * -Force|Out-String);sourceCommit=$env:GITHUB_SHA}
+            $json=$failure|ConvertTo-Json -Depth 5
+            [IO.File]::WriteAllText((Join-Path $pwd 'verification/window-script-error.json'),$json,[Text.UTF8Encoding]::new($false))
+            if(-not (Test-Path verification/game-window.json)){[IO.File]::WriteAllText((Join-Path $pwd 'verification/game-window.json'),$json,[Text.UTF8Encoding]::new($false))}
+            throw
+          }
       - name: Conserver le diagnostic sur la branche de test
         if: always()
         shell: powershell
@@ -28,6 +36,7 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           if(-not (Test-Path verification/game-window.json)){throw 'Rapport graphique absent.'}
           git add -- verification/game-window.json
+          if(Test-Path verification/window-script-error.json){git add -- verification/window-script-error.json}
           git commit -m 'Consigner le diagnostic graphique Windows'
           if($LASTEXITCODE -ne 0){throw 'Rapport non enregistre.'}
           git push origin ("HEAD:"+$env:GITHUB_REF_NAME)
