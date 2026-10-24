@@ -1,5 +1,16 @@
 # Modifications des versions Windows
 
+## 0.14.15 — publiée le 24 octobre 2026
+
+[Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.15). [Validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40087569673) ; destination C:\Games et fenêtre de diagnostic contrôlées, cinq fichiers publics vérifiés.
+
+- Nouvelle destination demandée : `C:\Games\Throne of Ashes`, avec le raccourci Bureau vers ce dossier.
+- Erreurs d’installation : fenêtre avec l’étape exacte, le code Windows et l’exception complète, copiable avec un bouton même si aucun journal ne peut être écrit.
+- Journalisation des étapes d’extraction, demande UAC, installation et lancement ; repli du journal vers le dossier temporaire si son emplacement normal est indisponible.
+- Une erreur de nettoyage ne masque plus l’erreur initiale lors du lancement du composant d’installation.
+- L’installation dans C:\Games\Throne of Ashes, les autorisations Windows et les sauvegardes sont conservées. Cette version améliore le diagnostic ; elle ne déclare pas résolue la cause du refus d’accès signalé sur le PC.
+
+
 ## 0.14.14 — publiée le 24 octobre 2026
 
 [Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.14). [Validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40086140642), avec vérification des manifestes embarqués ; cinq fichiers publics contrôlés.
