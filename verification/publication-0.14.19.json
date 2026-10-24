@@ -2,9 +2,9 @@
     "version":  "0.14.19",
     "status":  "failed",
     "published":  false,
-    "sourceCommit":  "ca1c02ee42dcd320bd3a0dd48bbef36262e14d0d",
-    "completedUtc":  "2026-10-24T15:37:37.4075866Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40107718523",
+    "sourceCommit":  "cfb88862805bc1ed23f0189791b4e2fef868c371",
+    "completedUtc":  "2026-10-24T15:40:03.1154403Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40107889303",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19",
     "windowCheck":  {
                         "version":  "0.14.19",
@@ -12,8 +12,8 @@
                         "checks":  [
 
                                    ],
-                        "sourceCommit":  "ca1c02ee42dcd320bd3a0dd48bbef36262e14d0d",
-                        "error":  "System.Exception: Cannot add type. The \".EXE\" extension is not supported.\r\n   at System.Management.Automation.MshCommandRuntime.ThrowTerminatingError(ErrorRecord errorRecord)",
-                        "completedUtc":  "2026-10-24T15:37:37.1368172Z"
+                        "sourceCommit":  "cfb88862805bc1ed23f0189791b4e2fef868c371",
+                        "error":  "System.IO.FileLoadException: Could not load file or assembly \u0027D:\\\\a\\\\Throne-of-Ashes-updates\\\\Throne-of-Ashes-updates\\\\.publication\\\\Throne-of-Ashes.exe\u0027 or one of its dependencies. The given assembly name or codebase was invalid. (Exception from HRESULT: 0x80131047)\r\nFile name: \u0027D:\\\\a\\\\Throne-of-Ashes-updates\\\\Throne-of-Ashes-updates\\\\.publication\\\\Throne-of-Ashes.exe\u0027\r\n   at System.Reflection.AssemblyName.nInit(RuntimeAssembly\u0026 assembly, Boolean forIntrospection, Boolean raiseResolveEvent)\r\n   at System.Reflection.RuntimeAssembly.CreateAssemblyName(String assemblyString, Boolean forIntrospection, RuntimeAssembly\u0026 assemblyFromResolveEvent)\r\n   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark\u0026 stackMark, IntPtr pPrivHostBinder, Boolean forIntrospection)\r\n   at System.Reflection.RuntimeAssembly.InternalLoad(String assemblyString, Evidence assemblySecurity, StackCrawlMark\u0026 stackMark, Boolean forIntrospection)\r\n   at System.Reflection.Assembly.Load(String assemblyString)\r\n   at Microsoft.PowerShell.Commands.AddTypeCommand.LoadAssemblyHelper(String assemblyName)\r\n   at Microsoft.PowerShell.Commands.AddTypeCommand.ResolveReferencedAssembly(String referencedAssembly)\r\n   at Microsoft.PowerShell.Commands.AddTypeCommand.CompileAssemblyFromSource(List`1 generatedTypes)\r\n   at Microsoft.PowerShell.Commands.AddTypeCommand.EndProcessing()\r\n   at System.Management.Automation.CommandProcessorBase.Complete()\r\n\r\n",
+                        "completedUtc":  "2026-10-24T15:40:02.7841876Z"
                     }
 }
