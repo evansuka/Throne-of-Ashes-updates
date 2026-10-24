@@ -1,8 +1,8 @@
 {
     "version":  "0.14.16",
     "status":  "running",
-    "sourceCommit":  "8ad3f2d81a647395a60b5f12624522efe1a409f5",
-    "startedUtc":  "2026-10-24T12:14:55.5588483Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40093126606",
+    "sourceCommit":  "9f534f7df41fea6c725b30ab1b5164b43b188245",
+    "startedUtc":  "2026-10-24T12:21:26.7569552Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40093573636",
     "published":  false
 }
