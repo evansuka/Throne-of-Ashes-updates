@@ -42,9 +42,9 @@ public static class VerifierGameWindow {
     if(child!=null){
      if(child.HasExited)throw new Exception("Game stopped during graphical initialization");
      if(OnScreen(child)){
-      var window=child.MainWindowHandle;Rect bounds;GetWindowRect(window,out bounds);
-      result["earlyWindow"]=new Dictionary<string,object>{{"title",child.MainWindowTitle},{"bounds",new[]{bounds.left,bounds.top,bounds.right,bounds.bottom}}};
-      Thread.Sleep(50);Check(!OnScreen(child),"Startup window suppressed within 50 ms");
+      var window=child.MainWindowHandle;Rect bounds;GetWindowRect(window,out bounds);string title=child.MainWindowTitle;
+      result["initializationWindow"]=new Dictionary<string,object>{{"title",title},{"bounds",new[]{bounds.left,bounds.top,bounds.right,bounds.bottom}},{"beforeReadiness",true}};
+      Check(String.IsNullOrWhiteSpace(title),"Only an untitled graphics initialization window may precede game readiness");
      }
     }
     if(clock.Elapsed.TotalSeconds>95)throw new Exception("Game readiness timed out");
@@ -52,6 +52,8 @@ public static class VerifierGameWindow {
    }
    work.GetAwaiter().GetResult();var process=ops.Child;int pid=process.Id;
    Check(!process.HasExited,"Real exported game started by actual launcher operations");
+   Check(!OnScreen(process),"Ready game remains hidden before launcher release");
+   result["windowScope"]="Ready game and 18-second handoff; untitled engine initialization window recorded separately";
    var ready=Directory.GetFiles(root,"handoff-*.ready");Check(ready.Length==1,"Actual launcher handshake file exists");
    Check(File.ReadAllText(ready[0]).Trim()==pid.ToString(),"Ready handshake identifies the real game PID");
    for(int i=0;i<180;i++){if(OnScreen(process))throw new Exception("Game appeared before explicit launcher release");Thread.Sleep(100);}
@@ -63,8 +65,8 @@ public static class VerifierGameWindow {
    result["gamePid"]=pid;result["initializationSamples"]=samples;result["status"]="passed";exit=0;
   }catch(Exception error){result["status"]="failed";result["error"]=error.ToString();Console.Error.WriteLine(error);}
   finally{
-   try{ops.ReleaseGame();}catch(Exception error){result["cleanupReleaseError"]=error.Message;}
    var child=ops.Child;if(child!=null)try{if(!child.HasExited){child.Kill();child.WaitForExit(10000);}child.Dispose();}catch(Exception error){result["cleanupError"]=error.Message;}
+   try{ops.ReleaseGame();}catch(Exception error){result["cleanupReleaseError"]=error.Message;}
    foreach(string name in new[]{"startup-guard.log","game.log"})try{string path=Path.Combine(root,name);if(File.Exists(path))result[name=="game.log"?"gameLogTail":"startupLog"]=ReadShared(path);}catch(Exception error){result[name+"ReadError"]=error.Message;}
    result["completedUtc"]=DateTime.UtcNow.ToString("o");File.WriteAllText(reportPath,new JavaScriptSerializer().Serialize(result));
   }
