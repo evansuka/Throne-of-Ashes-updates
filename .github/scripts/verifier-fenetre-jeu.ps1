@@ -73,7 +73,7 @@ function Check($value,[string]$label){if(-not $value){throw $label};$script:resu
  Start-Sleep -Seconds 3;$process.Refresh()
  Check (-not $process.HasExited -and $process.Id -eq $gamePid) 'One game PID remains alive after handoff'
  $result.gamePid=$gamePid;$result.initializationSamples=$samples;$result.status='passed'
-}catch{Trace 'catch';$result.status='failed';$result.error=$_.Exception.ToString();[IO.File]::WriteAllText($reportPath,($result|ConvertTo-Json -Depth 6),[Text.UTF8Encoding]::new($false));throw}
+}catch{Trace 'catch';$errorMessage=$_.Exception.Message;Trace 'error-message';$brief=[ordered]@{status='failed';version=$version;error=$errorMessage;sourceCommit=$env:GITHUB_SHA};[IO.File]::WriteAllText($reportPath,($brief|ConvertTo-Json -Depth 3),[Text.UTF8Encoding]::new($false));Trace 'brief-written';$result['status']='failed';$result['error']=$errorMessage;Trace 'catch-complete';throw}
 finally{
  try{$guardLog=Join-Path $fixture 'startup-guard.log';if(Test-Path $guardLog){$result['startupLog']=Get-Content $guardLog -Raw}}catch{$result['startupLogReadError']=$_.Exception.Message};try{$gameLog=Join-Path $fixture 'game.log';if(Test-Path $gameLog){$result['gameLogTail']=@(Get-Content $gameLog -Tail 15)}}catch{$result['gameLogReadError']=$_.Exception.Message}
  $result.completedUtc=[DateTime]::UtcNow.ToString('o')
