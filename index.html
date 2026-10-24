@@ -12,31 +12,28 @@
     html { color-scheme: dark; background: #130e0d; }
     body { margin: 0; color: #f6e9d6; font-family: Georgia, 'Times New Roman', serif; }
     .scene { position: fixed; inset: 0; overflow: hidden; pointer-events: none; }
-    .scene img { position: absolute; width: 134%; height: 190%; top: -85%; left: 0; object-fit: cover; object-position: left bottom; }
+    .scene img { position: absolute; width: 100%; height: 100%; top: 0; left: 0; object-fit: cover; object-position: center; }
     .scene::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, #08080b66, #0d090a35 45%, #0d090af0), radial-gradient(ellipse at center, transparent, #08080b66); }
-    main { position: relative; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px 24px 90px; text-align: center; }
-    h1 { margin: 0 0 32px; width: min(850px, 90vw); }
+    main { position: relative; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: clamp(24px, 5vh, 60px) 24px clamp(80px, 12vh, 140px); text-align: center; }
+    h1 { margin: 0 0 32px; width: min(620px, 80vw); }
     .logo { display: block; width: 100%; height: auto; filter: drop-shadow(0 8px 28px #000); }
     .tagline { margin: 0 0 30px; font-size: clamp(18px, 2.5vw, 24px); letter-spacing: .08em; text-shadow: 0 2px 8px #000; }
     .download { display: inline-flex; align-items: center; justify-content: center; gap: 14px; padding: 19px 36px; border: 1px solid #e2b878; border-radius: 3px; background: linear-gradient(#a64423, #632414); color: #fff2da; font: 700 18px Georgia, serif; text-decoration: none; box-shadow: 0 0 32px #d54d2428, inset 0 0 0 3px #28100c66; transition: background .2s, box-shadow .2s; }
     .download:hover { background: linear-gradient(#bc532d, #81301a); box-shadow: 0 0 36px #ef6b394a; }
     a:focus-visible { outline: 3px solid #ffe1a3; outline-offset: 6px; }
     .download svg { width: 22px; height: 22px; flex-shrink: 0; }
-    .note { margin: 17px 0 0; font: 14px/1.6 system-ui, sans-serif; color: #e1cbb5; }
-    footer { position: relative; margin-top: -56px; min-height: 56px; padding: 12px 20px 24px; text-align: center; font: 12px/1.6 system-ui, sans-serif; color: #c3b2a0; }
-    footer a { color: inherit; text-underline-offset: 4px; }
-    @media (max-width: 600px) { main { padding-inline: 18px; } h1 { width: 100%; margin-bottom: 30px; } .scene img { width: 134%; height: 190%; top: -85%; } .download { width: min(100%, 340px); padding-inline: 20px; } .tagline { letter-spacing: .04em; } }
+    @media (max-width: 600px) { main { padding-inline: 18px; } h1 { width: 100%; margin-bottom: 30px; } .download { width: min(100%, 340px); padding-inline: 20px; } .tagline { letter-spacing: .04em; } }
     @media (prefers-reduced-motion: reduce) { .download { transition: none; } }
   </style>
 </head>
 <body>
-  <div class="scene" aria-hidden="true"><img src="assets/accueil.png?v=18a0cc3" alt="" fetchpriority="high"></div>
+  <div class="scene" aria-hidden="true"><img src="assets/Blood%20Moon%20Throne%20of%20Ruin.png?v=9c7e530" alt="" fetchpriority="high"></div>
   <main>
     <h1><img class="logo" src="assets/logo-officiel.png?v=ea32450" alt="Throne of Ashes" width="2135" height="736" fetchpriority="high"></h1>
+    <div class="action">
     <p class="tagline">Entrez dans le royaume des cendres.</p>
     <a class="download" href="https://github.com/evansuka/Throne-of-Ashes-updates/releases/latest" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>Télécharger le jeu</a>
-    <p class="note">Pour Windows · Dernière version officielle<br>Ouverture de GitHub dans un nouvel onglet.<br>Choisissez <strong>Throne-of-Ashes.exe</strong>.</p>
+    </div>
   </main>
-  <footer><a href="https://github.com/evansuka/Throne-of-Ashes-updates/releases" target="_blank" rel="noopener noreferrer">Versions et mises à jour</a></footer>
 </body>
 </html>

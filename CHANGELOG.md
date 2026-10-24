@@ -1,5 +1,9 @@
 # Modifications des versions Windows
 
+## Site — 24 octobre 2026
+
+- Nouveau fond du trône sous la lune rouge, logo original en haut et suppression du texte sous Télécharger. Affichage ordinateur et mobile vérifié.
+
 ## 0.14.11 — publiée le 24 octobre 2026
 
 [Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.11). [Validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40075082687) ; quatre téléchargements contrôlés par SHA-256 et flux de mise à jour vérifié.
