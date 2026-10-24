@@ -1,0 +1,6 @@
+{
+  "version": "0.14.18",
+  "requestedUtc": "2026-10-24T14:49:58.772740+00:00",
+  "expectedSetupSha": "287fc5efb4f6869f6c620d405111a6efab3f185331e43718c35b89b4fbc6c5ba",
+  "purpose": "Fresh real installation, no overlapping launcher/game windows, exactly one game PID"
+}
