@@ -22,6 +22,34 @@ public static class VerifierInstallation {
   if(args.Length==1&&args[0]=="--probe")return 0;
   var fixture=Path.Combine(Path.GetTempPath(),"toa-install-test-"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(fixture);
   try{
+   var detail=LocalInstall.ErrorText("UAC test",new TargetInvocationException(new System.ComponentModel.Win32Exception(5,"Accès refusé")));
+   Check(detail.Contains("UAC test")&&detail.Contains("Code Windows : 5")&&detail.Contains("Win32Exception"),"Full phase and nested Windows error preserved without a log file");
+   var blockedRoot=Path.Combine(fixture,"not-a-directory");File.WriteAllText(blockedRoot,"fixture");
+   var fallback=LocalInstall.Log(blockedRoot,"diagnostic fallback");
+   Check(fallback!=null&&File.ReadAllText(fallback).Contains("diagnostic fallback"),"Logging falls back when the normal log cannot be created");
+   File.Delete(fallback);
+   if(Environment.OSVersion.Platform==PlatformID.Win32NT){
+    bool seen=false;Exception uiError=null;
+    using(var timer=new System.Windows.Forms.Timer{Interval=150}){
+     timer.Tick+=(sender,eventArgs)=>{
+      foreach(System.Windows.Forms.Form form in System.Windows.Forms.Application.OpenForms){
+       if(!form.Text.StartsWith("Diagnostic"))continue;
+       seen=true;timer.Stop();
+       try{
+        bool report=false,copy=false;
+        foreach(System.Windows.Forms.Control control in form.Controls){
+         var box=control as System.Windows.Forms.TextBox;if(box!=null)report=box.ReadOnly&&box.Text.Contains("UAC test")&&box.Text.Contains("Code Windows : 5");
+         var button=control as System.Windows.Forms.Button;if(button!=null)copy=button.Enabled&&button.Text=="Copier le diagnostic";
+        }
+        Check(report,"Real error dialog exposes full diagnostic when normal log is unavailable");Check(copy,"Error dialog provides copy action");
+       }catch(Exception e){uiError=e;}finally{form.Close();}break;
+      }
+     };
+     timer.Start();LocalInstall.ShowError(null,blockedRoot,"UAC test",new System.ComponentModel.Win32Exception(5,"Accès refusé"));
+    }
+    if(uiError!=null)throw uiError;Check(seen,"Real diagnostic dialog opened and closed");
+    var uiLog=LocalInstall.Log(blockedRoot,"UI diagnostic test completed");if(uiLog!=null)File.Delete(uiLog);
+   }
    var setup=Path.GetFullPath(args[0]);var probe=Path.GetFullPath(args[1]);var seed=Path.Combine(fixture,"seed.exe");
    using(var input=Assembly.LoadFile(setup).GetManifestResourceStream("LauncherSeed"))using(var output=File.Create(seed))input.CopyTo(output);
    Check(LocalInstall.Hash(seed)==LocalInstall.SeedHash,"Embedded launcher exact hash");
