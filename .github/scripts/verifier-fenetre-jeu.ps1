@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 public class RealWindowStartup:LauncherOperations {
  public volatile Process Child;public Task Work;
  public override Process LaunchGameProcess(ProcessStartInfo start){var process=base.LaunchGameProcess(start);Child=Process.GetProcessById(process.Id);return process;}
- public void Begin(string root,string version){Report=message=>File.AppendAllText(Path.Combine(root,"startup-guard.log"),DateTime.UtcNow.ToString("o")+" "+message+Environment.NewLine);Work=Task.Factory.StartNew(()=>StartGame(root,version));}
+ public void Begin(string root,string version){Report=message=>{lock(this){File.AppendAllText(Path.Combine(root,"startup-guard.log"),DateTime.UtcNow.ToString("o")+" "+message+Environment.NewLine);}};Work=Task.Factory.StartNew(()=>StartGame(root,version));}
 }
 '@)
 & 'C:/Windows/Microsoft.NET/Framework64/v4.0.30319/csc.exe' /nologo /target:library /out:$bridgeAssembly /reference:$launcher $bridgeSource
