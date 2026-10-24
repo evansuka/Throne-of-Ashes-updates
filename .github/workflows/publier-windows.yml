@@ -45,6 +45,9 @@ jobs:
       - name: Verifier l installation locale et les mises a jour du lanceur
         shell: powershell
         run: .github/scripts/verifier-installation.ps1 -Setup "$pwd/.publication/Throne-of-Ashes-Setup.exe"
+      - name: Verifier la vraie fenetre du jeu avant publication
+        shell: powershell
+        run: .github/scripts/verifier-fenetre-jeu.ps1 -Directory .publication -Tag $env:RELEASE_TAG
       - name: Creer la release et verifier les fichiers transferes
         shell: powershell
         run: |
@@ -78,7 +81,8 @@ jobs:
           if($version -notmatch '^\d+\.\d+\.\d+$'){exit 0}
           $ok='${{ job.status }}' -eq 'success'
           $report=[ordered]@{version=$version;status=$(if($ok){'passed'}else{'failed'});published=$ok;sourceCommit=$env:GITHUB_SHA;completedUtc=[DateTime]::UtcNow.ToString('o');workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";releaseUrl="https://github.com/$env:GITHUB_REPOSITORY/releases/tag/$env:RELEASE_TAG"}
-          $json=$report|ConvertTo-Json
+          if(Test-Path verification/game-window.json){$report['windowCheck']=Get-Content verification/game-window.json -Raw | ConvertFrom-Json}
+          $json=$report|ConvertTo-Json -Depth 7
           $path="verification/publication-$version.json"
           $endpoint="repos/$env:GITHUB_REPOSITORY/contents/$path"
           $body=@{message="Consigner la publication Windows $version";branch='main';content=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($json))}

@@ -22,6 +22,11 @@ Add-Type -TypeDefinition @'
 using System;
 using System.Runtime.InteropServices;
 public static class ToaWindowProbe {
+ [StructLayout(LayoutKind.Sequential)]public struct Rect {public int left,top,right,bottom;}
+ [DllImport("user32.dll")]static extern bool GetWindowRect(IntPtr window,out Rect rect);
+ [DllImport("user32.dll")]static extern int GetSystemMetrics(int index);
+ public static bool OnScreen(IntPtr window){Rect r;if(window==IntPtr.Zero||!GetWindowRect(window,out r))return false;int x=GetSystemMetrics(76),y=GetSystemMetrics(77);return r.right>x&&r.bottom>y&&r.left<x+GetSystemMetrics(78)&&r.top<y+GetSystemMetrics(79);}
+
  [DllImport("user32.dll")] public static extern bool IsWindowVisible(IntPtr handle);
  [DllImport("user32.dll")] public static extern bool IsIconic(IntPtr handle);
 }
@@ -75,12 +80,12 @@ try{
   $games=@(Get-Process -Name 'Throne-of-Ashes-Game' -ErrorAction SilentlyContinue)
   if($games.Count -eq 1){
    $games[0].Refresh();$handle=$games[0].MainWindowHandle
-   $ready=$launcherText -match ('Jeu lanc. : '+$pattern) -and $handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle)
-   $visible=$handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle)
+   $ready=$launcherText -match ('Jeu lanc. : '+$pattern) -and $handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle) -and [ToaWindowProbe]::OnScreen($handle)
+   $visible=$handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle) -and [ToaWindowProbe]::OnScreen($handle)
    if($visible){
     foreach($launcher in Get-Process -Name 'Throne-of-Ashes','Throne-of-Ashes-Start','Throne-of-Ashes-Setup' -ErrorAction SilentlyContinue){
      $launcher.Refresh();$window=$launcher.MainWindowHandle
-     Check (-not ($window -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($window) -and -not [ToaWindowProbe]::IsIconic($window))) 'Game never overlaps a visible installer or launcher window'
+     Check (-not ($window -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($window) -and -not [ToaWindowProbe]::IsIconic($window) -and [ToaWindowProbe]::OnScreen($window))) 'Game never overlaps a visible installer or launcher window'
     }
    }
    if($ready){$result.gameWindow=[ordered]@{pid=$games[0].Id;title=$games[0].MainWindowTitle;visible=$true;minimized=$false}}
