@@ -19,13 +19,17 @@ jobs:
       - name: Observer le vrai jeu et le lanceur
         shell: powershell
         run: |
-          try{.github/scripts/verifier-fenetre-jeu.ps1 -Directory .publication -Tag v0.14.19}
-          catch{
-            $failure=[ordered]@{status='failed';error=$_.Exception.ToString();details=($_|Format-List * -Force|Out-String);sourceCommit=$env:GITHUB_SHA}
+          $output=Join-Path $env:RUNNER_TEMP 'window-control-output.log'
+          $ErrorActionPreference='Continue'
+          & powershell.exe -NoProfile -ExecutionPolicy Bypass -File .github/scripts/verifier-fenetre-jeu.ps1 -Directory .publication -Tag v0.14.19 *> $output
+          $code=$LASTEXITCODE
+          $ErrorActionPreference='Stop'
+          if($code -ne 0 -or -not (Test-Path verification/game-window.json)){
+            $failure=[ordered]@{status='failed';exitCode=$code;output=@(Get-Content $output -Tail 80);sourceCommit=$env:GITHUB_SHA}
             $json=$failure|ConvertTo-Json -Depth 5
             [IO.File]::WriteAllText((Join-Path $pwd 'verification/window-script-error.json'),$json,[Text.UTF8Encoding]::new($false))
             if(-not (Test-Path verification/game-window.json)){[IO.File]::WriteAllText((Join-Path $pwd 'verification/game-window.json'),$json,[Text.UTF8Encoding]::new($false))}
-            throw
+            throw 'Le controle graphique enfant termine en erreur; sortie conservee.'
           }
       - name: Conserver le diagnostic sur la branche de test
         if: always()
