@@ -1,8 +1,83 @@
 {
     "version":  "0.14.18",
-    "status":  "running",
+    "status":  "failed",
     "sourceCommit":  "c35cd11e0579fabba56cfbd09c8ff58f33b77b95",
-    "startedUtc":  "2026-10-24T14:50:13.2662851Z",
     "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40104253587",
-    "published":  false
+    "startedUtc":  "2026-10-24T14:50:16.6705654Z",
+    "published":  false,
+    "checks":  [
+                   "Fresh app directory",
+                   "Fresh user data directory",
+                   "Fresh desktop shortcut",
+                   "Fresh per-user registration",
+                   "Exact published Setup SHA256",
+                   "Published Setup process created through the shell"
+               ],
+    "observedProcesses":  [
+                              {
+                                  "pid":  3928,
+                                  "name":  "Throne-of-Ashes-Setup",
+                                  "path":  "D:\\a\\_temp\\toa-real-install-7aae41d983494f0eb248643a23271e57\\Throne-of-Ashes-Setup.exe"
+                              },
+                              {
+                                  "pid":  9028,
+                                  "name":  "Throne-of-Ashes-Start",
+                                  "path":  "C:\\Games\\Throne of Ashes\\Throne-of-Ashes-Start.exe"
+                              },
+                              {
+                                  "pid":  6148,
+                                  "name":  "Throne-of-Ashes",
+                                  "path":  "C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\launchers\\0.14.18\\Throne-of-Ashes.exe"
+                              },
+                              {
+                                  "pid":  1860,
+                                  "name":  "Throne-of-Ashes-Game",
+                                  "path":  "C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\versions\\0.14.18\\Throne-of-Ashes-Game.exe"
+                              }
+                          ],
+    "platform":  "Microsoft Windows NT 10.0.26100.0",
+    "runnerElevated":  true,
+    "error":  "System.Management.Automation.RuntimeException: Game never overlaps a visible installer or launcher window",
+    "completedUtc":  "2026-10-24T14:50:25.2452650Z",
+    "logs":  {
+                 "installation.log":  [
+                                          "2026-10-24T14:50:18.5626336Z PHASE : Installation pour votre compte dans C:\\Games\\Throne of Ashes",
+                                          "2026-10-24T14:50:18.6937130Z PHASE : Enregistrement dans les applications de votre compte",
+                                          "2026-10-24T14:50:18.8745322Z PHASE : Préparation du dossier utilisateur : C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes",
+                                          "2026-10-24T14:50:18.8763106Z PHASE : Préparation du lanceur versionné",
+                                          "2026-10-24T14:50:19.0603036Z PHASE : Vérification des mises à jour du lanceur",
+                                          "2026-10-24T14:50:19.3195839Z Lanceur vérifié : 0.14.18",
+                                          "2026-10-24T14:50:19.3195839Z PHASE : Exécution du lanceur : C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\launchers\\0.14.18\\Throne-of-Ashes.exe",
+                                          "2026-10-24T14:50:19.3395979Z Lanceur installé démarré : 0.14.18 PID=6148",
+                                          ""
+                                      ],
+                 "launcher.log":  [
+                                      "2026-10-24T14:50:19.5986079Z Lanceur 0.14.18 ; début",
+                                      "2026-10-24T14:50:19.6006347Z Vérification de la version installée…",
+                                      "2026-10-24T14:50:19.6283666Z Version disponible localement : ",
+                                      "2026-10-24T14:50:19.6283666Z Recherche de mises à jour…",
+                                      "2026-10-24T14:50:19.7124870Z Version distante : 0.14.18",
+                                      "2026-10-24T14:50:19.7124870Z Téléchargement de la version 0.14.18…",
+                                      "2026-10-24T14:50:21.2348497Z Vérification et installation…",
+                                      "2026-10-24T14:50:21.9691428Z Vérification de l’archive téléchargée…",
+                                      "2026-10-24T14:50:22.1295879Z Extraction du jeu…",
+                                      "2026-10-24T14:50:23.7019975Z Vérification du jeu extrait…",
+                                      "2026-10-24T14:50:24.0092894Z Installation du jeu vérifié…",
+                                      "2026-10-24T14:50:24.0100962Z Activation de la version 0.14.18…",
+                                      "2026-10-24T14:50:24.0130790Z Installation vérifiée et activée : 0.14.18",
+                                      "2026-10-24T14:50:24.0211347Z Démarrage du jeu… Cela peut prendre un moment.",
+                                      "2026-10-24T14:50:24.0271815Z Création du processus du jeu 0.14.18…",
+                                      "2026-10-24T14:50:24.0380179Z Jeu créé : PID 1860 ; création 10 ms. Contrôle du démarrage…",
+                                      ""
+                                  ],
+                 "game.log":  [
+                                  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+                                  "WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.",
+                                  "   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)",
+                                  ""
+                              ]
+             },
+    "events":  [
+
+               ]
 }
