@@ -2,18 +2,19 @@
     "version":  "0.14.19",
     "status":  "failed",
     "published":  false,
-    "sourceCommit":  "d117b5e71be3c5fd44c351e2de7eb6a49ac669cb",
-    "completedUtc":  "2026-10-24T15:42:24.6780403Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40108066136",
+    "sourceCommit":  "1edd991ee720ad5ed69eb3707275409c621f1b90",
+    "completedUtc":  "2026-10-24T15:46:40.9834440Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40108374979",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19",
     "windowCheck":  {
                         "version":  "0.14.19",
                         "status":  "failed",
                         "checks":  [
                                        "Game survives graphical initialization",
+                                       "Game survives graphical initialization",
                                        "Game survives graphical initialization"
                                    ],
-                        "sourceCommit":  "d117b5e71be3c5fd44c351e2de7eb6a49ac669cb",
+                        "sourceCommit":  "1edd991ee720ad5ed69eb3707275409c621f1b90",
                         "earlyWindow":  {
                                             "title":  "",
                                             "bounds":  [
@@ -23,7 +24,7 @@
                                                            728
                                                        ]
                                         },
-                        "error":  "System.Management.Automation.RuntimeException: Game appeared on screen before readiness",
-                        "completedUtc":  "2026-10-24T15:42:24.2582796Z"
+                        "error":  "System.Management.Automation.RuntimeException: Startup window suppressed within 50 ms",
+                        "completedUtc":  "2026-10-24T15:46:40.5929091Z"
                     }
 }
