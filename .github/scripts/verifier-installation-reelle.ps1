@@ -1,0 +1,101 @@
+# Runs only on a disposable Windows CI runner. Exercises the published EXE's
+# real entry point, installation, installed bootstrap, launcher and real game.
+param([string]$Version='0.14.16')
+$ErrorActionPreference='Stop';$ProgressPreference='SilentlyContinue'
+if($env:OS -ne 'Windows_NT' -or $env:GITHUB_ACTIONS -ne 'true'){throw 'Reserve au runner Windows CI jetable.'}
+if($Version -ne '0.14.16'){throw 'Ce diagnostic est lie aux empreintes de la version 0.14.16.'}
+$repo=Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
+$reportPath=Join-Path $repo 'verification/installation-01416-e2e.json'
+$screenshot=Join-Path $repo 'verification/installation-01416-e2e.png'
+$app='C:\Games\Throne of Ashes'
+$data=Join-Path $env:LOCALAPPDATA 'ThroneOfAshes'
+$desktop=[Environment]::GetFolderPath('DesktopDirectory')
+$reg='HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\ThroneOfAshes'
+$start=[DateTime]::UtcNow
+$result=[ordered]@{version=$Version;status='running';sourceCommit=$env:GITHUB_SHA;workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";startedUtc=$start.ToString('o');published=$false;checks=@();observedProcesses=@();platform=[Environment]::OSVersion.VersionString;runnerElevated=([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)}
+$fixture=Join-Path $env:RUNNER_TEMP ('toa-real-install-'+[Guid]::NewGuid().ToString('N'))
+$setup=$null;$owned=$false
+function Check($value,[string]$label){if(-not $value){throw $label};$script:result.checks+=,$label;Write-Output ('INSTALL_E2E_CHECK: '+$label)}
+function Capture-Desktop{
+ Add-Type -AssemblyName System.Windows.Forms
+ Add-Type -AssemblyName System.Drawing
+ $bounds=[Windows.Forms.SystemInformation]::VirtualScreen
+ $bitmap=New-Object Drawing.Bitmap $bounds.Width,$bounds.Height
+ $graphics=[Drawing.Graphics]::FromImage($bitmap)
+ try{$graphics.CopyFromScreen($bounds.Left,$bounds.Top,0,0,$bitmap.Size);$bitmap.Save($screenshot,[Drawing.Imaging.ImageFormat]::Png)}finally{$graphics.Dispose();$bitmap.Dispose()}
+}
+try{
+ # Refuse to touch an existing installation even on CI.
+ Check (-not (Test-Path -LiteralPath $app)) 'Fresh app directory'
+ Check (-not (Test-Path -LiteralPath $data)) 'Fresh user data directory'
+ Check (-not (Test-Path -LiteralPath (Join-Path $desktop 'Throne of Ashes.lnk'))) 'Fresh desktop shortcut'
+ Check (-not (Test-Path -LiteralPath $reg)) 'Fresh per-user registration'
+ $owned=$true
+ New-Item -ItemType Directory -Path $fixture -Force | Out-Null
+ $source=Join-Path $fixture 'Throne-of-Ashes-Setup.exe'
+ Invoke-WebRequest 'https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v0.14.16/Throne-of-Ashes-Setup.exe' -OutFile $source -UseBasicParsing
+ Check ((Get-FileHash $source -Algorithm SHA256).Hash.ToLowerInvariant() -eq '743d82f6789ac90e556a02c73fa098a4220395b7013d42a85c24f002d1a7ab28') 'Exact published Setup SHA256'
+ $info=New-Object Diagnostics.ProcessStartInfo
+ $info.FileName=$source;$info.WorkingDirectory=$fixture;$info.UseShellExecute=$true
+ $setup=[Diagnostics.Process]::Start($info)
+ Check ($null -ne $setup) 'Published Setup process created through the shell'
+ $deadline=[DateTime]::UtcNow.AddMinutes(4)
+ $ready=$false;$seen=@{}
+ do{
+  foreach($name in @('Throne-of-Ashes-Setup','Throne-of-Ashes-Start','Throne-of-Ashes','Throne-of-Ashes-Game')){
+   foreach($process in Get-Process -Name $name -ErrorAction SilentlyContinue){
+    try{if($process.StartTime.ToUniversalTime() -ge $start -and -not $seen.ContainsKey($process.Id)){
+     $seen[$process.Id]=$true;$script:result.observedProcesses+=,[ordered]@{pid=$process.Id;name=$process.ProcessName;path=$process.MainModule.FileName}
+    }}catch{}
+   }
+  }
+  $log=Join-Path $data 'game.log'
+  if(Test-Path -LiteralPath $log){
+   $text=[IO.File]::ReadAllText($log)
+   $ready=$text -match 'SESSION_START: version=0\.14\.16-conversion' -and $text -match 'VILLAGE_READY' -and $text -match 'LAUNCHER_RELEASE:.*fallback=false'
+  }
+  if(-not $ready){Start-Sleep -Milliseconds 500}
+ }while(-not $ready -and [DateTime]::UtcNow -lt $deadline)
+ Capture-Desktop
+ $installed=Join-Path $app 'Throne-of-Ashes-Start.exe'
+ Check (Test-Path -LiteralPath $installed) 'Installed bootstrap exists'
+ Check ((Get-FileHash $installed -Algorithm SHA256).Hash -eq (Get-FileHash $source -Algorithm SHA256).Hash) 'Installed bootstrap exact source bytes'
+ Check ($setup.WaitForExit(10000) -and $setup.ExitCode -eq 0) 'Original Setup exits successfully'
+ Check ((Get-ItemProperty $reg).InstallLocation -eq $app) 'Actual current-user app registration'
+ $shell=New-Object -ComObject WScript.Shell
+ $shortcut=$shell.CreateShortcut((Join-Path $desktop 'Throne of Ashes.lnk'))
+ Check ($shortcut.TargetPath -eq $installed) 'Actual desktop shortcut targets local bootstrap'
+ Check $ready 'Real game 0.14.16 confirmed ready and released without fallback'
+ $games=@(Get-Process -Name 'Throne-of-Ashes-Game' -ErrorAction SilentlyContinue)
+ Check ($games.Count -eq 1) 'Exactly one real game process'
+ Start-Sleep -Seconds 5
+ Check (-not $games[0].HasExited) 'Real game remains open after launcher has exited'
+ $launcherLog=[IO.File]::ReadAllText((Join-Path $data 'launcher.log'))
+ Check ($launcherLog -match 'Lanceur 0\.14\.16' -and $launcherLog -match 'Jeu lancé : 0\.14\.16') 'Published launcher completes startup'
+ Check ($text -notmatch 'SCRIPT ERROR|Parse Error|ERROR:') 'No game runtime error'
+ $result.status='passed'
+}catch{
+ $result.status='failed';$result.error=$_.Exception.ToString();Write-Output $result.error
+ try{Capture-Desktop}catch{$result.captureError=$_.Exception.Message}
+ throw
+}finally{
+ $logs=[ordered]@{}
+ if($owned){
+  foreach($name in @('installation.log','launcher.log','game.log')){
+   $path=Join-Path $data $name
+   $logs[$name]=if(Test-Path -LiteralPath $path){@([IO.File]::ReadAllLines($path) | Select-Object -Last 100)}else{@('MISSING')}
+  }
+  $events=@()
+  foreach($channel in @('Application','Microsoft-Windows-CodeIntegrity/Operational','Microsoft-Windows-AppLocker/EXE and DLL')){
+   $events+=@(Get-WinEvent -FilterHashtable @{LogName=$channel;StartTime=$start.ToLocalTime()} -ErrorAction SilentlyContinue | Where-Object {$_.Message -match 'Throne.of.Ashes'} | Select-Object -First 8 | ForEach-Object {[ordered]@{channel=$channel;id=$_.Id;time=$_.TimeCreated.ToUniversalTime().ToString('o');message=$_.Message}})
+  }
+  $result.events=$events
+  # Stop only processes started by this test, never any pre-existing program.
+  foreach($name in @('Throne-of-Ashes-Game','Throne-of-Ashes-Setup','Throne-of-Ashes-Start','Throne-of-Ashes')){
+   Get-Process -Name $name -ErrorAction SilentlyContinue | ForEach-Object {try{if($_.StartTime.ToUniversalTime() -ge $start){Stop-Process -Id $_.Id -Force -ErrorAction SilentlyContinue}}catch{}}
+  }
+ }
+ $result.logs=$logs;$result.completedUtc=[DateTime]::UtcNow.ToString('o')
+ [IO.File]::WriteAllText($reportPath,($result|ConvertTo-Json -Depth 7),[Text.UTF8Encoding]::new($false))
+ Write-Output ('INSTALL_E2E_REPORT: '+$reportPath)
+}
