@@ -26,9 +26,9 @@ static class VerifierLauncherStartup {
  static void Check(bool ok,string message){checks++;if(!ok)throw new Exception(message);}
  static Dictionary<string,object> Read(string path){return new JavaScriptSerializer().Deserialize<Dictionary<string,object>>(File.ReadAllText(path));}
  static int Fake(string[] args){
-  string capture=args[1],marker=null;int launcherPid=0;bool minimized=false,crash=false;
-  foreach(string arg in args){if(arg.StartsWith("--launcher-handoff="))marker=arg.Substring("--launcher-handoff=".Length);if(arg.StartsWith("--launcher-pid="))launcherPid=int.Parse(arg.Substring("--launcher-pid=".Length));if(arg=="--minimized")minimized=true;if(arg=="--fail-boot")crash=true;}
-  File.WriteAllText(capture,new JavaScriptSerializer().Serialize(new {pid=Process.GetCurrentProcess().Id,minimized=minimized,marker=marker,launcherPid=launcherPid}));
+  string capture=args[1],marker=null;int launcherPid=0;bool offscreen=false,minimized=false,crash=false;
+  foreach(string arg in args){if(arg.StartsWith("--launcher-handoff="))marker=arg.Substring("--launcher-handoff=".Length);if(arg.StartsWith("--launcher-pid="))launcherPid=int.Parse(arg.Substring("--launcher-pid=".Length));if(arg=="--launcher-offscreen")offscreen=true;if(arg=="--minimized")minimized=true;if(arg=="--fail-boot")crash=true;}
+  File.WriteAllText(capture,new JavaScriptSerializer().Serialize(new {pid=Process.GetCurrentProcess().Id,minimized=minimized,marker=marker,launcherPid=launcherPid,offscreen=offscreen}));
   if(crash)return 7;
   if(marker==null){Thread.Sleep(3800);return 0;}
   File.WriteAllText(marker+".ready.tmp",Process.GetCurrentProcess().Id.ToString());File.Move(marker+".ready.tmp",marker+".ready");
@@ -42,20 +42,21 @@ static class VerifierLauncherStartup {
    string root=Path.Combine(Path.GetTempPath(),"toa-startup-é test-"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(root);
    string self=System.Reflection.Assembly.GetExecutingAssembly().Location;
    string runtime=Environment.OSVersion.Platform==PlatformID.Win32NT?null:(args.Length>0?args[0]:"mono");
-   foreach(string version in new[]{"0.14.8","0.14.9"}){
+   foreach(string version in new[]{"0.14.8","0.14.9","0.14.19"}){
     var probe=new StartupProbe{Self=self,Runtime=runtime,Capture=Path.Combine(root,version+".json")};var clock=Stopwatch.StartNew();
-    probe.StartGame(root,version);var captured=Read(probe.Capture);bool modern=version=="0.14.9";
+    probe.StartGame(root,version);var captured=Read(probe.Capture);bool modern=Version.Parse(version)>=new Version(0,14,9);
     Check(Convert.ToBoolean(captured["minimized"])==modern,"Wrong visibility mode for "+version);
     Check((captured["marker"]!=null)==modern,"Wrong handoff protocol for "+version);
     Check(Convert.ToInt32(captured["launcherPid"])==(modern?Process.GetCurrentProcess().Id:0),"Modern game receives the original launcher PID");
     Check(probe.Starts==1,"More than one child started");
+    Check(Convert.ToBoolean(captured["offscreen"])==(version=="0.14.19"),"Only games supporting recentering start offscreen");
     Check(clock.ElapsedMilliseconds<5000,"Startup waited for an unsupported handoff");
     Check(!probe.Completion.HasExited,"Closing the launcher process handle terminated the game");
     if(modern){string marker=Convert.ToString(captured["marker"]);Check(!File.Exists(marker+".release"),"Game was released before explicit handoff");probe.ReleaseGame();Check(File.Exists(marker+".release"),"Explicit handoff did not release the existing child");}
     else probe.ReleaseGame();
     Complete(probe.Completion);
    }
-   foreach(string version in new[]{"0.14.8","0.14.9"}){
+   foreach(string version in new[]{"0.14.8","0.14.9","0.14.19"}){
     var probe=new StartupProbe{Self=self,Runtime=runtime,Capture=Path.Combine(root,version+"-failed.json"),Crash=true};bool rejected=false;
     try{probe.StartGame(root,version);}catch(IOException error){rejected=error.Message.Contains("7");}
     Check(rejected,"Early process failure was not reported for "+version);Check(probe.Starts==1,"Failed launch was retried");
