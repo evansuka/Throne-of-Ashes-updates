@@ -2,13 +2,15 @@
 
 Ce dépôt public contient les téléchargements du jeu. Le code de développement est conservé dans un dépôt privé.
 
-La version **[0.14.12](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.12)** renouvelle l’accueil du jeu : décor de citadelle sous la lune rouge derrière les quatre classes, logo original en haut et zone de sélection à droite conservée sans décor. Les changements sont détaillés dans la release et dans [l’historique](CHANGELOG.md).
+La version **[0.14.13](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.13)** ajoute une installation Windows dans Program Files, un raccourci Bureau stable et la vérification automatique des nouvelles versions du lanceur. Les changements sont détaillés dans [l’historique](CHANGELOG.md).
 
 ## Installation
 
-Ouvrir la [dernière version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/latest) et télécharger **Throne-of-Ashes.exe**. Le lanceur installe le jeu puis vérifie automatiquement les nouvelles versions à chaque démarrage. Le ZIP Windows complet contient aussi les fichiers pour une première installation hors ligne.
+Télécharger [**Throne-of-Ashes-Setup.exe**](https://github.com/evansuka/Throne-of-Ashes-updates/releases/latest/download/Throne-of-Ashes-Setup.exe), le lancer et accepter la demande d’autorisation Windows pour installer l’application dans `Program Files/Throne of Ashes`. Utiliser ensuite le nouveau raccourci Bureau **Throne of Ashes**. L’application apparaît aussi dans la liste des applications Windows pour la désinstaller.
 
-Les derniers extraits PC reçus identifient encore un ancien lanceur 0.14.2. Fermez les fenêtres du lanceur puis téléchargez [le nouveau **Throne-of-Ashes.exe**](https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v0.14.12/Throne-of-Ashes.exe) et remplacez l’ancien fichier. La mise à jour du jeu ne remplace pas automatiquement le lanceur du bureau. Ne pas supprimer les sauvegardes.
+Le démarreur installé vérifie la version et l’intégrité du lanceur avant de démarrer celui-ci. Les nouvelles versions du lanceur et du jeu sont stockées dans `%LOCALAPPDATA%/ThroneOfAshes`, afin que les mises à jour ne demandent pas les droits administrateur à chaque fois. La désinstallation conserve les sauvegardes et ces données utilisateur. Les anciens fichiers et raccourcis vers Téléchargements ne sont pas modifiés.
+
+En cas d’échec d’une mise à jour, le lanceur précédemment vérifié reste disponible. Cette installation ne désactive aucune protection Windows et ne garantit pas de résoudre un blocage propre au PC.
 
 Les étapes et erreurs sont enregistrées dans `%LOCALAPPDATA%/ThroneOfAshes/launcher.log`. Le jeu lancé par le nouveau lanceur écrit dans `game.log` du même dossier. Pour une investigation dans le cloud, joindre une copie du journal pertinent à la session ; ces fichiers restent locaux et peuvent contenir le nom du compte Windows dans les chemins.
 
@@ -25,4 +27,4 @@ Les anciens extraits du lanceur reçus montrent plusieurs démarrages séparés 
 
 Une boîte Windows refusant l’accès au fichier du bureau OneDrive a également été signalée ; sa cause locale n’est pas établie. Tester une copie fraîche du lanceur dans Téléchargements permet de poursuivre ce diagnostic. Les contrôles cloud et Windows automatisés ne garantissent pas la disparition de tout arrêt propre au PC du joueur. Certains coffres/portails, les animations ennemies et la lisibilité des cadavres nécessitent encore une finition artistique ; multijoueur natif et synchronisation des parties restent à porter.
 
-[Validation Windows 0.14.12 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40082970232) : 45 contrôles de fenêtre, 20 de démarrage, installation/intégrité, exécutable natif et lecteur audio embarqué. Les quatre fichiers publics ont aussi été retéléchargés et comparés par SHA-256 après publication.
+[Validation Windows 0.14.13 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40084645449) : installation/raccourcis, mise à jour et repli du lanceur, fenêtre, démarrage, intégrité, vrai jeu et secours audio embarqué. Les cinq fichiers publics ont été retéléchargés et contrôlés par SHA-256. Le consentement UAC et la désinstallation interactive restent à vérifier sur le PC.

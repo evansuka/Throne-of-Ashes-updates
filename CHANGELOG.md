@@ -1,5 +1,16 @@
 # Modifications des versions Windows
 
+## 0.14.13 — publiée le 24 octobre 2026
+
+[Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.13). [Validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40084645449) ; cinq fichiers publics et flux de mise à jour contrôlés.
+
+- Installateur Windows : application et démarreur dans Program Files/Throne of Ashes, avec autorisation administrateur lors de l’installation.
+- Raccourci Bureau vers le démarreur installé ; entrée dans la liste des applications Windows et désinstallation conservant les données utilisateur.
+- Vérification automatique de la version du lanceur au démarrage : téléchargement et empreinte SHA-256 contrôlés, activation dans un dossier versionné, version précédente conservée et repli hors ligne.
+- Les mises à jour du lanceur et du jeu restent dans le cache utilisateur pour éviter une demande administrateur à chaque démarrage. Le jeu est lancé sans élévation par une installation commencée depuis un compte standard.
+- Sauvegardes existantes conservées. Les refus Windows et le son physique du PC restent à vérifier ; l’installation ne garantit pas la résolution d’un blocage de protection ou d’un problème matériel.
+
+
 ## 0.14.12 — publiée le 24 octobre 2026
 
 [Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.12). [Validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40082970232) ; quatre fichiers publics et flux de mise à jour contrôlés.
