@@ -82,8 +82,11 @@ jobs:
           $path="verification/publication-$version.json"
           $endpoint="repos/$env:GITHUB_REPOSITORY/contents/$path"
           $body=@{message="Consigner la publication Windows $version";branch='main';content=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($json))}
-          $existing=& gh api ($endpoint+'?ref=main') --jq '.sha' 2>$null
-          if($LASTEXITCODE -eq 0){$body.sha=$existing}
+          try {
+            $existing=& gh api ($endpoint+'?ref=main') --jq '.sha' 2>$null
+            if($LASTEXITCODE -eq 0){$body.sha=$existing}
+          } catch { # A first publication has no report to replace.
+          }
           $request=Join-Path $env:RUNNER_TEMP 'publication-report-request.json'
           [IO.File]::WriteAllText($request,($body|ConvertTo-Json),[Text.UTF8Encoding]::new($false))
           & gh api --method PUT $endpoint --input $request --silent
