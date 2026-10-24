@@ -120,6 +120,11 @@ public static class VerifierInstallation {
    Check(LocalInstall.Refresh(rejectedRoot,repeated,(u,p)=>{repeatedDownloads++;File.Copy(probe,p);})=="98.0.0"&&repeatedDownloads==0,"Rejected identical version is never downloaded again");
    repeated.launcherVersion="100.0.0";repeated.launcherUrl=url.Replace("99.0.0","100.0.0");
    Check(LocalInstall.Refresh(rejectedRoot,repeated,(u,p)=>{repeatedDownloads++;File.Copy(probe,p);})=="100.0.0"&&repeatedDownloads==1,"A genuinely new version can still update after a rejected version");
+   LocalInstall.Activate(rejectedRoot,probe,"101.0.0",probeHash);File.WriteAllText(Path.Combine(rejectedRoot,"launcher-previous.txt"),"99.0.0");starts=0;
+   using(var child=LocalInstall.StartVerified(rejectedRoot,"101.0.0",info=>{starts++;if(starts==1)throw new System.ComponentModel.Win32Exception(5);return Process.Start(info);})){
+    Check(child.WaitForExit(10000)&&child.ExitCode==0&&LocalInstall.Current(rejectedRoot)=="100.0.0","A verified old installation is recovered even if legacy retries lost its pointer");
+   }
+   Check(LocalInstall.Rejected(rejectedRoot,"99.0.0",probeHash)&&LocalInstall.Rejected(rejectedRoot,"101.0.0",probeHash),"Separate rejected versions remain excluded");
    Console.WriteLine("LOCAL_INSTALLATION_OK: "+count+" checks; isolated installs, launcher update/hash/rollback/offline/no downgrade, real child process and saves; Windows shortcuts="+(Environment.OSVersion.Platform==PlatformID.Win32NT));return 0;
   }catch(Exception e){Console.Error.WriteLine(e);return 1;}finally{try{Directory.Delete(fixture,true);}catch{}}
  }
