@@ -60,6 +60,8 @@ public static class VerifierInstallation {
     Check(File.Exists(helper),"Normal uninstaller embedded and extractable");
     using(var input=File.OpenRead(helper))Check(input.ReadByte()==77&&input.ReadByte()==90,"Uninstaller is a Windows PE");
     if(Environment.OSVersion.Platform==PlatformID.Win32NT){
+     Check(FileVersionInfo.GetVersionInfo(setup).FileVersion==LocalInstall.SeedVersion+".0","Setup native file version present and correct");
+     Check(FileVersionInfo.GetVersionInfo(helper).FileVersion==LocalInstall.SeedVersion+".0","Uninstaller native file version present and correct");
      Check(Manifest(helper).Contains("level=\"asInvoker\""),"Uninstaller PE manifest requires no elevation");
      Check(Manifest(setup).Contains("level=\"asInvoker\""),"Normal launcher PE manifest does not elevate the game");
     }

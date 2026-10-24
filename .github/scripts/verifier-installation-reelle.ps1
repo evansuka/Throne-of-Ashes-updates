@@ -89,6 +89,7 @@ try{
  Check $ready 'Real public game is visible after launcher startup'
  $games=@(Get-Process -Name 'Throne-of-Ashes-Game' -ErrorAction SilentlyContinue)
  Check ($games.Count -eq 1) 'Exactly one real game process'
+ Check ($games[0].MainModule.FileName -eq (Join-Path $data 'versions/0.14.16/Throne-of-Ashes-Game.exe')) 'Visible game is the actual installed 0.14.16 executable'
  Start-Sleep -Seconds 30
  Check (-not $games[0].HasExited) 'Real game remains open thirty seconds after launcher startup'
  Check (@(Get-Process -Name 'Throne-of-Ashes','Throne-of-Ashes-Start','Throne-of-Ashes-Setup' -ErrorAction SilentlyContinue).Count -eq 0) 'Setup, bootstrap and launcher have all exited while game stays open'
@@ -101,7 +102,7 @@ try{
  for($i=0;$i -lt $lines.Count;$i++){
   if($lines[$i] -notmatch '^ERROR:'){continue}
   $context=($lines[$i..([Math]::Min($i+3,$lines.Count-1))] -join "`n")
-  if($context -match 'drivers/wasapi/audio_driver_wasapi\.cpp:' -and ($lines[$i] -match '^ERROR: WASAPI: init_output_device error\.$' -or $lines[$i] -eq 'ERROR: Condition "hr != ((HRESULT)0x00000000)" is true. Returning: ERR_CANT_OPEN')){$expectedAudio+=,$context}else{$unexpected+=,$context}
+  if($i+1 -lt $lines.Count -and $lines[$i+1] -match '^\s*at: .+ \(drivers/wasapi/audio_driver_wasapi\.cpp:\d+\)\s*$' -and ($lines[$i] -match '^ERROR: WASAPI: init_output_device error\.$' -or $lines[$i] -eq 'ERROR: Condition "hr != ((HRESULT)0x00000000)" is true. Returning: ERR_CANT_OPEN')){$expectedAudio+=,$context}else{$unexpected+=,$context}
  }
  $result.expectedCiAudioErrors=$expectedAudio;$result.unexpectedRuntimeErrors=$unexpected
  Check ($unexpected.Count -eq 0) 'No unexpected engine runtime error (known WASAPI initialization failure on audio-less CI recorded separately)'
