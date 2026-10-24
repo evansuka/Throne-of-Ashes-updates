@@ -52,14 +52,15 @@ static class VerifierLauncherStartup {
     Check(Convert.ToBoolean(captured["offscreen"])==(version=="0.14.19"),"Only games supporting recentering start offscreen");
     Check(clock.ElapsedMilliseconds<5000,"Startup waited for an unsupported handoff");
     Check(!probe.Completion.HasExited,"Closing the launcher process handle terminated the game");
-    if(modern){string marker=Convert.ToString(captured["marker"]);Check(!File.Exists(marker+".release"),"Game was released before explicit handoff");probe.ReleaseGame();Check(File.Exists(marker+".release"),"Explicit handoff did not release the existing child");}
+    if(version=="0.14.19"){string pulse=Convert.ToString(captured["marker"])+".alive";Check(File.Exists(pulse),"New launcher creates its liveness pulse");var stamp=File.GetLastWriteTimeUtc(pulse);Thread.Sleep(1250);Check(File.GetLastWriteTimeUtc(pulse)>stamp,"Liveness pulse continues after game readiness");}
+    if(modern){string marker=Convert.ToString(captured["marker"]);Check(!File.Exists(marker+".release"),"Game was released before explicit handoff");probe.ReleaseGame();Check(File.Exists(marker+".release"),"Explicit handoff did not release the existing child");if(version=="0.14.19")Check(!File.Exists(marker+".alive"),"Release stops and removes the liveness pulse");}
     else probe.ReleaseGame();
     Complete(probe.Completion);
    }
    foreach(string version in new[]{"0.14.8","0.14.9","0.14.19"}){
     var probe=new StartupProbe{Self=self,Runtime=runtime,Capture=Path.Combine(root,version+"-failed.json"),Crash=true};bool rejected=false;
     try{probe.StartGame(root,version);}catch(IOException error){rejected=error.Message.Contains("7");}
-    Check(rejected,"Early process failure was not reported for "+version);Check(probe.Starts==1,"Failed launch was retried");
+    Check(rejected,"Early process failure was not reported for "+version);Check(probe.Starts==1,"Failed launch was retried");if(version=="0.14.19"){var failed=Read(probe.Capture);Check(!File.Exists(Convert.ToString(failed["marker"])+".alive"),"Early failure cleans the liveness pulse");}
    }
    Directory.Delete(root,true);Console.WriteLine("LAUNCHER_STARTUP_OK: "+checks+" checks; real legacy/new child processes, PID handshake, old-version visibility, early failure and no restart.");return 0;
   }catch(Exception error){Console.Error.WriteLine(error);return 1;}

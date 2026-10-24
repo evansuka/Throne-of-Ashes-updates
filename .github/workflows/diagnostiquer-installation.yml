@@ -29,7 +29,7 @@ jobs:
           if($LASTEXITCODE -ne 0){throw 'Accuse non synchronise.'}
       - name: Executer le vrai Setup 0.14.19 et sa chaine complete
         shell: powershell
-        run: .github/scripts/verifier-installation-reelle.ps1 -Version 0.14.19 -ExpectedSetupSha 346821545ce6f4a56aa4f8b8ef552a54f1284b1b952949c5ce72cba171a21a13
+        run: .github/scripts/verifier-installation-reelle.ps1 -Version 0.14.19 -ExpectedSetupSha 836efba5adb5532cb6b99c1319ad918499a09216ec77fe036f195904658767a9
       - name: Renvoyer le diagnostic par Git
         if: always()
         shell: powershell
