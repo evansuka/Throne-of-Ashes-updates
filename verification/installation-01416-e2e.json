@@ -1,8 +1,117 @@
 {
     "version":  "0.14.16",
-    "status":  "running",
+    "status":  "passed",
     "sourceCommit":  "b261253706711d22b653d7b970a7ca9d32b69c56",
-    "startedUtc":  "2026-10-24T12:37:56.9667418Z",
     "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40094714820",
-    "published":  false
+    "startedUtc":  "2026-10-24T12:38:00.1009966Z",
+    "published":  false,
+    "checks":  [
+                   "Fresh app directory",
+                   "Fresh user data directory",
+                   "Fresh desktop shortcut",
+                   "Fresh per-user registration",
+                   "Exact published Setup SHA256",
+                   "Published Setup process created through the shell",
+                   "Installed bootstrap exists",
+                   "Installed bootstrap exact source bytes",
+                   "Original Setup exits successfully",
+                   "Actual current-user app registration",
+                   "Actual desktop shortcut targets local bootstrap",
+                   "Real public game is visible after launcher startup",
+                   "Exactly one real game process",
+                   "Visible game is the actual installed 0.14.16 executable",
+                   "Real game remains open thirty seconds after launcher startup",
+                   "Setup, bootstrap and launcher have all exited while game stays open",
+                   "Published launcher completes startup",
+                   "No script or parse error",
+                   "No unexpected engine runtime error (known WASAPI initialization failure on audio-less CI recorded separately)"
+               ],
+    "observedProcesses":  [
+                              {
+                                  "pid":  1704,
+                                  "name":  "Throne-of-Ashes-Setup",
+                                  "path":  "D:\\a\\_temp\\toa-real-install-5fee3ff67b0542c786b66853d192162e\\Throne-of-Ashes-Setup.exe"
+                              },
+                              {
+                                  "pid":  8636,
+                                  "name":  "Throne-of-Ashes-Start",
+                                  "path":  "C:\\Games\\Throne of Ashes\\Throne-of-Ashes-Start.exe"
+                              },
+                              {
+                                  "pid":  2628,
+                                  "name":  "Throne-of-Ashes",
+                                  "path":  "C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\launchers\\0.14.16\\Throne-of-Ashes.exe"
+                              },
+                              {
+                                  "pid":  2360,
+                                  "name":  "Throne-of-Ashes-Game",
+                                  "path":  "C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\versions\\0.14.16\\Throne-of-Ashes-Game.exe"
+                              }
+                          ],
+    "platform":  "Microsoft Windows NT 10.0.26100.0",
+    "runnerElevated":  true,
+    "gameWindow":  {
+                       "pid":  2360,
+                       "title":  "Throne of Ashes — Campagne native",
+                       "visible":  true,
+                       "minimized":  false
+                   },
+    "expectedCiAudioErrors":  [
+                                  "ERROR: Condition \"hr != ((HRESULT)0x00000000)\" is true. Returning: ERR_CANT_OPEN\n   at: audio_device_init (drivers/wasapi/audio_driver_wasapi.cpp:275)\nERROR: WASAPI: init_output_device error.\n   at: init (drivers/wasapi/audio_driver_wasapi.cpp:600)",
+                                  "ERROR: WASAPI: init_output_device error.\n   at: init (drivers/wasapi/audio_driver_wasapi.cpp:600)\nWARNING: All audio drivers failed, falling back to the dummy driver.\n   at: initialize (servers/audio/audio_server.cpp:258)"
+                              ],
+    "unexpectedRuntimeErrors":  [
+
+                                ],
+    "completedUtc":  "2026-10-24T12:38:44.5425620Z",
+    "logs":  {
+                 "installation.log":  [
+                                          "2026-10-24T12:38:01.4256495Z PHASE : Installation pour votre compte dans C:\\Games\\Throne of Ashes",
+                                          "2026-10-24T12:38:01.5148414Z PHASE : Enregistrement dans les applications de votre compte",
+                                          "2026-10-24T12:38:01.6680269Z PHASE : Préparation du dossier utilisateur : C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes",
+                                          "2026-10-24T12:38:01.6685052Z PHASE : Préparation du lanceur versionné",
+                                          "2026-10-24T12:38:01.6847052Z PHASE : Vérification des mises à jour du lanceur",
+                                          "2026-10-24T12:38:01.9216494Z Lanceur vérifié : 0.14.16",
+                                          "2026-10-24T12:38:01.9216494Z PHASE : Exécution du lanceur : C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\launchers\\0.14.16\\Throne-of-Ashes.exe",
+                                          "2026-10-24T12:38:01.9354698Z Lanceur installé démarré : 0.14.16 PID=2628",
+                                          ""
+                                      ],
+                 "launcher.log":  [
+                                      "2026-10-24T12:38:02.1216445Z Lanceur 0.14.16 ; début",
+                                      "2026-10-24T12:38:02.1236693Z Vérification de la version installée…",
+                                      "2026-10-24T12:38:02.1415314Z Version disponible localement : ",
+                                      "2026-10-24T12:38:02.1435460Z Recherche de mises à jour…",
+                                      "2026-10-24T12:38:02.2271622Z Version distante : 0.14.16",
+                                      "2026-10-24T12:38:02.2289433Z Téléchargement de la version 0.14.16…",
+                                      "2026-10-24T12:38:03.2428060Z Vérification et installation…",
+                                      "2026-10-24T12:38:03.2865450Z Vérification de l’archive téléchargée…",
+                                      "2026-10-24T12:38:03.4184148Z Extraction du jeu…",
+                                      "2026-10-24T12:38:05.1620542Z Vérification du jeu extrait…",
+                                      "2026-10-24T12:38:05.5650328Z Installation du jeu vérifié…",
+                                      "2026-10-24T12:38:06.0261562Z Activation de la version 0.14.16…",
+                                      "2026-10-24T12:38:06.0955202Z Installation vérifiée et activée : 0.14.16",
+                                      "2026-10-24T12:38:06.1035739Z Démarrage du jeu… Cela peut prendre un moment.",
+                                      "2026-10-24T12:38:06.1073673Z Création du processus du jeu 0.14.16…",
+                                      "2026-10-24T12:38:06.1174325Z Jeu créé : PID 2360 ; création 10 ms. Contrôle du démarrage…",
+                                      "2026-10-24T12:38:11.4514130Z Jeu prêt ; transmission de la fenêtre sans relance…",
+                                      "2026-10-24T12:38:11.4514130Z Jeu lancé : 0.14.16",
+                                      ""
+                                  ],
+                 "game.log":  [
+                                  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+                                  "WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.",
+                                  "   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)",
+                                  "OpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)",
+                                  "ERROR: Condition \"hr != ((HRESULT)0x00000000)\" is true. Returning: ERR_CANT_OPEN",
+                                  "   at: audio_device_init (drivers/wasapi/audio_driver_wasapi.cpp:275)",
+                                  "ERROR: WASAPI: init_output_device error.",
+                                  "   at: init (drivers/wasapi/audio_driver_wasapi.cpp:600)",
+                                  "WARNING: All audio drivers failed, falling back to the dummy driver.",
+                                  "   at: initialize (servers/audio/audio_server.cpp:258)",
+                                  ""
+                              ]
+             },
+    "events":  [
+
+               ]
 }
