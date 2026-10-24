@@ -2,7 +2,7 @@ name: Verifier le vrai Setup publie sans nouvelle release
 on:
   push:
     branches: ['diagnostic/windows-install-*']
-    paths-ignore: ['verification/installation-01418-e2e.*']
+    paths-ignore: ['verification/installation-01419-e2e.*']
 permissions:
   contents: write
 concurrency:
@@ -17,30 +17,30 @@ jobs:
       - name: Accuser le demarrage
         shell: powershell
         run: |
-          $report='verification/installation-01418-e2e.json'
-          $data=[ordered]@{version='0.14.18';status='running';sourceCommit=$env:GITHUB_SHA;startedUtc=[DateTime]::UtcNow.ToString('o');workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";published=$false}
+          $report='verification/installation-01419-e2e.json'
+          $data=[ordered]@{version='0.14.19';status='running';sourceCommit=$env:GITHUB_SHA;startedUtc=[DateTime]::UtcNow.ToString('o');workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";published=$false}
           [IO.File]::WriteAllText((Join-Path $pwd $report),($data|ConvertTo-Json),[Text.UTF8Encoding]::new($false))
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -- $report
-          git commit -m 'Demarrer le test du vrai Setup public 0.14.18'
+          git commit -m 'Demarrer le test du vrai Setup public 0.14.19'
           if($LASTEXITCODE -ne 0){throw 'Accuse non enregistre.'}
           git push origin ("HEAD:"+$env:GITHUB_REF_NAME)
           if($LASTEXITCODE -ne 0){throw 'Accuse non synchronise.'}
-      - name: Executer le vrai Setup 0.14.18 et sa chaine complete
+      - name: Executer le vrai Setup 0.14.19 et sa chaine complete
         shell: powershell
-        run: .github/scripts/verifier-installation-reelle.ps1 -Version 0.14.18 -ExpectedSetupSha 287fc5efb4f6869f6c620d405111a6efab3f185331e43718c35b89b4fbc6c5ba
+        run: .github/scripts/verifier-installation-reelle.ps1 -Version 0.14.19 -ExpectedSetupSha 287ce2caa1b5d19abd8b3c4c4190989161f78b579847a91f7c77feb382c08107
       - name: Renvoyer le diagnostic par Git
         if: always()
         shell: powershell
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -- verification/installation-01418-e2e.json
-          if(Test-Path verification/installation-01418-e2e.png){git add -- verification/installation-01418-e2e.png}
+          git add -- verification/installation-01419-e2e.json
+          if(Test-Path verification/installation-01419-e2e.png){git add -- verification/installation-01419-e2e.png}
           git diff --cached --quiet
           if($LASTEXITCODE -eq 1){
-            git commit -m 'Consigner le test du vrai installateur public 0.14.18'
+            git commit -m 'Consigner le test du vrai installateur public 0.14.19'
             if($LASTEXITCODE -ne 0){throw 'Diagnostic non enregistre.'}
             git push origin ("HEAD:"+$env:GITHUB_REF_NAME)
             if($LASTEXITCODE -ne 0){throw 'Diagnostic non synchronise.'}
@@ -48,6 +48,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: diagnostic-installation-publiee-01418
+          name: diagnostic-installation-publiee-01419
           retention-days: 14
-          path: verification/installation-01418-e2e.*
+          path: verification/installation-01419-e2e.*
