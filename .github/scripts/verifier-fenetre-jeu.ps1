@@ -10,7 +10,7 @@ $process=$null
 try{
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $launcher=Join-Path $directory 'Throne-of-Ashes.exe'
-Add-Type -Path $launcher
+[Reflection.Assembly]::LoadFile($launcher) | Out-Null
 Add-Type -ReferencedAssemblies $launcher,'System.dll','System.Core.dll' -TypeDefinition @'
 using System.Diagnostics;
 using System.Threading.Tasks;
