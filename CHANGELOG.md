@@ -1,5 +1,23 @@
 # Modifications des versions Windows
 
+## 0.14.17 — publiée le 24 octobre 2026
+
+[Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.17). [Validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40101135405) ; cinq fichiers publics, empreintes et flux de mise à jour vérifiés.
+
+- Épées affinées dans le monde et l’inventaire, en conservant leur point de prise.
+- Posture de garde en donjon et placement du bouclier du paladin revu selon l’angle.
+- Potions et cases de la barre de raccourcis réduites.
+- Emplacements d’armure et de pantalon agrandis, bijoux et ceinture espacés.
+- Seize icônes de compétences dessinées pour la barre et la fiche personnage.
+- Frappe sacrée du paladin accompagnée d’une épée divine qui fonce vers la cible ; dégâts et portée conservés.
+- Cadavres avec épaisseur, flancs et contact au sol pendant la chute ; anciens cadavres sauvegardés compatibles.
+- Vues diagonales d’Éléane corrigées pour suivre son déplacement au village.
+- Commande Nouvelle expédition retirée du menu Échap.
+- Version du Setup et du désinstalleur lisible dans les propriétés Windows grâce aux ressources VERSIONINFO.
+
+Installation utilisateur dans C:\Games\Throne of Ashes et mise à jour automatique conservées. Les sauvegardes restent préservées. Cette version ne modifie aucun réglage d’AVG ni des protections Windows.
+
+
 ## 0.14.16 — publiée le 24 octobre 2026
 
 [Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.16). [Validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40089548475) ; installation utilisateur et désinstallation vérifiées, cinq fichiers publics contrôlés.
