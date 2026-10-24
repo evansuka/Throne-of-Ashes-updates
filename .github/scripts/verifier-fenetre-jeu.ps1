@@ -15,11 +15,13 @@ $bridgeSource=Join-Path $fixture 'RealWindowStartup.cs'
 $bridgeAssembly=Join-Path $fixture 'RealWindowStartup.dll'
 [IO.File]::WriteAllText($bridgeSource,@'
 using System.Diagnostics;
+using System.IO;
+using System;
 using System.Threading.Tasks;
 public class RealWindowStartup:LauncherOperations {
  public volatile Process Child;public Task Work;
  public override Process LaunchGameProcess(ProcessStartInfo start){var process=base.LaunchGameProcess(start);Child=Process.GetProcessById(process.Id);return process;}
- public void Begin(string root,string version){Work=Task.Factory.StartNew(()=>StartGame(root,version));}
+ public void Begin(string root,string version){Report=message=>File.AppendAllText(Path.Combine(root,"startup-guard.log"),DateTime.UtcNow.ToString("o")+" "+message+Environment.NewLine);Work=Task.Factory.StartNew(()=>StartGame(root,version));}
 }
 '@)
 & 'C:/Windows/Microsoft.NET/Framework64/v4.0.30319/csc.exe' /nologo /target:library /out:$bridgeAssembly /reference:$launcher $bridgeSource
@@ -71,6 +73,7 @@ function Check($value,[string]$label){if(-not $value){throw $label};$script:resu
  $result.gamePid=$gamePid;$result.initializationSamples=$samples;$result.status='passed'
 }catch{$result.status='failed';$result.error=$_.Exception.ToString();throw}
 finally{
+ $guardLog=Join-Path $fixture 'startup-guard.log';if(Test-Path $guardLog){$result['startupLog']=Get-Content $guardLog -Raw};$gameLog=Join-Path $fixture 'game.log';if(Test-Path $gameLog){$result['gameLogTail']=@(Get-Content $gameLog -Tail 15)}
  $result.completedUtc=[DateTime]::UtcNow.ToString('o')
  [IO.File]::WriteAllText($reportPath,($result|ConvertTo-Json -Depth 6),[Text.UTF8Encoding]::new($false))
  if($null -ne $process){try{if(-not $process.HasExited){$process.Kill();$process.WaitForExit(10000)|Out-Null}}catch{};$process.Dispose()}
