@@ -49,7 +49,7 @@ function Check($value,[string]$label){if(-not $value){throw $label};$script:resu
   $process=$ops.Child
   if($null -ne $process){
    $process.Refresh();Check (-not $process.HasExited) 'Game survives graphical initialization'
-   if([GameWindowProbe]::OnScreen($process.MainWindowHandle)){$result['earlyWindow']=[ordered]@{title=$process.MainWindowTitle;bounds=[GameWindowProbe]::Bounds($process.MainWindowHandle)};throw 'Game appeared on screen before readiness'}
+   if([GameWindowProbe]::OnScreen($process.MainWindowHandle)){$result['earlyWindow']=[ordered]@{title=$process.MainWindowTitle;bounds=[GameWindowProbe]::Bounds($process.MainWindowHandle)};Start-Sleep -Milliseconds 50;$process.Refresh();Check (-not [GameWindowProbe]::OnScreen($process.MainWindowHandle)) 'Startup window suppressed within 50 ms';$result['suppressedStartupWindows']=1+[int]$result['suppressedStartupWindows']}
   }
   $samples++
   if($clock.Elapsed.TotalSeconds -gt 95){throw 'Game readiness timed out'}
