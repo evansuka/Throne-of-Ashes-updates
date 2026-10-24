@@ -1,0 +1,34 @@
+name: Diagnostiquer la fenetre du jeu sans publication
+on:
+  push:
+    branches: ['diagnostic/windows-window-019']
+    paths-ignore: ['verification/game-window.json']
+permissions:
+  contents: write
+jobs:
+  diagnostic:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: livraison/v0.14.19
+          path: .publication
+          persist-credentials: false
+      - name: Observer le vrai jeu et le lanceur
+        shell: powershell
+        run: .github/scripts/verifier-fenetre-jeu.ps1 -Directory .publication -Tag v0.14.19
+      - name: Conserver le diagnostic sur la branche de test
+        if: always()
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if(-not (Test-Path verification/game-window.json)){throw 'Rapport graphique absent.'}
+          git add -- verification/game-window.json
+          git commit -m 'Consigner le diagnostic graphique Windows'
+          if($LASTEXITCODE -ne 0){throw 'Rapport non enregistre.'}
+          git push origin ("HEAD:"+$env:GITHUB_REF_NAME)
+          if($LASTEXITCODE -ne 0){throw 'Rapport non synchronise.'}

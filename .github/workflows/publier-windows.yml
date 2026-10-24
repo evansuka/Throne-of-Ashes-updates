@@ -77,7 +77,7 @@ jobs:
         shell: powershell
         run: |
           $ErrorActionPreference='Stop'
-          $version=$env:RELEASE_TAG -replace '^v',''
+          $version=$env:GITHUB_REF_NAME -replace '^publication/','' -replace '^v',''
           if($version -notmatch '^\d+\.\d+\.\d+$'){exit 0}
           $ok='${{ job.status }}' -eq 'success'
           $report=[ordered]@{version=$version;status=$(if($ok){'passed'}else{'failed'});published=$ok;sourceCommit=$env:GITHUB_SHA;completedUtc=[DateTime]::UtcNow.ToString('o');workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";releaseUrl="https://github.com/$env:GITHUB_REPOSITORY/releases/tag/$env:RELEASE_TAG"}
