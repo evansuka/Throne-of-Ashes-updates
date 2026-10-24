@@ -2,7 +2,19 @@ using System;
 using System.IO;
 using System.Diagnostics;
 using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Text;
 public static class VerifierInstallation {
+ [DllImport("kernel32.dll",CharSet=CharSet.Unicode)]static extern IntPtr LoadLibraryEx(string path,IntPtr file,uint flags);
+ [DllImport("kernel32.dll")]static extern IntPtr FindResource(IntPtr module,IntPtr name,IntPtr type);
+ [DllImport("kernel32.dll")]static extern IntPtr LoadResource(IntPtr module,IntPtr resource);
+ [DllImport("kernel32.dll")]static extern IntPtr LockResource(IntPtr resource);
+ [DllImport("kernel32.dll")]static extern uint SizeofResource(IntPtr module,IntPtr resource);
+ [DllImport("kernel32.dll")]static extern bool FreeLibrary(IntPtr module);
+ static string Manifest(string path){
+  var module=LoadLibraryEx(path,IntPtr.Zero,2);if(module==IntPtr.Zero)throw new Exception("Cannot read PE resources");
+  try{var resource=FindResource(module,new IntPtr(1),new IntPtr(24));if(resource==IntPtr.Zero)throw new Exception("Missing execution manifest");var bytes=new byte[(int)SizeofResource(module,resource)];Marshal.Copy(LockResource(LoadResource(module,resource)),bytes,0,bytes.Length);return Encoding.UTF8.GetString(bytes);}finally{FreeLibrary(module);}
+ }
  static int count;
  static void Check(bool result,string label){count++;if(!result)throw new Exception(label);}
  static void Reject(Action action,string label){bool rejected=false;try{action();}catch{rejected=true;}Check(rejected,label);}
@@ -14,6 +26,15 @@ public static class VerifierInstallation {
    using(var input=Assembly.LoadFile(setup).GetManifestResourceStream("LauncherSeed"))using(var output=File.Create(seed))input.CopyTo(output);
    Check(LocalInstall.Hash(seed)==LocalInstall.SeedHash,"Embedded launcher exact hash");
    Check((string)Assembly.LoadFile(seed).GetType("UpdateLogic").GetField("BundledVersion").GetRawConstantValue()==LocalInstall.SeedVersion,"Embedded launcher version matches installer");
+   var helper=LocalInstall.ExtractHelper();
+   try{
+    Check(File.Exists(helper),"Administrator helper embedded and extractable");
+    using(var input=File.OpenRead(helper))Check(input.ReadByte()==77&&input.ReadByte()==90,"Administrator helper is a Windows PE");
+    if(Environment.OSVersion.Platform==PlatformID.Win32NT){
+     Check(Manifest(helper).Contains("level=\"requireAdministrator\""),"Helper PE manifest requires Windows elevation");
+     Check(Manifest(setup).Contains("level=\"asInvoker\""),"Normal launcher PE manifest does not elevate the game");
+    }
+   }finally{File.Delete(helper);}
    Check(LocalInstall.ProgramRoot==Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),"Throne of Ashes"),"Program Files target");
    foreach(var bad in new[]{"../escape","1.2","1.2.3/escape","v1.2.3","1.2.3.4"})Reject(()=>LocalInstall.LauncherPath(fixture,bad),"Unsafe version path");
    var manifest=new LauncherFeed{launcherVersion="99.0.0",launcherUrl="https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v99.0.0/Throne-of-Ashes.exe",launcherSha256=LocalInstall.Hash(probe)};
