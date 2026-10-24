@@ -43,7 +43,7 @@ jobs:
             catch{return $_.Exception.Message}
           }
           foreach($dir in Get-ChildItem $env:RUNNER_TEMP -Directory -Filter 'toa-window-*'){
-            foreach($name in @('startup-guard.log','game.log')){$path=Join-Path $dir.FullName $name;if(Test-Path $path){$live.files[$name]=ReadLive $path}}
+            foreach($name in @('startup-guard.log','game.log','probe-phase.log')){$path=Join-Path $dir.FullName $name;if(Test-Path $path){$live.files[$name]=ReadLive $path}}
           }
           foreach($path in @($output,$stderr)){if(Test-Path $path){$live.files[[IO.Path]::GetFileName($path)]=ReadLive $path}}
           [IO.File]::WriteAllText((Join-Path $pwd 'verification/window-live.json'),($live|ConvertTo-Json -Depth 5),[Text.UTF8Encoding]::new($false))

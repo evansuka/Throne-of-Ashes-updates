@@ -41,6 +41,7 @@ public static class GameWindowProbe {
  public static bool OnScreen(IntPtr window){int cloaked;if(DwmGetWindowAttribute(window,14,out cloaked,4)==0&&cloaked!=0)return false;Rect r;if(window==IntPtr.Zero||!IsWindowVisible(window)||IsIconic(window)||!GetWindowRect(window,out r))return false;int x=GetSystemMetrics(76),y=GetSystemMetrics(77);return r.right>x&&r.bottom>y&&r.left<x+GetSystemMetrics(78)&&r.top<y+GetSystemMetrics(79);}
 }
 '@
+function Trace([string]$phase){[IO.File]::AppendAllText((Join-Path $fixture 'probe-phase.log'),([DateTime]::UtcNow.ToString('o')+' '+$phase+[Environment]::NewLine))}
 function Check($value,[string]$label){if(-not $value){throw $label};$script:result.checks+=,$label;Write-Output ('GAME_WINDOW_CHECK: '+$label)}
  $gameDirectory=Join-Path $fixture ("versions/"+$version);New-Item -ItemType Directory $gameDirectory -Force | Out-Null
  [IO.Compression.ZipFile]::ExtractToDirectory((Join-Path $directory "Throne-of-Ashes-$version-update.zip"),$gameDirectory)
@@ -48,16 +49,17 @@ function Check($value,[string]$label){if(-not $value){throw $label};$script:resu
  $ops=New-Object RealWindowStartup;$ops.Begin($fixture,$version)
  $clock=[Diagnostics.Stopwatch]::StartNew();$samples=0
  while(-not $ops.Work.IsCompleted){
-  $process=$ops.Child
+  Trace 'sample';$process=$ops.Child
   if($null -ne $process){
-   $process.Refresh();Check (-not $process.HasExited) 'Game survives graphical initialization'
-   if([GameWindowProbe]::OnScreen($process.MainWindowHandle)){$result['earlyWindow']=[ordered]@{title=$process.MainWindowTitle;bounds=[GameWindowProbe]::Bounds($process.MainWindowHandle)};Start-Sleep -Milliseconds 50;$process.Refresh();Check (-not [GameWindowProbe]::OnScreen($process.MainWindowHandle)) 'Startup window suppressed within 50 ms';$result['suppressedStartupWindows']=1+[int]$result['suppressedStartupWindows']}
+   Trace 'refresh';$process.Refresh();Trace 'survival';Check (-not $process.HasExited) 'Game survives graphical initialization'
+   Trace 'handle';$handle=$process.MainWindowHandle;Trace ('probe '+$handle);$onScreen=[GameWindowProbe]::OnScreen($handle);Trace ('on-screen '+$onScreen)
+   if($onScreen){$result['earlyWindow']=[ordered]@{title=$process.MainWindowTitle;bounds=[GameWindowProbe]::Bounds($process.MainWindowHandle)};Start-Sleep -Milliseconds 50;$process.Refresh();Check (-not [GameWindowProbe]::OnScreen($process.MainWindowHandle)) 'Startup window suppressed within 50 ms';$result['suppressedStartupWindows']=1+[int]$result['suppressedStartupWindows']}
   }
   $samples++
   if($clock.Elapsed.TotalSeconds -gt 95){throw 'Game readiness timed out'}
   Start-Sleep -Milliseconds 100
  }
- $ops.Work.GetAwaiter().GetResult();$process=$ops.Child;$gamePid=$process.Id
+ Trace 'ready-await';$ops.Work.GetAwaiter().GetResult();Trace 'ready-completed';$process=$ops.Child;$gamePid=$process.Id
  Check ($null -ne $process) 'Real exported game started by actual launcher operations'
  $readyFile=Get-ChildItem -LiteralPath $fixture -Filter 'handoff-*.ready' | Select-Object -First 1
  Check ($null -ne $readyFile) 'Actual launcher handshake file exists'
@@ -71,7 +73,7 @@ function Check($value,[string]$label){if(-not $value){throw $label};$script:resu
  Start-Sleep -Seconds 3;$process.Refresh()
  Check (-not $process.HasExited -and $process.Id -eq $gamePid) 'One game PID remains alive after handoff'
  $result.gamePid=$gamePid;$result.initializationSamples=$samples;$result.status='passed'
-}catch{$result.status='failed';$result.error=$_.Exception.ToString();throw}
+}catch{Trace 'catch';$result.status='failed';$result.error=$_.Exception.ToString();[IO.File]::WriteAllText($reportPath,($result|ConvertTo-Json -Depth 6),[Text.UTF8Encoding]::new($false));throw}
 finally{
  try{$guardLog=Join-Path $fixture 'startup-guard.log';if(Test-Path $guardLog){$result['startupLog']=Get-Content $guardLog -Raw}}catch{$result['startupLogReadError']=$_.Exception.Message};try{$gameLog=Join-Path $fixture 'game.log';if(Test-Path $gameLog){$result['gameLogTail']=@(Get-Content $gameLog -Tail 15)}}catch{$result['gameLogReadError']=$_.Exception.Message}
  $result.completedUtc=[DateTime]::UtcNow.ToString('o')
