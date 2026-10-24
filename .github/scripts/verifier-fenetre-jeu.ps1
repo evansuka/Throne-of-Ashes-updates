@@ -17,6 +17,7 @@ public static class GameWindowProbe {
  [DllImport("user32.dll")]static extern int GetSystemMetrics(int index);
  [DllImport("user32.dll")]static extern bool IsWindowVisible(IntPtr window);
  [DllImport("user32.dll")]static extern bool IsIconic(IntPtr window);
+ public static int[] Bounds(IntPtr window){Rect r;GetWindowRect(window,out r);return new[]{r.left,r.top,r.right,r.bottom};}
  public static bool OnScreen(IntPtr window){Rect r;if(window==IntPtr.Zero||!IsWindowVisible(window)||IsIconic(window)||!GetWindowRect(window,out r))return false;int x=GetSystemMetrics(76),y=GetSystemMetrics(77);return r.right>x&&r.bottom>y&&r.left<x+GetSystemMetrics(78)&&r.top<y+GetSystemMetrics(79);}
 }
 '@
@@ -32,7 +33,7 @@ try{
  $clock=[Diagnostics.Stopwatch]::StartNew();$samples=0
  while(-not (Test-Path -LiteralPath ($marker+'.ready'))){
   $process.Refresh();Check (-not $process.HasExited) 'Game survives graphical initialization'
-  if([GameWindowProbe]::OnScreen($process.MainWindowHandle)){throw 'Game appeared on screen before readiness'}
+  if([GameWindowProbe]::OnScreen($process.MainWindowHandle)){$result['earlyWindow']=[ordered]@{title=$process.MainWindowTitle;bounds=[GameWindowProbe]::Bounds($process.MainWindowHandle)};throw 'Game appeared on screen before readiness'}
   $samples++
   if($clock.Elapsed.TotalSeconds -gt 90){throw 'Game readiness timed out'}
   Start-Sleep -Milliseconds 100
