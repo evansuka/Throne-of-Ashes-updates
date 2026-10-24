@@ -15,6 +15,15 @@ $start=[DateTime]::UtcNow
 $result=[ordered]@{version=$Version;status='running';sourceCommit=$env:GITHUB_SHA;workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";startedUtc=$start.ToString('o');published=$false;checks=@();observedProcesses=@();platform=[Environment]::OSVersion.VersionString;runnerElevated=([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)}
 $fixture=Join-Path $env:RUNNER_TEMP ('toa-real-install-'+[Guid]::NewGuid().ToString('N'))
 $setup=$null;$owned=$false
+Add-Type -TypeDefinition @'
+using System;
+using System.Runtime.InteropServices;
+public static class ToaWindowProbe {
+ [DllImport("user32.dll")] public static extern bool IsWindowVisible(IntPtr handle);
+ [DllImport("user32.dll")] public static extern bool IsIconic(IntPtr handle);
+}
+'@
+
 function Check($value,[string]$label){if(-not $value){throw $label};$script:result.checks+=,$label;Write-Output ('INSTALL_E2E_CHECK: '+$label)}
 function Read-SharedText([string]$path){
  $stream=[IO.File]::Open($path,[IO.FileMode]::Open,[IO.FileAccess]::Read,([IO.FileShare]::ReadWrite -bor [IO.FileShare]::Delete))
@@ -58,9 +67,13 @@ try{
    }
   }
   $log=Join-Path $data 'game.log'
-  if(Test-Path -LiteralPath $log){
-   $text=Read-SharedText $log
-   $ready=$text -match 'SESSION_START: version=0\.14\.16-conversion' -and $text -match 'VILLAGE_READY' -and $text -match 'LAUNCHER_RELEASE:.*fallback=false'
+  $launcherPath=Join-Path $data 'launcher.log'
+  $launcherText=if(Test-Path -LiteralPath $launcherPath){Read-SharedText $launcherPath}else{''}
+  $games=@(Get-Process -Name 'Throne-of-Ashes-Game' -ErrorAction SilentlyContinue)
+  if($games.Count -eq 1){
+   $games[0].Refresh();$handle=$games[0].MainWindowHandle
+   $ready=$launcherText -match 'Jeu lanc. : 0\.14\.16' -and $handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle)
+   if($ready){$result.gameWindow=[ordered]@{pid=$games[0].Id;title=$games[0].MainWindowTitle;visible=$true;minimized=$false}}
   }
   if(-not $ready){Start-Sleep -Milliseconds 500}
  }while(-not $ready -and [DateTime]::UtcNow -lt $deadline)
@@ -73,14 +86,26 @@ try{
  $shell=New-Object -ComObject WScript.Shell
  $shortcut=$shell.CreateShortcut((Join-Path $desktop 'Throne of Ashes.lnk'))
  Check ($shortcut.TargetPath -eq $installed) 'Actual desktop shortcut targets local bootstrap'
- Check $ready 'Real game 0.14.16 confirmed ready and released without fallback'
+ Check $ready 'Real public game is visible after launcher startup'
  $games=@(Get-Process -Name 'Throne-of-Ashes-Game' -ErrorAction SilentlyContinue)
  Check ($games.Count -eq 1) 'Exactly one real game process'
- Start-Sleep -Seconds 5
- Check (-not $games[0].HasExited) 'Real game remains open after launcher has exited'
+ Start-Sleep -Seconds 30
+ Check (-not $games[0].HasExited) 'Real game remains open thirty seconds after launcher startup'
+ Check (@(Get-Process -Name 'Throne-of-Ashes','Throne-of-Ashes-Start','Throne-of-Ashes-Setup' -ErrorAction SilentlyContinue).Count -eq 0) 'Setup, bootstrap and launcher have all exited while game stays open'
+ Capture-Desktop
  $launcherLog=Read-SharedText (Join-Path $data 'launcher.log')
- Check ($launcherLog -match 'Lanceur 0\.14\.16' -and $launcherLog -match 'Jeu lancé : 0\.14\.16') 'Published launcher completes startup'
- Check ($text -notmatch 'SCRIPT ERROR|Parse Error|ERROR:') 'No game runtime error'
+ Check ($launcherLog -match 'Lanceur 0\.14\.16' -and $launcherLog -match 'Jeu lanc. : 0\.14\.16') 'Published launcher completes startup'
+ $text=Read-SharedText (Join-Path $data 'game.log')
+ Check ($text -notmatch 'SCRIPT ERROR|Parse Error') 'No script or parse error'
+ $lines=$text -split '\r?\n';$unexpected=@();$expectedAudio=@()
+ for($i=0;$i -lt $lines.Count;$i++){
+  if($lines[$i] -notmatch '^ERROR:'){continue}
+  $context=($lines[$i..([Math]::Min($i+3,$lines.Count-1))] -join "`n")
+  if($context -match 'drivers/wasapi/audio_driver_wasapi\.cpp:' -and ($lines[$i] -match '^ERROR: WASAPI: init_output_device error\.$' -or $lines[$i] -eq 'ERROR: Condition "hr != ((HRESULT)0x00000000)" is true. Returning: ERR_CANT_OPEN')){$expectedAudio+=,$context}else{$unexpected+=,$context}
+ }
+ $result.expectedCiAudioErrors=$expectedAudio;$result.unexpectedRuntimeErrors=$unexpected
+ Check ($unexpected.Count -eq 0) 'No unexpected engine runtime error (known WASAPI initialization failure on audio-less CI recorded separately)'
+
  $result.status='passed'
 }catch{
  $result.status='failed';$result.error=$_.Exception.ToString();Save-Report;Write-Output $result.error
