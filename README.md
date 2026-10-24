@@ -2,13 +2,13 @@
 
 Ce dépôt public contient les téléchargements du jeu. Le code de développement est conservé dans un dépôt privé.
 
-La version **[0.14.10](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.10)** corrige le raccord des jambes en marche, les proportions et noms ALT du butin, plusieurs erreurs de fenêtres et de sauvegarde, les comparaisons d’équipement et le cycle du secours audio. Le lanceur gère mieux les anciennes versions hors ligne et les erreurs de transmission. Un audit étendu accompagne ces corrections : 29 suites natives, onze suites web, captures avant/après et validation Windows. Les changements de chaque version sont énumérés dans sa description GitHub, dans [l’historique](CHANGELOG.md) et dans les ZIP.
+La version **[0.14.11](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.11)** améliore les coffres, les portails, les cadavres, les mouvements et attaques des ennemis, ainsi que les transitions de mort. Les changements sont détaillés dans la release et dans [l’historique](CHANGELOG.md).
 
 ## Installation
 
 Ouvrir la [dernière version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/latest) et télécharger **Throne-of-Ashes.exe**. Le lanceur installe le jeu puis vérifie automatiquement les nouvelles versions à chaque démarrage. Le ZIP Windows complet contient aussi les fichiers pour une première installation hors ligne.
 
-Les derniers extraits PC reçus identifient encore un ancien lanceur 0.14.2. Fermez les fenêtres du lanceur puis téléchargez [le nouveau **Throne-of-Ashes.exe**](https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v0.14.10/Throne-of-Ashes.exe) et remplacez l’ancien fichier. La mise à jour du jeu ne remplace pas automatiquement le lanceur du bureau. Ne pas supprimer les sauvegardes.
+Les derniers extraits PC reçus identifient encore un ancien lanceur 0.14.2. Fermez les fenêtres du lanceur puis téléchargez [le nouveau **Throne-of-Ashes.exe**](https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v0.14.11/Throne-of-Ashes.exe) et remplacez l’ancien fichier. La mise à jour du jeu ne remplace pas automatiquement le lanceur du bureau. Ne pas supprimer les sauvegardes.
 
 Les étapes et erreurs sont enregistrées dans `%LOCALAPPDATA%/ThroneOfAshes/launcher.log`. Le jeu lancé par le nouveau lanceur écrit dans `game.log` du même dossier. Pour une investigation dans le cloud, joindre une copie du journal pertinent à la session ; ces fichiers restent locaux et peuvent contenir le nom du compte Windows dans les chemins.
 
@@ -25,4 +25,4 @@ Les anciens extraits du lanceur reçus montrent plusieurs démarrages séparés 
 
 Une boîte Windows refusant l’accès au fichier du bureau OneDrive a également été signalée ; sa cause locale n’est pas établie. Tester une copie fraîche du lanceur dans Téléchargements permet de poursuivre ce diagnostic. Les contrôles cloud et Windows automatisés ne garantissent pas la disparition de tout arrêt propre au PC du joueur. Certains coffres/portails, les animations ennemies et la lisibilité des cadavres nécessitent encore une finition artistique ; multijoueur natif et synchronisation des parties restent à porter.
 
-[Validation Windows 0.14.10 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/39990833668) : 45 contrôles de fenêtre, 20 de démarrage, installation/intégrité, exécutable natif et lecteur audio embarqué. Les quatre fichiers publics ont aussi été retéléchargés et comparés par SHA-256 après publication.
+[Validation Windows 0.14.11 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40075082687) : 45 contrôles de fenêtre, 20 de démarrage, installation/intégrité, exécutable natif et lecteur audio embarqué. Les quatre fichiers publics ont aussi été retéléchargés et comparés par SHA-256 après publication.

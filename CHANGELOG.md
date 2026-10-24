@@ -1,5 +1,22 @@
 # Modifications des versions Windows
 
+## 0.14.11 — publiée le 24 octobre 2026
+
+[Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.11). [Validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40075082687) ; quatre téléchargements contrôlés par SHA-256 et flux de mise à jour vérifié.
+
+- Coffres en bois et ferrures avec serrure, rivets et couvercle animé ; variante dorée des coffres rares. Les coffres ouverts restent visibles au retour dans l’étage sans fournir de nouveau butin.
+- Portail de retour à glyphes et double anneau, avec lumière réduite et mouvement figé lorsque les effets lumineux sont atténués.
+- Arches de pierre et passages colorés pour les quatre portails de gardiens. Placement rapproché de la clairière et zones de sélection alignées sur les arches ; déblocage et destinations conservés.
+- Préparation, frappe et récupération visuelles différenciées pour la mêlée, les brutes, archers et mages de toutes les régions. Respiration et mouvements des bras affinés, pieds ancrés pendant les attaques.
+- Cycle de trot spécifique aux chiens et molosses, transitions de phase continues et mouvement d’attaque abaissé. Déformations procédurales des sprites existants, sans remplacement des illustrations.
+- Cadavres moins rouges, mieux séparés des flaques et du sol, avec silhouettes couchées légèrement courbées.
+- Un seul corps bascule du sprite debout vers le sol, au lieu du doublon ennemi qui s’efface/cadavre déjà couché. Durées adaptées aux quadrupèdes, bipèdes et boss ; pause respectée et collisions immédiatement retirées.
+- Sauvegarder ou quitter un étage pendant la chute conserve le cadavre final sans rejouer la mort au retour. Aucun changement du format de sauvegarde, du butin, des dégâts ou des délais d’impact.
+- Nouveaux contrôles des coffres, portails, animations et transitions de mort intégrés à la construction Windows ; captures natives et suivi conservés dans le dépôt de développement.
+
+Construction et contrôles Windows réussis. Ces améliorations visuelles ne constituent pas un correctif du refus d’accès au lanceur ou du son physique signalés sur le PC ; ces incidents restent à vérifier avec le lanceur récent. Multijoueur natif et synchronisation des sauvegardes restent à porter.
+
+
 ## 0.14.10 — publiée le 23 octobre 2026
 
 [Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.10).
