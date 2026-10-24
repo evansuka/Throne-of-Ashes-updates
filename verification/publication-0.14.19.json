@@ -1,0 +1,25 @@
+{
+    "version":  "0.14.19",
+    "status":  "failed",
+    "published":  false,
+    "sourceCommit":  "4da080ca4631d90ae84439ae44082d9413b793ab",
+    "completedUtc":  "2026-10-24T15:07:58.8216137Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40105392948",
+    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19",
+    "windowCheck":  {
+                        "version":  "0.14.19",
+                        "status":  "failed",
+                        "checks":  [
+                                       "Real exported game process created",
+                                       "Game survives graphical initialization",
+                                       "Game survives graphical initialization",
+                                       "Game survives graphical initialization",
+                                       "Game survives graphical initialization",
+                                       "Game survives graphical initialization",
+                                       "Game survives graphical initialization"
+                                   ],
+                        "sourceCommit":  "4da080ca4631d90ae84439ae44082d9413b793ab",
+                        "error":  "System.Management.Automation.RuntimeException: Game appeared on screen before readiness",
+                        "completedUtc":  "2026-10-24T15:07:58.3164986Z"
+                    }
+}
