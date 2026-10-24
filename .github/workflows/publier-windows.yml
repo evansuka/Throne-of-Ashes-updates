@@ -68,3 +68,23 @@ jobs:
           Write-Output "PUBLISHED_RELEASE: https://github.com/$env:GITHUB_REPOSITORY/releases/tag/$env:RELEASE_TAG"
           & gh api --method DELETE "repos/$env:GITHUB_REPOSITORY/git/refs/heads/livraison/$env:RELEASE_TAG"
           if($LASTEXITCODE -ne 0){Write-Warning 'Release publiee; branche temporaire a nettoyer.'}
+      - name: Consigner le resultat de publication
+        if: always()
+        continue-on-error: true
+        shell: powershell
+        run: |
+          $ErrorActionPreference='Stop'
+          $version=$env:RELEASE_TAG -replace '^v',''
+          if($version -notmatch '^\d+\.\d+\.\d+$'){exit 0}
+          $ok='${{ job.status }}' -eq 'success'
+          $report=[ordered]@{version=$version;status=$(if($ok){'passed'}else{'failed'});published=$ok;sourceCommit=$env:GITHUB_SHA;completedUtc=[DateTime]::UtcNow.ToString('o');workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";releaseUrl="https://github.com/$env:GITHUB_REPOSITORY/releases/tag/$env:RELEASE_TAG"}
+          $json=$report|ConvertTo-Json
+          $path="verification/publication-$version.json"
+          $endpoint="repos/$env:GITHUB_REPOSITORY/contents/$path"
+          $body=@{message="Consigner la publication Windows $version";branch='main';content=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($json))}
+          $existing=& gh api ($endpoint+'?ref=main') --jq '.sha' 2>$null
+          if($LASTEXITCODE -eq 0){$body.sha=$existing}
+          $request=Join-Path $env:RUNNER_TEMP 'publication-report-request.json'
+          [IO.File]::WriteAllText($request,($body|ConvertTo-Json),[Text.UTF8Encoding]::new($false))
+          & gh api --method PUT $endpoint --input $request --silent
+          if($LASTEXITCODE -ne 0){throw 'Rapport de publication non synchronise.'}
