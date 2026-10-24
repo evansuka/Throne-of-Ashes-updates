@@ -1,8 +1,97 @@
 {
     "version":  "0.14.16",
-    "status":  "running",
+    "status":  "failed",
     "sourceCommit":  "9f534f7df41fea6c725b30ab1b5164b43b188245",
-    "startedUtc":  "2026-10-24T12:21:26.7569552Z",
     "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40093573636",
-    "published":  false
+    "startedUtc":  "2026-10-24T12:21:30.3151049Z",
+    "published":  false,
+    "checks":  [
+                   "Fresh app directory",
+                   "Fresh user data directory",
+                   "Fresh desktop shortcut",
+                   "Fresh per-user registration",
+                   "Exact published Setup SHA256",
+                   "Published Setup process created through the shell",
+                   "Installed bootstrap exists",
+                   "Installed bootstrap exact source bytes",
+                   "Original Setup exits successfully",
+                   "Actual current-user app registration",
+                   "Actual desktop shortcut targets local bootstrap"
+               ],
+    "observedProcesses":  [
+                              {
+                                  "pid":  8892,
+                                  "name":  "Throne-of-Ashes-Setup",
+                                  "path":  "D:\\a\\_temp\\toa-real-install-43225a5a789246b5b7f5b72e39740727\\Throne-of-Ashes-Setup.exe"
+                              },
+                              {
+                                  "pid":  7160,
+                                  "name":  "Throne-of-Ashes-Start",
+                                  "path":  "C:\\Games\\Throne of Ashes\\Throne-of-Ashes-Start.exe"
+                              },
+                              {
+                                  "pid":  3328,
+                                  "name":  "Throne-of-Ashes",
+                                  "path":  "C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\launchers\\0.14.16\\Throne-of-Ashes.exe"
+                              },
+                              {
+                                  "pid":  1736,
+                                  "name":  "Throne-of-Ashes-Game",
+                                  "path":  "C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\versions\\0.14.16\\Throne-of-Ashes-Game.exe"
+                              }
+                          ],
+    "platform":  "Microsoft Windows NT 10.0.26100.0",
+    "runnerElevated":  true,
+    "error":  "System.Management.Automation.RuntimeException: Real game 0.14.16 confirmed ready and released without fallback",
+    "completedUtc":  "2026-10-24T12:25:45.0106264Z",
+    "logs":  {
+                 "installation.log":  [
+                                          "2026-10-24T12:21:31.3887380Z PHASE : Installation pour votre compte dans C:\\Games\\Throne of Ashes",
+                                          "2026-10-24T12:21:31.4839176Z PHASE : Enregistrement dans les applications de votre compte",
+                                          "2026-10-24T12:21:31.6357669Z PHASE : Préparation du dossier utilisateur : C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes",
+                                          "2026-10-24T12:21:31.6368991Z PHASE : Préparation du lanceur versionné",
+                                          "2026-10-24T12:21:31.6547685Z PHASE : Vérification des mises à jour du lanceur",
+                                          "2026-10-24T12:21:32.2941162Z Lanceur vérifié : 0.14.16",
+                                          "2026-10-24T12:21:32.2941162Z PHASE : Exécution du lanceur : C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\launchers\\0.14.16\\Throne-of-Ashes.exe",
+                                          "2026-10-24T12:21:32.3019033Z Lanceur installé démarré : 0.14.16 PID=3328",
+                                          ""
+                                      ],
+                 "launcher.log":  [
+                                      "2026-10-24T12:21:32.5079791Z Lanceur 0.14.16 ; début",
+                                      "2026-10-24T12:21:32.5079791Z Vérification de la version installée…",
+                                      "2026-10-24T12:21:32.5266660Z Version disponible localement : ",
+                                      "2026-10-24T12:21:32.5278817Z Recherche de mises à jour…",
+                                      "2026-10-24T12:21:32.8762462Z Version distante : 0.14.16",
+                                      "2026-10-24T12:21:32.8762462Z Téléchargement de la version 0.14.16…",
+                                      "2026-10-24T12:21:35.2097395Z Vérification et installation…",
+                                      "2026-10-24T12:21:35.2751141Z Vérification de l’archive téléchargée…",
+                                      "2026-10-24T12:21:35.4058296Z Extraction du jeu…",
+                                      "2026-10-24T12:21:37.0093520Z Vérification du jeu extrait…",
+                                      "2026-10-24T12:21:37.3163425Z Installation du jeu vérifié…",
+                                      "2026-10-24T12:21:37.3163425Z Activation de la version 0.14.16…",
+                                      "2026-10-24T12:21:37.3201173Z Installation vérifiée et activée : 0.14.16",
+                                      "2026-10-24T12:21:37.3281620Z Démarrage du jeu… Cela peut prendre un moment.",
+                                      "2026-10-24T12:21:37.3301948Z Création du processus du jeu 0.14.16…",
+                                      "2026-10-24T12:21:37.3420849Z Jeu créé : PID 1736 ; création 10 ms. Contrôle du démarrage…",
+                                      "2026-10-24T12:21:42.5744319Z Jeu prêt ; transmission de la fenêtre sans relance…",
+                                      "2026-10-24T12:21:42.5744319Z Jeu lancé : 0.14.16",
+                                      ""
+                                  ],
+                 "game.log":  [
+                                  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+                                  "WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.",
+                                  "   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)",
+                                  "OpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)",
+                                  "ERROR: Condition \"hr != ((HRESULT)0x00000000)\" is true. Returning: ERR_CANT_OPEN",
+                                  "   at: audio_device_init (drivers/wasapi/audio_driver_wasapi.cpp:275)",
+                                  "ERROR: WASAPI: init_output_device error.",
+                                  "   at: init (drivers/wasapi/audio_driver_wasapi.cpp:600)",
+                                  "WARNING: All audio drivers failed, falling back to the dummy driver.",
+                                  "   at: initialize (servers/audio/audio_server.cpp:258)",
+                                  ""
+                              ]
+             },
+    "events":  [
+
+               ]
 }
