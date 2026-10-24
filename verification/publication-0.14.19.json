@@ -2,30 +2,8 @@
     "version":  "0.14.19",
     "status":  "failed",
     "published":  false,
-    "sourceCommit":  "461cb9e1ae33587e9d892b844d7d4d22632173d8",
-    "completedUtc":  "2026-10-24T15:15:32.0393364Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40106017285",
-    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19",
-    "windowCheck":  {
-                        "version":  "0.14.19",
-                        "status":  "failed",
-                        "checks":  [
-                                       "Real exported game process created",
-                                       "Game survives graphical initialization",
-                                       "Game survives graphical initialization",
-                                       "Game survives graphical initialization"
-                                   ],
-                        "sourceCommit":  "461cb9e1ae33587e9d892b844d7d4d22632173d8",
-                        "earlyWindow":  {
-                                            "title":  "",
-                                            "bounds":  [
-                                                           -8,
-                                                           -31,
-                                                           1036,
-                                                           728
-                                                       ]
-                                        },
-                        "error":  "System.Management.Automation.RuntimeException: Game appeared on screen before readiness",
-                        "completedUtc":  "2026-10-24T15:15:31.7413362Z"
-                    }
+    "sourceCommit":  "edb8bf3d0d82da085edf23159fbdeac3053b37dc",
+    "completedUtc":  "2026-10-24T15:28:48.1781682Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40107021791",
+    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19"
 }
