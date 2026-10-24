@@ -2,11 +2,11 @@
 
 Ce dépôt public contient les téléchargements du jeu. Le code de développement est conservé dans un dépôt privé.
 
-La version **[0.14.15](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.15)** installe désormais l’application dans `C:\Games\Throne of Ashes`. Les erreurs d’installation disposent d’un diagnostic détaillé avec un bouton de copie, même si aucun journal ne peut être écrit. La cause du refus d’accès signalé sur le PC reste à établir. Détails dans [l’historique](CHANGELOG.md).
+La version **[0.14.16](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.16)** installe l’application pour votre compte dans `C:\Games\Throne of Ashes`, en utilisant uniquement vos droits existants sur ce dossier. Elle ne lance aucun composant administrateur. Raccourci Bureau personnel, mise à jour du lanceur et diagnostic détaillé sont conservés. Détails dans [l’historique](CHANGELOG.md).
 
 ## Installation
 
-Télécharger [**Throne-of-Ashes-Setup.exe**](https://github.com/evansuka/Throne-of-Ashes-updates/releases/latest/download/Throne-of-Ashes-Setup.exe), le lancer et accepter la demande d’autorisation Windows pour installer l’application dans `C:\Games\Throne of Ashes`. Utiliser ensuite le nouveau raccourci Bureau **Throne of Ashes**. L’application apparaît aussi dans la liste des applications Windows pour la désinstaller.
+Télécharger [**Throne-of-Ashes-Setup.exe**](https://github.com/evansuka/Throne-of-Ashes-updates/releases/latest/download/Throne-of-Ashes-Setup.exe), le lancer normalement, sans « Exécuter en tant qu’administrateur », pour installer l’application dans `C:\Games\Throne of Ashes`. Utiliser ensuite le nouveau raccourci du Bureau personnel **Throne of Ashes**. L’application apparaît dans la liste des applications du compte utilisateur pour la désinstaller. Le compte doit pouvoir écrire dans le dossier choisi ; aucun droit supplémentaire n’est imposé.
 
 Le démarreur installé vérifie la version et l’intégrité du lanceur avant de démarrer celui-ci. Les nouvelles versions du lanceur et du jeu sont stockées dans `%LOCALAPPDATA%/ThroneOfAshes`, afin que les mises à jour ne demandent pas les droits administrateur à chaque fois. La désinstallation conserve les sauvegardes et ces données utilisateur. Les anciens fichiers et raccourcis vers Téléchargements ne sont pas modifiés.
 
@@ -27,4 +27,4 @@ Les anciens extraits du lanceur reçus montrent plusieurs démarrages séparés 
 
 Une boîte Windows refusant l’accès au fichier du bureau OneDrive a également été signalée ; sa cause locale n’est pas établie. Tester une copie fraîche du lanceur dans Téléchargements permet de poursuivre ce diagnostic. Les contrôles cloud et Windows automatisés ne garantissent pas la disparition de tout arrêt propre au PC du joueur. Certains coffres/portails, les animations ennemies et la lisibilité des cadavres nécessitent encore une finition artistique ; multijoueur natif et synchronisation des parties restent à porter.
 
-[Validation Windows 0.14.15 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40087569673) : 54 contrôles installation/raccourcis/manifestes/diagnostic, ainsi que fenêtre, démarrage, intégrité, jeu et secours audio embarqué. Les cinq fichiers publics ont été retéléchargés et contrôlés par SHA-256. L’installation sur le PC concerné reste à confirmer.
+[Validation Windows 0.14.16 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40089548475) : 68 contrôles installation utilisateur, raccourcis, inscription HKCU, nettoyage de désinstallation, manifestes et diagnostic ; fenêtre du lanceur, démarrage, intégrité, jeu et secours audio également contrôlés. Les cinq fichiers publics ont été retéléchargés et vérifiés par SHA-256. L’installation et le lancement sur le PC concerné restent à confirmer.
