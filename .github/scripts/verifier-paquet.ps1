@@ -14,6 +14,10 @@ foreach($entry in $checksums.PSObject.Properties){
  if($entry.Name -notmatch '^[A-Za-z0-9._-]+$'){throw 'Nom de fichier invalide dans les empreintes.'}
  if((Get-FileHash -LiteralPath (Join-Path $Directory $entry.Name) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.Value){throw "Empreinte invalide : $($entry.Name)"}
 }
+if($manifest.launcherVersion){
+ if($manifest.launcherVersion -ne $version -or $manifest.launcherUrl -ne "https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/$Tag/Throne-of-Ashes.exe"){throw 'Flux du lanceur incompatible avec la version.'}
+ if((Get-FileHash (Join-Path $Directory 'Throne-of-Ashes.exe') -Algorithm SHA256).Hash.ToLowerInvariant() -ne $manifest.launcherSha256){throw 'Empreinte du lanceur dans le flux incorrecte.'}
+}
 $update=Join-Path $Directory "Throne-of-Ashes-$version-update.zip"
 if((Get-FileHash -LiteralPath $update -Algorithm SHA256).Hash.ToLowerInvariant() -ne $manifest.sha256){throw 'Archive de mise a jour incorrecte.'}
 Add-Type -AssemblyName System.IO.Compression.FileSystem

@@ -1,0 +1,50 @@
+using System;
+using System.IO;
+using System.Diagnostics;
+using System.Reflection;
+public static class VerifierInstallation {
+ static int count;
+ static void Check(bool result,string label){count++;if(!result)throw new Exception(label);}
+ static void Reject(Action action,string label){bool rejected=false;try{action();}catch{rejected=true;}Check(rejected,label);}
+ [STAThread] public static int Main(string[] args){
+  if(args.Length==1&&args[0]=="--probe")return 0;
+  var fixture=Path.Combine(Path.GetTempPath(),"toa-install-test-"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(fixture);
+  try{
+   var setup=Path.GetFullPath(args[0]);var probe=Path.GetFullPath(args[1]);var seed=Path.Combine(fixture,"seed.exe");
+   using(var input=Assembly.LoadFile(setup).GetManifestResourceStream("LauncherSeed"))using(var output=File.Create(seed))input.CopyTo(output);
+   Check(LocalInstall.Hash(seed)==LocalInstall.SeedHash,"Embedded launcher exact hash");
+   Check((string)Assembly.LoadFile(seed).GetType("UpdateLogic").GetField("BundledVersion").GetRawConstantValue()==LocalInstall.SeedVersion,"Embedded launcher version matches installer");
+   Check(LocalInstall.ProgramRoot==Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles),"Throne of Ashes"),"Program Files target");
+   foreach(var bad in new[]{"../escape","1.2","1.2.3/escape","v1.2.3","1.2.3.4"})Reject(()=>LocalInstall.LauncherPath(fixture,bad),"Unsafe version path");
+   var manifest=new LauncherFeed{launcherVersion="99.0.0",launcherUrl="https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v99.0.0/Throne-of-Ashes.exe",launcherSha256=LocalInstall.Hash(probe)};
+   LocalInstall.Validate(manifest);count++;
+   var url=manifest.launcherUrl;
+   foreach(var bad in new[]{"http://github.com/a","https://evil.example/game.exe",url+"?other=1",url.Replace("v99.0.0","v98.0.0")}){manifest.launcherUrl=bad;Reject(()=>LocalInstall.Validate(manifest),"Invalid launcher URL rejected");}manifest.launcherUrl=url;
+   foreach(var machine in new[]{"PC A é","PC B"}){
+    var root=Path.Combine(fixture,machine);Directory.CreateDirectory(root);var save=Path.Combine(root,"campagne-v1.json");File.WriteAllText(save,"SAVE MUST STAY");
+    LocalInstall.Activate(root,seed,LocalInstall.SeedVersion,LocalInstall.SeedHash);Check(LocalInstall.Current(root)==LocalInstall.SeedVersion,"Initial seed activated");
+    var downloads=0;
+    LocalInstall.Refresh(root,manifest,(u,p)=>{downloads++;File.Copy(probe,p);});
+    Check(LocalInstall.Current(root)=="99.0.0"&&downloads==1,"New launcher downloaded and activated");
+    using(var child=Process.Start(new ProcessStartInfo(LocalInstall.LauncherPath(root,"99.0.0"),"--probe"){UseShellExecute=false})){Check(child.WaitForExit(10000)&&child.ExitCode==0,"Real updated child process executes");}
+    LocalInstall.Refresh(root,manifest,(u,p)=>{throw new Exception("Must not download same version");});Check(LocalInstall.Current(root)=="99.0.0","Current launcher not replaced");
+    manifest.launcherVersion="98.0.0";manifest.launcherUrl=url.Replace("99.0.0","98.0.0");LocalInstall.Refresh(root,manifest,(u,p)=>{throw new Exception("Must not downgrade");});Check(LocalInstall.Current(root)=="99.0.0","No downgrade");
+    manifest.launcherVersion="100.0.0";manifest.launcherUrl=url.Replace("99.0.0","100.0.0");
+    Reject(()=>LocalInstall.Refresh(root,manifest,(u,p)=>File.WriteAllText(p,"corrupt")),"Corrupt update rejected");Check(LocalInstall.Current(root)=="99.0.0","Active launcher preserved on corrupt update");
+    Reject(()=>LocalInstall.Refresh(root,manifest,(u,p)=>{throw new IOException("offline");}),"Offline update surfaces failure");Check(LocalInstall.Current(root)=="99.0.0","Offline keeps installed launcher");
+    Check(File.ReadAllText(save)=="SAVE MUST STAY","Save preservation");Check(Directory.GetFiles(root,"*.download").Length==0,"Download cleanup");
+    File.WriteAllText(LocalInstall.LauncherPath(root,"99.0.0"),"corrupt");Check(LocalInstall.Current(root)==LocalInstall.SeedVersion,"Hash failure falls back to previous launcher");
+    if(Environment.OSVersion.Platform==PlatformID.Win32NT){
+     var app=Path.Combine(root,"Program Files","Throne of Ashes");var desktop=Path.Combine(root,"Bureau");LocalInstall.Install(app,setup,seed,desktop);
+     Check(LocalInstall.Hash(Path.Combine(app,LocalInstall.HostName))==LocalInstall.Hash(setup),"Exact local host installation");Check(LocalInstall.Hash(Path.Combine(app,"Throne-of-Ashes.exe"))==LocalInstall.SeedHash,"Base launcher installed");
+     var type=Type.GetTypeFromProgID("WScript.Shell",true);object shell=Activator.CreateInstance(type),link=null;
+     try{link=type.InvokeMember("CreateShortcut",BindingFlags.InvokeMethod,null,shell,new object[]{Path.Combine(desktop,"Throne of Ashes.lnk")});var target=(string)link.GetType().InvokeMember("TargetPath",BindingFlags.GetProperty,null,link,null);Check(String.Equals(target,Path.Combine(app,LocalInstall.HostName),StringComparison.OrdinalIgnoreCase),"Desktop shortcut targets installed host");}
+     finally{if(link!=null)System.Runtime.InteropServices.Marshal.FinalReleaseComObject(link);System.Runtime.InteropServices.Marshal.FinalReleaseComObject(shell);}
+     LocalInstall.Install(app,setup,seed,desktop);Check(File.Exists(Path.Combine(desktop,"Throne of Ashes.lnk")),"Reinstallation repairs shortcut");
+    }
+    manifest.launcherVersion="99.0.0";manifest.launcherUrl=url;
+   }
+   Console.WriteLine("LOCAL_INSTALLATION_OK: "+count+" checks; isolated installs, launcher update/hash/rollback/offline/no downgrade, real child process and saves; Windows shortcuts="+(Environment.OSVersion.Platform==PlatformID.Win32NT));return 0;
+  }catch(Exception e){Console.Error.WriteLine(e);return 1;}finally{try{Directory.Delete(fixture,true);}catch{}}
+ }
+}

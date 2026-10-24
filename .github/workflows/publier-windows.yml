@@ -42,13 +42,16 @@ jobs:
         run: |
           try{.github/scripts/verifier-paquet.ps1 -Directory .publication -Tag $env:RELEASE_TAG}
           catch{Write-Output "::error::$($_.Exception.Message)";throw}
+      - name: Verifier l installation locale et les mises a jour du lanceur
+        shell: powershell
+        run: .github/scripts/verifier-installation.ps1 -Setup "$pwd/.publication/Throne-of-Ashes-Setup.exe"
       - name: Creer la release et verifier les fichiers transferes
         shell: powershell
         run: |
           $ErrorActionPreference='Stop'
           $version=$env:RELEASE_TAG.Substring(1)
           $short=($version -split '\.')[0..1] -join '.'
-          $names=@("Throne-of-Ashes-$version-update.zip", "Throne-of-Ashes-Godot-$short-Windows.zip", 'Throne-of-Ashes.exe', 'update.json')
+          $names=@("Throne-of-Ashes-$version-update.zip", "Throne-of-Ashes-Godot-$short-Windows.zip", 'Throne-of-Ashes.exe', 'Throne-of-Ashes-Setup.exe', 'update.json')
           $assets=@($names | ForEach-Object { Join-Path .publication $_ })
           & gh release create $env:RELEASE_TAG @assets --repo $env:GITHUB_REPOSITORY --draft --title "Throne of Ashes $version" --notes-file .publication/RELEASE.md
           if($LASTEXITCODE -ne 0){throw 'Creation de la release refusee; aucune activation.'}
