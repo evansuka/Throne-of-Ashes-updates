@@ -1,5 +1,17 @@
 # Modifications des versions Windows
 
+## 0.14.12 — publiée le 24 octobre 2026
+
+[Télécharger cette version](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.12). [Validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40082970232) ; quatre fichiers publics et flux de mise à jour contrôlés.
+
+- Nouveau décor de citadelle sous la lune rouge à l’accueil, derrière les quatre classes disponibles.
+- Zone de sélection des personnages conservée à droite, sans image de fond ; commandes et personnages existants préservés.
+- Logo original en haut de l’accueil. Proportions du décor conservées avec un recadrage centré.
+- Site de téléchargement actualisé séparément : décor du trône, logo original en haut et texte sous Télécharger retiré.
+
+Les sauvegardes sont conservées. Le diagnostic du lancement et du son physique sur le PC reste ouvert ; ce changement visuel ne constitue pas un correctif de cet incident.
+
+
 ## Site — 24 octobre 2026
 
 - Nouveau fond du trône sous la lune rouge, logo original en haut et suppression du texte sous Télécharger. Affichage ordinateur et mobile vérifié.
