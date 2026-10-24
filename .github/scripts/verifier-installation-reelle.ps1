@@ -16,6 +16,14 @@ $result=[ordered]@{version=$Version;status='running';sourceCommit=$env:GITHUB_SH
 $fixture=Join-Path $env:RUNNER_TEMP ('toa-real-install-'+[Guid]::NewGuid().ToString('N'))
 $setup=$null;$owned=$false
 function Check($value,[string]$label){if(-not $value){throw $label};$script:result.checks+=,$label;Write-Output ('INSTALL_E2E_CHECK: '+$label)}
+function Read-SharedText([string]$path){
+ $stream=[IO.File]::Open($path,[IO.FileMode]::Open,[IO.FileAccess]::Read,([IO.FileShare]::ReadWrite -bor [IO.FileShare]::Delete))
+ $reader=New-Object IO.StreamReader $stream
+ try{return $reader.ReadToEnd()}finally{$reader.Dispose()}
+}
+function Save-Report{
+ [IO.File]::WriteAllText($script:reportPath,($script:result|ConvertTo-Json -Depth 7),[Text.UTF8Encoding]::new($false))
+}
 function Capture-Desktop{
  Add-Type -AssemblyName System.Windows.Forms
  Add-Type -AssemblyName System.Drawing
@@ -51,7 +59,7 @@ try{
   }
   $log=Join-Path $data 'game.log'
   if(Test-Path -LiteralPath $log){
-   $text=[IO.File]::ReadAllText($log)
+   $text=Read-SharedText $log
    $ready=$text -match 'SESSION_START: version=0\.14\.16-conversion' -and $text -match 'VILLAGE_READY' -and $text -match 'LAUNCHER_RELEASE:.*fallback=false'
   }
   if(-not $ready){Start-Sleep -Milliseconds 500}
@@ -70,32 +78,32 @@ try{
  Check ($games.Count -eq 1) 'Exactly one real game process'
  Start-Sleep -Seconds 5
  Check (-not $games[0].HasExited) 'Real game remains open after launcher has exited'
- $launcherLog=[IO.File]::ReadAllText((Join-Path $data 'launcher.log'))
+ $launcherLog=Read-SharedText (Join-Path $data 'launcher.log')
  Check ($launcherLog -match 'Lanceur 0\.14\.16' -and $launcherLog -match 'Jeu lancé : 0\.14\.16') 'Published launcher completes startup'
  Check ($text -notmatch 'SCRIPT ERROR|Parse Error|ERROR:') 'No game runtime error'
  $result.status='passed'
 }catch{
- $result.status='failed';$result.error=$_.Exception.ToString();Write-Output $result.error
+ $result.status='failed';$result.error=$_.Exception.ToString();Save-Report;Write-Output $result.error
  try{Capture-Desktop}catch{$result.captureError=$_.Exception.Message}
  throw
 }finally{
  $logs=[ordered]@{}
+ $result.completedUtc=[DateTime]::UtcNow.ToString('o');Save-Report
  if($owned){
   foreach($name in @('installation.log','launcher.log','game.log')){
    $path=Join-Path $data $name
-   $logs[$name]=if(Test-Path -LiteralPath $path){@([IO.File]::ReadAllLines($path) | Select-Object -Last 100)}else{@('MISSING')}
+   try{$logs[$name]=if(Test-Path -LiteralPath $path){@((Read-SharedText $path) -split '\r?\n' | Select-Object -Last 100)}else{@('MISSING')}}catch{$logs[$name]=@('READ ERROR: '+$_.Exception.Message)}
   }
+  $result.logs=$logs;Save-Report
   $events=@()
   foreach($channel in @('Application','Microsoft-Windows-CodeIntegrity/Operational','Microsoft-Windows-AppLocker/EXE and DLL')){
-   $events+=@(Get-WinEvent -FilterHashtable @{LogName=$channel;StartTime=$start.ToLocalTime()} -ErrorAction SilentlyContinue | Where-Object {$_.Message -match 'Throne.of.Ashes'} | Select-Object -First 8 | ForEach-Object {[ordered]@{channel=$channel;id=$_.Id;time=$_.TimeCreated.ToUniversalTime().ToString('o');message=$_.Message}})
+   try{$events+=@(Get-WinEvent -FilterHashtable @{LogName=$channel;StartTime=$start.ToLocalTime()} -ErrorAction SilentlyContinue | Where-Object {$_.Message -match 'Throne.of.Ashes'} | Select-Object -First 8 | ForEach-Object {[ordered]@{channel=$channel;id=$_.Id;time=$_.TimeCreated.ToUniversalTime().ToString('o');message=$_.Message}})}catch{$events+=,[ordered]@{channel=$channel;readError=$_.Exception.Message}}
   }
-  $result.events=$events
-  # Stop only processes started by this test, never any pre-existing program.
+  $result.events=$events;Save-Report
   foreach($name in @('Throne-of-Ashes-Game','Throne-of-Ashes-Setup','Throne-of-Ashes-Start','Throne-of-Ashes')){
    Get-Process -Name $name -ErrorAction SilentlyContinue | ForEach-Object {try{if($_.StartTime.ToUniversalTime() -ge $start){Stop-Process -Id $_.Id -Force -ErrorAction SilentlyContinue}}catch{}}
   }
  }
- $result.logs=$logs;$result.completedUtc=[DateTime]::UtcNow.ToString('o')
- [IO.File]::WriteAllText($reportPath,($result|ConvertTo-Json -Depth 7),[Text.UTF8Encoding]::new($false))
+ $result.logs=$logs;$result.completedUtc=[DateTime]::UtcNow.ToString('o');Save-Report
  Write-Output ('INSTALL_E2E_REPORT: '+$reportPath)
 }
