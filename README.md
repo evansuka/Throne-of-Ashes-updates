@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.28](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.28)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.29](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.29)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.28 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40214302879) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
+[Validation Windows 0.14.29 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40216616745) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -37,3 +37,5 @@ Dans Échap → Option → Audio, cliquer sur **Réinitialiser la sortie audio**
 La page **Échap → Version**, à l’accueil, contient aussi l’historique des versions. **Échap → Option** propose les onglets Audio, Graphique et Clavier ; les touches se personnalisent dans Clavier (ZQSD ou flèches par défaut, déplacement au clic conservé).
 
 L’inventaire et la fiche Personnage restent actifs : le héros peut se déplacer et les ennemis continuent d’agir. Échap met le jeu en pause ; **Sauvegarder et quitter** revient à l’accueil.
+
+La configuration du clavier affiche chaque action sur sa propre ligne, avec sa touche et **Modifier** à droite. Les quatre socles du village portent désormais les boss sous forme de statues de pierre. Le Viking porte un pantalon long sans short superposé.

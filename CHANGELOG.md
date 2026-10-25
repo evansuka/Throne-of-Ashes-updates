@@ -4,6 +4,16 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.29 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.29) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40216616745). Trois assets publics et latest vérifiés.
+
+- Clavier : une ligne compacte par action, libellé à gauche, touche actuelle et bouton Modifier à droite. La touche affichée est actualisée après modification ; Échap annule la saisie.
+- Les socles portent Tharok, Velyra, Ilyss et Mordrath en pierre : mêmes silhouettes, armes et proportions que les boss du donjon. Statues immobiles, sans combat et visibles dès le début.
+- Viking : short d’origine retiré au rendu, pantalon long raccordé depuis la taille jusqu’aux bottes. Mains et avant-bras natifs préservés, prises d’armes inchangées.
+
+47 contrôles ciblés, régressions interface, marche et équipement réussis ; captures natives inspectées. Construction complète et remplacement réel du jeu validés sur Windows, sauvegardes conservées.
+
 ## 0.14.28 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.28) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40214302879). Trois fichiers publics et latest vérifiés.
