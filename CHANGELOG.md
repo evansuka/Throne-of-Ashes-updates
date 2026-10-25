@@ -4,6 +4,20 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.28 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.28) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40214302879). Trois fichiers publics et latest vérifiés.
+
+- Pantalons longs et bottes raccourcies pour le Viking ; bottes du Sorcier raccourcies et affinées.
+- Inventaire, Personnage et Sac à dos laissent le héros, les PNJ et les ennemis agir. Échap conserve la pause ; Option et les autres pages modales restent protégées.
+- Inventaire sans défilement, équipement descendu et pantalon dans un emplacement plus haut et étroit. Toutes les rangées restent visibles ; les anciens objets excédentaires sont conservés et accessibles par pagination.
+- Ligne de vue des quatre socles des gardiens dégagée : 127 arbres retirés, rendu, navigation et collisions du village reconstruits.
+- Échap à l’accueil : Option, Cinématique, Version, Quitter. Version présente l’historique et la vérification des mises à jour en haut ; aucune recherche de mise à jour dans Option.
+- Échap en partie : Option, Quêtes, Sauvegarder et quitter (retour à l’accueil), Retour au jeu. Un échec de sauvegarde conserve la partie ouverte.
+- Options réparties en Audio, Graphique et Clavier ; touches personnalisables et conservées, doublons échangés, raccourcis actualisés dans la barre. Déplacement ZQSD ou flèches, en plus du clic.
+
+33 contrôles ciblés natifs et captures aux résolutions 720p/900p/1080p, suites de marche/équipement/objets/sauvegardes, puis remplacement réel et récupération validés sur Windows. Aucun résultat de son physique ou FPS du PC déduit de ces essais.
+
 ## 0.14.27 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.27) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40205308747).

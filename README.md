@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.27](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.27)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.28](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.28)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -10,7 +10,7 @@ Utiliser ce fichier à la place de l’ancien Setup ou démarreur. Un raccourci 
 
 ## Mises à jour dans le jeu
 
-L’écran d’accueil affiche en bas à droite, sous la création de personnage, la version installée et vérifie la dernière version disponible. Depuis l’accueil, ouvrir **Échap → Options** pour vérifier les mises à jour ou choisir **Mettre à jour et redémarrer** : le jeu télécharge et vérifie les fichiers, conserve une copie de secours, puis redémarre sur la nouvelle version. Une partie en cours n’est pas interrompue.
+L’écran d’accueil affiche en bas à droite, sous la création de personnage, la version installée et vérifie la dernière version disponible. Depuis l’accueil, ouvrir **Échap → Version** pour vérifier les mises à jour ou choisir **Mettre à jour et redémarrer** : le jeu télécharge et vérifie les fichiers, conserve une copie de secours, puis redémarre sur la nouvelle version. Une partie en cours n’est pas interrompue.
 
 En cas d’échec du nouveau démarrage, la version précédente est restaurée avec un seul lancement de secours. Hors ligne, le jeu reste utilisable. La copie `.previous` à côté de l’EXE est le secours du dernier remplacement.
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.27 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40205308747) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
+[Validation Windows 0.14.28 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40214302879) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -32,4 +32,8 @@ Dans le chat, onglet **Système** : `/help`, `/get <nom ou identifiant de l’un
 
 ## Son absent
 
-Dans Échap → Options, cliquer sur **Réinitialiser la sortie audio**, puis **Tester les bruitages**. Le secours Windows est réellement relancé sans fermer le jeu. En secours, **Choisir la sortie Windows** permet de vérifier le périphérique par défaut ; après un changement, réinitialiser le son dans le jeu. Avec le pilote natif, le périphérique peut être choisi directement dans les Options. Le statut affiche les erreurs de lecture connues ; une sortie audible reste à confirmer sur votre PC.
+Dans Échap → Option → Audio, cliquer sur **Réinitialiser la sortie audio**, puis **Tester les bruitages**. Le secours Windows est réellement relancé sans fermer le jeu. En secours, **Choisir la sortie Windows** permet de vérifier le périphérique par défaut ; après un changement, réinitialiser le son dans le jeu. Avec le pilote natif, le périphérique peut être choisi directement dans les Options. Le statut affiche les erreurs de lecture connues ; une sortie audible reste à confirmer sur votre PC.
+
+La page **Échap → Version**, à l’accueil, contient aussi l’historique des versions. **Échap → Option** propose les onglets Audio, Graphique et Clavier ; les touches se personnalisent dans Clavier (ZQSD ou flèches par défaut, déplacement au clic conservé).
+
+L’inventaire et la fiche Personnage restent actifs : le héros peut se déplacer et les ennemis continuent d’agir. Échap met le jeu en pause ; **Sauvegarder et quitter** revient à l’accueil.
