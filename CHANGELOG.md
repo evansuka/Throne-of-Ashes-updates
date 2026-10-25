@@ -4,6 +4,20 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.31 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.31) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40219089328). Trois assets publics et latest vérifiés.
+
+- Sortie par les escaliers du premier étage : retour devant la grotte, sans modifier les retours par portail ou après défaite.
+- Statues remontées au-dessus du dessus des socles pour dégager les pieds.
+- Jambes du Viking raccourcies et torse/équipement repositionnés ensemble, prises d’armes préservées.
+- Options : taille de fenêtre agrandie conservée ; le mode fenêtré n’est réappliqué que lors d’une vraie sortie du plein écran.
+- Mise à jour : verrou exclusif sur le jeu, refus d’une seconde tentative concurrente et absence de nouvelle recherche immédiate après remplacement réussi. Le journal PC montre un seul lancement confirmé ; la double relance signalée n’a pas été reproduite.
+- Huit sons de pas distincts adaptés depuis Kenney Starter Kit FPS (MIT), surfaces souples et pierre ; cadence des sons alignée sur les foulées.
+- Éléane contourne les obstacles et la forge avec une grille adaptée à son corps ; récupération après blocage prolongé.
+
+Construction complète, contrôles physiques du contournement de la forge, redimensionnement natif et captures des proportions/statues vérifiés. Remplacement réel et concurrence validés sur Windows. Pas de mesure des FPS ni du son physiquement entendu sur le PC.
+
 ## 0.14.30 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.30) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40217384472). Trois assets publics et latest vérifiés.
