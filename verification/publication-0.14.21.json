@@ -1,16 +1,47 @@
 {
     "version":  "0.14.21",
-    "status":  "failed",
-    "published":  false,
-    "cleanupSucceeded":  false,
-    "sourceCommit":  "2dab5fc0a7dc2a3476c1c1de9174c3ebdacd899a",
-    "completedUtc":  "2026-10-25T07:13:58.2339224Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40171708942",
+    "status":  "passed",
+    "published":  true,
+    "cleanupSucceeded":  true,
+    "sourceCommit":  "bdf64807903c0bc99ce8c2b61b347077c41a2470",
+    "completedUtc":  "2026-10-25T07:24:15.6413306Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40172431413",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.21",
+    "windowCheck":  {
+                        "version":  "0.14.21",
+                        "status":  "passed",
+                        "sourceCommit":  "bdf64807903c0bc99ce8c2b61b347077c41a2470",
+                        "checks":  [
+                                       "Real exported game started by actual launcher operations",
+                                       "Ready game remains hidden before launcher release",
+                                       "Actual launcher handshake file exists",
+                                       "Ready handshake identifies the real game PID",
+                                       "No on-screen game during 18 seconds before explicit release",
+                                       "Same exported game becomes visible on screen after release",
+                                       "One game PID remains alive after handoff"
+                                   ],
+                        "initializationWindow":  {
+                                                     "title":  "Throne of Ashes â€” Campagne native",
+                                                     "bounds":  [
+                                                                    -8,
+                                                                    -31,
+                                                                    1036,
+                                                                    728
+                                                                ],
+                                                     "beforeReadiness":  true
+                                                 },
+                        "initializationWindowObserved":  true,
+                        "windowScope":  "Ready game minimized before handshake and held for 18 seconds; engine initialization recorded separately",
+                        "gamePid":  5628,
+                        "initializationSamples":  29,
+                        "startupLog":  "2026-10-25T07:23:31.6457618Z CrÃ©ation du processus du jeu 0.14.21â€¦\r\n2026-10-25T07:23:32.3688567Z Jeu crÃ©Ã© : PID 5628 ; crÃ©ation 723 ms. ContrÃ´le du dÃ©marrageâ€¦\r\n2026-10-25T07:23:34.4864765Z Jeu prÃªt ; transmission de la fenÃªtre sans relanceâ€¦\r\n",
+                        "gameLogTail":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nWARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\nERROR: Condition \"hr != ((HRESULT)0x00000000)\" is true. Returning: ERR_CANT_OPEN\n   at: audio_device_init (drivers/wasapi/audio_driver_wasapi.cpp:275)\nERROR: WASAPI: init_output_device error.\n   at: init (drivers/wasapi/audio_driver_wasapi.cpp:600)\nWARNING: All audio drivers failed, falling back to the dummy driver.\n   at: initialize (servers/audio/audio_server.cpp:258)\n",
+                        "completedUtc":  "2026-10-25T07:23:56.6763672Z"
+                    },
     "recoveryCheck":  {
                           "status":  "passed",
-                          "launcherSha256":  "d08a766e1881b01eebabcfe2b0359fa08bca2d4615f339b926f0fbfabdd7840f",
-                          "setupSha256":  "a70f19faec28f37deac962d65e78dc31079b1be4bc503cecf390012741103255",
+                          "launcherSha256":  "df25b32c46994fe0f240000ff112c7c5d225a948c6b8922ef2e63b7ae03fd093",
+                          "setupSha256":  "492c551c5adb624590e4f5106f9f3544aa7119e6576cc813e595d812543b2977",
                           "installer":  {
                                             "suite":  "installer-recovery-audit",
                                             "cases":  [
@@ -60,9 +91,9 @@
                                             "platform":  "Microsoft Windows NT 6.2.9200.0",
                                             "windowsShortcutExercised":  true,
                                             "setupVersion":  "0.14.21",
-                                            "setupSha256":  "a70f19faec28f37deac962d65e78dc31079b1be4bc503cecf390012741103255",
+                                            "setupSha256":  "492c551c5adb624590e4f5106f9f3544aa7119e6576cc813e595d812543b2977",
                                             "status":  "all-recovery-checks-passed",
-                                            "completedUtc":  "2026-10-25T07:09:49.1934973Z"
+                                            "completedUtc":  "2026-10-25T07:21:48.9255021Z"
                                         },
                           "launcher":  {
                                            "scope":  "Isolated updater business logic; no real game/network; runtime startup failure is injected",
@@ -126,18 +157,24 @@
                                                      ],
                                            "realPlayerDataAccessed":  false,
                                            "productionFilesModified":  false,
-                                           "launcherSha256":  "d08a766e1881b01eebabcfe2b0359fa08bca2d4615f339b926f0fbfabdd7840f",
-                                           "loadedLauncher":  "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\toa-recovery-73c4294f63254538b28a2fef0fb6e6a3\\Throne-of-Ashes.exe",
+                                           "launcherSha256":  "df25b32c46994fe0f240000ff112c7c5d225a948c6b8922ef2e63b7ae03fd093",
+                                           "loadedLauncher":  "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\toa-recovery-8a0e01ff3b1d43de8acc70a21b94f9d5\\Throne-of-Ashes.exe",
                                            "status":  "all-recovery-checks-passed",
-                                           "completedUtc":  "2026-10-25T07:09:49.8476181Z"
+                                           "completedUtc":  "2026-10-25T07:21:49.5981242Z"
                                        }
                       },
-    "packageFailure":  {
-                           "status":  "failed",
-                           "version":  "0.14.21",
-                           "error":  "System.Management.Automation.RuntimeException: Exported biome render timed out.",
-                           "detail":  "Exported biome render timed out.\r\nAt D:\\a\\Throne-of-Ashes-updates\\Throne-of-Ashes-updates\\.github\\scripts\\verifier-paquet.ps1:99 char:55\r\n+ ... xit(180000)){$biomes.Kill();throw \u0027Exported biome render timed out.\u0027}\r\n+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Exported biome render timed out.:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Exported biome render timed out.\r\n \r\n",
-                           "renderLog":  null,
-                           "gameOutput":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\n\r\nSESSION_START: version=0.14.21-conversion pid=7516 audio=Dummy device=Default\r\nLAUNCHER_READY: pid=7516\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nCAMPAGNE: Bienvenue ÃƒÂ  Havrebrume. Rejoins la grotte pour entrer au donjon.\r\nGAMEPLAY_START: version=0.14.21-conversion pid=7516 hero=native-viking\r\nLAUNCHER_RELEASE: pid=7516 fallback=false\r\n"
-                       }
+    "dungeonRenderCheck":  {
+                               "status":  "passed",
+                               "version":  "0.14.21",
+                               "depths":  [
+                                              1,
+                                              21,
+                                              41,
+                                              61,
+                                              81,
+                                              100
+                                          ],
+                               "realWindowsRenderer":  true,
+                               "log":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nAUDIO_FALLBACK: Windows MCI active=true parent=1700\r\nSESSION_START: version=0.14.21-conversion pid=1700 audio=Dummy device=Default\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nCAMPAGNE: Bienvenue Ã  Havrebrume. Rejoins la grotte pour entrer au donjon.\r\nGAMEPLAY_START: version=0.14.21-conversion pid=1700 hero=native-viking\r\nCAMPAGNE: Grottes de pierre Â· Ã‰TAGE 1\r\nEXPORTED_BIOME_FRAME: 1; size=(1028, 578)\r\nCAMPAGNE: Grottes du gel Ã©ternel Â· Ã‰TAGE 21\r\nEXPORTED_BIOME_FRAME: 21; size=(1028, 578)\r\nCAMPAGNE: Grottes des premiÃ¨res braises Â· Ã‰TAGE 41\r\nEXPORTED_BIOME_FRAME: 41; size=(1028, 578)\r\nCAMPAGNE: Profondeurs infernales Â· Ã‰TAGE 61\r\nEXPORTED_BIOME_FRAME: 61; size=(1028, 578)\r\nCAMPAGNE: Enfer du TrÃ´ne des Cendres Â· Ã‰TAGE 81\r\nEXPORTED_BIOME_FRAME: 81; size=(1028, 578)\r\nCAMPAGNE: Enfer du TrÃ´ne des Cendres Â· Ã‰TAGE 100\r\nEXPORTED_BIOME_FRAME: 100; size=(1028, 578)\r\nEXPORTED_BIOMES_OK: six real rendered levels, shaders, final boss and no player saves\r\n\nWARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\n"
+                           }
 }
