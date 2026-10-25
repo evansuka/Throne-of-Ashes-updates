@@ -1,0 +1,135 @@
+{
+    "version":  "0.14.21",
+    "status":  "failed",
+    "published":  false,
+    "cleanupSucceeded":  false,
+    "sourceCommit":  "049035c74b6c04f54b55d62ed7b2e3abeed70595",
+    "completedUtc":  "2026-10-25T07:07:29.0904267Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40171291071",
+    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.21",
+    "recoveryCheck":  {
+                          "status":  "passed",
+                          "launcherSha256":  "d08a766e1881b01eebabcfe2b0359fa08bca2d4615f339b926f0fbfabdd7840f",
+                          "setupSha256":  "a70f19faec28f37deac962d65e78dc31079b1be4bc503cecf390012741103255",
+                          "installer":  {
+                                            "suite":  "installer-recovery-audit",
+                                            "cases":  [
+                                                          {
+                                                              "verifiedFallback":  "0.0.1",
+                                                              "repairError":  null,
+                                                              "trigger":  "Same-version active launcher changed; bootstrap seeds its embedded version before Refresh or StartVerified.",
+                                                              "id":  "seed-repair-succeeds",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "attempts":  2,
+                                                              "primaryRejected":  true,
+                                                              "fallbackRejected":  true,
+                                                              "selectedAfterFailure":  "",
+                                                              "impact":  "Both denied hashes excluded from subsequent selection.",
+                                                              "id":  "all-denials-recorded",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "error":  null,
+                                                              "launchAttempts":  1,
+                                                              "verifiedFallback":  "0.0.1",
+                                                              "trigger":  "Primary disappears after selection and before its final hash check.",
+                                                              "id":  "missing-primary-uses-verified-fallback",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "nativeVersionAfterCorruption":  "0.14.21.0",
+                                                              "restoredHash":  true,
+                                                              "trigger":  "Re-run the same Setup on a modified host retaining its native file version.",
+                                                              "id":  "same-version-host-repaired",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "downloads":  0,
+                                                              "rejected":  false,
+                                                              "id":  "transient-lock-cached-retry",
+                                                              "passed":  true
+                                                          },
+                                                          {
+                                                              "startAttempts":  1,
+                                                              "id":  "modified-primary-uses-fallback",
+                                                              "passed":  true
+                                                          }
+                                                      ],
+                                            "platform":  "Microsoft Windows NT 6.2.9200.0",
+                                            "windowsShortcutExercised":  true,
+                                            "setupVersion":  "0.14.21",
+                                            "setupSha256":  "a70f19faec28f37deac962d65e78dc31079b1be4bc503cecf390012741103255",
+                                            "status":  "all-recovery-checks-passed",
+                                            "completedUtc":  "2026-10-25T07:03:17.7480863Z"
+                                        },
+                          "launcher":  {
+                                           "scope":  "Isolated updater business logic; no real game/network; runtime startup failure is injected",
+                                           "platform":  "Microsoft Windows NT 6.2.9200.0",
+                                           "cases":  [
+                                                         {
+                                                             "manualLaunches":  2,
+                                                             "downloads":  1,
+                                                             "startedVersions":  [
+                                                                                     "1.1.0",
+                                                                                     "1.1.0"
+                                                                                 ],
+                                                             "activeVersion":  "1.1.0",
+                                                             "case":  "corrupt-existing-version-repaired",
+                                                             "passed":  true
+                                                         },
+                                                         {
+                                                             "previousPointer":  "1.0.0",
+                                                             "activeVersion":  "1.0.0",
+                                                             "oldestVersionStillValid":  true,
+                                                             "trigger":  "Current 1.1.0 is corrupt while previous 1.0.0 is valid; install 1.2.0; damage 1.2.0",
+                                                             "case":  "last-valid-backup-preserved",
+                                                             "passed":  true
+                                                         },
+                                                         {
+                                                             "manualLaunches":  2,
+                                                             "startedVersions":  [
+                                                                                     "1.1.0"
+                                                                                 ],
+                                                             "activeVersion":  "1.1.0",
+                                                             "previousPointer":  "1.0.0",
+                                                             "note":  "No automatic restart is requested; audit checks recovery on the next explicit manual launch",
+                                                             "case":  "next-manual-launch-offers-recovery",
+                                                             "passed":  true
+                                                         },
+                                                         {
+                                                             "manifestReads":  1,
+                                                             "downloads":  1,
+                                                             "startedVersions":  [
+                                                                                     "1.1.0"
+                                                                                 ],
+                                                             "launcherReportsSuccess":  true,
+                                                             "case":  "legacy-cache-does-not-block-update",
+                                                             "passed":  true
+                                                         },
+                                                         {
+                                                             "downloads":  0,
+                                                             "case":  "manual-restore-skips-failed-update",
+                                                             "passed":  true
+                                                         },
+                                                         {
+                                                             "refused":  true,
+                                                             "case":  "same-tag-content-conflict-rejected",
+                                                             "passed":  true
+                                                         },
+                                                         {
+                                                             "activeVersion":  "1.2.0",
+                                                             "case":  "newer-version-after-startup-failure",
+                                                             "passed":  true
+                                                         }
+                                                     ],
+                                           "realPlayerDataAccessed":  false,
+                                           "productionFilesModified":  false,
+                                           "launcherSha256":  "d08a766e1881b01eebabcfe2b0359fa08bca2d4615f339b926f0fbfabdd7840f",
+                                           "loadedLauncher":  "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\toa-recovery-38d71310da9f4bd1ad79056a70557312\\Throne-of-Ashes.exe",
+                                           "status":  "all-recovery-checks-passed",
+                                           "completedUtc":  "2026-10-25T07:03:18.5362855Z"
+                                       }
+                      }
+}
