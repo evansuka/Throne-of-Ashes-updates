@@ -1,5 +1,6 @@
 param([Parameter(Mandatory=$true)][string]$Directory,[Parameter(Mandatory=$true)][string]$Tag,[switch]$SkipGameLaunch)
 $ErrorActionPreference='Stop'
+try{
 if($Tag -notmatch '^v\d+\.\d+\.\d+$'){throw 'Tag de version invalide.'}
 $version=$Tag.Substring(1)
 $short=($version -split '\.')[0..1] -join '.'
@@ -109,3 +110,9 @@ if(-not $SkipGameLaunch){
  if($audioProcess.ExitCode -ne 0 -or $audioOut.Result -notmatch 'WINDOWS_AUDIO_BRIDGE_CHECKS' -or $audioErr.Result -match 'SCRIPT ERROR|ERROR:'){throw 'Le secours audio Windows est absent ou invalide dans le jeu exporte.'}
 }
 Write-Output "WINDOWS_PACKAGE_OK: $version; checksums, archives, exact launcher binding, two independent installations, save preservation, corrupt download rejection."
+
+}catch{
+ $failure=[ordered]@{status='failed';version=$version;error=$_.Exception.ToString();detail=($_|Out-String);renderLog=$renderLog;gameOutput=$output}
+ [IO.File]::WriteAllText((Join-Path $pwd 'verification/package-failure.json'),($failure|ConvertTo-Json -Depth 5),[Text.UTF8Encoding]::new($false))
+ throw
+}

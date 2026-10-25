@@ -93,6 +93,7 @@ jobs:
           if(Test-Path verification/game-window.json){$report['windowCheck']=Get-Content verification/game-window.json -Raw | ConvertFrom-Json}
           if(Test-Path verification/launcher-recovery.json){$report['recoveryCheck']=Get-Content verification/launcher-recovery.json -Raw | ConvertFrom-Json}
           if(Test-Path verification/dungeon-render.json){$report['dungeonRenderCheck']=Get-Content verification/dungeon-render.json -Raw | ConvertFrom-Json}
+          if(Test-Path verification/package-failure.json){$report['packageFailure']=Get-Content verification/package-failure.json -Raw | ConvertFrom-Json}
           $json=$report|ConvertTo-Json -Depth 12
           $path="verification/publication-$version.json"
           git config user.name 'github-actions[bot]'
