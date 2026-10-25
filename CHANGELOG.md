@@ -4,6 +4,18 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.27 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.27) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40205308747).
+
+- Le bouton « Réinitialiser la sortie audio » relance réellement le lecteur de secours Windows, même lorsque son processus semble encore actif. Le jeu reste ouvert et aucun second lecteur n’est créé avant l’arrêt du précédent.
+- Les erreurs de lecture signalées par Windows sont désormais remontées au jeu ; deux tentatives de récupération au maximum, avec possibilité de réessayer manuellement.
+- L’état de la sortie audio se met à jour dans les Options : initialisation, réinitialisation ou erreur, au lieu de considérer une simple connexion au lecteur comme un son fonctionnel.
+- Choix du périphérique de sortie lorsque le pilote audio natif est disponible, avec préférence conservée et retour à la sortie par défaut si le périphérique est absent.
+- En mode secours, accès aux paramètres de son Windows pour sélectionner la sortie par défaut.
+
+Ce correctif améliore la récupération après un démarrage silencieux ; la cause de l’échec initial de WASAPI sur le PC n’est pas établie. Les essais automatisés ne vérifient pas le son physiquement entendu sur ce PC.
+
 ## 0.14.26 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.26) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40196167179).
