@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$Directory,[Parameter(Mandatory=$true)][string]$Tag)
+﻿param([Parameter(Mandatory=$true)][string]$Directory,[Parameter(Mandatory=$true)][string]$Tag)
 $ErrorActionPreference='Stop'
 $version=$Tag.TrimStart('v');$directory=(Resolve-Path $Directory).Path
 $report=[ordered]@{status='running';version=$version;noInstaller=$true;checks=@()}
@@ -46,6 +46,7 @@ try{
  Check (Test-Path (Join-Path $trial 'trial.json')) 'Actual game prepared a self-update'
  $trialInfo=Get-Content (Join-Path $trial 'trial.json') -Raw -Encoding UTF8|ConvertFrom-Json
  Check (-not $trialInfo.realPlayerSaveAccessed) 'Self-update trial uses no player saves'
+ $report.trial=$trialInfo
  Check ($trialInfo.versionLabel -eq ('VERSION '+$version)) 'Home screen displays the installed game version'
  Check ($trialInfo.button -eq 'Mettre à jour et redémarrer') 'Home screen offers the direct update action'
  $result=Join-Path $trialInfo.work 'result.json';$clock.Restart()

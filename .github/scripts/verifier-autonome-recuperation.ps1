@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$Helper)
+﻿param([Parameter(Mandatory=$true)][string]$Helper)
 $ErrorActionPreference='Stop'
 $root=Join-Path $env:RUNNER_TEMP ('toa-portable-recovery-'+[Guid]::NewGuid().ToString('N'));New-Item -ItemType Directory $root|Out-Null
 $checks=@();$children=New-Object Collections.Generic.List[Diagnostics.Process]
