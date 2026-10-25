@@ -3,9 +3,9 @@
     "status":  "failed",
     "published":  false,
     "cleanupSucceeded":  false,
-    "sourceCommit":  "049035c74b6c04f54b55d62ed7b2e3abeed70595",
-    "completedUtc":  "2026-10-25T07:07:29.0904267Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40171291071",
+    "sourceCommit":  "2dab5fc0a7dc2a3476c1c1de9174c3ebdacd899a",
+    "completedUtc":  "2026-10-25T07:13:58.2339224Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40171708942",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.21",
     "recoveryCheck":  {
                           "status":  "passed",
@@ -62,7 +62,7 @@
                                             "setupVersion":  "0.14.21",
                                             "setupSha256":  "a70f19faec28f37deac962d65e78dc31079b1be4bc503cecf390012741103255",
                                             "status":  "all-recovery-checks-passed",
-                                            "completedUtc":  "2026-10-25T07:03:17.7480863Z"
+                                            "completedUtc":  "2026-10-25T07:09:49.1934973Z"
                                         },
                           "launcher":  {
                                            "scope":  "Isolated updater business logic; no real game/network; runtime startup failure is injected",
@@ -127,9 +127,17 @@
                                            "realPlayerDataAccessed":  false,
                                            "productionFilesModified":  false,
                                            "launcherSha256":  "d08a766e1881b01eebabcfe2b0359fa08bca2d4615f339b926f0fbfabdd7840f",
-                                           "loadedLauncher":  "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\toa-recovery-38d71310da9f4bd1ad79056a70557312\\Throne-of-Ashes.exe",
+                                           "loadedLauncher":  "C:\\Users\\runneradmin\\AppData\\Local\\Temp\\toa-recovery-73c4294f63254538b28a2fef0fb6e6a3\\Throne-of-Ashes.exe",
                                            "status":  "all-recovery-checks-passed",
-                                           "completedUtc":  "2026-10-25T07:03:18.5362855Z"
+                                           "completedUtc":  "2026-10-25T07:09:49.8476181Z"
                                        }
-                      }
+                      },
+    "packageFailure":  {
+                           "status":  "failed",
+                           "version":  "0.14.21",
+                           "error":  "System.Management.Automation.RuntimeException: Exported biome render timed out.",
+                           "detail":  "Exported biome render timed out.\r\nAt D:\\a\\Throne-of-Ashes-updates\\Throne-of-Ashes-updates\\.github\\scripts\\verifier-paquet.ps1:99 char:55\r\n+ ... xit(180000)){$biomes.Kill();throw \u0027Exported biome render timed out.\u0027}\r\n+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (Exported biome render timed out.:String) [], RuntimeException\r\n    + FullyQualifiedErrorId : Exported biome render timed out.\r\n \r\n",
+                           "renderLog":  null,
+                           "gameOutput":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\n\r\nSESSION_START: version=0.14.21-conversion pid=7516 audio=Dummy device=Default\r\nLAUNCHER_READY: pid=7516\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nCAMPAGNE: Bienvenue ÃƒÂ  Havrebrume. Rejoins la grotte pour entrer au donjon.\r\nGAMEPLAY_START: version=0.14.21-conversion pid=7516 hero=native-viking\r\nLAUNCHER_RELEASE: pid=7516 fallback=false\r\n"
+                       }
 }
