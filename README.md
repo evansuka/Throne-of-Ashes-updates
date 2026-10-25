@@ -2,7 +2,7 @@
 
 Ce dépôt public contient les téléchargements du jeu. Le code de développement est conservé dans un dépôt privé.
 
-La version **[0.14.19](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19)** corrige la transmission entre le lanceur et le jeu. Elle inclut les aperçus de personnages indépendants, la sélection d’un héros seul, une liste initiale vide et les optimisations d’accueil, de poses et de donjons. Détails dans [l’historique](CHANGELOG.md).
+La version **[0.14.20](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.20)** fiabilise la réparation, les versions de secours et la restauration manuelle après un échec de démarrage. Détails dans [l’historique](CHANGELOG.md).
 
 ## Installation
 
@@ -20,6 +20,6 @@ Les journaux `installation.log`, `launcher.log` et `game.log` servent au diagnos
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.19 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40113346850) : archives, intégrité, installation et raccourcis contrôlés. Le vrai jeu reste minimisé pendant dix-huit secondes après son signal prêt, puis le même processus devient visible et reste actif. Les cinq fichiers publics ont été retéléchargés et comparés par SHA-256 ; le flux et le dernier Setup correspondent à la 0.14.19. Une fenêtre du moteur peut apparaître pendant son initialisation graphique, avant le chargement du jeu.
+[Validation Windows 0.14.20 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40167551366) : archives, intégrité, installation, raccourcis et treize scénarios de récupération contrôlés. Le vrai jeu reste minimisé pendant dix-huit secondes après son signal prêt, puis le même processus devient visible et reste actif. Les cinq fichiers publics ont été retéléchargés et comparés par SHA-256 ; le flux et le dernier Setup correspondent à la 0.14.20. Une fenêtre du moteur peut apparaître pendant son initialisation graphique, avant le chargement du jeu.
 
 [Installation neuve complète validée](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40113587797) : Setup public, installation dans C:\Games\Throne of Ashes, raccourci réel, un seul PID de jeu et jeu toujours ouvert trente secondes après la fermeture du Setup, du démarreur et du lanceur.

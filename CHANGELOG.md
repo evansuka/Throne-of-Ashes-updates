@@ -1,5 +1,17 @@
 # Modifications des versions Windows
 
+## 0.14.20 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.20) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40167551366). Les cinq fichiers publics et les liens latest ont été retéléchargés et vérifiés.
+
+- Réparation des fichiers altérés et conservation d’une version de secours vérifiée.
+- Refus de démarrage gérés sans téléchargement identique répété ; verrouillages temporaires distingués.
+- Restauration manuelle de la version précédente après échec du jeu, sans redémarrage automatique.
+- Cache historique facultatif et phases réelles affichées par le démarreur.
+- Publication Windows obligatoire, numéros de version contrôlés et activation distinguée du nettoyage.
+
+Treize scénarios de récupération et cinquante contrôles d’interface, dont clic sur la restauration, sont inclus dans la validation Windows. Exécuter une fois le nouveau Setup pour mettre à jour le démarreur installé. Sauvegardes conservées. La cause du premier refus Windows du PC n’est pas identifiée par ces corrections.
+
 ## 0.14.19 — publiée le 24 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.19) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40113346850). Les cinq fichiers publics, leurs empreintes et les liens latest ont été vérifiés. [Installation neuve complète validée](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40113587797) : Setup public, installation dans C:\Games\Throne of Ashes, raccourci réel, un seul PID de jeu et jeu toujours ouvert trente secondes après la fermeture du Setup, du démarreur et du lanceur.
