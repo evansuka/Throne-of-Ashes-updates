@@ -1,14 +1,14 @@
 {
     "version":  "0.14.27",
-    "status":  "failed",
-    "published":  false,
-    "cleanupSucceeded":  false,
-    "sourceCommit":  "bb56be89e9fa5a2ecaa27e6ad2d6a51fb54640ea",
-    "completedUtc":  "2026-10-25T14:58:14.8546469Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40204388420",
+    "status":  "passed",
+    "published":  true,
+    "cleanupSucceeded":  true,
+    "sourceCommit":  "f624413cd85bc9628738de65028cae0d15c43b57",
+    "completedUtc":  "2026-10-25T15:08:15.1796155Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40205308747",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.27",
     "portableCheck":  {
-                          "status":  "failed",
+                          "status":  "passed",
                           "version":  "0.14.27",
                           "noInstaller":  true,
                           "checks":  [
@@ -33,20 +33,64 @@
                                          "Actual game prepared a self-update",
                                          "Self-update trial uses no player saves",
                                          "Home screen displays the installed game version",
-                                         "Home screen offers the direct update action"
+                                         "Home screen offers the direct update action",
+                                         "Replacement helper reports its outcome",
+                                         "Self-update completed: Updated to 999.0.0",
+                                         "Old game exits for the explicit update",
+                                         "Replacement game stays open without a restart loop",
+                                         "Previous game retained as rollback backup",
+                                         "Direct download is the Godot game itself"
                                      ],
                           "trial":  {
                                         "button":  "Mettre Ã  jour et redÃ©marrer",
-                                        "oldPid":  8572,
+                                        "oldPid":  6076,
                                         "realPlayerSaveAccessed":  false,
                                         "versionLabel":  "VERSION 0.14.27",
-                                        "work":  "C:/Users/runneradmin/AppData/Local/ThroneOfAshes/portable-updates/verification-8572-2816111"
+                                        "work":  "C:/Users/runneradmin/AppData/Local/ThroneOfAshes/portable-updates/verification-6076-2721939"
                                     },
-                          "error":  "System.Management.Automation.RuntimeException: Replacement helper reports its outcome",
-                          "trialOutput":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nAUDIO_FALLBACK: Windows MCI active=true parent=8572\r\nSESSION_START: version=0.14.27-conversion pid=8572 audio=Dummy device=Default\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nGAME_UPDATE: Version 999.0.0 disponible.\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/8572/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=8572\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/8572/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=8572\r\nPORTABLE_TRIAL: real game requests verified replacement from home; no player saves\r\nGAME_UPDATE: PrÃ©paration du redÃ©marrageâ€¦\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/8572/audio-fallback.log\r\nGAME_UPDATE: Remplacement indisponible. Le jeu reste ouvert ; aucun nouvel essai automatique.\r\n",
+                          "selfUpdate":  {
+                                             "installedVersion":  "VERSION 0.14.27",
+                                             "status":  "success",
+                                             "newPid":  6360,
+                                             "oldPid":  6076,
+                                             "keptAliveSeconds":  10
+                                         },
+                          "trialOutput":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nAUDIO_FALLBACK: Windows MCI active=true parent=6076\r\nSESSION_START: version=0.14.27-conversion pid=6076 audio=Dummy device=Default\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nGAME_UPDATE: Version 999.0.0 disponible.\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/6076/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=6076\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/6076/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=6076\r\nPORTABLE_TRIAL: real game requests verified replacement from home; no player saves\r\nGAME_UPDATE: PrÃ©paration du redÃ©marrageâ€¦\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/6076/audio-fallback.log\r\n",
                           "trialErrors":  "WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\n",
                           "helperDiagnostics":  {
-
+                                                    "helper.ready":  "ready",
+                                                    "update.log":  "2026-10-25T15:07:08.8319737Z PREPARING; reading replacement plan\r\n2026-10-25T15:07:11.7731666Z HASHING; verifying new and current executable\r\n2026-10-25T15:07:22.7201521Z VERIFIED; waiting for the running game to close\r\n2026-10-25T15:07:24.5085257Z ACTIVATED; starting the verified game\r\n2026-10-25T15:07:26.9553787Z READY; same replacement game is alive\r\n",
+                                                    "result.json":  "{\"state\":\"success\",\"message\":\"Updated to 999.0.0\"}"
                                                 }
-                      }
+                      },
+    "portableRecovery":  {
+                             "status":  "passed",
+                             "cases":  6,
+                             "checks":  [
+                                            "success: helper validates before handoff",
+                                            "Success helper exits cleanly",
+                                            "New verified binary activated",
+                                            "Previous binary retained",
+                                            "bad-hash: rejected before game closes",
+                                            "bad-hash: original process remains alive",
+                                            "bad-hash: failure reported",
+                                            "bad-hash: old binary preserved or restored",
+                                            "outside-path: rejected before game closes",
+                                            "outside-path: original process remains alive",
+                                            "outside-path: failure reported",
+                                            "outside-path: old binary preserved or restored",
+                                            "startup-failure: helper validates before handoff",
+                                            "startup-failure: failure reported",
+                                            "startup-failure: old binary preserved or restored",
+                                            "Failed new game starts the old game once",
+                                            "Rollback never loops",
+                                            "stage-changed: helper validates before handoff",
+                                            "stage-changed: failure reported",
+                                            "stage-changed: old binary preserved or restored",
+                                            "locked-target: helper validates before handoff",
+                                            "locked-target: failure reported",
+                                            "locked-target: old binary preserved or restored"
+                                        ],
+                             "noSecuritySettingsChanged":  true
+                         }
 }
