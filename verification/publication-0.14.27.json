@@ -1,0 +1,52 @@
+{
+    "version":  "0.14.27",
+    "status":  "failed",
+    "published":  false,
+    "cleanupSucceeded":  false,
+    "sourceCommit":  "bb56be89e9fa5a2ecaa27e6ad2d6a51fb54640ea",
+    "completedUtc":  "2026-10-25T14:58:14.8546469Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40204388420",
+    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.27",
+    "portableCheck":  {
+                          "status":  "failed",
+                          "version":  "0.14.27",
+                          "noInstaller":  true,
+                          "checks":  [
+                                         "Strict release version",
+                                         "Standalone manifest matches tag",
+                                         "Immutable update URL",
+                                         "No installer in distribution",
+                                         "Safe distribution filename",
+                                         "Checksum Throne-of-Ashes-0.14.27-update.zip",
+                                         "Safe distribution filename",
+                                         "Checksum update.json",
+                                         "Safe distribution filename",
+                                         "Checksum RELEASE.md",
+                                         "Archive matches manifest",
+                                         "Executable matches manifest",
+                                         "Native executable version matches release",
+                                         "Version-specific release notes",
+                                         "Exported game verification terminates cleanly",
+                                         "Six rendered floors, five guardians and ending rewards",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded Windows audio bridge remains available",
+                                         "Actual game prepared a self-update",
+                                         "Self-update trial uses no player saves",
+                                         "Home screen displays the installed game version",
+                                         "Home screen offers the direct update action"
+                                     ],
+                          "trial":  {
+                                        "button":  "Mettre Ã  jour et redÃ©marrer",
+                                        "oldPid":  8572,
+                                        "realPlayerSaveAccessed":  false,
+                                        "versionLabel":  "VERSION 0.14.27",
+                                        "work":  "C:/Users/runneradmin/AppData/Local/ThroneOfAshes/portable-updates/verification-8572-2816111"
+                                    },
+                          "error":  "System.Management.Automation.RuntimeException: Replacement helper reports its outcome",
+                          "trialOutput":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nAUDIO_FALLBACK: Windows MCI active=true parent=8572\r\nSESSION_START: version=0.14.27-conversion pid=8572 audio=Dummy device=Default\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nGAME_UPDATE: Version 999.0.0 disponible.\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/8572/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=8572\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/8572/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=8572\r\nPORTABLE_TRIAL: real game requests verified replacement from home; no player saves\r\nGAME_UPDATE: PrÃ©paration du redÃ©marrageâ€¦\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/8572/audio-fallback.log\r\nGAME_UPDATE: Remplacement indisponible. Le jeu reste ouvert ; aucun nouvel essai automatique.\r\n",
+                          "trialErrors":  "WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\n",
+                          "helperDiagnostics":  {
+
+                                                }
+                      }
+}
