@@ -98,6 +98,7 @@ if(-not $SkipGameLaunch){
   if(-not $biomes.WaitForExit(180000)){$biomes.Kill();$biomes.WaitForExit();$renderLog=$biomeOut.Result+"`n"+$biomeErr.Result;throw 'Exported biome render timed out.'}
   $biomes.WaitForExit();$renderLog=$biomeOut.Result+"`n"+$biomeErr.Result;Write-Output $renderLog
   if($biomes.ExitCode -ne 0 -or $renderLog -notmatch 'EXPORTED_BIOMES_OK' -or $renderLog -match 'SCRIPT ERROR|ERROR:|Parse Error'){throw 'Exported dungeon biome renderer failed.'}
+  if([Version]$version -ge [Version]'0.14.22' -and $renderLog -notmatch 'EXPORTED_CHRONICLES_OK'){throw 'Exported chronicles, guardians and ending rewards failed.'}
   $renderReport=[ordered]@{status='passed';version=$version;depths=@(1,21,41,61,81,100);realWindowsRenderer=$true;log=$renderLog}
   [IO.File]::WriteAllText((Join-Path $pwd 'verification/dungeon-render.json'),($renderReport|ConvertTo-Json -Depth 4),[Text.UTF8Encoding]::new($false))
  }
