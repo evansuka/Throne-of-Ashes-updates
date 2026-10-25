@@ -3,9 +3,9 @@
     "status":  "failed",
     "published":  false,
     "cleanupSucceeded":  false,
-    "sourceCommit":  "777ab705d14ec0fa192454de91b368515ccde6d7",
-    "completedUtc":  "2026-10-25T11:57:56.7803542Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40190981123",
+    "sourceCommit":  "051b4cd398c2eb489c03ee9871235dd805f71e68",
+    "completedUtc":  "2026-10-25T12:01:01.7137621Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40191149406",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.24",
     "portableCheck":  {
                           "status":  "failed",
@@ -32,8 +32,28 @@
                                          "Embedded Windows audio bridge remains available",
                                          "Actual game prepared a self-update",
                                          "Self-update trial uses no player saves",
-                                         "Home screen displays the installed game version"
+                                         "Home screen displays the installed game version",
+                                         "Home screen offers the direct update action",
+                                         "Replacement helper reports its outcome",
+                                         "Self-update completed: Updated to 999.0.0",
+                                         "Old game exits for the explicit update",
+                                         "Replacement game stays open without a restart loop",
+                                         "Previous game retained as rollback backup"
                                      ],
-                          "error":  "System.Management.Automation.RuntimeException: Home screen offers the direct update action"
+                          "trial":  {
+                                        "button":  "Mettre Ã  jour et redÃ©marrer",
+                                        "oldPid":  5392,
+                                        "realPlayerSaveAccessed":  false,
+                                        "versionLabel":  "VERSION 0.14.24",
+                                        "work":  "C:/Users/runneradmin/AppData/Local/ThroneOfAshes/portable-updates/verification-5392-2339109"
+                                    },
+                          "selfUpdate":  {
+                                             "installedVersion":  "VERSION 0.14.24",
+                                             "status":  "success",
+                                             "newPid":  6956,
+                                             "oldPid":  5392,
+                                             "keptAliveSeconds":  10
+                                         },
+                          "error":  "System.Management.Automation.RuntimeException: startup-failure: old binary preserved or restored"
                       }
 }
