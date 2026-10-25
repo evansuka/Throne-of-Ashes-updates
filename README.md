@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.31](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.31)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.32](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.32)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.31 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40219089328) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
+[Validation Windows 0.14.32 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40220461046) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -42,4 +42,6 @@ La configuration du clavier affiche chaque action sur sa propre ligne, avec sa t
 
 Le prologue utilise les nouvelles voix P1 à P4, avec des scènes synchronisées sur les enregistrements. Pour le revoir : **Accueil → Échap → Cinématique**.
 
-En 0.14.31 : sortie devant la grotte, pieds des statues dégagés, jambes du Viking raccourcies, taille de fenêtre conservée, nouveaux pas et contournement de la forge par Éléane. Le remplacement refuse aussi les tentatives concurrentes. Bruits de pas : Kenney Starter Kit FPS, MIT (2025), licence incluse dans le jeu.
+En 0.14.32 : sortie devant la grotte, pieds des statues dégagés, proportions du Viking ajustées à hauteur d’origine, taille de fenêtre conservée, nouveaux pas et contournement de la forge par Éléane. Le remplacement refuse aussi les tentatives concurrentes. Bruits de pas : Kenney Starter Kit FPS, MIT (2025), licence incluse dans le jeu.
+
+La 0.14.32 rétablit la hauteur d’origine du Viking et ajuste le raccord du bassin au pantalon long ; le corps ne subit aucune réduction ni aucun étirement.

@@ -4,6 +4,15 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.32 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.32) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40220461046). Trois assets publics et latest vérifiés.
+
+- Hauteur d’origine du Viking rétablie : retrait de l’abaissement du haut du corps ajouté en 0.14.31.
+- Raccord du bassin et du pantalon long ajusté pour rééquilibrer les proportions, sans réduire ni étirer le corps, la tête, les mains ou les armes.
+
+64 contrôles de hauteur dans huit directions, avec et sans équipement ; 38 888 équipement, 44 403 marche et 8 192 raccords réussis. Captures natives inspectées. Jeu exporté et remplacement réel validés sur Windows.
+
 ## 0.14.31 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.31) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40219089328). Trois assets publics et latest vérifiés.
