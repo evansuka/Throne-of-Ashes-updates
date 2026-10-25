@@ -41,7 +41,8 @@ try{
  $info=@{version='999.0.0';url='https://github.com/evansuka/Throne-of-Ashes-updates/releases/download/v999.0.0/Throne-of-Ashes-999.0.0-update.zip';sha256=$manifest.sha256;exeSha256=$manifest.exeSha256}
  [IO.File]::WriteAllText((Join-Path $trial 'input.json'),($info|ConvertTo-Json),[Text.UTF8Encoding]::new($false))
  $start=New-Object Diagnostics.ProcessStartInfo;$start.FileName=$game;$start.WorkingDirectory=$fixture;$start.UseShellExecute=$false;$start.Arguments='--audio-driver Dummy -- --verify-portable-update="'+$trial+'"'
- $old=[Diagnostics.Process]::Start($start);$clock=[Diagnostics.Stopwatch]::StartNew()
+ $start.RedirectStandardOutput=$true;$start.RedirectStandardError=$true
+ $old=[Diagnostics.Process]::Start($start);$trialStdout=$old.StandardOutput.ReadToEndAsync();$trialStderr=$old.StandardError.ReadToEndAsync();$clock=[Diagnostics.Stopwatch]::StartNew()
  while(-not (Test-Path (Join-Path $trial 'trial.json')) -and -not $old.HasExited -and $clock.Elapsed.TotalSeconds -lt 90){Start-Sleep -Milliseconds 200}
  Check (Test-Path (Join-Path $trial 'trial.json')) 'Actual game prepared a self-update'
  $trialInfo=Get-Content (Join-Path $trial 'trial.json') -Raw -Encoding UTF8|ConvertFrom-Json
@@ -74,6 +75,10 @@ try{
  Write-Output 'PORTABLE_WINDOWS_OK: direct game, home version, real self-replacement and rollback tests; no installer.'
 }catch{$report.status='failed';$report.error=$_.Exception.ToString();throw}
 finally{
+ if($old -and -not $old.HasExited){$old.Kill();$old.WaitForExit()}
+ if($trialStdout -and $trialStdout.Wait(2000)){$report.trialOutput=$trialStdout.Result}
+ if($trialStderr -and $trialStderr.Wait(2000)){$report.trialErrors=$trialStderr.Result}
+ if($trialInfo){$report.helperDiagnostics=@{};foreach($name in @('update.log','result.json','helper.ready')){$f=Join-Path $trialInfo.work $name;if(Test-Path $f){$report.helperDiagnostics[$name]=[IO.File]::ReadAllText($f)}}}
  [IO.File]::WriteAllText((Join-Path $pwd 'verification/portable-validation.json'),($report|ConvertTo-Json -Depth 8),[Text.UTF8Encoding]::new($false))
  if($new -and -not $new.HasExited){$new.Kill()}
  if($old -and -not $old.HasExited){$old.Kill()}
