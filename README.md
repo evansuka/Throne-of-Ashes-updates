@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.24](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.24)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.25](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.25)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -10,7 +10,7 @@ Utiliser ce fichier à la place de l’ancien Setup ou démarreur. Un raccourci 
 
 ## Mises à jour dans le jeu
 
-L’écran d’accueil affiche la version installée et vérifie la dernière version disponible. Si nécessaire, cliquer sur **Mettre à jour et redémarrer** : le jeu télécharge et vérifie les fichiers, conserve une copie de secours, puis redémarre sur la nouvelle version. Une partie en cours n’est pas interrompue.
+L’écran d’accueil affiche en bas à droite, sous la création de personnage, la version installée et vérifie la dernière version disponible. Depuis l’accueil, ouvrir **Échap → Options** pour vérifier les mises à jour ou choisir **Mettre à jour et redémarrer** : le jeu télécharge et vérifie les fichiers, conserve une copie de secours, puis redémarre sur la nouvelle version. Une partie en cours n’est pas interrompue.
 
 En cas d’échec du nouveau démarrage, la version précédente est restaurée avec un seul lancement de secours. Hors ligne, le jeu reste utilisable. La copie `.previous` à côté de l’EXE est le secours du dernier remplacement.
 
@@ -22,6 +22,6 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.24 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40191566642) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
+[Validation Windows 0.14.25 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40193054490) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).

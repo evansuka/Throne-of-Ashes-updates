@@ -4,6 +4,14 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.25 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.25) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40193054490).
+
+- Version et état des mises à jour déplacés en bas à droite, sous les actions de création de personnage.
+- Vérification et mise à jour accessibles dans Échap → Options, uniquement depuis l’accueil. La vérification automatique à l’accueil est conservée.
+- Import de personnages web retiré de l’interface. Personnages et sauvegardes existants conservés.
+
 ## 0.14.24 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.24) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40191566642).
