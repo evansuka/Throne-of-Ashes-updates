@@ -1,5 +1,9 @@
 # Modifications des versions Windows
 
+## Site web — 25 octobre 2026
+
+- Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
+
 ## 0.14.20 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.20) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40167551366). Les cinq fichiers publics et les liens latest ont été retéléchargés et vérifiés. [Installation réelle et second lancement validés](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40167882039), 28 contrôles : raccourci réel, jeu maintenu ouvert et réouverture sans téléchargement ni installation.
