@@ -27,6 +27,7 @@ jobs:
         run: |
           $tag=$env:RELEASE_TAG -replace '^publication/',''
           if($tag -notmatch '^v\d+\.\d+\.\d+$'){throw 'Version invalide.'}
+          "PORTABLE=$([Version]$tag.Substring(1) -ge [Version]'0.14.24')" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
           "RELEASE_TAG=$tag" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
       - uses: actions/checkout@v4
         with:
@@ -40,12 +41,17 @@ jobs:
       - name: Verifier les paquets et le lanceur sur Windows
         shell: powershell
         run: |
-          try{.github/scripts/verifier-paquet.ps1 -Directory .publication -Tag $env:RELEASE_TAG}
+          try{
+            if($env:PORTABLE -eq 'True'){.github/scripts/verifier-autonome.ps1 -Directory .publication -Tag $env:RELEASE_TAG}
+            else{.github/scripts/verifier-paquet.ps1 -Directory .publication -Tag $env:RELEASE_TAG}
+          }
           catch{Write-Output "::error::$($_.Exception.Message)";throw}
       - name: Verifier l installation locale et les mises a jour du lanceur
+        if: env.PORTABLE != 'True'
         shell: powershell
         run: .github/scripts/verifier-installation.ps1 -Setup "$pwd/.publication/Throne-of-Ashes-Setup.exe"
       - name: Verifier la vraie fenetre du jeu avant publication
+        if: env.PORTABLE != 'True'
         shell: powershell
         run: .github/scripts/verifier-fenetre-jeu.ps1 -Directory .publication -Tag $env:RELEASE_TAG
       - name: Creer la release et verifier les fichiers transferes
@@ -55,6 +61,7 @@ jobs:
           $version=$env:RELEASE_TAG.Substring(1)
           $short=($version -split '\.')[0..1] -join '.'
           $names=@("Throne-of-Ashes-$version-update.zip", "Throne-of-Ashes-Godot-$short-Windows.zip", 'Throne-of-Ashes.exe', 'Throne-of-Ashes-Setup.exe', 'update.json')
+          if($env:PORTABLE -eq 'True'){$names=@("Throne-of-Ashes-$version-update.zip",'Throne-of-Ashes.exe','update.json')}
           $assets=@($names | ForEach-Object { Join-Path .publication $_ })
           & gh release create $env:RELEASE_TAG @assets --repo $env:GITHUB_REPOSITORY --draft --title "Throne of Ashes $version" --notes-file .publication/RELEASE.md
           if($LASTEXITCODE -ne 0){throw 'Creation de la release refusee; aucune activation.'}
@@ -90,6 +97,8 @@ jobs:
           $ok='${{ job.status }}' -eq 'success'
           $published=$env:RELEASE_ACTIVATED -eq 'true'
           $report=[ordered]@{version=$version;status=$(if($ok){'passed'}else{'failed'});published=$published;cleanupSucceeded=($env:RELEASE_CLEANUP_OK -eq 'True');sourceCommit=$env:GITHUB_SHA;completedUtc=[DateTime]::UtcNow.ToString('o');workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";releaseUrl="https://github.com/$env:GITHUB_REPOSITORY/releases/tag/$env:RELEASE_TAG"}
+          if(Test-Path verification/portable-validation.json){$report['portableCheck']=Get-Content verification/portable-validation.json -Raw | ConvertFrom-Json}
+          if(Test-Path verification/portable-recovery.json){$report['portableRecovery']=Get-Content verification/portable-recovery.json -Raw | ConvertFrom-Json}
           if(Test-Path verification/game-window.json){$report['windowCheck']=Get-Content verification/game-window.json -Raw | ConvertFrom-Json}
           if(Test-Path verification/launcher-recovery.json){$report['recoveryCheck']=Get-Content verification/launcher-recovery.json -Raw | ConvertFrom-Json}
           if(Test-Path verification/dungeon-render.json){$report['dungeonRenderCheck']=Get-Content verification/dungeon-render.json -Raw | ConvertFrom-Json}
