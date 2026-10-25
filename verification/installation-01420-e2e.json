@@ -1,8 +1,149 @@
 {
     "version":  "0.14.20",
-    "status":  "running",
+    "status":  "passed",
     "sourceCommit":  "c50c36ac8b91f2c42f97f52475764c00bca032c8",
-    "startedUtc":  "2026-10-25T06:05:50.7560688Z",
     "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40167882039",
-    "published":  false
+    "startedUtc":  "2026-10-25T06:05:54.0373216Z",
+    "published":  false,
+    "checks":  [
+                   "Fresh app directory",
+                   "Fresh user data directory",
+                   "Fresh desktop shortcut",
+                   "Fresh per-user registration",
+                   "Exact published Setup SHA256",
+                   "Published Setup process created through the shell",
+                   "Installed bootstrap exists",
+                   "Installed bootstrap exact source bytes",
+                   "Original Setup exits successfully",
+                   "Actual current-user app registration",
+                   "Actual desktop shortcut targets local bootstrap",
+                   "Real public game is visible after launcher startup",
+                   "Only one game PID observed throughout startup",
+                   "Exactly one real game process",
+                   "Visible game is the actual installed 0.14.20 executable",
+                   "Real game remains open thirty seconds after launcher startup",
+                   "Setup, bootstrap and launcher have all exited while game stays open",
+                   "Published launcher completes startup",
+                   "No script or parse error",
+                   "No unexpected engine runtime error (known WASAPI initialization failure on audio-less CI recorded separately)",
+                   "First game accepts normal window close",
+                   "First game closes before manual second launch",
+                   "Second manual desktop launch presents the installed game",
+                   "Second launch keeps current local and remote version",
+                   "Second launch performs no game download or installation",
+                   "Second manual launch creates exactly one new game PID",
+                   "Second launch preserves the installed bootstrap bytes",
+                   "Second game remains open after launcher handoff"
+               ],
+    "observedProcesses":  [
+                              {
+                                  "pid":  2092,
+                                  "name":  "Throne-of-Ashes-Setup",
+                                  "path":  "D:\\a\\_temp\\toa-real-install-4c7c810a2c5b467f9198ccde4459977e\\Throne-of-Ashes-Setup.exe"
+                              },
+                              {
+                                  "pid":  6724,
+                                  "name":  "Throne-of-Ashes-Start",
+                                  "path":  "C:\\Games\\Throne of Ashes\\Throne-of-Ashes-Start.exe"
+                              },
+                              {
+                                  "pid":  4092,
+                                  "name":  "Throne-of-Ashes",
+                                  "path":  "C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\launchers\\0.14.20\\Throne-of-Ashes.exe"
+                              },
+                              {
+                                  "pid":  5176,
+                                  "name":  "Throne-of-Ashes-Game",
+                                  "path":  "C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\versions\\0.14.20\\Throne-of-Ashes-Game.exe"
+                              }
+                          ],
+    "platform":  "Microsoft Windows NT 10.0.26100.0",
+    "runnerElevated":  true,
+    "initializationWindowObserved":  true,
+    "gameWindow":  {
+                       "pid":  5176,
+                       "title":  "Throne of Ashes — Campagne native",
+                       "visible":  true,
+                       "minimized":  false
+                   },
+    "expectedCiAudioErrors":  [
+                                  "ERROR: Condition \"hr != ((HRESULT)0x00000000)\" is true. Returning: ERR_CANT_OPEN\n   at: audio_device_init (drivers/wasapi/audio_driver_wasapi.cpp:275)\nERROR: WASAPI: init_output_device error.\n   at: init (drivers/wasapi/audio_driver_wasapi.cpp:600)",
+                                  "ERROR: WASAPI: init_output_device error.\n   at: init (drivers/wasapi/audio_driver_wasapi.cpp:600)\nWARNING: All audio drivers failed, falling back to the dummy driver.\n   at: initialize (servers/audio/audio_server.cpp:258)"
+                              ],
+    "unexpectedRuntimeErrors":  [
+
+                                ],
+    "secondLaunch":  {
+                         "pid":  5560,
+                         "noDownload":  true,
+                         "noInstall":  true,
+                         "log":  "2026-10-25T06:06:38.5330267Z Lanceur 0.14.20 ; début\r\n2026-10-25T06:06:38.5334210Z Vérification de la version installée…\r\n2026-10-25T06:06:38.8226479Z Version disponible localement : 0.14.20\r\n2026-10-25T06:06:38.8226479Z Recherche de mises à jour…\r\n2026-10-25T06:06:39.0550369Z Version distante : 0.14.20\r\n2026-10-25T06:06:39.0550369Z Démarrage du jeu… Cela peut prendre un moment.\r\n2026-10-25T06:06:39.0605156Z Création du processus du jeu 0.14.20…\r\n2026-10-25T06:06:39.0645428Z Jeu créé : PID 5560 ; création 3 ms. Contrôle du démarrage…\r\n2026-10-25T06:06:41.5828989Z Jeu prêt ; transmission de la fenêtre sans relance…\r\n2026-10-25T06:06:41.5839022Z Jeu lancé : 0.14.20\r\n"
+                     },
+    "completedUtc":  "2026-10-25T06:06:51.3269500Z",
+    "logs":  {
+                 "installation.log":  [
+                                          "2026-10-25T06:05:55.4396201Z PHASE : Installation pour votre compte dans C:\\Games\\Throne of Ashes",
+                                          "2026-10-25T06:05:55.5291372Z PHASE : Enregistrement dans les applications de votre compte",
+                                          "2026-10-25T06:05:55.6860884Z PHASE : Préparation du dossier utilisateur : C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes",
+                                          "2026-10-25T06:05:55.6881134Z PHASE : Préparation du lanceur versionné",
+                                          "2026-10-25T06:05:55.7020190Z PHASE : Vérification des mises à jour du lanceur",
+                                          "2026-10-25T06:05:55.9609416Z Lanceur vérifié : 0.14.20",
+                                          "2026-10-25T06:05:55.9609416Z PHASE : Exécution du lanceur : C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\launchers\\0.14.20\\Throne-of-Ashes.exe",
+                                          "2026-10-25T06:05:55.9747793Z Lanceur installé démarré : 0.14.20 PID=4092",
+                                          "2026-10-25T06:06:38.1510137Z PHASE : Préparation du dossier utilisateur : C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes",
+                                          "2026-10-25T06:06:38.1530353Z PHASE : Préparation du lanceur versionné",
+                                          "2026-10-25T06:06:38.1596004Z PHASE : Vérification des mises à jour du lanceur",
+                                          "2026-10-25T06:06:38.3807920Z Lanceur vérifié : 0.14.20",
+                                          "2026-10-25T06:06:38.3820912Z PHASE : Exécution du lanceur : C:\\Users\\runneradmin\\AppData\\Local\\ThroneOfAshes\\launchers\\0.14.20\\Throne-of-Ashes.exe",
+                                          "2026-10-25T06:06:38.3896358Z Lanceur installé démarré : 0.14.20 PID=2468",
+                                          ""
+                                      ],
+                 "launcher.log":  [
+                                      "2026-10-25T06:05:56.1572326Z Lanceur 0.14.20 ; début",
+                                      "2026-10-25T06:05:56.1592583Z Vérification de la version installée…",
+                                      "2026-10-25T06:05:56.1660893Z Version disponible localement : ",
+                                      "2026-10-25T06:05:56.1660893Z Recherche de mises à jour…",
+                                      "2026-10-25T06:05:56.4036835Z Version distante : 0.14.20",
+                                      "2026-10-25T06:05:56.4036835Z Téléchargement de la version 0.14.20…",
+                                      "2026-10-25T06:05:57.4217522Z Vérification et installation…",
+                                      "2026-10-25T06:05:57.4712885Z Vérification de l’archive téléchargée…",
+                                      "2026-10-25T06:05:57.6020346Z Extraction du jeu…",
+                                      "2026-10-25T06:05:59.2384240Z Vérification du jeu extrait…",
+                                      "2026-10-25T06:05:59.6795205Z Installation du jeu vérifié…",
+                                      "2026-10-25T06:05:59.7896830Z Activation de la version 0.14.20…",
+                                      "2026-10-25T06:05:59.7916974Z Installation vérifiée et activée : 0.14.20",
+                                      "2026-10-25T06:05:59.7994917Z Démarrage du jeu… Cela peut prendre un moment.",
+                                      "2026-10-25T06:05:59.8035254Z Création du processus du jeu 0.14.20…",
+                                      "2026-10-25T06:05:59.8153879Z Jeu créé : PID 5176 ; création 11 ms. Contrôle du démarrage…",
+                                      "2026-10-25T06:06:05.0521348Z Jeu prêt ; transmission de la fenêtre sans relance…",
+                                      "2026-10-25T06:06:05.0531491Z Jeu lancé : 0.14.20",
+                                      "2026-10-25T06:06:38.5330267Z Lanceur 0.14.20 ; début",
+                                      "2026-10-25T06:06:38.5334210Z Vérification de la version installée…",
+                                      "2026-10-25T06:06:38.8226479Z Version disponible localement : 0.14.20",
+                                      "2026-10-25T06:06:38.8226479Z Recherche de mises à jour…",
+                                      "2026-10-25T06:06:39.0550369Z Version distante : 0.14.20",
+                                      "2026-10-25T06:06:39.0550369Z Démarrage du jeu… Cela peut prendre un moment.",
+                                      "2026-10-25T06:06:39.0605156Z Création du processus du jeu 0.14.20…",
+                                      "2026-10-25T06:06:39.0645428Z Jeu créé : PID 5560 ; création 3 ms. Contrôle du démarrage…",
+                                      "2026-10-25T06:06:41.5828989Z Jeu prêt ; transmission de la fenêtre sans relance…",
+                                      "2026-10-25T06:06:41.5839022Z Jeu lancé : 0.14.20",
+                                      ""
+                                  ],
+                 "game.log":  [
+                                  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+                                  "WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.",
+                                  "   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)",
+                                  "OpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)",
+                                  "ERROR: Condition \"hr != ((HRESULT)0x00000000)\" is true. Returning: ERR_CANT_OPEN",
+                                  "   at: audio_device_init (drivers/wasapi/audio_driver_wasapi.cpp:275)",
+                                  "ERROR: WASAPI: init_output_device error.",
+                                  "   at: init (drivers/wasapi/audio_driver_wasapi.cpp:600)",
+                                  "WARNING: All audio drivers failed, falling back to the dummy driver.",
+                                  "   at: initialize (servers/audio/audio_server.cpp:258)",
+                                  ""
+                              ]
+             },
+    "events":  [
+
+               ]
 }
