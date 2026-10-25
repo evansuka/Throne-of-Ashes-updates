@@ -90,6 +90,17 @@ if(-not $SkipGameLaunch){
  Write-Output $output
  if($output -notmatch 'LAUNCHER_RELEASE:.*fallback=false'){throw 'Le jeu ne termine pas la transmission sans relance.'}
  if($output -notmatch 'VILLAGE_READY' -or $output -match 'SCRIPT ERROR|ERROR:|Parse Error'){throw 'Le jeu Windows ne demarre pas proprement.'}
+ if([Version]$version -ge [Version]'0.14.21'){
+  $probe=(Resolve-Path (Join-Path $PSScriptRoot 'VerifierDungeonBiomes.gd')).Path
+  $start.Arguments='--audio-driver Dummy --script "'+$probe+'"'
+  $biomes=[Diagnostics.Process]::Start($start)
+  $biomeOut=$biomes.StandardOutput.ReadToEndAsync();$biomeErr=$biomes.StandardError.ReadToEndAsync()
+  if(-not $biomes.WaitForExit(180000)){$biomes.Kill();throw 'Exported biome render timed out.'}
+  $biomes.WaitForExit();$renderLog=$biomeOut.Result+"`n"+$biomeErr.Result;Write-Output $renderLog
+  if($biomes.ExitCode -ne 0 -or $renderLog -notmatch 'EXPORTED_BIOMES_OK' -or $renderLog -match 'SCRIPT ERROR|ERROR:|Parse Error'){throw 'Exported dungeon biome renderer failed.'}
+  $renderReport=[ordered]@{status='passed';version=$version;depths=@(1,21,41,61,81,100);realWindowsRenderer=$true;log=$renderLog}
+  [IO.File]::WriteAllText((Join-Path $pwd 'verification/dungeon-render.json'),($renderReport|ConvertTo-Json -Depth 4),[Text.UTF8Encoding]::new($false))
+ }
  $start.Arguments='--headless -- --verify-audio-bridge'
  $audioProcess=[Diagnostics.Process]::Start($start)
  $audioOut=$audioProcess.StandardOutput.ReadToEndAsync();$audioErr=$audioProcess.StandardError.ReadToEndAsync()

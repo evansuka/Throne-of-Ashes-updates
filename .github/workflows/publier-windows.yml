@@ -92,6 +92,7 @@ jobs:
           $report=[ordered]@{version=$version;status=$(if($ok){'passed'}else{'failed'});published=$published;cleanupSucceeded=($env:RELEASE_CLEANUP_OK -eq 'True');sourceCommit=$env:GITHUB_SHA;completedUtc=[DateTime]::UtcNow.ToString('o');workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";releaseUrl="https://github.com/$env:GITHUB_REPOSITORY/releases/tag/$env:RELEASE_TAG"}
           if(Test-Path verification/game-window.json){$report['windowCheck']=Get-Content verification/game-window.json -Raw | ConvertFrom-Json}
           if(Test-Path verification/launcher-recovery.json){$report['recoveryCheck']=Get-Content verification/launcher-recovery.json -Raw | ConvertFrom-Json}
+          if(Test-Path verification/dungeon-render.json){$report['dungeonRenderCheck']=Get-Content verification/dungeon-render.json -Raw | ConvertFrom-Json}
           $json=$report|ConvertTo-Json -Depth 12
           $path="verification/publication-$version.json"
           git config user.name 'github-actions[bot]'
