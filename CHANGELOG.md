@@ -4,6 +4,19 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.22 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.22) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40177484590).
+
+- Cinq royaumes inspirés des Chroniques : vingt découvertes, stèles et journal relisible.
+- Tharok : liens vitaux à rompre ; Velyra : glace contaminée devenant poison ; Ilyss : échos temporels annoncés ; Mordrath : fournaises à interrompre ; Azhraël : Dernier Gardien devant les cinq chaînes anciennes brisées.
+- Après la victoire, Vaelthar et Elyndra révèlent la vérité du trône. Trois fins avec confirmation et épilogues conservés par héros.
+- Créer de nouveaux sceaux offre le Sceau du Dernier Serment ; prendre le trône, le Cœur du Nouveau Souverain ; briser le cycle, l’Éclat du Cycle Brisé.
+- Une récompense par héros, coffre partagé si le sac est plein, un seul nouveau charme de destinée actif. L’ancienne Corne reste conservée avec ses bonus, sans nouvelle attribution.
+- Réactions à Havrebrume et apparence du trône selon la fin. Compétences et sauvegardes existantes préservées.
+
+Fermer le jeu puis rouvrir le lanceur pour recevoir la mise à jour.
+
 ## 0.14.21 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.21) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40172431413). Six étages rendus dans le vrai EXE Windows ; cinq fichiers publics et liens latest vérifiés.

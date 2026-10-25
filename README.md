@@ -2,7 +2,7 @@
 
 Ce dépôt public contient les téléchargements du jeu. Le code de développement est conservé dans un dépôt privé.
 
-La version **[0.14.21](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.21)** renouvelle les donjons en cinq paliers : roche, glace, premières braises, cavernes infernales puis enfer. Les attaques glacées et le trône dans la salle du boss final sont inclus. Détails dans [l’historique](CHANGELOG.md).
+La version **[0.14.22](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.22)** adapte les cinq régions aux Chroniques du Trône de Cendres : stèles, journal, mécaniques des gardiens et trois fins offrant chacune un charme unique. L’ancienne Corne est conservée chez ses propriétaires, mais n’est plus distribuée. Détails dans [l’historique](CHANGELOG.md).
 
 ## Installation
 
@@ -20,6 +20,6 @@ Les journaux `installation.log`, `launcher.log` et `game.log` servent au diagnos
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.21 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40172431413) : six biomes rendus dans le vrai jeu exporté, intégrité des paquets, installation isolée, lanceur, récupération et transmission de la fenêtre sans redémarrage. Les cinq fichiers publics et les liens latest ont été retéléchargés et vérifiés. Une fenêtre du moteur peut apparaître pendant son initialisation graphique, avant le chargement du jeu.
+[Validation Windows 0.14.22 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40177484590) : six étages rendus dans le vrai jeu exporté, cinq gardiens et trois récompenses de fin vérifiés ; intégrité des paquets, installation isolée, lanceur, récupération et transmission de la fenêtre sans redémarrage. Les cinq fichiers publics et les liens latest ont été retéléchargés et vérifiés. Une fenêtre du moteur peut apparaître pendant son initialisation graphique, avant le chargement du jeu.
 
 [Installation neuve complète validée](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40113587797) : Setup public, installation dans C:\Games\Throne of Ashes, raccourci réel, un seul PID de jeu et jeu toujours ouvert trente secondes après la fermeture du Setup, du démarreur et du lanceur.
