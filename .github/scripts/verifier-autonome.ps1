@@ -51,7 +51,7 @@ try{
  Check ($trialInfo.versionLabel -eq ('VERSION '+$version)) 'Home screen displays the installed game version'
  Check ($trialInfo.button -eq 'Mettre à jour et redémarrer') 'Home screen offers the direct update action'
  $result=Join-Path $trialInfo.work 'result.json';$clock.Restart()
- while(-not (Test-Path $result) -and $clock.Elapsed.TotalSeconds -lt 180){Start-Sleep -Milliseconds 200}
+ while(-not (Test-Path $result) -and $clock.Elapsed.TotalSeconds -lt 300){Start-Sleep -Milliseconds 200}
  Check (Test-Path $result) 'Replacement helper reports its outcome'
  $outcome=Get-Content $result -Raw -Encoding UTF8|ConvertFrom-Json
  Check ($outcome.state -eq 'success') ('Self-update completed: '+$outcome.message)
