@@ -1,0 +1,39 @@
+{
+    "version":  "0.14.24",
+    "status":  "failed",
+    "published":  false,
+    "cleanupSucceeded":  false,
+    "sourceCommit":  "777ab705d14ec0fa192454de91b368515ccde6d7",
+    "completedUtc":  "2026-10-25T11:57:56.7803542Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40190981123",
+    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.24",
+    "portableCheck":  {
+                          "status":  "failed",
+                          "version":  "0.14.24",
+                          "noInstaller":  true,
+                          "checks":  [
+                                         "Strict release version",
+                                         "Standalone manifest matches tag",
+                                         "Immutable update URL",
+                                         "No installer in distribution",
+                                         "Safe distribution filename",
+                                         "Checksum Throne-of-Ashes-0.14.24-update.zip",
+                                         "Safe distribution filename",
+                                         "Checksum update.json",
+                                         "Safe distribution filename",
+                                         "Checksum RELEASE.md",
+                                         "Archive matches manifest",
+                                         "Executable matches manifest",
+                                         "Native executable version matches release",
+                                         "Version-specific release notes",
+                                         "Exported game verification terminates cleanly",
+                                         "Six rendered floors, five guardians and ending rewards",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded Windows audio bridge remains available",
+                                         "Actual game prepared a self-update",
+                                         "Self-update trial uses no player saves",
+                                         "Home screen displays the installed game version"
+                                     ],
+                          "error":  "System.Management.Automation.RuntimeException: Home screen offers the direct update action"
+                      }
+}
