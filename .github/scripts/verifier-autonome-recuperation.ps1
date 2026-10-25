@@ -46,6 +46,14 @@ try{
    Check (Test-Path $ready) ($case+': helper validates before handoff')
    if($case -eq 'stage-changed'){[IO.File]::AppendAllText($next,'changed')}
    if($case -eq 'locked-target'){$lock=[IO.File]::Open($target,[IO.FileMode]::Open,[IO.FileAccess]::Read,[IO.FileShare]::Read)}
+   if($case -eq 'success' -and ([IO.File]::ReadAllText($Helper).Contains('$updateLock'))){
+    $duplicateDir=Join-Path $dir 'duplicate';New-Item -ItemType Directory $duplicateDir|Out-Null
+    $duplicatePlan=Join-Path $duplicateDir 'plan.json';[IO.File]::WriteAllText($duplicatePlan,($plan|ConvertTo-Json),[Text.UTF8Encoding]::new($false))
+    $duplicate=StartExe 'powershell.exe' ('-NoProfile -NonInteractive -ExecutionPolicy Bypass -File "'+$Helper+'" -Plan "'+$duplicatePlan+'"')
+    Check ($duplicate.WaitForExit(20000) -and $duplicate.ExitCode -eq 3) 'Concurrent helper rejected by exclusive target lock'
+    Check (-not $parent.HasExited -and (Hash $target) -eq $oldHash) 'Concurrent attempt neither kills nor replaces current game'
+    Check (-not (Test-Path (Join-Path $duplicateDir 'fallback.txt'))) 'Concurrent helper never starts a fallback game'
+   }
    $parent.Kill();$parent.WaitForExit()
   }
   try{
