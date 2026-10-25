@@ -4,6 +4,20 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.26 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.26) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40196167179).
+
+- Version et état des mises à jour centrés dans la zone de droite de l’accueil.
+- Molette : aucun zoom du monde lorsqu’une fenêtre de jeu est ouverte.
+- Collisions entre héros, personnages du village, Blue et ennemis vivants ; clic sur toute la silhouette pour sélectionner/interagir.
+- Commandes solo dans le chat Système : /get pour chaque unique, /portal pour les cinq gardiens, /help pour l’aide.
+- Cercles lumineux retirés des entrées et sorties d’étage ; escaliers et textes conservés.
+- Nouvelle icône du jeu : trône devant la lune rouge (choix 5).
+- Donjons réinitialisés à chaque nouvelle session du héros, progression, équipement, quêtes et portails débloqués conservés. Réinitialisation à l’ouverture d’une nouvelle partie depuis l’accueil, ou après relance du jeu ; une simple pause Échap ne réinitialise rien.
+
+[Liste des commandes solo](COMMANDES-SOLO.md).
+
 ## 0.14.25 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.25) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40193054490).
