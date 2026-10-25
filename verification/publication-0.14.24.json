@@ -1,14 +1,14 @@
 {
     "version":  "0.14.24",
-    "status":  "failed",
-    "published":  false,
-    "cleanupSucceeded":  false,
-    "sourceCommit":  "051b4cd398c2eb489c03ee9871235dd805f71e68",
-    "completedUtc":  "2026-10-25T12:01:01.7137621Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40191149406",
+    "status":  "passed",
+    "published":  true,
+    "cleanupSucceeded":  true,
+    "sourceCommit":  "b0ea8ea3d8892e3ba93f393866967222fd810e0f",
+    "completedUtc":  "2026-10-25T12:07:15.9375989Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40191566642",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.24",
     "portableCheck":  {
-                          "status":  "failed",
+                          "status":  "passed",
                           "version":  "0.14.24",
                           "noInstaller":  true,
                           "checks":  [
@@ -38,22 +38,52 @@
                                          "Self-update completed: Updated to 999.0.0",
                                          "Old game exits for the explicit update",
                                          "Replacement game stays open without a restart loop",
-                                         "Previous game retained as rollback backup"
+                                         "Previous game retained as rollback backup",
+                                         "Direct download is the Godot game itself"
                                      ],
                           "trial":  {
                                         "button":  "Mettre Ã  jour et redÃ©marrer",
-                                        "oldPid":  5392,
+                                        "oldPid":  1860,
                                         "realPlayerSaveAccessed":  false,
                                         "versionLabel":  "VERSION 0.14.24",
-                                        "work":  "C:/Users/runneradmin/AppData/Local/ThroneOfAshes/portable-updates/verification-5392-2339109"
+                                        "work":  "C:/Users/runneradmin/AppData/Local/ThroneOfAshes/portable-updates/verification-1860-2815129"
                                     },
                           "selfUpdate":  {
                                              "installedVersion":  "VERSION 0.14.24",
                                              "status":  "success",
-                                             "newPid":  6956,
-                                             "oldPid":  5392,
+                                             "newPid":  8196,
+                                             "oldPid":  1860,
                                              "keptAliveSeconds":  10
-                                         },
-                          "error":  "System.Management.Automation.RuntimeException: startup-failure: old binary preserved or restored"
-                      }
+                                         }
+                      },
+    "portableRecovery":  {
+                             "status":  "passed",
+                             "cases":  6,
+                             "checks":  [
+                                            "success: helper validates before handoff",
+                                            "Success helper exits cleanly",
+                                            "New verified binary activated",
+                                            "Previous binary retained",
+                                            "bad-hash: rejected before game closes",
+                                            "bad-hash: original process remains alive",
+                                            "bad-hash: failure reported",
+                                            "bad-hash: old binary preserved or restored",
+                                            "outside-path: rejected before game closes",
+                                            "outside-path: original process remains alive",
+                                            "outside-path: failure reported",
+                                            "outside-path: old binary preserved or restored",
+                                            "startup-failure: helper validates before handoff",
+                                            "startup-failure: failure reported",
+                                            "startup-failure: old binary preserved or restored",
+                                            "Failed new game starts the old game once",
+                                            "Rollback never loops",
+                                            "stage-changed: helper validates before handoff",
+                                            "stage-changed: failure reported",
+                                            "stage-changed: old binary preserved or restored",
+                                            "locked-target: helper validates before handoff",
+                                            "locked-target: failure reported",
+                                            "locked-target: old binary preserved or restored"
+                                        ],
+                             "noSecuritySettingsChanged":  true
+                         }
 }
