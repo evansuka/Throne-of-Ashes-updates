@@ -126,6 +126,34 @@ try{
  $result.expectedCiAudioErrors=$expectedAudio;$result.unexpectedRuntimeErrors=$unexpected
  Check ($unexpected.Count -eq 0) 'No unexpected engine runtime error (known WASAPI initialization failure on audio-less CI recorded separately)'
 
+ # A second explicit desktop launch must reuse both installed components.
+ $offset=$launcherLog.Length;$oldPid=$games[0].Id
+ Check ($games[0].CloseMainWindow()) 'First game accepts normal window close'
+ Check ($games[0].WaitForExit(15000)) 'First game closes before manual second launch'
+ $shortcutPath=Join-Path $desktop 'Throne of Ashes.lnk'
+ $again=New-Object Diagnostics.ProcessStartInfo
+ $again.FileName=$shortcutPath;$again.UseShellExecute=$true
+ $secondBootstrap=[Diagnostics.Process]::Start($again)
+ $secondReady=$false;$secondDeadline=[DateTime]::UtcNow.AddMinutes(3);$secondSeen=@{}
+ do{
+  $secondGames=@(Get-Process -Name 'Throne-of-Ashes-Game' -ErrorAction SilentlyContinue)
+  foreach($process in $secondGames){$secondSeen[$process.Id]=$true}
+  $allText=Read-SharedText (Join-Path $data 'launcher.log')
+  $secondText=if($allText.Length -ge $offset){$allText.Substring($offset)}else{throw 'Launcher log unexpectedly truncated'}
+  if($secondGames.Count -eq 1){
+   $secondGames[0].Refresh();$handle=$secondGames[0].MainWindowHandle
+   $secondReady=$secondText -match ('Jeu lanc. : '+$pattern) -and $handle -ne [IntPtr]::Zero -and [ToaWindowProbe]::IsWindowVisible($handle) -and -not [ToaWindowProbe]::IsIconic($handle) -and [ToaWindowProbe]::OnScreen($handle)
+  }
+  if(-not $secondReady){Start-Sleep -Milliseconds 500}
+ }while(-not $secondReady -and [DateTime]::UtcNow -lt $secondDeadline)
+ Check $secondReady 'Second manual desktop launch presents the installed game'
+ Check ($secondText -match ('Version disponible localement : '+$pattern) -and $secondText -match ('Version distante : '+$pattern)) 'Second launch keeps current local and remote version'
+ Check ($secondText -notmatch 'T.l.chargement de la version|V.rification et installation|Installation v.rifi.e et activ.e') 'Second launch performs no game download or installation'
+ Check ($secondSeen.Count -eq 1 -and -not $secondSeen.ContainsKey($oldPid)) 'Second manual launch creates exactly one new game PID'
+ Check ((Get-FileHash $installed -Algorithm SHA256).Hash.ToLowerInvariant() -eq $ExpectedSetupSha) 'Second launch preserves the installed bootstrap bytes'
+ Start-Sleep -Seconds 5
+ Check (-not $secondGames[0].HasExited) 'Second game remains open after launcher handoff'
+ $result['secondLaunch']=[ordered]@{pid=$secondGames[0].Id;noDownload=$true;noInstall=$true;log=$secondText}
  $result.status='passed'
 }catch{
  $result.status='failed';$result.error=$_.Exception.ToString();Save-Report;Write-Output $result.error

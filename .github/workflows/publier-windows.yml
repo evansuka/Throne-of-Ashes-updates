@@ -68,9 +68,17 @@ jobs:
           }
           & gh release edit $env:RELEASE_TAG --repo $env:GITHUB_REPOSITORY --draft=false --latest
           if($LASTEXITCODE -ne 0){throw 'Activation de la release interrompue.'}
+          "RELEASE_ACTIVATED=true" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
           Write-Output "PUBLISHED_RELEASE: https://github.com/$env:GITHUB_REPOSITORY/releases/tag/$env:RELEASE_TAG"
-          & gh api --method DELETE "repos/$env:GITHUB_REPOSITORY/git/refs/heads/livraison/$env:RELEASE_TAG"
-          if($LASTEXITCODE -ne 0){Write-Warning 'Release publiee; branche temporaire a nettoyer.'}
+          $cleanupOk=$false
+          try{
+            & gh api --method DELETE "repos/$env:GITHUB_REPOSITORY/git/refs/heads/livraison/$env:RELEASE_TAG"
+            $cleanupOk=$LASTEXITCODE -eq 0
+          }catch{Write-Warning ('Nettoyage indisponible : '+$_.Exception.Message)}
+          "RELEASE_CLEANUP_OK=$cleanupOk" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          if(-not $cleanupOk){Write-Warning 'Release publiee; branche temporaire a nettoyer.'}
+          # Activation and cleanup have independent outcomes.
+          $global:LASTEXITCODE=0
       - name: Consigner le resultat de publication
         if: always()
         continue-on-error: true
@@ -80,9 +88,11 @@ jobs:
           $version=$env:GITHUB_REF_NAME -replace '^publication/','' -replace '^v',''
           if($version -notmatch '^\d+\.\d+\.\d+$'){exit 0}
           $ok='${{ job.status }}' -eq 'success'
-          $report=[ordered]@{version=$version;status=$(if($ok){'passed'}else{'failed'});published=$ok;sourceCommit=$env:GITHUB_SHA;completedUtc=[DateTime]::UtcNow.ToString('o');workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";releaseUrl="https://github.com/$env:GITHUB_REPOSITORY/releases/tag/$env:RELEASE_TAG"}
+          $published=$env:RELEASE_ACTIVATED -eq 'true'
+          $report=[ordered]@{version=$version;status=$(if($ok){'passed'}else{'failed'});published=$published;cleanupSucceeded=($env:RELEASE_CLEANUP_OK -eq 'True');sourceCommit=$env:GITHUB_SHA;completedUtc=[DateTime]::UtcNow.ToString('o');workflowUrl="https://github.com/$env:GITHUB_REPOSITORY/actions/runs/$env:GITHUB_RUN_ID";releaseUrl="https://github.com/$env:GITHUB_REPOSITORY/releases/tag/$env:RELEASE_TAG"}
           if(Test-Path verification/game-window.json){$report['windowCheck']=Get-Content verification/game-window.json -Raw | ConvertFrom-Json}
-          $json=$report|ConvertTo-Json -Depth 7
+          if(Test-Path verification/launcher-recovery.json){$report['recoveryCheck']=Get-Content verification/launcher-recovery.json -Raw | ConvertFrom-Json}
+          $json=$report|ConvertTo-Json -Depth 12
           $path="verification/publication-$version.json"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'

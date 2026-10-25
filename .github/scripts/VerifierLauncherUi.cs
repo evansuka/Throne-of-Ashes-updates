@@ -8,13 +8,13 @@ using System.Windows.Forms;
 // Runs the real launcher form and update workflow. Only external services are
 // replaced; package verification, activation, cleanup and UI dispatch stay real.
 sealed class FixtureOperations:LauncherOperations {
- public string Zip;public UpdateManifest Manifest;public bool Offline,FailStart,Corrupt,FailRelease;public int Starts,UiThread,Releases;public Func<bool> IsLauncherVisible;
+ public string Zip;public UpdateManifest Manifest;public bool Offline,FailStart,Corrupt,FailRelease;public int Starts,UiThread,Releases,Downloads;public Func<bool> IsLauncherVisible;
  public void Worker() {if(Thread.CurrentThread.ManagedThreadId==UiThread)throw new Exception("Blocking work ran on the UI thread.");Thread.Sleep(1500);}
  public override void Prepare(string root) {Worker();Directory.CreateDirectory(root);}
  public override string Installed(string root) {Worker();return base.Installed(root);}
  public override string ImportBundled(string root) {Worker();return "";}
  public override UpdateManifest ReadManifest() {Worker();if(Offline)throw new IOException("Offline fixture");return Manifest;}
- public override void Download(UpdateManifest m,string zip,Action<int> progress) {Worker();File.Copy(Zip,zip);if(Corrupt)File.AppendAllText(zip,"damaged");progress(100);}
+ public override void Download(UpdateManifest m,string zip,Action<int> progress) {Downloads++;Worker();File.Copy(Zip,zip);if(Corrupt)File.AppendAllText(zip,"damaged");progress(100);}
  public override void Install(UpdateManifest m,string zip,string root) {Worker();base.Install(m,zip,root);}
  public override void ReleaseGame(){if(IsLauncherVisible())throw new Exception("Game released before launcher hidden");Releases++;if(FailRelease)throw new IOException("Handoff fixture failure");}
  public override void StartGame(string root,string version) {Starts++;Worker();if(FailStart)throw new IOException("Startup fixture failure");if(base.Installed(root)!=version)throw new Exception("Started an unverified version.");}
@@ -56,6 +56,27 @@ static class VerifierLauncherUi {
   Check(log.Contains("ERREUR")== (offline||failStart||corrupt),name+": missing diagnostic");
   Console.WriteLine("LAUNCHER_UI_CASE: "+name+"; ticks="+ticks+"; max gap="+gap+" ms; starts="+ops.Starts);
  }
+ static void ManualRestore(string folder,UpdateManifest old,string oldZip,UpdateManifest current,string zip){
+  var root=Path.Combine(folder,"manual-restore-ui");UpdateLogic.Install(old,oldZip,root);
+  var ops=new FixtureOperations{UiThread=Thread.CurrentThread.ManagedThreadId,Manifest=current,Zip=zip,FailStart=true};
+  bool clicked=false,timedOut=false;var clock=Stopwatch.StartNew();
+  using(var form=new Launcher(root,ops))using(var timer=new System.Windows.Forms.Timer{Interval=30}){
+   ops.IsLauncherVisible=()=>form.Visible;
+   timer.Tick+=(s,e)=>{
+    foreach(Control control in form.Controls)if(!clicked&&control is Button&&control.Visible&&control.Text=="Restaurer la version précédente"){
+     Check(ops.Starts==1,"restore: failure never automatically restarts the game");
+     clicked=true;ops.FailStart=false;((Button)control).PerformClick();break;
+    }
+    if(clock.Elapsed.TotalSeconds>40){timedOut=true;form.Close();}
+   };
+   timer.Start();Application.Run(form);timer.Stop();
+  }
+  Check(!timedOut&&clicked,"restore: visible recovery control can be clicked");
+  Check(ops.Starts==2&&ops.Releases==1,"restore: one extra start only after explicit click");
+  Check(ops.Downloads==1,"restore: failed candidate is not downloaded again");
+  Check(UpdateLogic.Installed(root)==old.version,"restore: verified previous version selected");
+  Console.WriteLine("LAUNCHER_UI_CASE: manual-restore; explicitClick="+clicked+"; starts="+ops.Starts+"; downloads="+ops.Downloads);
+ }
  [STAThread] static int Main(string[] args) {
   try {
    Application.EnableVisualStyles();Application.SetCompatibleTextRenderingDefault(false);
@@ -66,6 +87,7 @@ static class VerifierLauncherUi {
    Scenario(folder,"startup-failure-no-loop",old,oldZip,current,zip,true,false,true,false);
    Scenario(folder,"corrupt-update-fallback",old,oldZip,current,zip,true,false,false,true);
    Scenario(folder,"handoff-write-failure-no-crash",old,oldZip,current,zip,true,false,false,false,true);
+   ManualRestore(folder,old,oldZip,current,zip);
    Console.WriteLine("LAUNCHER_UI_OK: "+checks+" checks; real WinForms loop, responsive slow verification/install/start, offline fallback, startup failure without retry loop, save preservation.");return 0;
   }catch(Exception error){Console.Error.WriteLine(error);return 1;}
  }

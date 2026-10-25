@@ -30,6 +30,11 @@ $game=Join-Path $fixture 'update/Throne-of-Ashes-Game.exe'
 foreach($candidate in @($game,(Join-Path $fixture 'bundle/Throne-of-Ashes-Game.exe'))){
  if((Get-FileHash -LiteralPath $candidate -Algorithm SHA256).Hash.ToLowerInvariant() -ne $manifest.exeSha256){throw 'EXE du jeu incorrect dans une archive.'}
 }
+# Native metadata must agree even when execution is explicitly skipped.
+foreach($candidate in @($game,(Join-Path $Directory 'Throne-of-Ashes-Setup.exe'))){
+ if([Diagnostics.FileVersionInfo]::GetVersionInfo($candidate).FileVersion -ne ($version+'.0') -or [Diagnostics.FileVersionInfo]::GetVersionInfo($candidate).ProductVersion -ne ($version+'.0')){throw 'Version native du jeu ou du Setup incompatible avec le tag.'}
+}
+if((Get-FileHash (Join-Path $Directory 'Throne-of-Ashes-Setup.exe') -Algorithm SHA256).Hash -ne (Get-FileHash (Join-Path $fixture 'bundle/Throne-of-Ashes-Setup.exe') -Algorithm SHA256).Hash){throw 'Setup incoherent dans le paquet complet.'}
 $launcher=Join-Path $Directory 'Throne-of-Ashes.exe'
 if((Get-FileHash -LiteralPath $launcher -Algorithm SHA256).Hash -ne (Get-FileHash -LiteralPath (Join-Path $fixture 'bundle/Throne-of-Ashes.exe') -Algorithm SHA256).Hash){throw 'Lanceurs incoherents.'}
 foreach($folder in @('update','bundle')){
@@ -60,6 +65,8 @@ foreach($machine in @('pc-a','pc-b')){
  $current.sha256=$manifest.sha256
 }
 if(-not $SkipGameLaunch){
+ & (Join-Path $PSScriptRoot 'verifier-recuperation.ps1') -Setup (Join-Path $Directory 'Throne-of-Ashes-Setup.exe') -Assembly $launcher -ReportPath (Join-Path (Get-Location) 'verification/launcher-recovery.json')
+ if($LASTEXITCODE -ne 0){throw 'Recuperation lanceur/installation refusee.'}
  & (Join-Path $PSScriptRoot 'verifier-lanceur-interface.ps1') -Assembly $launcher
  & (Join-Path $PSScriptRoot 'verifier-lanceur-demarrage.ps1') -Assembly $launcher
  $log=Join-Path $fixture 'game.log';$stderr=Join-Path $fixture 'game.err'
