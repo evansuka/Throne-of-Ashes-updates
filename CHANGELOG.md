@@ -4,6 +4,20 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.24 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.24) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40191566642).
+
+- Distribution autonome : le téléchargement principal est directement le jeu Windows, sans installateur ni lanceur séparé.
+- L’écran d’accueil affiche la version installée et vérifie les nouvelles versions. Le jeu reste utilisable hors ligne.
+- Le bouton « Mettre à jour et redémarrer » télécharge et vérifie la nouvelle version depuis le jeu ; le remplacement n’interrompt jamais une partie en cours.
+- La version précédente est conservée. Un démarrage non confirmé restaure la version précédente avec un seul essai de secours, sans boucle de téléchargement.
+- Sauvegardes, personnages et paramètres conservés. Aucun droit administrateur ni changement de protection Windows requis ; le dossier contenant le jeu doit être accessible en écriture.
+
+Télécharger Throne-of-Ashes.exe, le placer dans un dossier personnel accessible en écriture, puis le lancer directement. Les anciens raccourcis restent utilisables, mais ne sont plus nécessaires pour la nouvelle distribution.
+
+Remplacement réel du jeu depuis l’accueil et six scénarios de récupération réussis. Le téléchargement principal est directement le jeu Godot ; aucun Setup dans cette version.
+
 ## 0.14.23 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.23) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40189100085).
