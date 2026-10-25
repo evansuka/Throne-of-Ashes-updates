@@ -72,4 +72,8 @@ try{
  $result=@{status='passed';checks=$checks;cases=6;noSecuritySettingsChanged=$true}
  [IO.File]::WriteAllText((Join-Path $pwd 'verification/portable-recovery.json'),($result|ConvertTo-Json -Depth 5),[Text.UTF8Encoding]::new($false))
  Write-Output ('PORTABLE_RECOVERY_OK: '+$checks.Count+' checks; six real process/replacement/rollback cases.')
+}catch{
+ $logs=@();Get-ChildItem $root -Filter update.log -Recurse|ForEach-Object {$logs+=@{path=$_.FullName;text=[IO.File]::ReadAllText($_.FullName)}}
+ $failure=@{status='failed';checks=$checks;case=$case;error=$_.Exception.ToString();logs=$logs}
+ [IO.File]::WriteAllText((Join-Path $pwd 'verification/portable-recovery.json'),($failure|ConvertTo-Json -Depth 8),[Text.UTF8Encoding]::new($false));throw
 }finally{foreach($p in $children){try{if(-not $p.HasExited){$p.Kill();$p.WaitForExit()}}catch{}}}
