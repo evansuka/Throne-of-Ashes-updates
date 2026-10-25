@@ -4,6 +4,16 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.30 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.30) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40217384472). Trois assets publics et latest vérifiés.
+
+- Les nouvelles narrations P1, P2, P3 et P4 remplacent les quatre anciennes voix du prologue, sans réencodage.
+- Scènes recalées sur les durées des fichiers, avec une seconde avant/après chaque narration : 55,064 secondes au total, sans coupure de voix.
+- Textes, illustrations, volumes et possibilité de passer la cinématique conservés. Relecture depuis Accueil → Échap → Cinématique.
+
+33 contrôles de cinématique réussis, régressions audio et vérification des quatre empreintes des MP3 dans le jeu exporté. Remplacement du jeu et récupération validés sur Windows ; son physique du PC non mesuré.
+
 ## 0.14.29 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.29) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40216616745). Trois assets publics et latest vérifiés.
