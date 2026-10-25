@@ -4,6 +4,19 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.21 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.21) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40172431413). Six étages rendus dans le vrai EXE Windows ; cinq fichiers publics et liens latest vérifiés.
+
+- 1–20 : grottes rocheuses ordinaires, éboulis et stalagmites.
+- 21–40 : grottes glaciales, cristaux et attaques froides avec ralentissement, y compris les zones du gardien.
+- 41–60 : roche naturelle gagnée par les premières braises.
+- 61–80 : cavernes volcaniques, lave et flammes plus présentes.
+- 81–100 : enfer de basalte, lave animée et feu.
+- Niveau 100 : trône gothique sur estrade, couronne de pointes et gemme rouge, dans la salle d’Azhraël.
+
+Navigation, escaliers, progression et sauvegardes conservés. La lave du décor ne provoque pas de dégâts supplémentaires. Fermer le jeu et rouvrir le lanceur pour recevoir la mise à jour.
+
 ## 0.14.20 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.20) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40167551366). Les cinq fichiers publics et les liens latest ont été retéléchargés et vérifiés. [Installation réelle et second lancement validés](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40167882039), 28 contrôles : raccourci réel, jeu maintenu ouvert et réouverture sans téléchargement ni installation.
