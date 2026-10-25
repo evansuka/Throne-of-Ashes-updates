@@ -4,6 +4,17 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.23 — publiée le 25 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.23) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40189100085).
+
+- Tailles des cinq régions harmonisées sur les proportions des premiers niveaux.
+- Archers, mages et éclaireurs affinés ; guerriers lourds et chefs plus massifs.
+- Molosses à une échelle cohérente ; gardiens réduits, Azhraël restant le plus grand.
+- Largeur conservée à la mort, pieds ancrés, animations et statistiques de combat préservées.
+
+Fermer le jeu puis rouvrir le lanceur pour recevoir la mise à jour.
+
 ## 0.14.22 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.22) et [validation Windows réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40177484590).
