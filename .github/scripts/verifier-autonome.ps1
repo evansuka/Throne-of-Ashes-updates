@@ -8,6 +8,11 @@ function RunGame([string]$exe,[string]$arguments,[int]$seconds=180){
  $process=[Diagnostics.Process]::Start($start);$out=$process.StandardOutput.ReadToEndAsync();$err=$process.StandardError.ReadToEndAsync()
  if(-not $process.WaitForExit($seconds*1000)){$process.Kill();$process.WaitForExit();$text=$out.Result+"`n"+$err.Result;Write-Host $text;$script:report.timeoutDiagnostics=@{arguments=$arguments;output=$text};throw 'Game verification timed out.'}
  $process.WaitForExit();$text=$out.Result+"`n"+$err.Result;Write-Host $text
+ if($process.ExitCode -ne 0 -or $text -match 'SCRIPT ERROR|ERROR:|Parse Error'){
+  $script:report['processDiagnostics']=@{arguments=$arguments;exitCode=$process.ExitCode;output=$text}
+  $toaFailedArmor=Join-Path $fixture 'armor.json'
+  if(Test-Path $toaFailedArmor){$script:report['armor']=Get-Content $toaFailedArmor -Raw -Encoding UTF8 | ConvertFrom-Json}
+ }
  Check ($process.ExitCode -eq 0 -and $text -notmatch 'SCRIPT ERROR|ERROR:|Parse Error') 'Exported game verification terminates cleanly'
  return $text
 }
