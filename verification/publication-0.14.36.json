@@ -1,0 +1,464 @@
+{
+    "version":  "0.14.36",
+    "status":  "passed",
+    "published":  true,
+    "cleanupSucceeded":  true,
+    "sourceCommit":  "b99e218f1da7a08a5d4e9ca8bfd49cf9681ea887",
+    "completedUtc":  "2026-10-26T09:55:27.4166948Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40302740827",
+    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.36",
+    "portableCheck":  {
+                          "status":  "passed",
+                          "version":  "0.14.36",
+                          "noInstaller":  true,
+                          "checks":  [
+                                         "Strict release version",
+                                         "Standalone manifest matches tag",
+                                         "Immutable update URL",
+                                         "No installer in distribution",
+                                         "Safe distribution filename",
+                                         "Checksum Throne-of-Ashes-0.14.36-update.zip",
+                                         "Safe distribution filename",
+                                         "Checksum update.json",
+                                         "Safe distribution filename",
+                                         "Checksum RELEASE.md",
+                                         "Archive matches manifest",
+                                         "Executable matches manifest",
+                                         "Native executable version matches release",
+                                         "Version-specific release notes",
+                                         "Exported game verification terminates cleanly",
+                                         "Six rendered floors, five guardians and ending rewards",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded heroGraphics audit completes",
+                                         "Exported heroGraphics has no failures",
+                                         "Four classes, eight directions and complete exported pose matrix",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded heroCoordination audit completes",
+                                         "Exported heroCoordination has no failures",
+                                         "Real delayed bow release, pause, interruption and travel cancellation",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual rendered garment pixel audit completes",
+                                         "Four class outfits retain native front/back motifs in five combat poses",
+                                         "Exported game verification terminates cleanly",
+                                         "Exported itemization, commerce and repair audit completes",
+                                         "Rarity powers, physical ranges, attack speed and critical rolls verified",
+                                         "Commerce-only bottom-left prices, repairs and jewelry preservation verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Exported village, service access and NPC audit completes",
+                                         "Six NPC services, full body selection, dynamic detours and five rendered village views verified",
+                                         "Village detail budget and isolated save policy verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded Windows audio bridge remains available",
+                                         "Actual game prepared a self-update",
+                                         "Self-update trial uses no player saves",
+                                         "Home screen displays the installed game version",
+                                         "Home screen offers the direct update action",
+                                         "Replacement helper reports its outcome",
+                                         "Self-update completed: Updated to 999.0.0",
+                                         "Old game exits for the explicit update",
+                                         "Replacement game stays open without a restart loop",
+                                         "Previous game retained as rollback backup",
+                                         "Direct download is the Godot game itself"
+                                     ],
+                          "heroGraphics":  {
+                                               "checks":  625380,
+                                               "classes":  [
+                                                               "Viking",
+                                                               "Paladin",
+                                                               "Sorcier",
+                                                               "RÃ´deur"
+                                                           ],
+                                               "directions":  8,
+                                               "failures":  0,
+                                               "firstFailures":  [
+
+                                                                 ],
+                                               "kitsPerClass":  18,
+                                               "metrics":  {
+                                                               "duplicatedGuardBodies":  0,
+                                                               "maxCombatGripError":  0.000000491512480493839,
+                                                               "maxHeadHeightError":  0.000000294446945048321,
+                                                               "maxLegShapeChange":  0.00000012287812012346,
+                                                               "maxShieldWristError":  0.000000596232666794094,
+                                                               "poses":  24192
+                                                           },
+                                               "physicalOutputOrPlayerSavesAccessed":  false,
+                                               "scope":  "Actual native transforms. Pixel appearance inspected separately in viewport captures; this does not prove anatomical quality or physical audio.",
+                                               "states":  [
+                                                              "idle",
+                                                              "walk",
+                                                              "guard",
+                                                              "guard-walk",
+                                                              "attack",
+                                                              "left",
+                                                              "skill0",
+                                                              "skill1",
+                                                              "skill2",
+                                                              "skill3"
+                                                          ],
+                                               "version":  "0.14.36-conversion"
+                                           },
+                          "heroCoordination":  {
+                                                   "checks":  14,
+                                                   "failures":  [
+
+                                                                ],
+                                                   "playerSavesAccessed":  false
+                                               },
+                          "heroGarments":  {
+                                               "actualGpuPixels":  true,
+                                               "checks":  120,
+                                               "classes":  4,
+                                               "directions":  [
+                                                                  0,
+                                                                  4
+                                                              ],
+                                               "failures":  [
+
+                                                            ],
+                                               "maxRgbDifference":  0.0,
+                                               "playerSavesAccessed":  false,
+                                               "posesPerDirection":  5,
+                                               "version":  "0.14.36-conversion"
+                                           },
+                          "itemization":  {
+                                              "attackTrials":  10000,
+                                              "captures":  [
+                                                               "itemization-fiches.png",
+                                                               "itemization-commerce.png"
+                                                           ],
+                                              "checks":  19832,
+                                              "commerceOnlyGoldBottomLeft":  true,
+                                              "criticals":  1238,
+                                              "examples":  [
+                                                               {
+                                                                   "affixes":  [
+
+                                                                               ],
+                                                                   "attackSeconds":  0.43,
+                                                                   "bonuses":  {
+
+                                                                               },
+                                                                   "criticalChance":  6.0,
+                                                                   "damage":  163.0,
+                                                                   "damageMax":  192,
+                                                                   "damageMin":  134,
+                                                                   "durability":  92.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  92,
+                                                                   "modelIndex":  1,
+                                                                   "name":  "BÃ¢ton de chÃªne ordinaire",
+                                                                   "rarity":  "normal",
+                                                                   "requirements":  {
+                                                                                        "intelligence":  21,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "staff",
+                                                                   "value":  227.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  12.0,
+                                                                                       "min":  7.0,
+                                                                                       "stat":  "lightningDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  7.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  8.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "attackSpeed",
+                                                                                       "tier":  3,
+                                                                                       "value":  5.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  11.0,
+                                                                                       "min":  8.0,
+                                                                                       "stat":  "fireDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  10.0
+                                                                                   }
+                                                                               ],
+                                                                   "attackSeconds":  0.65,
+                                                                   "bonuses":  {
+                                                                                   "attackSpeed":  5.0,
+                                                                                   "fireDamage":  10.0,
+                                                                                   "lightningDamage":  7.0
+                                                                               },
+                                                                   "criticalChance":  5.0,
+                                                                   "damage":  181.0,
+                                                                   "damageMax":  214,
+                                                                   "damageMin":  148,
+                                                                   "durability":  102.0,
+                                                                   "elementalRanges":  {
+                                                                                           "fireDamage":  [
+                                                                                                              8,
+                                                                                                              12
+                                                                                                          ],
+                                                                                           "lightningDamage":  [
+                                                                                                                   2,
+                                                                                                                   12
+                                                                                                               ]
+                                                                                       },
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  102,
+                                                                   "modelIndex":  1,
+                                                                   "name":  "Arc de chasse magique",
+                                                                   "rarity":  "magic",
+                                                                   "requirements":  {
+                                                                                        "dexterite":  20,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "bow",
+                                                                   "value":  503.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "force",
+                                                                                       "tier":  3,
+                                                                                       "value":  6.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  28.0,
+                                                                                       "min":  18.0,
+                                                                                       "stat":  "armorPercent",
+                                                                                       "tier":  3,
+                                                                                       "value":  23.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  17.0,
+                                                                                       "min":  12.0,
+                                                                                       "stat":  "feu",
+                                                                                       "tier":  3,
+                                                                                       "value":  15.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "dexterite",
+                                                                                       "tier":  3,
+                                                                                       "value":  5.0
+                                                                                   }
+                                                                               ],
+                                                                   "armor":  62.0,
+                                                                   "bonuses":  {
+                                                                                   "armorPercent":  23.0,
+                                                                                   "dexterite":  5.0,
+                                                                                   "feu":  15.0,
+                                                                                   "force":  6.0
+                                                                               },
+                                                                   "durability":  120.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  120,
+                                                                   "modelIndex":  0,
+                                                                   "name":  "Tunique rare",
+                                                                   "rarity":  "rare",
+                                                                   "requirements":  {
+                                                                                        "force":  7,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "armor",
+                                                                   "value":  752.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  28.0,
+                                                                                       "min":  18.0,
+                                                                                       "stat":  "physicalPercent",
+                                                                                       "tier":  3,
+                                                                                       "value":  19.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  9.0,
+                                                                                       "min":  7.0,
+                                                                                       "stat":  "physicalDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  7.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "vitalite",
+                                                                                       "tier":  3,
+                                                                                       "value":  5.0
+                                                                                   }
+                                                                               ],
+                                                                   "attackSeconds":  0.43,
+                                                                   "bonuses":  {
+                                                                                   "physicalDamage":  7.0,
+                                                                                   "physicalPercent":  19.0,
+                                                                                   "vitalite":  5.0
+                                                                               },
+                                                                   "criticalChance":  4.0,
+                                                                   "damage":  295.0,
+                                                                   "damageMax":  348,
+                                                                   "damageMin":  242,
+                                                                   "durability":  139.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "legendaryEffect":  "bleed",
+                                                                   "maxDurability":  139,
+                                                                   "modelIndex":  2,
+                                                                   "name":  "Hache Ã  double tranchant lÃ©gendaire",
+                                                                   "rarity":  "legendary",
+                                                                   "requirements":  {
+                                                                                        "force":  20,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "sockets":  1,
+                                                                   "type":  "axe",
+                                                                   "value":  1122.0
+                                                               }
+                                                           ],
+                                              "failures":  [
+
+                                                           ],
+                                              "families":  16,
+                                              "generatedItems":  3072,
+                                              "jewelryDoesNotWear":  true,
+                                              "legacyItemsNotRerolled":  true,
+                                              "legendaryExclusivePower":  true,
+                                              "playerSavesAccessed":  false,
+                                              "rarityAffixCounts":  {
+                                                                        "legendary":  [
+                                                                                          3,
+                                                                                          4
+                                                                                      ],
+                                                                        "magic":  [
+                                                                                      2,
+                                                                                      3
+                                                                                  ],
+                                                                        "normal":  [
+                                                                                       0,
+                                                                                       0
+                                                                                   ],
+                                                                        "rare":  [
+                                                                                     3,
+                                                                                     4
+                                                                                 ]
+                                                                    },
+                                              "version":  "0.14.36-conversion"
+                                          },
+                          "village":  {
+                                          "captures":  [
+                                                           "village-place.png",
+                                                           "village-eglise.png",
+                                                           "village-maison.png",
+                                                           "village-etang.png",
+                                                           "village-ecurie.png"
+                                                       ],
+                                          "checks":  57,
+                                          "clearedTrees":  37,
+                                          "detailMeshes":  6,
+                                          "detailPrimitives":  950,
+                                          "detailTriangles":  12164,
+                                          "dynamicNpcClearance":  1.16277301311493,
+                                          "failures":  [
+
+                                                       ],
+                                          "fullBodySelection":  true,
+                                          "newPropColliders":  14,
+                                          "playerSavesAccessed":  false,
+                                          "renderInfo":  {
+                                                             "drawCalls":  91,
+                                                             "fpsClaimed":  false,
+                                                             "primitives":  99222
+                                                         },
+                                          "routes":  [
+                                                         {
+                                                             "distance":  0.962945461273193,
+                                                             "id":  "smith",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.702344954013824,
+                                                             "id":  "fisher",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.767204225063324,
+                                                             "id":  "eleane",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.941609442234039,
+                                                             "id":  "merchant",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.909632086753845,
+                                                             "id":  "priest",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.895710825920105,
+                                                             "id":  "dyer",
+                                                             "reached":  true
+                                                         }
+                                                     ],
+                                          "version":  "0.14.36-conversion"
+                                      },
+                          "trial":  {
+                                        "button":  "Mettre Ã  jour et redÃ©marrer",
+                                        "oldPid":  7992,
+                                        "realPlayerSaveAccessed":  false,
+                                        "versionLabel":  "VERSION 0.14.36",
+                                        "work":  "C:/Users/runneradmin/AppData/Local/ThroneOfAshes/portable-updates/verification-7992-3153954"
+                                    },
+                          "selfUpdate":  {
+                                             "installedVersion":  "VERSION 0.14.36",
+                                             "status":  "success",
+                                             "newPid":  8992,
+                                             "oldPid":  7992,
+                                             "keptAliveSeconds":  10
+                                         },
+                          "trialOutput":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nAUDIO_FALLBACK: Windows MCI active=true parent=7992\r\nSESSION_START: version=0.14.36-conversion pid=7992 audio=Dummy device=Default\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nGAME_UPDATE: Version 999.0.0 disponible.\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/7992/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=7992\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/7992/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=7992\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/7992/audio-fallback.log\r\nPORTABLE_TRIAL: real game requests verified replacement from home; no player saves\r\nGAME_UPDATE: PrÃ©paration du redÃ©marrageâ€¦\r\n",
+                          "trialErrors":  "WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\n",
+                          "helperDiagnostics":  {
+                                                    "helper.ready":  "ready",
+                                                    "update.log":  "2026-10-26T09:54:11.4374804Z PREPARING; reading replacement plan\r\n2026-10-26T09:54:14.2049261Z HASHING; verifying new and current executable\r\n2026-10-26T09:54:25.4010396Z VERIFIED; waiting for the running game to close\r\n2026-10-26T09:54:26.7190010Z ACTIVATED; starting the verified game\r\n2026-10-26T09:54:30.0146710Z READY; same replacement game is alive\r\n",
+                                                    "result.json":  "{\"state\":\"success\",\"message\":\"Updated to 999.0.0\"}"
+                                                }
+                      },
+    "portableRecovery":  {
+                             "status":  "passed",
+                             "cases":  6,
+                             "checks":  [
+                                            "success: helper validates before handoff",
+                                            "Concurrent helper rejected by exclusive target lock",
+                                            "Concurrent attempt neither kills nor replaces current game",
+                                            "Concurrent helper never starts a fallback game",
+                                            "Success helper exits cleanly",
+                                            "New verified binary activated",
+                                            "Previous binary retained",
+                                            "bad-hash: rejected before game closes",
+                                            "bad-hash: original process remains alive",
+                                            "bad-hash: failure reported",
+                                            "bad-hash: old binary preserved or restored",
+                                            "outside-path: rejected before game closes",
+                                            "outside-path: original process remains alive",
+                                            "outside-path: failure reported",
+                                            "outside-path: old binary preserved or restored",
+                                            "startup-failure: helper validates before handoff",
+                                            "startup-failure: failure reported",
+                                            "startup-failure: old binary preserved or restored",
+                                            "Failed new game starts the old game once",
+                                            "Rollback never loops",
+                                            "stage-changed: helper validates before handoff",
+                                            "stage-changed: failure reported",
+                                            "stage-changed: old binary preserved or restored",
+                                            "locked-target: helper validates before handoff",
+                                            "locked-target: failure reported",
+                                            "locked-target: old binary preserved or restored"
+                                        ],
+                             "noSecuritySettingsChanged":  true
+                         }
+}
