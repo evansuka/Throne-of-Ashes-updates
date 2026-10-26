@@ -86,6 +86,15 @@ try{
   Check ($armorInfo.changedVikingCollars -eq 5 -and $armorInfo.actualGpuPixels -and $armorInfo.viewportCoordinatesScaled -and $armorInfo.fixtureInterpolationDisabled -and -not $armorInfo.playerSavesAccessed) 'All five Viking collars corrected without accessing player saves'
   $report['armor']=$armorInfo
  }
+ if([Version]$version -ge [Version]'0.14.38'){
+  $fitPath=Join-Path $fixture 'equipment-fit.json'
+  $fitText=RunGame $game ('--audio-driver Dummy -- --verify-equipment-fit="'+$fitPath+'"') 240
+  Check ($fitText -match 'EQUIPMENT_FIT_AUDIT' -and (Test-Path $fitPath)) 'Actual worn equipment fitting audit completes'
+  $fitInfo=Get-Content $fitPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  Check ($fitInfo.failures.Count -eq 0 -and $fitInfo.checks -ge 21830 -and $fitInfo.classes -eq 4 -and $fitInfo.directions -eq 8 -and $fitInfo.kits -eq 7) 'Four heroes retain fitted equipment across complete, mixed and unique kits'
+  Check ($fitInfo.actualGpuPixels -and $fitInfo.facePixelProbes -ge 192 -and $fitInfo.opaqueShellPixelProbes -ge 336 -and -not $fitInfo.playerSavesAccessed) 'Open faces, opaque body coverage, native sleeves and rear accessories verified'
+  $report['equipmentFit']=$fitInfo
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
