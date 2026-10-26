@@ -71,6 +71,16 @@ try{
   Check ($villageInfo.detailMeshes -le 8 -and $villageInfo.detailTriangles -lt 15000 -and -not $villageInfo.playerSavesAccessed) 'Village detail budget and isolated save policy verified'
   $report['village']=$villageInfo
  }
+ if([Version]$version -ge [Version]'0.14.37'){
+  Check ($villageInfo.roadSurface -eq 'dirt' -and $villageInfo.roadMeshes -eq 1 -and $villageInfo.roadBorderStones -eq 0 -and $villageInfo.roadTriangles -lt 12000) 'Continuous dirt-only trails without paving or stone borders verified'
+  $armorPath=Join-Path $fixture 'armor.json'
+  $armorText=RunGame $game ('--audio-driver Dummy -- --verify-armor="'+$armorPath+'"') 180
+  Check ($armorText -match 'ARMOR_AUDIT' -and (Test-Path $armorPath)) 'Actual rendered armor opening audit completes'
+  $armorInfo=Get-Content $armorPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  Check ($armorInfo.failures.Count -eq 0 -and $armorInfo.checks -ge 469 -and $armorInfo.armorModels -eq 5 -and $armorInfo.classes -eq 4 -and $armorInfo.directions -eq 8) 'Original native neck and arm pixels remain visible through all five armor model openings'
+  Check ($armorInfo.changedVikingCollars -eq 5 -and -not $armorInfo.playerSavesAccessed) 'All five Viking collars corrected without accessing player saves'
+  $report['armor']=$armorInfo
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
