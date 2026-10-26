@@ -33,6 +33,18 @@ try{
  Check ((Get-Content (Join-Path $directory 'RELEASE.md') -Raw).StartsWith("# Throne of Ashes $version")) 'Version-specific release notes'
  $text=RunGame $game '--audio-driver Dummy -- --verify-dungeon-biomes'
  Check ($text -match 'EXPORTED_BIOMES_OK' -and $text -match 'EXPORTED_CHRONICLES_OK') 'Six rendered floors, five guardians and ending rewards'
+ if([Version]$version -ge [Version]'0.14.33'){
+  foreach($audit in @(@{script='hero_graphics_audit.gd';file='hero-graphics.json';marker='HERO_GRAPHICS_AUDIT';key='heroGraphics'},@{script='hero_coordination_audit.gd';file='hero-coordination.json';marker='HERO_COORDINATION_CHECKS';key='heroCoordination'})){
+   $auditPath=Join-Path $fixture $audit.file
+   $auditText=RunGame $game ('--headless --audio-driver Dummy --script res://scripts/'+$audit.script+' -- "'+$auditPath+'"') 180
+   Check ($auditText -match $audit.marker -and (Test-Path $auditPath)) ('Embedded '+$audit.key+' audit completes')
+   $auditInfo=Get-Content $auditPath -Raw -Encoding UTF8 | ConvertFrom-Json
+   Check ($auditInfo.failures.Count -eq 0 -or $auditInfo.failures -eq 0) ('Exported '+$audit.key+' has no failures')
+   if($audit.key -eq 'heroGraphics'){Check ($auditInfo.classes.Count -eq 4 -and $auditInfo.directions -eq 8 -and $auditInfo.metrics.poses -ge 24192) 'Four classes, eight directions and complete exported pose matrix'}
+   else{Check ($auditInfo.checks -ge 14 -and -not $auditInfo.playerSavesAccessed) 'Real delayed bow release, pause, interruption and travel cancellation'}
+   $report[$audit.key]=$auditInfo
+  }
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
