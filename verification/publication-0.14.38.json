@@ -1,0 +1,450 @@
+{
+    "version":  "0.14.38",
+    "status":  "failed",
+    "published":  false,
+    "cleanupSucceeded":  false,
+    "sourceCommit":  "1d3d16d264b30cd80a5aad5d1942823a0f3e781d",
+    "completedUtc":  "2026-10-26T16:51:56.2076352Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40362849142",
+    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.38",
+    "portableCheck":  {
+                          "status":  "failed",
+                          "version":  "0.14.38",
+                          "noInstaller":  true,
+                          "checks":  [
+                                         "Strict release version",
+                                         "Standalone manifest matches tag",
+                                         "Immutable update URL",
+                                         "No installer in distribution",
+                                         "Safe distribution filename",
+                                         "Checksum Throne-of-Ashes-0.14.38-update.zip",
+                                         "Safe distribution filename",
+                                         "Checksum update.json",
+                                         "Safe distribution filename",
+                                         "Checksum RELEASE.md",
+                                         "Archive matches manifest",
+                                         "Executable matches manifest",
+                                         "Native executable version matches release",
+                                         "Version-specific release notes",
+                                         "Exported game verification terminates cleanly",
+                                         "Six rendered floors, five guardians and ending rewards",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded heroGraphics audit completes",
+                                         "Exported heroGraphics has no failures",
+                                         "Four classes, eight directions and complete exported pose matrix",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded heroCoordination audit completes",
+                                         "Exported heroCoordination has no failures",
+                                         "Real delayed bow release, pause, interruption and travel cancellation",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual rendered garment pixel audit completes",
+                                         "Four class outfits retain native front/back motifs in five combat poses",
+                                         "Exported game verification terminates cleanly",
+                                         "Exported itemization, commerce and repair audit completes",
+                                         "Rarity powers, physical ranges, attack speed and critical rolls verified",
+                                         "Commerce-only bottom-left prices, repairs and jewelry preservation verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Exported village, service access and NPC audit completes",
+                                         "Six NPC services, full body selection, dynamic detours and five rendered village views verified",
+                                         "Village detail budget and isolated save policy verified",
+                                         "Continuous dirt-only trails without paving or stone borders verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual rendered armor opening audit completes",
+                                         "Original native neck and arm pixels remain visible through all five armor model openings",
+                                         "All five Viking collars corrected without accessing player saves"
+                                     ],
+                          "heroGraphics":  {
+                                               "checks":  625380,
+                                               "classes":  [
+                                                               "Viking",
+                                                               "Paladin",
+                                                               "Sorcier",
+                                                               "RÃ´deur"
+                                                           ],
+                                               "directions":  8,
+                                               "failures":  0,
+                                               "firstFailures":  [
+
+                                                                 ],
+                                               "kitsPerClass":  18,
+                                               "metrics":  {
+                                                               "duplicatedGuardBodies":  0,
+                                                               "maxCombatGripError":  0.000000491512480493839,
+                                                               "maxHeadHeightError":  0.000000294446945048321,
+                                                               "maxLegShapeChange":  0.00000012287812012346,
+                                                               "maxShieldWristError":  0.000000596232666794094,
+                                                               "poses":  24192
+                                                           },
+                                               "physicalOutputOrPlayerSavesAccessed":  false,
+                                               "scope":  "Actual native transforms. Pixel appearance inspected separately in viewport captures; this does not prove anatomical quality or physical audio.",
+                                               "states":  [
+                                                              "idle",
+                                                              "walk",
+                                                              "guard",
+                                                              "guard-walk",
+                                                              "attack",
+                                                              "left",
+                                                              "skill0",
+                                                              "skill1",
+                                                              "skill2",
+                                                              "skill3"
+                                                          ],
+                                               "version":  "0.14.38-conversion"
+                                           },
+                          "heroCoordination":  {
+                                                   "checks":  14,
+                                                   "failures":  [
+
+                                                                ],
+                                                   "playerSavesAccessed":  false
+                                               },
+                          "heroGarments":  {
+                                               "actualGpuPixels":  true,
+                                               "checks":  120,
+                                               "classes":  4,
+                                               "directions":  [
+                                                                  0,
+                                                                  4
+                                                              ],
+                                               "failures":  [
+
+                                                            ],
+                                               "maxRgbDifference":  0.0,
+                                               "playerSavesAccessed":  false,
+                                               "posesPerDirection":  5,
+                                               "version":  "0.14.38-conversion"
+                                           },
+                          "itemization":  {
+                                              "attackTrials":  10000,
+                                              "captures":  [
+                                                               "itemization-fiches.png",
+                                                               "itemization-commerce.png"
+                                                           ],
+                                              "checks":  19832,
+                                              "commerceOnlyGoldBottomLeft":  true,
+                                              "criticals":  1238,
+                                              "examples":  [
+                                                               {
+                                                                   "affixes":  [
+
+                                                                               ],
+                                                                   "attackSeconds":  0.43,
+                                                                   "bonuses":  {
+
+                                                                               },
+                                                                   "criticalChance":  6.0,
+                                                                   "damage":  226.0,
+                                                                   "damageMax":  267,
+                                                                   "damageMin":  185,
+                                                                   "durability":  116.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  116,
+                                                                   "modelIndex":  3,
+                                                                   "name":  "Sceptre de cristal ordinaire",
+                                                                   "rarity":  "normal",
+                                                                   "requirements":  {
+                                                                                        "intelligence":  21,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "staff",
+                                                                   "value":  214.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  11.0,
+                                                                                       "min":  8.0,
+                                                                                       "stat":  "fireDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  11.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  1.4,
+                                                                                       "min":  0.9,
+                                                                                       "stat":  "critChance",
+                                                                                       "tier":  3,
+                                                                                       "value":  1.1
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "dexterite",
+                                                                                       "tier":  3,
+                                                                                       "value":  5.0
+                                                                                   }
+                                                                               ],
+                                                                   "attackSeconds":  0.65,
+                                                                   "bonuses":  {
+                                                                                   "critChance":  1.1,
+                                                                                   "dexterite":  5.0,
+                                                                                   "fireDamage":  11.0
+                                                                               },
+                                                                   "criticalChance":  5.0,
+                                                                   "damage":  260.0,
+                                                                   "damageMax":  307,
+                                                                   "damageMin":  213,
+                                                                   "durability":  126.0,
+                                                                   "elementalRanges":  {
+                                                                                           "fireDamage":  [
+                                                                                                              9,
+                                                                                                              13
+                                                                                                          ]
+                                                                                       },
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  126,
+                                                                   "modelIndex":  3,
+                                                                   "name":  "Arc de guerre magique",
+                                                                   "rarity":  "magic",
+                                                                   "requirements":  {
+                                                                                        "dexterite":  20,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "bow",
+                                                                   "value":  493.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "vitalite",
+                                                                                       "tier":  3,
+                                                                                       "value":  6.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  17.0,
+                                                                                       "min":  12.0,
+                                                                                       "stat":  "poison",
+                                                                                       "tier":  3,
+                                                                                       "value":  17.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "dexterite",
+                                                                                       "tier":  3,
+                                                                                       "value":  7.0
+                                                                                   }
+                                                                               ],
+                                                                   "armor":  60.0,
+                                                                   "bonuses":  {
+                                                                                   "dexterite":  7.0,
+                                                                                   "poison":  17.0,
+                                                                                   "vitalite":  6.0
+                                                                               },
+                                                                   "durability":  120.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  120,
+                                                                   "modelIndex":  0,
+                                                                   "name":  "Tunique rare",
+                                                                   "rarity":  "rare",
+                                                                   "requirements":  {
+                                                                                        "force":  7,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "armor",
+                                                                   "value":  721.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "vitalite",
+                                                                                       "tier":  3,
+                                                                                       "value":  6.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  9.0,
+                                                                                       "min":  7.0,
+                                                                                       "stat":  "physicalDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  9.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  12.0,
+                                                                                       "min":  7.0,
+                                                                                       "stat":  "lightningDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  11.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  1.4,
+                                                                                       "min":  0.9,
+                                                                                       "stat":  "critChance",
+                                                                                       "tier":  3,
+                                                                                       "value":  1.2
+                                                                                   }
+                                                                               ],
+                                                                   "attackSeconds":  0.43,
+                                                                   "bonuses":  {
+                                                                                   "critChance":  1.2,
+                                                                                   "lightningDamage":  11.0,
+                                                                                   "physicalDamage":  9.0,
+                                                                                   "vitalite":  6.0
+                                                                               },
+                                                                   "criticalChance":  4.0,
+                                                                   "damage":  243.0,
+                                                                   "damageMax":  287,
+                                                                   "damageMin":  199,
+                                                                   "durability":  127.0,
+                                                                   "elementalRanges":  {
+                                                                                           "lightningDamage":  [
+                                                                                                                   4,
+                                                                                                                   18
+                                                                                                               ]
+                                                                                       },
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "legendaryEffect":  "leech",
+                                                                   "maxDurability":  127,
+                                                                   "modelIndex":  1,
+                                                                   "name":  "Hache de combat lÃ©gendaire",
+                                                                   "rarity":  "legendary",
+                                                                   "requirements":  {
+                                                                                        "force":  20,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "axe",
+                                                                   "value":  1134.0
+                                                               }
+                                                           ],
+                                              "failures":  [
+
+                                                           ],
+                                              "families":  16,
+                                              "generatedItems":  3072,
+                                              "jewelryDoesNotWear":  true,
+                                              "legacyItemsNotRerolled":  true,
+                                              "legendaryExclusivePower":  true,
+                                              "playerSavesAccessed":  false,
+                                              "rarityAffixCounts":  {
+                                                                        "legendary":  [
+                                                                                          3,
+                                                                                          4
+                                                                                      ],
+                                                                        "magic":  [
+                                                                                      2,
+                                                                                      3
+                                                                                  ],
+                                                                        "normal":  [
+                                                                                       0,
+                                                                                       0
+                                                                                   ],
+                                                                        "rare":  [
+                                                                                     3,
+                                                                                     4
+                                                                                 ]
+                                                                    },
+                                              "version":  "0.14.38-conversion"
+                                          },
+                          "village":  {
+                                          "captures":  [
+                                                           "village-place.png",
+                                                           "village-eglise.png",
+                                                           "village-maison.png",
+                                                           "village-etang.png",
+                                                           "village-ecurie.png"
+                                                       ],
+                                          "checks":  61,
+                                          "clearedTrees":  37,
+                                          "detailMeshes":  6,
+                                          "detailPrimitives":  749,
+                                          "detailTriangles":  9740,
+                                          "dynamicNpcClearance":  1.16277301311493,
+                                          "failures":  [
+
+                                                       ],
+                                          "fullBodySelection":  true,
+                                          "newPropColliders":  14,
+                                          "playerSavesAccessed":  false,
+                                          "renderInfo":  {
+                                                             "drawCalls":  89,
+                                                             "fpsClaimed":  false,
+                                                             "primitives":  101280
+                                                         },
+                                          "roadBorderStones":  0,
+                                          "roadMeshes":  1,
+                                          "roadSurface":  "dirt",
+                                          "roadTriangles":  8102,
+                                          "routes":  [
+                                                         {
+                                                             "distance":  0.962945461273193,
+                                                             "id":  "smith",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.702344954013824,
+                                                             "id":  "fisher",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.767204225063324,
+                                                             "id":  "eleane",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.941609442234039,
+                                                             "id":  "merchant",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.909632086753845,
+                                                             "id":  "priest",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.895710825920105,
+                                                             "id":  "dyer",
+                                                             "reached":  true
+                                                         }
+                                                     ],
+                                          "version":  "0.14.38-conversion"
+                                      },
+                          "armor":  {
+                                        "actualGpuPixels":  true,
+                                        "armorModels":  5,
+                                        "captures":  [
+                                                         "armor-idle-0.png",
+                                                         "armor-idle-1.png",
+                                                         "armor-idle-2.png",
+                                                         "armor-idle-4.png",
+                                                         "armor-walk-0.png",
+                                                         "armor-walk-1.png",
+                                                         "armor-walk-2.png",
+                                                         "armor-walk-4.png",
+                                                         "armor-attack-0.png",
+                                                         "armor-attack-1.png",
+                                                         "armor-attack-2.png",
+                                                         "armor-attack-4.png"
+                                                     ],
+                                        "changedVikingCollars":  5,
+                                        "checks":  469,
+                                        "classes":  4,
+                                        "directions":  8,
+                                        "failures":  [
+
+                                                     ],
+                                        "fixtureInterpolationDisabled":  true,
+                                        "logicalViewport":  "(1280.0, 720.0)",
+                                        "playerSavesAccessed":  false,
+                                        "renderedImage":  "(1028, 578)",
+                                        "states":  [
+                                                       "idle",
+                                                       "walk",
+                                                       "attack"
+                                                   ],
+                                        "version":  "0.14.38-conversion",
+                                        "viewportCoordinatesScaled":  true
+                                    },
+                          "processDiagnostics":  {
+                                                     "output":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nEQUIPMENT_FIT_AUDIT: {\"actualGpuPixels\":true,\"bareHandsAndGloves\":true,\"captures\":[\"equipment-fit-kit0-idle.png\",\"equipment-fit-kit0-attack.png\",\"equipment-fit-kit1-idle.png\",\"equipment-fit-kit1-attack.png\",\"equipment-fit-kit2-idle.png\",\"equipment-fit-kit2-attack.png\",\"equipment-fit-kit3-idle.png\",\"equipment-fit-kit3-attack.png\",\"equipment-fit-kit4-idle.png\",\"equipment-fit-kit4-attack.png\",\"equipment-fit-kit5-idle.png\",\"equipment-fit-kit5-attack.png\",\"equipment-fit-kit6-idle.png\",\"equipment-fit-kit6-attack.png\"],\"checks\":21802,\"classes\":4,\"directions\":8,\"facePixelProbes\":192,\"failures\":[\"Open helmet reveals native face: RÃ´deur/1/7/idle (823, 446) error=0.69411766342819\",\"Open helmet reveals native face: RÃ´deur/1/7/guard (823, 446) error=0.69411766342819\",\"Open helmet reveals native face: RÃ´deur/1/7/attack (823, 446) error=0.69411766342819\",\"Open helmet reveals native face: Viking/2/1/idle (292, 39) error=0.29411765933037\",\"Open helmet reveals native face: RÃ´deur/2/7/idle (823, 446) error=0.71372550725937\",\"Open helmet reveals native face: Viking/2/1/guard (292, 39) error=0.29411765933037\",\"Open helmet reveals native face: RÃ´deur/2/7/guard (823, 446) error=0.71372550725937\",\"Open helmet reveals native face: Viking/2/1/attack (292, 39) error=0.29411765933037\",\"Open helmet reveals native face: RÃ´deur/2/7/attack (823, 446) error=0.71372550725937\",\"Open helmet reveals native face: RÃ´deur/5/7/idle (823, 446) error=0.69411766342819\",\"Open helmet reveals native face: RÃ´deur/5/7/guard (823, 446) error=0.69411766342819\",\"Open helmet reveals native face: RÃ´deur/5/7/attack (823, 446) error=0.69411766342819\"],\"kits\":7,\"maxFaceRgbError\":0.713725507259369,\"mixedItemsAndUniques\":true,\"opaqueShellPixelProbes\":336,\"playerSavesAccessed\":false,\"states\":[\"idle\",\"walk\",\"guard\",\"attack\"],\"version\":\"0.14.38-conversion\"}\r\n\nWARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\nERROR: Open helmet reveals native face: RÃ´deur/1/7/idle (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/1/7/guard (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/1/7/attack (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: Viking/2/1/idle (292, 39) error=0.29411765933037\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/2/7/idle (823, 446) error=0.71372550725937\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: Viking/2/1/guard (292, 39) error=0.29411765933037\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/2/7/guard (823, 446) error=0.71372550725937\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: Viking/2/1/attack (292, 39) error=0.29411765933037\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/2/7/attack (823, 446) error=0.71372550725937\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/5/7/idle (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/5/7/guard (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/5/7/attack (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\n",
+                                                     "exitCode":  2,
+                                                     "arguments":  "--audio-driver Dummy -- --verify-equipment-fit=\"D:\\a\\_temp\\Throne essais autonomes-36c8b8bb2b044ab68cd6fe0ff1253968\\equipment-fit.json\""
+                                                 },
+                          "error":  "System.Management.Automation.RuntimeException: Exported game verification terminates cleanly"
+                      }
+}
