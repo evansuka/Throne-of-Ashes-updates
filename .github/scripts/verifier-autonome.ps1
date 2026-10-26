@@ -6,7 +6,7 @@ function Check([bool]$ok,[string]$message){if(-not $ok){throw $message};$script:
 function RunGame([string]$exe,[string]$arguments,[int]$seconds=180){
  $start=New-Object Diagnostics.ProcessStartInfo;$start.FileName=$exe;$start.WorkingDirectory=Split-Path -Parent $exe;$start.Arguments=$arguments;$start.UseShellExecute=$false;$start.RedirectStandardOutput=$true;$start.RedirectStandardError=$true
  $process=[Diagnostics.Process]::Start($start);$out=$process.StandardOutput.ReadToEndAsync();$err=$process.StandardError.ReadToEndAsync()
- if(-not $process.WaitForExit($seconds*1000)){$process.Kill();throw 'Game verification timed out.'}
+ if(-not $process.WaitForExit($seconds*1000)){$process.Kill();$process.WaitForExit();$text=$out.Result+"`n"+$err.Result;Write-Host $text;$script:report.timeoutDiagnostics=@{arguments=$arguments;output=$text};throw 'Game verification timed out.'}
  $process.WaitForExit();$text=$out.Result+"`n"+$err.Result;Write-Host $text
  Check ($process.ExitCode -eq 0 -and $text -notmatch 'SCRIPT ERROR|ERROR:|Parse Error') 'Exported game verification terminates cleanly'
  return $text
@@ -34,9 +34,9 @@ try{
  $text=RunGame $game '--audio-driver Dummy -- --verify-dungeon-biomes'
  Check ($text -match 'EXPORTED_BIOMES_OK' -and $text -match 'EXPORTED_CHRONICLES_OK') 'Six rendered floors, five guardians and ending rewards'
  if([Version]$version -ge [Version]'0.14.33'){
-  foreach($audit in @(@{script='hero_graphics_audit.gd';file='hero-graphics.json';marker='HERO_GRAPHICS_AUDIT';key='heroGraphics'},@{script='hero_coordination_audit.gd';file='hero-coordination.json';marker='HERO_COORDINATION_CHECKS';key='heroCoordination'})){
+  foreach($audit in @(@{mode='graphics';file='hero-graphics.json';marker='HERO_GRAPHICS_AUDIT';key='heroGraphics'},@{mode='coordination';file='hero-coordination.json';marker='HERO_COORDINATION_CHECKS';key='heroCoordination'})){
    $auditPath=Join-Path $fixture $audit.file
-   $auditText=RunGame $game ('--headless --audio-driver Dummy --script res://scripts/'+$audit.script+' -- "'+$auditPath+'"') 180
+   $auditText=RunGame $game ('--headless --audio-driver Dummy -- --verify-hero-'+$audit.mode+'="'+$auditPath+'"') 180
    Check ($auditText -match $audit.marker -and (Test-Path $auditPath)) ('Embedded '+$audit.key+' audit completes')
    $auditInfo=Get-Content $auditPath -Raw -Encoding UTF8 | ConvertFrom-Json
    Check ($auditInfo.failures.Count -eq 0 -or $auditInfo.failures -eq 0) ('Exported '+$audit.key+' has no failures')
