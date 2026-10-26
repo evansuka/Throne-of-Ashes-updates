@@ -62,6 +62,15 @@ try{
   Check ($itemInfo.commerceOnlyGoldBottomLeft -and $itemInfo.jewelryDoesNotWear -and -not $itemInfo.playerSavesAccessed) 'Commerce-only bottom-left prices, repairs and jewelry preservation verified'
   $report['itemization']=$itemInfo
  }
+ if([Version]$version -ge [Version]'0.14.36'){
+  $villagePath=Join-Path $fixture 'village.json'
+  $villageText=RunGame $game ('--audio-driver Dummy -- --verify-village="'+$villagePath+'"') 180
+  Check ($villageText -match 'VILLAGE_AUDIT' -and (Test-Path $villagePath)) 'Exported village, service access and NPC audit completes'
+  $villageInfo=Get-Content $villagePath -Raw -Encoding UTF8 | ConvertFrom-Json
+  Check ($villageInfo.failures.Count -eq 0 -and $villageInfo.routes.Count -eq 6 -and $villageInfo.captures.Count -ge 5 -and $villageInfo.dynamicNpcClearance -gt 0.56) 'Six NPC services, full body selection, dynamic detours and five rendered village views verified'
+  Check ($villageInfo.detailMeshes -le 8 -and $villageInfo.detailTriangles -lt 15000 -and -not $villageInfo.playerSavesAccessed) 'Village detail budget and isolated save policy verified'
+  $report['village']=$villageInfo
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
