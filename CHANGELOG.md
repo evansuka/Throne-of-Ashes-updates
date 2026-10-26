@@ -4,6 +4,19 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.33 — publiée le 26 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.33) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40272072643). Trois assets publics et latest vérifiés.
+
+- Quatre héros : mêmes jambes et bottes entre repos, marche, garde, attaque et compétences ; hauteur native de tête/casque conservée, vues de dos corrigées. Le Viking garde sa hauteur d’origine.
+- Garde : une seule paire de bras et de mains, sans silhouette relaxée superposée.
+- Poignets, poignées et boucliers raccordés pendant les interpolations d’animation.
+- Rôdeuse : pose de tir normal et flèche au relâchement à 0,20 seconde ; pause, interruption par compétence et voyage traités sans flèche doublée. Les frames lentes n’écrasent plus une attaque en attente.
+- Largeur des pantalons/bottes du Sorcier et de la Rôdeuse rééquilibrée.
+- Instructions de téléchargement adaptées au jeu autonome, sans renvoi vers l’ancien lanceur.
+
+24 192 poses, 18 kits par classe, huit directions : 492 324 vérifications et 14 contrôles de coordination, aussi réussis dans l’EXE Windows. Construction complète, prises, marche et captures natives vérifiées ; remplacement réel et récupération réussis. Certains motifs de tunique demandent encore des dessins harmonisés entre repos et combat ; les animations restent des sprites articulés.
+
 ## 0.14.32 — publiée le 25 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.32) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40220461046). Trois assets publics et latest vérifiés.
