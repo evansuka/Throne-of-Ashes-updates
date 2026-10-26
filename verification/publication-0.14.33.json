@@ -1,14 +1,14 @@
 {
     "version":  "0.14.33",
-    "status":  "failed",
-    "published":  false,
-    "cleanupSucceeded":  false,
-    "sourceCommit":  "1ded836ccbf4c21ae38a0984f2995daf8dda34b7",
-    "completedUtc":  "2026-10-26T04:52:09.3497003Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40270942184",
+    "status":  "passed",
+    "published":  true,
+    "cleanupSucceeded":  true,
+    "sourceCommit":  "5e514e364fd3dbb1f5c991fec43d941df53d83d7",
+    "completedUtc":  "2026-10-26T05:04:56.7210134Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40272072643",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.33",
     "portableCheck":  {
-                          "status":  "failed",
+                          "status":  "passed",
                           "version":  "0.14.33",
                           "noInstaller":  true,
                           "checks":  [
@@ -27,8 +27,126 @@
                                          "Native executable version matches release",
                                          "Version-specific release notes",
                                          "Exported game verification terminates cleanly",
-                                         "Six rendered floors, five guardians and ending rewards"
+                                         "Six rendered floors, five guardians and ending rewards",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded heroGraphics audit completes",
+                                         "Exported heroGraphics has no failures",
+                                         "Four classes, eight directions and complete exported pose matrix",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded heroCoordination audit completes",
+                                         "Exported heroCoordination has no failures",
+                                         "Real delayed bow release, pause, interruption and travel cancellation",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded Windows audio bridge remains available",
+                                         "Actual game prepared a self-update",
+                                         "Self-update trial uses no player saves",
+                                         "Home screen displays the installed game version",
+                                         "Home screen offers the direct update action",
+                                         "Replacement helper reports its outcome",
+                                         "Self-update completed: Updated to 999.0.0",
+                                         "Old game exits for the explicit update",
+                                         "Replacement game stays open without a restart loop",
+                                         "Previous game retained as rollback backup",
+                                         "Direct download is the Godot game itself"
                                      ],
-                          "error":  "System.Management.Automation.RuntimeException: Game verification timed out."
-                      }
+                          "heroGraphics":  {
+                                               "checks":  492324,
+                                               "classes":  [
+                                                               "Viking",
+                                                               "Paladin",
+                                                               "Sorcier",
+                                                               "RÃ´deur"
+                                                           ],
+                                               "directions":  8,
+                                               "failures":  0,
+                                               "firstFailures":  [
+
+                                                                 ],
+                                               "kitsPerClass":  18,
+                                               "metrics":  {
+                                                               "duplicatedGuardBodies":  0,
+                                                               "maxCombatGripError":  0.000000491512480493839,
+                                                               "maxHeadHeightError":  0.000000294446945048321,
+                                                               "maxLegShapeChange":  0.00000012287812012346,
+                                                               "maxShieldWristError":  0.000000596232666794094,
+                                                               "poses":  24192
+                                                           },
+                                               "physicalOutputOrPlayerSavesAccessed":  false,
+                                               "scope":  "Actual native transforms. Pixel appearance inspected separately in viewport captures; this does not prove anatomical quality or physical audio.",
+                                               "states":  [
+                                                              "idle",
+                                                              "walk",
+                                                              "guard",
+                                                              "guard-walk",
+                                                              "attack",
+                                                              "left",
+                                                              "skill0",
+                                                              "skill1",
+                                                              "skill2",
+                                                              "skill3"
+                                                          ],
+                                               "version":  "0.14.33-conversion"
+                                           },
+                          "heroCoordination":  {
+                                                   "checks":  14,
+                                                   "failures":  [
+
+                                                                ],
+                                                   "playerSavesAccessed":  false
+                                               },
+                          "trial":  {
+                                        "button":  "Mettre Ã  jour et redÃ©marrer",
+                                        "oldPid":  5100,
+                                        "realPlayerSaveAccessed":  false,
+                                        "versionLabel":  "VERSION 0.14.33",
+                                        "work":  "C:/Users/runneradmin/AppData/Local/ThroneOfAshes/portable-updates/verification-5100-2712526"
+                                    },
+                          "selfUpdate":  {
+                                             "installedVersion":  "VERSION 0.14.33",
+                                             "status":  "success",
+                                             "newPid":  2488,
+                                             "oldPid":  5100,
+                                             "keptAliveSeconds":  10
+                                         },
+                          "trialOutput":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nAUDIO_FALLBACK: Windows MCI active=true parent=5100\r\nSESSION_START: version=0.14.33-conversion pid=5100 audio=Dummy device=Default\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nGAME_UPDATE: Version 999.0.0 disponible.\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/5100/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=5100\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/5100/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=5100\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/5100/audio-fallback.log\r\nPORTABLE_TRIAL: real game requests verified replacement from home; no player saves\r\nGAME_UPDATE: PrÃ©paration du redÃ©marrageâ€¦\r\n",
+                          "trialErrors":  "WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\n",
+                          "helperDiagnostics":  {
+                                                    "helper.ready":  "ready",
+                                                    "update.log":  "2026-10-26T05:03:31.6317931Z PREPARING; reading replacement plan\r\n2026-10-26T05:03:34.6933431Z HASHING; verifying new and current executable\r\n2026-10-26T05:03:52.1062795Z VERIFIED; waiting for the running game to close\r\n2026-10-26T05:03:53.4446451Z ACTIVATED; starting the verified game\r\n2026-10-26T05:03:55.8938839Z READY; same replacement game is alive\r\n",
+                                                    "result.json":  "{\"state\":\"success\",\"message\":\"Updated to 999.0.0\"}"
+                                                }
+                      },
+    "portableRecovery":  {
+                             "status":  "passed",
+                             "cases":  6,
+                             "checks":  [
+                                            "success: helper validates before handoff",
+                                            "Concurrent helper rejected by exclusive target lock",
+                                            "Concurrent attempt neither kills nor replaces current game",
+                                            "Concurrent helper never starts a fallback game",
+                                            "Success helper exits cleanly",
+                                            "New verified binary activated",
+                                            "Previous binary retained",
+                                            "bad-hash: rejected before game closes",
+                                            "bad-hash: original process remains alive",
+                                            "bad-hash: failure reported",
+                                            "bad-hash: old binary preserved or restored",
+                                            "outside-path: rejected before game closes",
+                                            "outside-path: original process remains alive",
+                                            "outside-path: failure reported",
+                                            "outside-path: old binary preserved or restored",
+                                            "startup-failure: helper validates before handoff",
+                                            "startup-failure: failure reported",
+                                            "startup-failure: old binary preserved or restored",
+                                            "Failed new game starts the old game once",
+                                            "Rollback never loops",
+                                            "stage-changed: helper validates before handoff",
+                                            "stage-changed: failure reported",
+                                            "stage-changed: old binary preserved or restored",
+                                            "locked-target: helper validates before handoff",
+                                            "locked-target: failure reported",
+                                            "locked-target: old binary preserved or restored"
+                                        ],
+                             "noSecuritySettingsChanged":  true
+                         }
 }
