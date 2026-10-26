@@ -4,6 +4,19 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.35 — publiée le 26 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.35) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40285823265). Trois assets publics et latest vérifiés.
+
+- Nouvelles fiches sombres : propriétés de base, plages physiques/élémentaires, cadence, critique, prérequis et pouvoirs séparés ; effets des uniques/légendaires décrits en clair.
+- Nouveaux butins : ordinaire sans pouvoir magique ; bleu 2–3 ; rare 3–4 ; légendaire 3–4 plus un pouvoir exclusif. Groupes d’affixes par famille et six paliers de puissance.
+- Les bonus affichés agissent réellement sur les attaques, sorts, protections et ressources. Conditions d’équipement vérifiées sans les bonus de l’objet entrant ou remplacé.
+- Durabilité et réparations chez Borin conservées ; boucliers/carquois s’usent aux impacts, anneaux/amulettes sans usure.
+- Valeur en or uniquement dans le commerce, en bas à gauche des fiches et des cases du marchand ; même calcul de prix pour l’affichage et la transaction.
+- Anciennes pièces et uniques conservés sans nouveau tirage ni prérequis rétroactifs.
+
+19 832 contrôles dédiés sur 3 072 objets, douze niveaux, seize familles et 10 000 attaques, aussi réussis dans le vrai EXE Windows. Construction complète, 106 contrôles UI et 2 787 combat, captures natives, remplacement réel et six cas de récupération réussis. Source `02a0b9f`.
+
 ## 0.14.34 — publiée le 26 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.34) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40281142921). Trois assets publics et latest vérifiés.
