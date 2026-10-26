@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.35](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.35)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.36](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.36)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.35 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40285823265) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
+[Validation Windows 0.14.36 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40302740827) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -51,3 +51,5 @@ En **0.14.33**, les quatre héros conservent leurs proportions en combat, la gar
 En **0.14.34**, les quatre héros retrouvent les mêmes tissus et motifs au repos, en garde et en combat. Hauteur, mains et prises d’armes conservées. Les pixels visibles du torse sont comparés dans cinq poses face/dos : 120 contrôles du vrai rendu Windows, sans échec.
 
 En **0.14.35**, les nouveaux objets ordinaires n’ont aucun pouvoir magique, les bleus en ont 2–3, les rares 3–4 et les légendaires 3–4 plus un pouvoir exclusif. Les fiches présentent les dégâts, la cadence, le critique, les prérequis et les effets en clair. Durabilité et réparations chez Borin conservées, anneaux et amulettes sans usure. La valeur en or apparaît seulement dans le commerce, en bas à gauche. Les anciennes pièces gardent leurs caractéristiques.
+
+En **0.14.36**, Havrebrume reçoit des maisons détaillées, une chapelle avec portail voûté et clocher ouvert, des chemins raccordés aux services et une berge aménagée. Les collisions de la forge et les trajets autour des PNJ sont corrigés. Les six services, les dialogues et les déplacements sont vérifiés dans le vrai jeu Windows.

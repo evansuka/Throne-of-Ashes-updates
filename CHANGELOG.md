@@ -4,6 +4,19 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.36 — publiée le 26 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.36) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40302740827). Trois assets publics et latest vérifiés.
+
+- Maisons : fenêtres dégagées, volets, portes ferrées, soubassements, seuils pavés, cheminées, jardinières et finitions de toiture.
+- Chapelle : portail voûté, imposte/rosace, vitraux, contreforts corrigés, clocher ouvert et cloche visible.
+- Place, bordures et raccords vers les services, berge du pêcheur, ateliers et abords des statues enrichis ; arbres gênant les accès écartés.
+- Forge : collisions séparées du foyer, de l’enclume et du râtelier pour dégager l’emplacement de Borin. Dégagements du feu et du coffre corrigés.
+- Trajets : contournement des PNJ, recalcul en cas de blocage et arrivée choisie dans une zone réellement accessible ; Blue évite les PNJ et réessaie si bloqué.
+- Décor regroupé en six maillages statiques ; aucune nouvelle lumière ou particule.
+
+57 contrôles dans le vrai EXE Windows : accès physique aux six services, dialogues et sélection du corps entier, cinq vues rendues, accès aux bâtiments/grotte, contournement d’Éléane et reprise face à un PNJ déplacé. Construction complète, régressions du jeu, remplacement réel et six cas de récupération réussis. Source `b2a6f10`. Le budget graphique ne constitue pas une mesure des FPS du PC.
+
 ## 0.14.35 — publiée le 26 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.35) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40285823265). Trois assets publics et latest vérifiés.
