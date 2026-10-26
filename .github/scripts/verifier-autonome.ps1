@@ -83,7 +83,7 @@ try{
   Check ($armorText -match 'ARMOR_AUDIT' -and (Test-Path $armorPath)) 'Actual rendered armor opening audit completes'
   $armorInfo=Get-Content $armorPath -Raw -Encoding UTF8 | ConvertFrom-Json
   Check ($armorInfo.failures.Count -eq 0 -and $armorInfo.checks -ge 469 -and $armorInfo.armorModels -eq 5 -and $armorInfo.classes -eq 4 -and $armorInfo.directions -eq 8) 'Original native neck and arm pixels remain visible through all five armor model openings'
-  Check ($armorInfo.changedVikingCollars -eq 5 -and -not $armorInfo.playerSavesAccessed) 'All five Viking collars corrected without accessing player saves'
+  Check ($armorInfo.changedVikingCollars -eq 5 -and $armorInfo.actualGpuPixels -and $armorInfo.viewportCoordinatesScaled -and $armorInfo.fixtureInterpolationDisabled -and -not $armorInfo.playerSavesAccessed) 'All five Viking collars corrected without accessing player saves'
   $report['armor']=$armorInfo
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
