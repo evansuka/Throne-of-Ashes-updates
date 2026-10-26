@@ -3,9 +3,9 @@
     "status":  "failed",
     "published":  false,
     "cleanupSucceeded":  false,
-    "sourceCommit":  "1d3d16d264b30cd80a5aad5d1942823a0f3e781d",
-    "completedUtc":  "2026-10-26T16:51:56.2076352Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40362849142",
+    "sourceCommit":  "cdc4e4259be223ab48df722e0c960f26c8f3f2ce",
+    "completedUtc":  "2026-10-26T17:11:37.6881621Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40365857371",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.38",
     "portableCheck":  {
                           "status":  "failed",
@@ -133,9 +133,9 @@
 
                                                                                },
                                                                    "criticalChance":  6.0,
-                                                                   "damage":  226.0,
-                                                                   "damageMax":  267,
-                                                                   "damageMin":  185,
+                                                                   "damage":  237.0,
+                                                                   "damageMax":  280,
+                                                                   "damageMin":  194,
                                                                    "durability":  116.0,
                                                                    "itemLevel":  50,
                                                                    "itemizationVersion":  1,
@@ -148,7 +148,7 @@
                                                                                         "level":  37
                                                                                     },
                                                                    "type":  "staff",
-                                                                   "value":  214.0
+                                                                   "value":  211.0
                                                                },
                                                                {
                                                                    "affixes":  [
@@ -160,32 +160,36 @@
                                                                                        "value":  11.0
                                                                                    },
                                                                                    {
-                                                                                       "max":  1.4,
-                                                                                       "min":  0.9,
-                                                                                       "stat":  "critChance",
-                                                                                       "tier":  3,
-                                                                                       "value":  1.1
-                                                                                   },
-                                                                                   {
                                                                                        "max":  7.0,
                                                                                        "min":  5.0,
-                                                                                       "stat":  "dexterite",
+                                                                                       "stat":  "vitalite",
                                                                                        "tier":  3,
-                                                                                       "value":  5.0
+                                                                                       "value":  7.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  11.0,
+                                                                                       "min":  8.0,
+                                                                                       "stat":  "coldDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  10.0
                                                                                    }
                                                                                ],
                                                                    "attackSeconds":  0.65,
                                                                    "bonuses":  {
-                                                                                   "critChance":  1.1,
-                                                                                   "dexterite":  5.0,
-                                                                                   "fireDamage":  11.0
+                                                                                   "coldDamage":  10.0,
+                                                                                   "fireDamage":  11.0,
+                                                                                   "vitalite":  7.0
                                                                                },
                                                                    "criticalChance":  5.0,
-                                                                   "damage":  260.0,
-                                                                   "damageMax":  307,
-                                                                   "damageMin":  213,
+                                                                   "damage":  261.0,
+                                                                   "damageMax":  308,
+                                                                   "damageMin":  214,
                                                                    "durability":  126.0,
                                                                    "elementalRanges":  {
+                                                                                           "coldDamage":  [
+                                                                                                              8,
+                                                                                                              12
+                                                                                                          ],
                                                                                            "fireDamage":  [
                                                                                                               9,
                                                                                                               13
@@ -202,37 +206,37 @@
                                                                                         "level":  37
                                                                                     },
                                                                    "type":  "bow",
-                                                                   "value":  493.0
+                                                                   "value":  509.0
                                                                },
                                                                {
                                                                    "affixes":  [
                                                                                    {
-                                                                                       "max":  7.0,
-                                                                                       "min":  5.0,
-                                                                                       "stat":  "vitalite",
+                                                                                       "max":  28.0,
+                                                                                       "min":  18.0,
+                                                                                       "stat":  "armorPercent",
                                                                                        "tier":  3,
-                                                                                       "value":  6.0
+                                                                                       "value":  25.0
                                                                                    },
                                                                                    {
                                                                                        "max":  17.0,
                                                                                        "min":  12.0,
-                                                                                       "stat":  "poison",
+                                                                                       "stat":  "foudre",
                                                                                        "tier":  3,
-                                                                                       "value":  17.0
+                                                                                       "value":  12.0
                                                                                    },
                                                                                    {
-                                                                                       "max":  7.0,
-                                                                                       "min":  5.0,
-                                                                                       "stat":  "dexterite",
+                                                                                       "max":  17.0,
+                                                                                       "min":  12.0,
+                                                                                       "stat":  "froid",
                                                                                        "tier":  3,
-                                                                                       "value":  7.0
+                                                                                       "value":  16.0
                                                                                    }
                                                                                ],
                                                                    "armor":  60.0,
                                                                    "bonuses":  {
-                                                                                   "dexterite":  7.0,
-                                                                                   "poison":  17.0,
-                                                                                   "vitalite":  6.0
+                                                                                   "armorPercent":  25.0,
+                                                                                   "foudre":  12.0,
+                                                                                   "froid":  16.0
                                                                                },
                                                                    "durability":  120.0,
                                                                    "itemLevel":  50,
@@ -246,70 +250,74 @@
                                                                                         "level":  37
                                                                                     },
                                                                    "type":  "armor",
-                                                                   "value":  721.0
+                                                                   "value":  739.0
                                                                },
                                                                {
                                                                    "affixes":  [
-                                                                                   {
-                                                                                       "max":  7.0,
-                                                                                       "min":  5.0,
-                                                                                       "stat":  "vitalite",
-                                                                                       "tier":  3,
-                                                                                       "value":  6.0
-                                                                                   },
-                                                                                   {
-                                                                                       "max":  9.0,
-                                                                                       "min":  7.0,
-                                                                                       "stat":  "physicalDamage",
-                                                                                       "tier":  3,
-                                                                                       "value":  9.0
-                                                                                   },
                                                                                    {
                                                                                        "max":  12.0,
                                                                                        "min":  7.0,
                                                                                        "stat":  "lightningDamage",
                                                                                        "tier":  3,
-                                                                                       "value":  11.0
+                                                                                       "value":  7.0
                                                                                    },
                                                                                    {
-                                                                                       "max":  1.4,
-                                                                                       "min":  0.9,
-                                                                                       "stat":  "critChance",
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "vitalite",
                                                                                        "tier":  3,
-                                                                                       "value":  1.2
+                                                                                       "value":  5.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  11.0,
+                                                                                       "min":  8.0,
+                                                                                       "stat":  "coldDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  9.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  8.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "attackSpeed",
+                                                                                       "tier":  3,
+                                                                                       "value":  7.0
                                                                                    }
                                                                                ],
                                                                    "attackSeconds":  0.43,
                                                                    "bonuses":  {
-                                                                                   "critChance":  1.2,
-                                                                                   "lightningDamage":  11.0,
-                                                                                   "physicalDamage":  9.0,
-                                                                                   "vitalite":  6.0
+                                                                                   "attackSpeed":  7.0,
+                                                                                   "coldDamage":  9.0,
+                                                                                   "lightningDamage":  7.0,
+                                                                                   "vitalite":  5.0
                                                                                },
                                                                    "criticalChance":  4.0,
-                                                                   "damage":  243.0,
-                                                                   "damageMax":  287,
-                                                                   "damageMin":  199,
-                                                                   "durability":  127.0,
+                                                                   "damage":  195.0,
+                                                                   "damageMax":  230,
+                                                                   "damageMin":  160,
+                                                                   "durability":  115.0,
                                                                    "elementalRanges":  {
+                                                                                           "coldDamage":  [
+                                                                                                              7,
+                                                                                                              11
+                                                                                                          ],
                                                                                            "lightningDamage":  [
-                                                                                                                   4,
-                                                                                                                   18
+                                                                                                                   2,
+                                                                                                                   12
                                                                                                                ]
                                                                                        },
                                                                    "itemLevel":  50,
                                                                    "itemizationVersion":  1,
-                                                                   "legendaryEffect":  "leech",
-                                                                   "maxDurability":  127,
-                                                                   "modelIndex":  1,
-                                                                   "name":  "Hache de combat lÃ©gendaire",
+                                                                   "legendaryEffect":  "bleed",
+                                                                   "maxDurability":  115,
+                                                                   "modelIndex":  0,
+                                                                   "name":  "Hachette lÃ©gendaire",
                                                                    "rarity":  "legendary",
                                                                    "requirements":  {
                                                                                         "force":  20,
                                                                                         "level":  37
                                                                                     },
                                                                    "type":  "axe",
-                                                                   "value":  1134.0
+                                                                   "value":  1042.0
                                                                }
                                                            ],
                                               "failures":  [
@@ -441,10 +449,55 @@
                                         "viewportCoordinatesScaled":  true
                                     },
                           "processDiagnostics":  {
-                                                     "output":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nEQUIPMENT_FIT_AUDIT: {\"actualGpuPixels\":true,\"bareHandsAndGloves\":true,\"captures\":[\"equipment-fit-kit0-idle.png\",\"equipment-fit-kit0-attack.png\",\"equipment-fit-kit1-idle.png\",\"equipment-fit-kit1-attack.png\",\"equipment-fit-kit2-idle.png\",\"equipment-fit-kit2-attack.png\",\"equipment-fit-kit3-idle.png\",\"equipment-fit-kit3-attack.png\",\"equipment-fit-kit4-idle.png\",\"equipment-fit-kit4-attack.png\",\"equipment-fit-kit5-idle.png\",\"equipment-fit-kit5-attack.png\",\"equipment-fit-kit6-idle.png\",\"equipment-fit-kit6-attack.png\"],\"checks\":21802,\"classes\":4,\"directions\":8,\"facePixelProbes\":192,\"failures\":[\"Open helmet reveals native face: RÃ´deur/1/7/idle (823, 446) error=0.69411766342819\",\"Open helmet reveals native face: RÃ´deur/1/7/guard (823, 446) error=0.69411766342819\",\"Open helmet reveals native face: RÃ´deur/1/7/attack (823, 446) error=0.69411766342819\",\"Open helmet reveals native face: Viking/2/1/idle (292, 39) error=0.29411765933037\",\"Open helmet reveals native face: RÃ´deur/2/7/idle (823, 446) error=0.71372550725937\",\"Open helmet reveals native face: Viking/2/1/guard (292, 39) error=0.29411765933037\",\"Open helmet reveals native face: RÃ´deur/2/7/guard (823, 446) error=0.71372550725937\",\"Open helmet reveals native face: Viking/2/1/attack (292, 39) error=0.29411765933037\",\"Open helmet reveals native face: RÃ´deur/2/7/attack (823, 446) error=0.71372550725937\",\"Open helmet reveals native face: RÃ´deur/5/7/idle (823, 446) error=0.69411766342819\",\"Open helmet reveals native face: RÃ´deur/5/7/guard (823, 446) error=0.69411766342819\",\"Open helmet reveals native face: RÃ´deur/5/7/attack (823, 446) error=0.69411766342819\"],\"kits\":7,\"maxFaceRgbError\":0.713725507259369,\"mixedItemsAndUniques\":true,\"opaqueShellPixelProbes\":336,\"playerSavesAccessed\":false,\"states\":[\"idle\",\"walk\",\"guard\",\"attack\"],\"version\":\"0.14.38-conversion\"}\r\n\nWARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\nERROR: Open helmet reveals native face: RÃ´deur/1/7/idle (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/1/7/guard (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/1/7/attack (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: Viking/2/1/idle (292, 39) error=0.29411765933037\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/2/7/idle (823, 446) error=0.71372550725937\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: Viking/2/1/guard (292, 39) error=0.29411765933037\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/2/7/guard (823, 446) error=0.71372550725937\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: Viking/2/1/attack (292, 39) error=0.29411765933037\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/2/7/attack (823, 446) error=0.71372550725937\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/5/7/idle (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/5/7/guard (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face: RÃ´deur/5/7/attack (823, 446) error=0.69411766342819\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\n",
+                                                     "output":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nEQUIPMENT_FIT_AUDIT: {\"actualGpuPixels\":true,\"bareHandsAndGloves\":true,\"captures\":[\"equipment-fit-kit0-idle.png\",\"equipment-fit-kit0-attack.png\",\"equipment-fit-kit1-idle.png\",\"equipment-fit-kit1-attack.png\",\"equipment-fit-kit2-idle.png\",\"equipment-fit-kit2-attack.png\",\"equipment-fit-kit3-idle.png\",\"equipment-fit-kit3-attack.png\",\"equipment-fit-kit4-idle.png\",\"equipment-fit-kit4-attack.png\",\"equipment-fit-kit5-idle.png\",\"equipment-fit-kit5-attack.png\",\"equipment-fit-kit6-idle.png\",\"equipment-fit-kit6-attack.png\"],\"checks\":21802,\"classes\":4,\"directions\":8,\"faceBackgroundExcluded\":true,\"facePatchSize\":3,\"facePixelProbes\":192,\"failures\":[\"Open helmet reveals native face region: RÃ´deur/2/7/idle (823, 447) visible=5/9\",\"Open helmet reveals native face region: Viking/2/1/walk (290, 40) visible=5/9\",\"Open helmet reveals native face region: RÃ´deur/2/7/guard (823, 447) visible=5/9\",\"Open helmet reveals native face region: RÃ´deur/2/7/attack (823, 447) visible=5/9\"],\"kits\":7,\"maxMatchedFaceRgbError\":0.04313725233078,\"minFaceVisibleFraction\":0.555555555555556,\"mixedItemsAndUniques\":true,\"opaqueShellPixelProbes\":336,\"playerSavesAccessed\":false,\"states\":[\"idle\",\"walk\",\"guard\",\"attack\"],\"version\":\"0.14.38-conversion\"}\r\n\nWARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\nERROR: Open helmet reveals native face region: RÃ´deur/2/7/idle (823, 447) visible=5/9\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face region: Viking/2/1/walk (290, 40) visible=5/9\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face region: RÃ´deur/2/7/guard (823, 447) visible=5/9\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Open helmet reveals native face region: RÃ´deur/2/7/attack (823, 447) visible=5/9\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\n",
                                                      "exitCode":  2,
-                                                     "arguments":  "--audio-driver Dummy -- --verify-equipment-fit=\"D:\\a\\_temp\\Throne essais autonomes-36c8b8bb2b044ab68cd6fe0ff1253968\\equipment-fit.json\""
+                                                     "arguments":  "--audio-driver Dummy -- --verify-equipment-fit=\"D:\\a\\_temp\\Throne essais autonomes-33701b826ca04a879ef160b10b0c5481\\equipment-fit.json\""
                                                  },
+                          "equipmentFit":  {
+                                               "actualGpuPixels":  true,
+                                               "bareHandsAndGloves":  true,
+                                               "captures":  [
+                                                                "equipment-fit-kit0-idle.png",
+                                                                "equipment-fit-kit0-attack.png",
+                                                                "equipment-fit-kit1-idle.png",
+                                                                "equipment-fit-kit1-attack.png",
+                                                                "equipment-fit-kit2-idle.png",
+                                                                "equipment-fit-kit2-attack.png",
+                                                                "equipment-fit-kit3-idle.png",
+                                                                "equipment-fit-kit3-attack.png",
+                                                                "equipment-fit-kit4-idle.png",
+                                                                "equipment-fit-kit4-attack.png",
+                                                                "equipment-fit-kit5-idle.png",
+                                                                "equipment-fit-kit5-attack.png",
+                                                                "equipment-fit-kit6-idle.png",
+                                                                "equipment-fit-kit6-attack.png"
+                                                            ],
+                                               "checks":  21802,
+                                               "classes":  4,
+                                               "directions":  8,
+                                               "faceBackgroundExcluded":  true,
+                                               "facePatchSize":  3,
+                                               "facePixelProbes":  192,
+                                               "failures":  [
+                                                                "Open helmet reveals native face region: RÃ´deur/2/7/idle (823, 447) visible=5/9",
+                                                                "Open helmet reveals native face region: Viking/2/1/walk (290, 40) visible=5/9",
+                                                                "Open helmet reveals native face region: RÃ´deur/2/7/guard (823, 447) visible=5/9",
+                                                                "Open helmet reveals native face region: RÃ´deur/2/7/attack (823, 447) visible=5/9"
+                                                            ],
+                                               "kits":  7,
+                                               "maxMatchedFaceRgbError":  0.04313725233078,
+                                               "minFaceVisibleFraction":  0.555555555555556,
+                                               "mixedItemsAndUniques":  true,
+                                               "opaqueShellPixelProbes":  336,
+                                               "playerSavesAccessed":  false,
+                                               "states":  [
+                                                              "idle",
+                                                              "walk",
+                                                              "guard",
+                                                              "attack"
+                                                          ],
+                                               "version":  "0.14.38-conversion"
+                                           },
                           "error":  "System.Management.Automation.RuntimeException: Exported game verification terminates cleanly"
                       }
 }
