@@ -45,6 +45,14 @@ try{
    $report[$audit.key]=$auditInfo
   }
  }
+ if([Version]$version -ge [Version]'0.14.34'){
+  $garmentPath=Join-Path $fixture 'hero-garments.json'
+  $garmentText=RunGame $game ('--audio-driver Dummy -- --verify-hero-garments="'+$garmentPath+'"') 180
+  Check ($garmentText -match 'HERO_GARMENT_PIXELS' -and (Test-Path $garmentPath)) 'Actual rendered garment pixel audit completes'
+  $garmentInfo=Get-Content $garmentPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  Check ($garmentInfo.failures.Count -eq 0 -and $garmentInfo.checks -ge 120 -and $garmentInfo.actualGpuPixels) 'Four class outfits retain native front/back motifs in five combat poses'
+  $report['heroGarments']=$garmentInfo
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
