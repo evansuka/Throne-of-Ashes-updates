@@ -4,6 +4,16 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.37 — publiée le 26 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.37) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40312750282). Trois assets publics et latest vérifiés.
+
+- Havrebrume : uniquement des sentiers de terre continus, bords irréguliers fondus dans l’herbe ; pavés et bordures de pierres retirés, y compris les raccords ajoutés aux maisons, à la chapelle et à la forge.
+- Un seul maillage précalculé pour les sentiers : 8 102 triangles. Les détails conservés du village passent de 12 164 à 9 740 triangles ; aucune nouvelle lumière ou particule.
+- Armures : les ouvertures du col et des manches révèlent le cou et les bras natifs des quatre héros, au lieu des intérieurs noirs opaques. Cinq modèles conservés ; proportions, mains, prises des armes et teintures inchangées.
+
+61 contrôles du village et 469 contrôles visuels des armures réussis dans le vrai EXE Windows. Quatre classes, cinq armures, huit directions, repos/marche/attaque ; pixels comparés au corps natif dans la même pose équipée. Construction complète, six contrôles web, remplacement réel et six cas de récupération réussis. Source `a71f57a`, QA `aa83bcd`. Aucun accès aux sauvegardes joueur ; aucune mesure de FPS du PC affirmée.
+
 ## 0.14.36 — publiée le 26 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.36) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40302740827). Trois assets publics et latest vérifiés.
