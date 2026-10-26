@@ -12,6 +12,8 @@ function RunGame([string]$exe,[string]$arguments,[int]$seconds=180){
   $script:report['processDiagnostics']=@{arguments=$arguments;exitCode=$process.ExitCode;output=$text}
   $toaFailedArmor=Join-Path $fixture 'armor.json'
   if(Test-Path $toaFailedArmor){$script:report['armor']=Get-Content $toaFailedArmor -Raw -Encoding UTF8 | ConvertFrom-Json}
+  $toaFailedFit=Join-Path $fixture 'equipment-fit.json'
+  if(Test-Path $toaFailedFit){$script:report['equipmentFit']=Get-Content $toaFailedFit -Raw -Encoding UTF8 | ConvertFrom-Json}
  }
  Check ($process.ExitCode -eq 0 -and $text -notmatch 'SCRIPT ERROR|ERROR:|Parse Error') 'Exported game verification terminates cleanly'
  return $text
@@ -92,7 +94,7 @@ try{
   Check ($fitText -match 'EQUIPMENT_FIT_AUDIT' -and (Test-Path $fitPath)) 'Actual worn equipment fitting audit completes'
   $fitInfo=Get-Content $fitPath -Raw -Encoding UTF8 | ConvertFrom-Json
   Check ($fitInfo.failures.Count -eq 0 -and $fitInfo.checks -ge 21802 -and $fitInfo.classes -eq 4 -and $fitInfo.directions -eq 8 -and $fitInfo.kits -eq 7) 'Four heroes retain fitted equipment across complete, mixed and unique kits'
-  Check ($fitInfo.actualGpuPixels -and $fitInfo.facePixelProbes -ge 192 -and $fitInfo.opaqueShellPixelProbes -ge 336 -and -not $fitInfo.playerSavesAccessed) 'Open faces, opaque body coverage, native sleeves and rear accessories verified'
+  Check ($fitInfo.actualGpuPixels -and $fitInfo.facePatchSize -eq 3 -and $fitInfo.faceBackgroundExcluded -and $fitInfo.minFaceVisibleFraction -ge 0.60 -and $fitInfo.facePixelProbes -ge 192 -and $fitInfo.opaqueShellPixelProbes -ge 336 -and -not $fitInfo.playerSavesAccessed) 'Open faces, opaque body coverage, native sleeves and rear accessories verified'
   $report['equipmentFit']=$fitInfo
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
