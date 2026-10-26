@@ -53,6 +53,15 @@ try{
   Check ($garmentInfo.failures.Count -eq 0 -and $garmentInfo.checks -ge 120 -and $garmentInfo.actualGpuPixels) 'Four class outfits retain native front/back motifs in five combat poses'
   $report['heroGarments']=$garmentInfo
  }
+ if([Version]$version -ge [Version]'0.14.35'){
+  $itemPath=Join-Path $fixture 'itemization.json'
+  $itemText=RunGame $game ('--audio-driver Dummy -- --verify-itemization="'+$itemPath+'"') 180
+  Check ($itemText -match 'ITEMIZATION_CHECKS' -and (Test-Path $itemPath)) 'Exported itemization, commerce and repair audit completes'
+  $itemInfo=Get-Content $itemPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  Check ($itemInfo.failures.Count -eq 0 -and $itemInfo.generatedItems -ge 3072 -and $itemInfo.attackTrials -ge 10000) 'Rarity powers, physical ranges, attack speed and critical rolls verified'
+  Check ($itemInfo.commerceOnlyGoldBottomLeft -and $itemInfo.jewelryDoesNotWear -and -not $itemInfo.playerSavesAccessed) 'Commerce-only bottom-left prices, repairs and jewelry preservation verified'
+  $report['itemization']=$itemInfo
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
