@@ -1,14 +1,14 @@
 {
     "version":  "0.14.37",
-    "status":  "failed",
-    "published":  false,
-    "cleanupSucceeded":  false,
-    "sourceCommit":  "44bf7a9b2d1e7ce88aace24627dd911b0eb661e3",
-    "completedUtc":  "2026-10-26T11:02:23.4908408Z",
-    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40311771025",
+    "status":  "passed",
+    "published":  true,
+    "cleanupSucceeded":  true,
+    "sourceCommit":  "aa83bcdf732a889fe1b82224bf5a7d3ea2a3043f",
+    "completedUtc":  "2026-10-26T11:12:31.8654771Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40312750282",
     "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.37",
     "portableCheck":  {
-                          "status":  "failed",
+                          "status":  "passed",
                           "version":  "0.14.37",
                           "noInstaller":  true,
                           "checks":  [
@@ -47,7 +47,23 @@
                                          "Exported village, service access and NPC audit completes",
                                          "Six NPC services, full body selection, dynamic detours and five rendered village views verified",
                                          "Village detail budget and isolated save policy verified",
-                                         "Continuous dirt-only trails without paving or stone borders verified"
+                                         "Continuous dirt-only trails without paving or stone borders verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual rendered armor opening audit completes",
+                                         "Original native neck and arm pixels remain visible through all five armor model openings",
+                                         "All five Viking collars corrected without accessing player saves",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded Windows audio bridge remains available",
+                                         "Actual game prepared a self-update",
+                                         "Self-update trial uses no player saves",
+                                         "Home screen displays the installed game version",
+                                         "Home screen offers the direct update action",
+                                         "Replacement helper reports its outcome",
+                                         "Self-update completed: Updated to 999.0.0",
+                                         "Old game exits for the explicit update",
+                                         "Replacement game stays open without a restart loop",
+                                         "Previous game retained as rollback backup",
+                                         "Direct download is the Godot game itself"
                                      ],
                           "heroGraphics":  {
                                                "checks":  625380,
@@ -129,54 +145,62 @@
 
                                                                                },
                                                                    "criticalChance":  6.0,
-                                                                   "damage":  190.0,
-                                                                   "damageMax":  224,
-                                                                   "damageMin":  156,
-                                                                   "durability":  104.0,
+                                                                   "damage":  156.0,
+                                                                   "damageMax":  184,
+                                                                   "damageMin":  128,
+                                                                   "durability":  92.0,
                                                                    "itemLevel":  50,
                                                                    "itemizationVersion":  1,
-                                                                   "maxDurability":  104,
-                                                                   "modelIndex":  2,
-                                                                   "name":  "BÃ¢ton runique ordinaire",
+                                                                   "maxDurability":  92,
+                                                                   "modelIndex":  1,
+                                                                   "name":  "BÃ¢ton de chÃªne ordinaire",
                                                                    "rarity":  "normal",
                                                                    "requirements":  {
                                                                                         "intelligence":  21,
                                                                                         "level":  37
                                                                                     },
                                                                    "type":  "staff",
-                                                                   "value":  219.0
+                                                                   "value":  211.0
                                                                },
                                                                {
                                                                    "affixes":  [
                                                                                    {
-                                                                                       "max":  11.0,
-                                                                                       "min":  8.0,
-                                                                                       "stat":  "fireDamage",
-                                                                                       "tier":  3,
-                                                                                       "value":  8.0
-                                                                                   },
-                                                                                   {
                                                                                        "max":  7.0,
                                                                                        "min":  5.0,
-                                                                                       "stat":  "vitalite",
+                                                                                       "stat":  "dexterite",
                                                                                        "tier":  3,
-                                                                                       "value":  5.0
+                                                                                       "value":  6.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  42.0,
+                                                                                       "min":  32.0,
+                                                                                       "stat":  "attackRating",
+                                                                                       "tier":  3,
+                                                                                       "value":  36.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  11.0,
+                                                                                       "min":  8.0,
+                                                                                       "stat":  "coldDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  9.0
                                                                                    }
                                                                                ],
                                                                    "attackSeconds":  0.65,
                                                                    "bonuses":  {
-                                                                                   "fireDamage":  8.0,
-                                                                                   "vitalite":  5.0
+                                                                                   "attackRating":  36.0,
+                                                                                   "coldDamage":  9.0,
+                                                                                   "dexterite":  6.0
                                                                                },
                                                                    "criticalChance":  5.0,
-                                                                   "damage":  181.0,
-                                                                   "damageMax":  214,
-                                                                   "damageMin":  148,
+                                                                   "damage":  179.0,
+                                                                   "damageMax":  211,
+                                                                   "damageMin":  147,
                                                                    "durability":  102.0,
                                                                    "elementalRanges":  {
-                                                                                           "fireDamage":  [
-                                                                                                              6,
-                                                                                                              10
+                                                                                           "coldDamage":  [
+                                                                                                              7,
+                                                                                                              11
                                                                                                           ]
                                                                                        },
                                                                    "itemLevel":  50,
@@ -190,10 +214,17 @@
                                                                                         "level":  37
                                                                                     },
                                                                    "type":  "bow",
-                                                                   "value":  477.0
+                                                                   "value":  464.0
                                                                },
                                                                {
                                                                    "affixes":  [
+                                                                                   {
+                                                                                       "max":  17.0,
+                                                                                       "min":  12.0,
+                                                                                       "stat":  "poison",
+                                                                                       "tier":  3,
+                                                                                       "value":  13.0
+                                                                                   },
                                                                                    {
                                                                                        "max":  24.0,
                                                                                        "min":  17.0,
@@ -202,96 +233,111 @@
                                                                                        "value":  21.0
                                                                                    },
                                                                                    {
-                                                                                       "max":  7.0,
-                                                                                       "min":  5.0,
-                                                                                       "stat":  "intelligence",
+                                                                                       "max":  17.0,
+                                                                                       "min":  12.0,
+                                                                                       "stat":  "froid",
                                                                                        "tier":  3,
-                                                                                       "value":  7.0
+                                                                                       "value":  12.0
                                                                                    },
                                                                                    {
-                                                                                       "max":  28.0,
-                                                                                       "min":  18.0,
-                                                                                       "stat":  "armorPercent",
+                                                                                       "max":  17.0,
+                                                                                       "min":  12.0,
+                                                                                       "stat":  "foudre",
                                                                                        "tier":  3,
-                                                                                       "value":  18.0
-                                                                                   },
-                                                                                   {
-                                                                                       "max":  34.0,
-                                                                                       "min":  26.0,
-                                                                                       "stat":  "maxLife",
-                                                                                       "tier":  3,
-                                                                                       "value":  29.0
+                                                                                       "value":  15.0
                                                                                    }
                                                                                ],
-                                                                   "armor":  194.0,
+                                                                   "armor":  149.0,
                                                                    "bonuses":  {
-                                                                                   "armorPercent":  18.0,
-                                                                                   "intelligence":  7.0,
-                                                                                   "maxLife":  29.0,
-                                                                                   "maxMana":  21.0
+                                                                                   "foudre":  15.0,
+                                                                                   "froid":  12.0,
+                                                                                   "maxMana":  21.0,
+                                                                                   "poison":  13.0
                                                                                },
-                                                                   "durability":  156.0,
+                                                                   "durability":  144.0,
                                                                    "itemLevel":  50,
                                                                    "itemizationVersion":  1,
-                                                                   "maxDurability":  156,
-                                                                   "modelIndex":  3,
-                                                                   "name":  "Armure de fer rare",
+                                                                   "maxDurability":  144,
+                                                                   "modelIndex":  2,
+                                                                   "name":  "Cotte de mailles rare",
                                                                    "rarity":  "rare",
                                                                    "requirements":  {
                                                                                         "force":  7,
                                                                                         "level":  37
                                                                                     },
                                                                    "type":  "armor",
-                                                                   "value":  689.0
+                                                                   "value":  741.0
                                                                },
                                                                {
                                                                    "affixes":  [
                                                                                    {
-                                                                                       "max":  9.0,
+                                                                                       "max":  12.0,
                                                                                        "min":  7.0,
-                                                                                       "stat":  "physicalDamage",
+                                                                                       "stat":  "lightningDamage",
                                                                                        "tier":  3,
-                                                                                       "value":  9.0
+                                                                                       "value":  10.5
                                                                                    },
                                                                                    {
                                                                                        "max":  7.0,
                                                                                        "min":  5.0,
                                                                                        "stat":  "vitalite",
                                                                                        "tier":  3,
-                                                                                       "value":  6.0
+                                                                                       "value":  7.0
                                                                                    },
                                                                                    {
-                                                                                       "max":  8.0,
-                                                                                       "min":  5.0,
-                                                                                       "stat":  "attackSpeed",
+                                                                                       "max":  11.0,
+                                                                                       "min":  8.0,
+                                                                                       "stat":  "fireDamage",
                                                                                        "tier":  3,
-                                                                                       "value":  6.0
+                                                                                       "value":  8.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  11.0,
+                                                                                       "min":  8.0,
+                                                                                       "stat":  "coldDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  8.0
                                                                                    }
                                                                                ],
                                                                    "attackSeconds":  0.43,
                                                                    "bonuses":  {
-                                                                                   "attackSpeed":  6.0,
-                                                                                   "physicalDamage":  9.0,
-                                                                                   "vitalite":  6.0
+                                                                                   "coldDamage":  8.0,
+                                                                                   "fireDamage":  8.0,
+                                                                                   "lightningDamage":  10.5,
+                                                                                   "vitalite":  7.0
                                                                                },
                                                                    "criticalChance":  4.0,
-                                                                   "damage":  194.0,
-                                                                   "damageMax":  229,
-                                                                   "damageMin":  159,
-                                                                   "durability":  115.0,
+                                                                   "damage":  293.0,
+                                                                   "damageMax":  346,
+                                                                   "damageMin":  240,
+                                                                   "durability":  139.0,
+                                                                   "elementalRanges":  {
+                                                                                           "coldDamage":  [
+                                                                                                              6,
+                                                                                                              10
+                                                                                                          ],
+                                                                                           "fireDamage":  [
+                                                                                                              6,
+                                                                                                              10
+                                                                                                          ],
+                                                                                           "lightningDamage":  [
+                                                                                                                   4,
+                                                                                                                   17
+                                                                                                               ]
+                                                                                       },
                                                                    "itemLevel":  50,
                                                                    "itemizationVersion":  1,
-                                                                   "legendaryEffect":  "bleed",
-                                                                   "maxDurability":  115,
-                                                                   "modelIndex":  0,
-                                                                   "name":  "Hachette lÃ©gendaire",
+                                                                   "legendaryEffect":  "leech",
+                                                                   "maxDurability":  139,
+                                                                   "modelIndex":  2,
+                                                                   "name":  "Hache Ã  double tranchant lÃ©gendaire",
                                                                    "rarity":  "legendary",
                                                                    "requirements":  {
                                                                                         "force":  20,
                                                                                         "level":  37
                                                                                     },
                                                                    "type":  "axe",
-                                                                   "value":  1123.0
+                                                                   "value":  1136.0
                                                                }
                                                            ],
                                               "failures":  [
@@ -386,12 +432,8 @@
                                                      ],
                                           "version":  "0.14.37-conversion"
                                       },
-                          "processDiagnostics":  {
-                                                     "output":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nARMOR_AUDIT: {\"armorModels\":5,\"captures\":[\"armor-idle-0.png\",\"armor-idle-1.png\",\"armor-idle-2.png\",\"armor-idle-4.png\",\"armor-walk-0.png\",\"armor-walk-1.png\",\"armor-walk-2.png\",\"armor-walk-4.png\",\"armor-attack-0.png\",\"armor-attack-1.png\",\"armor-attack-2.png\",\"armor-attack-4.png\"],\"changedVikingCollars\":0,\"checks\":469,\"classes\":4,\"directions\":8,\"failures\":[\"Opening reveals original neck/arm: idle/0/0\",\"Opening reveals original neck/arm: idle/3/0\",\"Opening reveals original neck/arm: walk/0/0\",\"Opening reveals original neck/arm: walk/3/0\",\"Opening reveals original neck/arm: attack/0/0\",\"Opening reveals original neck/arm: attack/1/0\",\"Opening reveals original neck/arm: attack/3/0\",\"Opening reveals original neck/arm: attack/7/0\",\"All five Viking collars recover the native neck instead of a painted black hole\"],\"playerSavesAccessed\":false,\"states\":[\"idle\",\"walk\",\"attack\"],\"version\":\"0.14.37-conversion\"}\r\n\nWARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\nERROR: Opening reveals original neck/arm: idle/0/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Opening reveals original neck/arm: idle/3/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Opening reveals original neck/arm: walk/0/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Opening reveals original neck/arm: walk/3/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Opening reveals original neck/arm: attack/0/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Opening reveals original neck/arm: attack/1/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Opening reveals original neck/arm: attack/3/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Opening reveals original neck/arm: attack/7/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: All five Viking collars recover the native neck instead of a painted black hole\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\n",
-                                                     "exitCode":  2,
-                                                     "arguments":  "--audio-driver Dummy -- --verify-armor=\"D:\\a\\_temp\\Throne essais autonomes-9d26692e3e9244588c6f59fcf451c4ae\\armor.json\""
-                                                 },
                           "armor":  {
+                                        "actualGpuPixels":  true,
                                         "armorModels":  5,
                                         "captures":  [
                                                          "armor-idle-0.png",
@@ -407,29 +449,78 @@
                                                          "armor-attack-2.png",
                                                          "armor-attack-4.png"
                                                      ],
-                                        "changedVikingCollars":  0,
+                                        "changedVikingCollars":  5,
                                         "checks":  469,
                                         "classes":  4,
                                         "directions":  8,
                                         "failures":  [
-                                                         "Opening reveals original neck/arm: idle/0/0",
-                                                         "Opening reveals original neck/arm: idle/3/0",
-                                                         "Opening reveals original neck/arm: walk/0/0",
-                                                         "Opening reveals original neck/arm: walk/3/0",
-                                                         "Opening reveals original neck/arm: attack/0/0",
-                                                         "Opening reveals original neck/arm: attack/1/0",
-                                                         "Opening reveals original neck/arm: attack/3/0",
-                                                         "Opening reveals original neck/arm: attack/7/0",
-                                                         "All five Viking collars recover the native neck instead of a painted black hole"
+
                                                      ],
+                                        "fixtureInterpolationDisabled":  true,
+                                        "logicalViewport":  "(1280.0, 720.0)",
                                         "playerSavesAccessed":  false,
+                                        "renderedImage":  "(1028, 578)",
                                         "states":  [
                                                        "idle",
                                                        "walk",
                                                        "attack"
                                                    ],
-                                        "version":  "0.14.37-conversion"
+                                        "version":  "0.14.37-conversion",
+                                        "viewportCoordinatesScaled":  true
                                     },
-                          "error":  "System.Management.Automation.RuntimeException: Exported game verification terminates cleanly"
-                      }
+                          "trial":  {
+                                        "button":  "Mettre Ã  jour et redÃ©marrer",
+                                        "oldPid":  9184,
+                                        "realPlayerSaveAccessed":  false,
+                                        "versionLabel":  "VERSION 0.14.37",
+                                        "work":  "C:/Users/runneradmin/AppData/Local/ThroneOfAshes/portable-updates/verification-9184-2852720"
+                                    },
+                          "selfUpdate":  {
+                                             "installedVersion":  "VERSION 0.14.37",
+                                             "status":  "success",
+                                             "newPid":  1600,
+                                             "oldPid":  9184,
+                                             "keptAliveSeconds":  10
+                                         },
+                          "trialOutput":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nAUDIO_FALLBACK: Windows MCI active=true parent=9184\r\nSESSION_START: version=0.14.37-conversion pid=9184 audio=Dummy device=Default\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nGAME_UPDATE: Version 999.0.0 disponible.\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/9184/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=9184\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/9184/audio-fallback.log\r\nAUDIO_FALLBACK: Windows MCI active=true parent=9184\r\nPORTABLE_TRIAL: real game requests verified replacement from home; no player saves\r\nGAME_UPDATE: PrÃ©paration du redÃ©marrageâ€¦\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : MCI 266 : Unknown problem while loading the specified device driver.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/9184/audio-fallback.log\r\n",
+                          "trialErrors":  "WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\n",
+                          "helperDiagnostics":  {
+                                                    "helper.ready":  "ready",
+                                                    "update.log":  "2026-10-26T11:11:18.2995115Z PREPARING; reading replacement plan\r\n2026-10-26T11:11:21.1148619Z HASHING; verifying new and current executable\r\n2026-10-26T11:11:32.4896580Z VERIFIED; waiting for the running game to close\r\n2026-10-26T11:11:33.7886235Z ACTIVATED; starting the verified game\r\n2026-10-26T11:11:36.4967261Z READY; same replacement game is alive\r\n",
+                                                    "result.json":  "{\"state\":\"success\",\"message\":\"Updated to 999.0.0\"}"
+                                                }
+                      },
+    "portableRecovery":  {
+                             "status":  "passed",
+                             "cases":  6,
+                             "checks":  [
+                                            "success: helper validates before handoff",
+                                            "Concurrent helper rejected by exclusive target lock",
+                                            "Concurrent attempt neither kills nor replaces current game",
+                                            "Concurrent helper never starts a fallback game",
+                                            "Success helper exits cleanly",
+                                            "New verified binary activated",
+                                            "Previous binary retained",
+                                            "bad-hash: rejected before game closes",
+                                            "bad-hash: original process remains alive",
+                                            "bad-hash: failure reported",
+                                            "bad-hash: old binary preserved or restored",
+                                            "outside-path: rejected before game closes",
+                                            "outside-path: original process remains alive",
+                                            "outside-path: failure reported",
+                                            "outside-path: old binary preserved or restored",
+                                            "startup-failure: helper validates before handoff",
+                                            "startup-failure: failure reported",
+                                            "startup-failure: old binary preserved or restored",
+                                            "Failed new game starts the old game once",
+                                            "Rollback never loops",
+                                            "stage-changed: helper validates before handoff",
+                                            "stage-changed: failure reported",
+                                            "stage-changed: old binary preserved or restored",
+                                            "locked-target: helper validates before handoff",
+                                            "locked-target: failure reported",
+                                            "locked-target: old binary preserved or restored"
+                                        ],
+                             "noSecuritySettingsChanged":  true
+                         }
 }
