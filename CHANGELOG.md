@@ -4,6 +4,17 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.34 — publiée le 26 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.34) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40281142921). Trois assets publics et latest vérifiés.
+
+- Motifs des quatre héros harmonisés entre repos, garde, attaque et compétences : soleil du Paladin, broderies du Sorcier, cuir de la Rôdeuse et tatouages du Viking.
+- Buste et pans issus de la même texture native ; manches recolorées depuis cette identité en gardant les contours articulés.
+- Tissu reconstitué derrière les bras dans les vues de profil, sans fragment de main immobile.
+- Hauteur, jambes, véritables mains, prises d’armes et équipements portés conservés.
+
+625 380 vérifications sur 24 192 poses, huit directions et 18 kits par classe ; 14 contrôles de coordination. Dans le vrai EXE Windows, 120 comparaisons de pixels face/dos dans cinq poses confirment les motifs visibles du torse (différence RGB maximale 0). Construction complète, captures natives, remplacement réel et six scénarios de récupération réussis. Les tenues restent composées de sprites articulés ; ce contrôle ne compare pas tous les pixels cachés par les bras et objets.
+
 ## 0.14.33 — publiée le 26 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.33) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40272072643). Trois assets publics et latest vérifiés.

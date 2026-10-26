@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.33](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.33)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.34](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.34)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.33 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40272072643) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
+[Validation Windows 0.14.34 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40281142921) : rendu des donjons, gardiens, récompenses, version à l’accueil, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -46,4 +46,6 @@ En 0.14.32 : sortie devant la grotte, pieds des statues dégagés, proportions d
 
 La 0.14.32 rétablit la hauteur d’origine du Viking et ajuste le raccord du bassin au pantalon long ; le corps ne subit aucune réduction ni aucun étirement.
 
-En **0.14.33**, les quatre héros conservent leurs proportions en combat, la garde n’affiche plus de bras en double, les poignées et boucliers suivent les poignets et la flèche normale de la Rôdeuse part au relâchement. Les largeurs des pantalons et bottes sont rééquilibrées. Audit Windows : 24 192 poses dans huit directions et 14 contrôles de coordination, sans échec. Certains motifs des tenues restent à harmoniser entre les dessins de repos et de combat.
+En **0.14.33**, les quatre héros conservent leurs proportions en combat, la garde n’affiche plus de bras en double, les poignées et boucliers suivent les poignets et la flèche normale de la Rôdeuse part au relâchement. Les largeurs des pantalons et bottes sont rééquilibrées. Audit Windows : 24 192 poses dans huit directions et 14 contrôles de coordination, sans échec. L’harmonisation des motifs est livrée en 0.14.34.
+
+En **0.14.34**, les quatre héros retrouvent les mêmes tissus et motifs au repos, en garde et en combat. Hauteur, mains et prises d’armes conservées. Les pixels visibles du torse sont comparés dans cinq poses face/dos : 120 contrôles du vrai rendu Windows, sans échec.
