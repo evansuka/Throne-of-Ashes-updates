@@ -4,6 +4,17 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.38 — publiée le 26 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.38) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40369283948). Trois assets publics et latest vérifiés.
+
+- Cuirasses et épaulières ajustées aux quatre classes, sans modifier la taille des héros ; anciennes épaules/mantelets et dessous de tunique dégagés sous les armures.
+- Casques de cuir et de mailles : visage visible, position/hauteur et largeur adaptées aux têtes ; bandeau, capuches et garde nasale conservés.
+- Peau et manches de classe conservées en garde/combat, gants portés conservés ; mains natives et prises des armes inchangées.
+- Sac et carquois correctement placés au-dessus du dos de l’armure du Souverain ; ordre de profondeur ordinaire conservé.
+
+21802 contrôles dans le vrai EXE Windows : quatre classes × huit directions × sept ensembles × quatre états, 192 zones du visage et 336 de couverture des cuirasses. Cinq ensembles complets, mélange à mains nues/teinture et objets uniques. Construction complète, 625 380 contrôles graphiques, 44 403 marche, six contrôles web et quatre essais accueil/partie réussis. Remplacement réel et six cas de récupération validés. Source `d247f4a`, QA `43e98d7`. Proportions, statistiques et sauvegardes conservées.
+
 ## 0.14.37 — publiée le 26 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.37) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40312750282). Trois assets publics et latest vérifiés.

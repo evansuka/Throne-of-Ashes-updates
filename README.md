@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.37](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.37)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.38](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.38)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.37 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40312750282) : sentiers uniquement en terre, accès aux six services, 61 contrôles du village, 469 contrôles visuels des armures, rendu des donjons et récompenses, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
+[Validation Windows 0.14.38 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40369283948) : 21 802 contrôles des équipements portés sur quatre héros, visages des casques ouverts, manches, superpositions et accessoires uniques, accès au village, rendu des donjons et récompenses, remplacement demandé par le bouton du jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics sont retéléchargés et comparés aux fichiers validés ; le téléchargement principal est le moteur Godot avec le jeu embarqué, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
