@@ -4,6 +4,17 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.41 — publiée le 27 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.41) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40477214789). Trois fichiers publics et latest retéléchargés, octets/empreintes conformes.
+
+- Infobulles sans « Objet survolé », délai réduit à 80 ms ; titre de comparaison équipé conservé.
+- Grille des 40 cases abaissée, sans scrolling ; pantalon aussi large que le torse et plus haut, anneaux/amulette plus carrés, ceinture rehaussée. Actions au-dessus de la grille.
+- Ajout de points de statistiques ou de compétences conservant la position de défilement après reconstruction de la fiche.
+- Tourbillon mobile du Viking : rotation en huit directions, durée 2,4 s + 0,15 s par niveau supplémentaire, contacts dans les arcs des armes portées et intervalle de 0,30 s par cible. Armes brisées, usure et obstacles pris en compte ; arrêt au changement de carte.
+
+Construction complète et six contrôles web réussis. 28 assertions spécifiques source et pack exporté : trois hauteurs de fenêtre, capacité, derniers emplacements, allocations réellement cliquées, durée aux niveaux 1/10, contacts, intervalle et mouvement physique. Windows : 16 258 tenue, 24 074 équipement, 672 036 graphismes, aucune erreur ; remplacement réel et six cas de récupération réussis. Source `b9e5de3`, QA `23e3870`.
+
 ## 0.14.40 — publiée le 27 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.40) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40453278304). Trois fichiers publics et latest retéléchargés, octets et empreintes conformes ; aucun installateur.
