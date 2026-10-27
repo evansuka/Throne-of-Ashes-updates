@@ -4,6 +4,17 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.46 — publiée le 27 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.46) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40580521816), source `f6fe26e`.
+
+- Mini-carte transparente comme le chat ; TAB pour l’ouvrir et la fermer, fermée au début de chaque partie.
+- Coin supérieur gauche/droit et taille petite/grande dans Gameplay, réglages conservés.
+- Déplacements et clics possibles avec la carte ouverte, sans pause ; héros en triangle orienté, aucun autre marqueur.
+- Ville entièrement visible, donjons révélés en avançant avec murs occultants ; exploration conservée entre étages de la même session.
+
+48 contrôles source et paquet exporté réussis, dont déplacement physique carte ouverte ; Gameplay 27, interface 25, menus 33, ALT/audio 26 et solo 343. Windows : 16482 tenue, 24074 équipement et 672036 graphismes sans erreur ; remplacement réel et six récupérations. Trois assets et latest retéléchargés et conformes, aucun installateur.
+
 ## 0.14.45 — publiée le 27 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.45) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40575406566), source `c9e21f2`.
