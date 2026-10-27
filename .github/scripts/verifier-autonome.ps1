@@ -16,6 +16,8 @@ function RunGame([string]$exe,[string]$arguments,[int]$seconds=180){
   if(Test-Path $toaFailedFit){$script:report['equipmentFit']=Get-Content $toaFailedFit -Raw -Encoding UTF8 | ConvertFrom-Json}
   $toaFailedPresentation=Join-Path $fixture 'presentation.json'
   if(Test-Path $toaFailedPresentation){$script:report['presentation']=Get-Content $toaFailedPresentation -Raw -Encoding UTF8 | ConvertFrom-Json}
+  $toaFailedWardrobe=Join-Path $fixture 'wardrobe.json'
+  if(Test-Path $toaFailedWardrobe){$script:report['wardrobe']=Get-Content $toaFailedWardrobe -Raw -Encoding UTF8 | ConvertFrom-Json}
  }
  Check ($process.ExitCode -eq 0 -and $text -notmatch 'SCRIPT ERROR|ERROR:|Parse Error') 'Exported game verification terminates cleanly'
  return $text
@@ -108,6 +110,16 @@ try{
   Check ($presentationInfo.failures.Count -eq 0 -and $presentationInfo.checks -ge 287 -and $presentationInfo.levels.Count -eq 6) 'Five cave regions and final room retain navigation, static details and light budgets'
   Check ($presentationInfo.actualNativeRendering -and $presentationInfo.captures.Count -eq 7 -and $presentationInfo.foliageMaterials -eq 4 -and $presentationInfo.foliageChunks -gt 4 -and $presentationInfo.foliageChunks -le 512 -and $presentationInfo.roadTriangles -lt 12000) 'Village and six dungeon views render with shared foliage materials and bounded geometry'
   Check ($presentationInfo.maxGuardReturnError -lt 0.002 -and -not $presentationInfo.playerSavesAccessed -and -not $presentationInfo.testerFpsClaimed) 'Attack recovery, hit reaction and distant AI preserve gameplay and player saves'
+ }
+ if([Version]$version -ge [Version]'0.14.40'){
+  $wardrobePath=Join-Path $fixture 'wardrobe.json'
+  $wardrobeText=RunGame $game ('--audio-driver Dummy -- --verify-wardrobe="'+$wardrobePath+'"') 240
+  Check ($wardrobeText -match 'WARDROBE_AUDIT' -and (Test-Path $wardrobePath)) 'Native base-outfit replacement audit completes'
+  $wardrobeInfo=Get-Content $wardrobePath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['wardrobe']=$wardrobeInfo
+  Check ($wardrobeInfo.failures.Count -eq 0 -and $wardrobeInfo.checks -ge 16256 -and $wardrobeInfo.poses -eq 1280 -and $wardrobeInfo.classes -eq 4 -and $wardrobeInfo.directions -eq 8 -and $wardrobeInfo.kits -eq 10) 'Default and worn clothing remain exclusive across four heroes and mixed kits'
+  Check ($wardrobeInfo.exactPixelRestorations -eq 4 -and $wardrobeInfo.nativeSubViewport -and $wardrobeInfo.fixedRenderSize[0] -eq 2560 -and $wardrobeInfo.fixedRenderSize[1] -eq 1440) 'All four native default pose images restore exactly after removing dyed and unique gear'
+  Check ($wardrobeInfo.actualInventoryTransactions -and $wardrobeInfo.defaultInventoryItems -eq 0 -and $wardrobeInfo.baseStatBonus -eq 0 -and -not $wardrobeInfo.playerSavesAccessed) 'Real equip/remove creates no default inventory item or hidden stat bonus'
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
