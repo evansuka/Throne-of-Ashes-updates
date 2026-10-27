@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.46](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.46)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.47](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.47)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.46 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40580521816) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.47 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40590202033) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -34,7 +34,7 @@ Dans le chat, onglet **Système** : `/help`, `/get <nom ou identifiant de l’un
 
 Dans Échap → Option → Audio, cliquer sur **Réinitialiser la sortie audio**, puis **Tester les bruitages**. Le secours Windows est réellement relancé sans fermer le jeu. En secours, **Choisir la sortie Windows** permet de vérifier le périphérique par défaut ; après un changement, réinitialiser le son dans le jeu. Avec le pilote natif, le périphérique peut être choisi directement dans les Options. Le statut affiche les erreurs de lecture connues ; une sortie audible reste à confirmer sur votre PC.
 
-La page **Échap → Version**, à l’accueil, contient aussi l’historique des versions. **Échap → Option** propose les onglets Audio, Graphique et Clavier ; les touches se personnalisent dans Clavier (ZQSD ou flèches par défaut, déplacement au clic conservé).
+La page **Échap → Version**, à l’accueil, contient aussi l’historique des versions. **Échap → Option** propose les onglets Audio, Graphique, Clavier et Gameplay ; les touches se personnalisent dans Clavier (ZQSD ou flèches par défaut, déplacement au clic conservé).
 
 L’inventaire et la fiche Personnage restent actifs : le héros peut se déplacer et les ennemis continuent d’agir. Échap met le jeu en pause ; **Sauvegarder et quitter** revient à l’accueil.
 
@@ -57,3 +57,5 @@ En **0.14.37**, Havrebrume reçoit des maisons détaillées, une chapelle avec p
 Dans **Échap → Option → Gameplay**, choisir la taille des chiffres de dégâts infligés (aucun, petit, moyen, gros) et le mode ALT verrouillé pour le butin.
 
 **TAB** ouvre et ferme la mini-carte pendant la partie, sans pause. Dans **Échap → Option → Gameplay**, choisir son coin et sa taille. Ville dévoilée, donjons explorés progressivement ; seul le triangle du héros est affiché. La carte démarre fermée à chaque nouvelle partie.
+
+En **0.14.47**, les jauges de vie/mana utilisent beaucoup moins d’appels de dessin tout en conservant leur apparence. Les ennemis vivants se bloquent entre eux pour limiter leur superposition ; les cadavres restent franchissables. Audit de combats aux étages 1, 20, 40, 60, 80 et 100 ; mesures du cloud, pas des FPS de votre PC.

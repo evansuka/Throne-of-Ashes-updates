@@ -4,6 +4,16 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.47 — publiée le 27 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.47) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40590202033), source `45c6281`.
+
+- Jauges vie/mana : mêmes segments et couleurs regroupés, 518 → 39 appels de dessin par jauge pleine. Comparaison native sur 306656 pixels, écart maximal 1/255.
+- Les ennemis vivants ne se traversent plus ; les corps morts libèrent immédiatement le passage.
+- Audit aux étages 1, 20, 40, 60, 80 et 100 : douze ennemis rapprochés, donjons générés, mini-carte ouverte, 240 images mesurées après chauffe. Trois séries comparatives puis six scènes dans le paquet exporté ; zéro chevauchement physique proche final.
+
+Construction native complète réussie ; combat 2787, boss 1263, récit 190, mini-carte 48, collisions 46 et graphismes héros 672036. Jauges et collisions vérifiées dans le paquet. Windows : 16482 tenue, 24074 équipement et 672036 graphismes sans erreur ; remplacement réel et six récupérations. Trois assets et latest retéléchargés et conformes, aucun installateur. Les temps mesurés sous llvmpipe sont ceux du cloud, pas les FPS du testeur ; lisibilité des barres en mêlée dense et validation sur son PC à poursuivre.
+
 ## 0.14.46 — publiée le 27 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.46) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40580521816), source `f6fe26e`.
