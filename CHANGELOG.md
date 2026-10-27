@@ -4,6 +4,20 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.42 — publiée le 27 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.42) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40528393212). Trois fichiers publics et latest retéléchargés, octets et empreintes conformes ; aucun installateur.
+
+- Trois emplacements de bijoux identiques et réduits ; torse et ceinture agrandis dans l’espace libéré, 40 cases de sac lisibles et sans défilement. Actions dans le pied de fenêtre, or sur une ligne.
+- Bâtons sur toute la hauteur de leurs quatre cases, proportions du modèle porté.
+- Glisser un objet hors de la fenêtre pour le déposer aux pieds du héros et le reprendre. Piles conservées, déplacement périmé/refusé et Échap sans perte, sac rempli protégé ; objets du village conservés par héros.
+- Doubles clics d’équipement consommés avant la reconstruction de l’interface, sans ordre de marche.
+- Viking : reste de short retiré, tissu de base sans plaques répétées et raccord de bassin ; hauteur, mains et géométrie des jambes conservées.
+- Un coup normal par clic, sans répétition tant que la cible reste sélectionnée. Barres de vie ennemies ; dégâts physiques rouges et magiques bleus, composantes simultanées séparées sans dégâts supplémentaires.
+- Premier sort du Paladin : nouveau son divin de 280 ms, génération originale reproductible.
+
+Construction complète, six contrôles web et contrôles ciblés finaux réussis. 39 assertions source et paquet exporté : vrais événements de double clic, drag natif, Échap, ramassage, trajet village/donjon, piles, sac rempli, attaque unique/répétée au clic, barres et compteurs. Windows : 16 482 tenue, 24 074 équipement et 672 036 graphismes, aucune erreur ; remplacement réel et six cas de récupération réussis. Source `566060c`, QA `9eb29ff`.
+
 ## 0.14.41 — publiée le 27 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.41) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40477214789). Trois fichiers publics et latest retéléchargés, octets/empreintes conformes.
