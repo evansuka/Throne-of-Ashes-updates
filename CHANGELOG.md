@@ -4,6 +4,16 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.40 — publiée le 27 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.40) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40453278304). Trois fichiers publics et latest retéléchargés, octets et empreintes conformes ; aucun installateur.
+
+- Tenue intégrée par emplacement pour les quatre classes : une pièce portée remplace son apparence de base, qui revient après retrait.
+- Torse et robe de base séparés du corps ; armure propriétaire de ses manches, reprenant la matière du plastron. Gants portés prioritaires, pantalons/bottes/casques indépendants et raccord de taille ajusté.
+- Libellés de tenue de base dans les emplacements vides ; aucun objet fictif dans l’inventaire, bonus, coût ou durabilité ajouté. Mains natives fermées, prises et proportions conservées ; sélection comprenant les nouvelles couches.
+
+Construction complète et six contrôles web réussis. Dans le vrai EXE Windows : **16 258 contrôles de tenue**, 1 280 poses, quatre classes/huit directions/dix ensembles ; quatre images de défaut rétablies pixel par pixel après retrait. **24 074 contrôles d’équipement et 672 036 graphiques**, aucune erreur. Transactions réelles d’inventaire, ensembles mixtes/teints/uniques, sélection et sauvegardes isolées. Remplacement réel PID 8032 → 2508, nouveau jeu ouvert dix secondes ; six cas de récupération et 26 contrôles réussis. Source `ed55e12`, QA `6cf7ff1`.
+
 ## 0.14.39 — publiée le 27 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.39) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40446189794). Trois fichiers publics et latest vérifiés.
