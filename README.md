@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.44](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.44)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.45](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.45)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.44 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40561736999) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.45 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40575406566) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -53,3 +53,5 @@ En **0.14.34**, les quatre héros retrouvent les mêmes tissus et motifs au repo
 En **0.14.35**, les nouveaux objets ordinaires n’ont aucun pouvoir magique, les bleus en ont 2–3, les rares 3–4 et les légendaires 3–4 plus un pouvoir exclusif. Les fiches présentent les dégâts, la cadence, le critique, les prérequis et les effets en clair. Durabilité et réparations chez Borin conservées, anneaux et amulettes sans usure. La valeur en or apparaît seulement dans le commerce, en bas à gauche. Les anciennes pièces gardent leurs caractéristiques.
 
 En **0.14.37**, Havrebrume reçoit des maisons détaillées, une chapelle avec portail voûté et clocher ouvert, des chemins raccordés aux services et une berge aménagée. Les collisions de la forge et les trajets autour des PNJ sont corrigés. Les six services, les dialogues et les déplacements sont vérifiés dans le vrai jeu Windows.
+
+Dans **Échap → Option → Gameplay**, choisir la taille des chiffres de dégâts infligés (aucun, petit, moyen, gros) et le mode ALT verrouillé pour le butin.

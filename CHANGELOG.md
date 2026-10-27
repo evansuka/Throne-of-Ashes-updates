@@ -4,6 +4,18 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.45 — publiée le 27 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.45) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40575406566), source `c9e21f2`.
+
+- Onglet Gameplay : chiffres des dégâts infligés masqués, petits, moyens ou gros ; Moyen conserve la taille précédente. ALT Lock déplacé depuis Clavier, préférences conservées. Soins et dégâts subis inchangés.
+- Attaques de mêlée : préparation, accélération et retour en garde progressif ; contact conservé à 180 ms, prises et textures communes aux équipements.
+- Recul collisionné sur impacts directs, pondéré par masse ; dégâts persistants sans poussée et attaques des boss non interrompues.
+- Affaissement transitoire des cadavres, contact sonore unique au sol et immobilité après la chute.
+- Sons selon l’arme, impacts chair/armure distincts ; sept sons de compétences limités à 360 ms avec fondu. Cri du Viking et voix conservés.
+
+Construction complète du combat réussie, puis contrôles ciblés et nouvel export après ajout du menu Gameplay. 27 assertions Gameplay source et paquet, menus 33, inventaire/combat 39 et ALT/audio 26 ; 121 assertions du ressenti de combat. Windows : 16482 tenue, 24074 équipement et 672036 graphismes, sans erreur ; remplacement réel et six récupérations. Trois assets et latest retéléchargés, empreintes conformes ; aucun installateur.
+
 ## 0.14.44 — publiée le 27 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.44) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40561736999), source `7b7ea74`.
