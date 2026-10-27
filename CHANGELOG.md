@@ -4,6 +4,16 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.43 — publiée le 27 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.43) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40546259867). Trois fichiers publics et latest retéléchargés, octets et empreintes conformes ; aucun installateur.
+
+- Pantalon de base du Viking repris depuis sa silhouette d’origine : vrais plis, raccord du bassin et deux jambes articulées, bottes distinctes ; hauteur du héros conservée.
+- Cases équipées utilisant toute la surface disponible, sans nom d’emplacement ; repères conservés dans les cases vides.
+- Cri du Viking remplacé par un extrait bref de 1,1 seconde provenant de Flare, Clint Bellanger et contributeurs, sous [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/). Découpe, gain et fondus ; licence, crédits et source inclus dans le jeu.
+
+Construction complète et six contrôles web réussis. 280 assertions ciblées dans la source et le paquet exporté, dont 180 points du pantalon conformes au dessin original (erreur RGB maximale 0) ; 8 192 raccords de jambes. Windows : 16482 tenue, 24074 équipement et 672036 graphismes, aucune erreur ; remplacement réel et six cas de récupération réussis. Source `22c5758`, QA `7e4e4e9`.
+
 ## 0.14.42 — publiée le 27 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.42) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40528393212). Trois fichiers publics et latest retéléchargés, octets et empreintes conformes ; aucun installateur.
