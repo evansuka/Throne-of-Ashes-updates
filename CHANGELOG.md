@@ -4,6 +4,15 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.44 — publiée le 27 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.44) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40561736999), source `7b7ea74`.
+
+- Éléane joue « Bonjour étranger », MP3 fourni par le joueur, lorsqu’on clique sur elle au village.
+- Volume des bruitages respecté, sans boucle ni superposition ; les répliques cessent au changement de carte et au retour à l’accueil.
+
+50 contrôles de voix réussis dans la source et le paquet exporté. Validation Windows du jeu autonome, de l’équipement et du remplacement réel réussie ; six cas de récupération. Trois fichiers publics et latest retéléchargés avec empreintes conformes ; aucun installateur.
+
 ## 0.14.43 — publiée le 27 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.43) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40546259867). Trois fichiers publics et latest retéléchargés, octets et empreintes conformes ; aucun installateur.
