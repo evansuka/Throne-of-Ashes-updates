@@ -4,6 +4,18 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.39 — publiée le 27 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.39) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40446189794). Trois fichiers publics et latest vérifiés.
+
+- Sentiers de terre plus granuleux et irréguliers, herbe mélangée aux marges, usure autour des maisons, humidité près de l’étang et suie à la forge ; aucun pavé ni bordure de pierres.
+- Façades patinées au contact du sol ; forêt divisée en groupes spatiaux avec quatre matériaux partagés.
+- Matières et lumière des cinq régions de grotte affinées, roche et glace différenciées, fissures infernales ; trône et récit conservés.
+- Trajectoires des bras et armes plus fluides, marche amortie, retour continu en garde et miroir de l’arc stabilisé ; réactions aux coups et chutes plus lourdes.
+- Décors statiques regroupés et lumières plafonnées selon la qualité et la caméra ; calcul de vue évité pour les ennemis hors de leur portée, sans suspendre leurs autres traitements.
+
+Windows : 287 contrôles de présentation, 21 802 d’équipement porté et 625 380 graphiques réussis ; cinq régions, salle finale et village rendus, six cas de récupération et remplacement unique validés. Construction complète et six contrôles web réussis. Sur le rendu logiciel du cloud : 30,4–39,3 % de temps médian économisé dans les donjons ; CPU des ennemis lointains environ 31 % moins coûteux. Village stable dans la vue mesurée ; ces résultats ne prédisent pas les FPS du testeur. Source `c1d5aa6`, QA `56dc914`.
+
 ## 0.14.38 — publiée le 26 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.38) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40369283948). Trois assets publics et latest vérifiés.
