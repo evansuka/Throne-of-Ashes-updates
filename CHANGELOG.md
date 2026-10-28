@@ -4,6 +4,17 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.54 — publiée le 28 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.54) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40764832181), source `8260770`.
+
+- Nouvelles mains en prise : pouce opposé et doigts autour des poignées, quatre héros et variantes de gants en toile/cuir/mailles/métal.
+- Véritable manche visible dans les ouvertures ; doigts au premier plan. Masque des anciennes mains précis, raccord des poignets et nettoyage des doigts sous les gants.
+- Haches peintes au repos recalées sur la main et sa respiration ; ancrage selon le sprite réellement affiché, même lorsqu’une arme unique utilise une autre variante au repos.
+- Images de corps d’origine conservées ; nouvelles prises dans le rendu natif.
+
+5080 contrôles du paquet dans un projet vide sans ressources source, dont 48 sondes GPU ; 24074 d’équipement sur le même pack. Suite locale terminée avec reprises documentées, six contrats web et huit tests des notes. 64 gros plans natifs, conversion sans perte vérifiée, comparateur Chromium sur 128 combinaisons. Windows : 5080 prises, 16482 tenue, 24074 équipement, 672036 graphismes ; remplacement réel et six récupérations réussis. Trois fichiers publics et latest retéléchargés et conformes.
+
 ## 0.14.52 — publiée le 28 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.52) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40717395825), source `525f45c`.
