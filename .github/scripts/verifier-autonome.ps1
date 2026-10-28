@@ -121,6 +121,15 @@ try{
   Check ($wardrobeInfo.exactPixelRestorations -eq 4 -and $wardrobeInfo.nativeSubViewport -and $wardrobeInfo.fixedRenderSize[0] -eq 2560 -and $wardrobeInfo.fixedRenderSize[1] -eq 1440) 'All four native default pose images restore exactly after removing dyed and unique gear'
   Check ($wardrobeInfo.actualInventoryTransactions -and $wardrobeInfo.defaultInventoryItems -eq 0 -and $wardrobeInfo.baseStatBonus -eq 0 -and -not $wardrobeInfo.playerSavesAccessed) 'Real equip/remove creates no default inventory item or hidden stat bonus'
  }
+ if([Version]$version -ge [Version]'0.14.53'){
+  $gripPath=Join-Path $fixture 'hand-grips.json'
+  $gripText=RunGame $game ('--audio-driver Dummy --script res://outils/verifier-prises-01453.gd -- "'+$gripPath+'"') 240
+  Check ($gripText -match 'WRAPPED_HANDS_01453' -and (Test-Path $gripPath)) 'Exported gripping-hand shader audit completes'
+  $gripInfo=Get-Content $gripPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['handGrips']=$gripInfo
+  Check ($gripInfo.failures.Count -eq 0 -and $gripInfo.poses -eq 896 -and $gripInfo.actualGpuProbes -eq 48) 'Four heroes, eight directions, visible fingers and actual shaft openings verified'
+  Check ($gripInfo.maxHandleError -lt 0.00001 -and $gripInfo.originalAtlasUnmodified -and -not $gripInfo.playerSavesAccessed) 'Painted rest axes track actual hand sockets without changing the original atlas or saves'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
