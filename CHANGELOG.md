@@ -4,6 +4,16 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.51 — publiée le 28 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.51) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40709161229), source `e9f801d`.
+
+- Marche des quatre héros plus souple dans les huit directions, avec ou sans équipement et en garde : retour des pieds raccordé à la vitesse d’appui, levée progressive et flexion accrue des genoux.
+- Léger transfert du poids du corps, compensé aux pieds pour maintenir l’appui au sol. Départ progressif et arrêt plus court, sans cycle sur place.
+- Proportions au repos, prises, vêtements portés, placement des aperçus et vitesse de déplacement conservés.
+
+44403 contrôles de démarche et 243 ciblés, dont semelles réellement mesurées à 30/60/120 Hz, quatre classes et huit directions. 243 contrôles aussi depuis le vrai paquet exporté. Suite native complète réussie, six contrats web et huit tests des notes. Deux films natifs de 192 images, avant et après (après depuis le paquet), huit vues Chromium inspectées. Windows : 16482 tenue, 24074 équipement, 672036 graphismes ; remplacement réel et six récupérations. Trois fichiers publics et latest retéléchargés et conformes. Pas de mesure des FPS physiques ni nouvelle animation 3D.
+
 ## 0.14.50 — publiée le 28 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.50) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40689861428), source `ab3066e`.

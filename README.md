@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.50](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.50)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.51](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.51)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.50 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40689861428) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.51 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40709161229) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -65,3 +65,5 @@ En **0.14.48**, les objets au sol se placent sur des positions voisines accessib
 En **0.14.49**, vente par glisser dans une boutique unique et rachat à +10 % (arrondi à l’or supérieur), renouvellement automatique du stock toutes les dix minutes. Échanges d’objets sous la souris, noms du butin cliquables, armes dix fois moins fragiles, icônes par paires, impacts du tourbillon et onde de choc. Capuche et raccord pantalon/bottes retouchés.
 
 En **0.14.50**, l’or proche est ramassé automatiquement et l’équipement trouvé remplit les emplacements vides compatibles. Frappe puissante touche au contact visuel des armes ; nouvel impact court sur armure, butin davantage espacé, murs opaques si le héros est visible et chiffres des dégâts agrandis.
+
+En **0.14.51**, la marche des quatre héros est retravaillée : retour du pied plus fluide, genoux plus souples et transfert du poids avec appui stabilisé. Départ et arrêt affinés, proportions au repos et vitesse de jeu conservées.
