@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.47](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.47)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.48](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.48)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -10,7 +10,7 @@ Utiliser ce fichier à la place de l’ancien Setup ou démarreur. Un raccourci 
 
 ## Mises à jour dans le jeu
 
-L’écran d’accueil affiche en bas à droite, sous la création de personnage, la version installée et vérifie la dernière version disponible. Depuis l’accueil, ouvrir **Échap → Version** pour vérifier les mises à jour ou choisir **Mettre à jour et redémarrer** : le jeu télécharge et vérifie les fichiers, conserve une copie de secours, puis redémarre sur la nouvelle version. Une partie en cours n’est pas interrompue.
+L’écran d’accueil affiche uniquement la version installée, fixée en bas à droite indépendamment du panneau des personnages. Une vérification s’effectue au démarrage : si une nouvelle version est disponible, une fenêtre propose **Faire la mise à jour** ou **Refuser**. Refuser laisse jouer sans téléchargement et sans nouvelle proposition pendant cette exécution. Une réponse reçue en partie attend le retour à l’accueil. Depuis l’accueil, ouvrir **Échap → Version** pour vérifier les mises à jour ou choisir **Mettre à jour et redémarrer** : le jeu télécharge et vérifie les fichiers, conserve une copie de secours, puis redémarre sur la nouvelle version. Une partie en cours n’est pas interrompue.
 
 En cas d’échec du nouveau démarrage, la version précédente est restaurée avec un seul lancement de secours. Hors ligne, le jeu reste utilisable. La copie `.previous` à côté de l’EXE est le secours du dernier remplacement.
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.47 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40590202033) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.48 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40646807227) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -59,3 +59,5 @@ Dans **Échap → Option → Gameplay**, choisir la taille des chiffres de dég�
 **TAB** ouvre et ferme la mini-carte pendant la partie, sans pause. Dans **Échap → Option → Gameplay**, choisir son coin et sa taille. Ville dévoilée, donjons explorés progressivement ; seul le triangle du héros est affiché. La carte démarre fermée à chaque nouvelle partie.
 
 En **0.14.47**, les jauges de vie/mana utilisent beaucoup moins d’appels de dessin tout en conservant leur apparence. Les ennemis vivants se bloquent entre eux pour limiter leur superposition ; les cadavres restent franchissables. Audit de combats aux étages 1, 20, 40, 60, 80 et 100 ; mesures du cloud, pas des FPS de votre PC.
+
+En **0.14.48**, les objets au sol se placent sur des positions voisines accessibles, sans superposition de leurs icônes dans les situations normales ; leur contenu et leur position restent sauvegardés. Chaque objet reste ramassable séparément.

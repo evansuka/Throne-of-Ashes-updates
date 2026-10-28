@@ -4,6 +4,16 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.48 — publiée le 28 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.48) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40646807227), source `6c5c108`.
+
+- Objets déposés et butin espacés sur le sol navigable, sans traverser les obstacles du décor. Chaque objet garde sa position sauvegardée et son ramassage ; aucune fusion d’objets distincts.
+- Version installée seule, fixée en bas à droite indépendamment de la création/sélection des personnages.
+- Nouvelle version : fenêtre proposant Faire la mise à jour ou Refuser. Refus sans téléchargement ni répétition pendant l’exécution ; proposition différée pendant la partie ou la cinématique. Vérification manuelle et progression dans Accueil → Échap → Version.
+
+436 contrôles natifs source et autant dans le paquet exporté : trois tailles de fenêtre, deux choix, hors ligne, 24 transferts, positions restaurées et ramassage. Régressions : démarrage 20, interface 48, menus 33, inventaire 39, confort headless 32, solo 343 et récit 190. Windows : 16482 tenue, 24074 équipement, 672036 graphismes ; acceptation de la proposition et remplacement réels, six récupérations. Trois fichiers publics et latest retéléchargés et conformes, sans installateur.
+
 ## 0.14.47 — publiée le 27 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.47) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40590202033), source `45c6281`.
