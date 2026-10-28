@@ -123,10 +123,11 @@ try{
  }
  if([Version]$version -ge [Version]'0.14.53'){
   $gripPath=Join-Path $fixture 'hand-grips.json'
-  $gripText=RunGame $game ('--audio-driver Dummy --script res://scripts/hand_grip_checks.gd -- "'+$gripPath+'"') 240
+  $gripText=RunGame $game ('--audio-driver Dummy -- --verify-hand-grips="'+$gripPath+'"') 240
   Check ($gripText -match 'WRAPPED_HANDS_01453' -and (Test-Path $gripPath)) 'Exported gripping-hand shader audit completes'
   $gripInfo=Get-Content $gripPath -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['handGrips']=$gripInfo
+  Check ($gripInfo.nativeVersion -eq ($version+'-conversion') -and $gripText -notmatch 'SESSION_START:|GAME_UPDATE:') 'Native verification flag runs before normal game startup'
   Check ($gripInfo.failures.Count -eq 0 -and $gripInfo.poses -eq 896 -and $gripInfo.actualGpuProbes -eq 48) 'Four heroes, eight directions, visible fingers and actual shaft openings verified'
   Check ($gripInfo.maxHandleError -lt 0.00001 -and $gripInfo.originalAtlasUnmodified -and -not $gripInfo.playerSavesAccessed) 'Painted rest axes track actual hand sockets without changing the original atlas or saves'
  }
