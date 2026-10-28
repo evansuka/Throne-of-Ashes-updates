@@ -4,6 +4,17 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.52 — publiée le 28 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.52) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40717395825), source `525f45c`.
+
+- Garde compacte des quatre héros, depuis leur début de geste ; véritable préparation au tir pour la Rôdeuse.
+- Poignets orientés avec les avant-bras, véritables poings fermés et gants conservés ; mêmes points de prise des armes et du bouclier.
+- Préparation, impact et retour des coups de mêlée raccordés par une vitesse continue ; contact normal à 180 ms et délais du tir/des compétences conservés.
+- Respiration native activée avec suivi des prises, équipements et vêtements sur le même déplacement que les mains.
+
+4725 contrôles ciblés source et paquet exporté, suite native complète réussie, six contrats web et huit tests des notes. Deux films natifs de 288 images, huit directions, mains nues/gantées ; après capturé depuis le paquet, 288/288 images identiques à la source. Comparateur Chromium et jeu web de référence vérifiés. Windows : 16482 tenue, 24074 équipement, 672036 graphismes ; remplacement réel et six récupérations. Trois fichiers publics et latest retéléchargés et conformes. Dessins articulés existants, aucun nouveau modèle 3D ni mesure des FPS physiques.
+
 ## 0.14.51 — publiée le 28 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.51) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40709161229), source `e9f801d`.
