@@ -1,0 +1,10 @@
+{
+  "version": "0.14.50",
+  "status": "failed",
+  "published": false,
+  "cleanupSucceeded": false,
+  "sourceCommit": "8ee8f98572b4f854670f8e420594fbb3282ae13c",
+  "completedUtc": "2026-10-28T12:47:35.9363778Z",
+  "workflowUrl": "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40689863061",
+  "releaseUrl": "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.50"
+}

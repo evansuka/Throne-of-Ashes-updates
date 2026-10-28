@@ -4,6 +4,19 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.50 — publiée le 28 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.50) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40689861428), source `ab3066e`.
+
+- Or ramassé automatiquement à proximité avec ligne de vue. Équipement ramassé porté si un emplacement compatible est vide et si les exigences sont satisfaites ; aucun remplacement automatique.
+- Frappe puissante : dégâts sur contact des armes et de la silhouette ennemie pendant l’animation, un seul coup. Masques opaques préparés au build ; pas de lecture des grandes textures au premier coup. Le coup peut manquer visuellement.
+- Nouveau son d’impact d’armure original, court et amorti (0,16 s).
+- Butin espacé davantage, hauteur de dépôt normalisée et recherche de place étendue.
+- Murs de grotte transparents uniquement si le héros est masqué, dans la portion qui le cache ; mur derrière lui opaque.
+- Ancien Moyen devenu Petit ; tailles 0/30/44/60 et Moyen 44 par défaut.
+
+Contrôles ciblés source et paquet réussis, dont trente butins, huit directions, frappe unique/contacts, fuite pendant préparation, ramassage à travers un mur refusé, équipement sous exigences et sac plein, trois vrais contrôles caméra/obstacle. Suite native achevée avec reprises documentées après adaptation des attentes de ramassage ; six contrôles web réussis. Windows : 16482 tenue, 24074 équipement, 672036 graphismes ; remplacement réel et six récupérations. Trois fichiers publics et latest retéléchargés et conformes. Aucun son physique ou FPS du testeur mesuré.
+
 ## 0.14.49 — publiée le 28 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.49) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40656143580), source `e2289bb`.

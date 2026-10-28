@@ -113,6 +113,8 @@ jobs:
           if($LASTEXITCODE -ne 0){throw 'Lecture du suivi distant impossible.'}
           git switch --detach FETCH_HEAD
           if($LASTEXITCODE -ne 0){throw 'Preparation du suivi impossible.'}
+          . .github/scripts/chemin-rapport.ps1
+          $path=Get-PublicationReportPath -Root $pwd.Path -Version $version -RunId $env:GITHUB_RUN_ID -Published $published
           [IO.File]::WriteAllText((Join-Path $pwd $path),$json,[Text.UTF8Encoding]::new($false))
           git add -- $path
           git commit -m "Consigner la publication Windows $version"
