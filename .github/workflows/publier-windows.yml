@@ -42,6 +42,7 @@ jobs:
         shell: powershell
         run: |
           try{
+            .github/scripts/assembler-transfert.ps1 -Directory .publication
             if($env:PORTABLE -eq 'True'){.github/scripts/verifier-autonome.ps1 -Directory .publication -Tag $env:RELEASE_TAG}
             else{.github/scripts/verifier-paquet.ps1 -Directory .publication -Tag $env:RELEASE_TAG}
           }
