@@ -138,7 +138,7 @@ try{
   $restInfo=Get-Content $restPath -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['restEquipment']=$restInfo
   Check ($restInfo.nativeVersion -eq ($version+'-conversion') -and $restInfo.failures.Count -eq 0 -and $restInfo.villagePoses -eq 448) 'Four heroes retain their actual gear while stowed, including mixed kits and uniques'
-  Check ($restInfo.actualStartAndTravel -and $restInfo.actualGpuFaceProbes -eq 16 -and $restInfo.coveredHairPixels -gt 20 -and -not $restInfo.playerSavesAccessed) 'Real village/dungeon transitions draw and stow weapons without accessing player saves'
+  Check ($restInfo.actualStartAndTravel -and $restInfo.actualGpuFaceProbes -eq 16 -and $restInfo.actualGpuCoverageProbes -eq 24 -and $restInfo.coveredHairPixels -gt 20 -and -not $restInfo.playerSavesAccessed) 'Real village/dungeon transitions draw and stow weapons without accessing player saves'
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
