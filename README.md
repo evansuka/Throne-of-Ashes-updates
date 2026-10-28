@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.48](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.48)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.49](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.49)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.48 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40646807227) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.49 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40656143580) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -61,3 +61,5 @@ Dans **Échap → Option → Gameplay**, choisir la taille des chiffres de dég�
 En **0.14.47**, les jauges de vie/mana utilisent beaucoup moins d’appels de dessin tout en conservant leur apparence. Les ennemis vivants se bloquent entre eux pour limiter leur superposition ; les cadavres restent franchissables. Audit de combats aux étages 1, 20, 40, 60, 80 et 100 ; mesures du cloud, pas des FPS de votre PC.
 
 En **0.14.48**, les objets au sol se placent sur des positions voisines accessibles, sans superposition de leurs icônes dans les situations normales ; leur contenu et leur position restent sauvegardés. Chaque objet reste ramassable séparément.
+
+En **0.14.49**, vente par glisser dans une boutique unique et rachat à +10 % (arrondi à l’or supérieur), renouvellement automatique du stock toutes les dix minutes. Échanges d’objets sous la souris, noms du butin cliquables, armes dix fois moins fragiles, icônes par paires, impacts du tourbillon et onde de choc. Capuche et raccord pantalon/bottes retouchés.

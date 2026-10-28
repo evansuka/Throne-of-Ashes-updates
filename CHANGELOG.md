@@ -4,6 +4,19 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.49 — publiée le 28 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.49) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40656143580), source `e2289bb`.
+
+- Gants et bottes représentés par paires. Capuche modèle 0 ajustée et pantalon Viking resserré au raccord des bottes, sans changement de hauteur.
+- Échange sur un seul objet dans l’inventaire, objet remplacé conservé sous la souris ; dépôt couvrant plusieurs objets refusé. Objet tenu sauvegardé et annulation sans duplication.
+- Ramassage en cliquant sur le nom visible d’un objet au sol, y compris au-dessus d’un ennemi.
+- Usure des armes divisée par dix ; armures inchangées, réparation chez Borin.
+- Tourbillon : impacts sonores ; Onde de choc : frappe lourde originale de 0,55 s et anneaux au sol, un seul avec effets réduits.
+- Marchand sans onglets ni bouton de renouvellement : vente par glisser, objets vendus en tête de la même liste ; rachat au prix de vente +10 % arrondi à l’or supérieur. Stock renouvelé toutes les dix minutes et rachats préservés.
+
+49 contrôles ciblés dans la source et le paquet exporté ; 275 assertions et 175 sondes de tissu dans chacun, tolérance RGB conservée. Suite native achevée en plusieurs passages avec interruptions et reprise documentées : conservation 509, combat 2787, démarche 44403, équipement 38920 ; six contrôles web et galerie Chromium de 14 vues. Windows : 16482 tenue, 24074 équipement, 672036 graphismes ; acceptation de la proposition et remplacement réels, six récupérations. Trois fichiers et latest retéléchargés et conformes, sans installateur. Aucun son physique ni FPS du testeur mesuré.
+
 ## 0.14.48 — publiée le 28 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.48) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40646807227), source `6c5c108`.
