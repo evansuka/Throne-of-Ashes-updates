@@ -128,8 +128,17 @@ try{
   $gripInfo=Get-Content $gripPath -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['handGrips']=$gripInfo
   Check ($gripInfo.nativeVersion -eq ($version+'-conversion') -and $gripText -notmatch 'SESSION_START:|GAME_UPDATE:') 'Native verification flag runs before normal game startup'
-  Check ($gripInfo.failures.Count -eq 0 -and $gripInfo.poses -eq 896 -and $gripInfo.actualGpuProbes -eq 48) 'Four heroes, eight directions, visible fingers and actual shaft openings verified'
+  Check ($gripInfo.failures.Count -eq 0 -and $gripInfo.poses -eq 896 -and $gripInfo.actualGpuProbes -eq $(if([Version]$version -ge [Version]'0.14.55'){96}else{48})) 'Four heroes, eight directions, visible fingers and actual shaft openings verified'
   Check ($gripInfo.maxHandleError -lt 0.00001 -and $gripInfo.originalAtlasUnmodified -and -not $gripInfo.playerSavesAccessed) 'Painted rest axes track actual hand sockets without changing the original atlas or saves'
+ }
+ if([Version]$version -ge [Version]'0.14.55'){
+  $restPath=Join-Path $fixture 'rest-equipment.json'
+  $restText=RunGame $game ('--audio-driver Dummy -- --verify-rest-equipment="'+$restPath+'"') 180
+  Check ($restText -match 'REST_EQUIPMENT_01455' -and (Test-Path $restPath)) 'Native village carrying and actual zone transitions audit completes'
+  $restInfo=Get-Content $restPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['restEquipment']=$restInfo
+  Check ($restInfo.nativeVersion -eq ($version+'-conversion') -and $restInfo.failures.Count -eq 0 -and $restInfo.villagePoses -eq 448) 'Four heroes retain their actual gear while stowed, including mixed kits and uniques'
+  Check ($restInfo.actualStartAndTravel -and $restInfo.actualGpuFaceProbes -eq 16 -and $restInfo.coveredHairPixels -gt 20 -and -not $restInfo.playerSavesAccessed) 'Real village/dungeon transitions draw and stow weapons without accessing player saves'
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
