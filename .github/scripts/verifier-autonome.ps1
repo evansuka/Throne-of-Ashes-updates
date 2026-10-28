@@ -123,7 +123,7 @@ try{
  }
  if([Version]$version -ge [Version]'0.14.53'){
   $gripPath=Join-Path $fixture 'hand-grips.json'
-  $gripText=RunGame $game ('--audio-driver Dummy --script res://outils/verifier-prises-01453.gd -- "'+$gripPath+'"') 240
+  $gripText=RunGame $game ('--audio-driver Dummy --script res://scripts/hand_grip_checks.gd -- "'+$gripPath+'"') 240
   Check ($gripText -match 'WRAPPED_HANDS_01453' -and (Test-Path $gripPath)) 'Exported gripping-hand shader audit completes'
   $gripInfo=Get-Content $gripPath -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['handGrips']=$gripInfo
