@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.54](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.54)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.56](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.56)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.54 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40764832181) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.56 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40775118692) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -71,3 +71,5 @@ En **0.14.51**, la marche des quatre héros est retravaillée : retour du pied p
 En **0.14.52**, prises et coups des quatre héros sont affinés : garde compacte, poignets orientés avec les avant-bras, préparation et retour de mêlée plus fluides. Armes et vêtements suivent la respiration native ; timing des dégâts conservé.
 
 En **0.14.54**, les nouvelles prises montrent les doigts et le pouce autour du manche, avec les variantes de gants. Les haches au repos suivent leur vraie ancre. Windows valide aussi 5080 contrôles spécifiques, dont 48 sondes GPU sur le passage du manche derrière les doigts.
+
+En **0.14.56**, prises de repos avec le pouce au-dessus des doigts, armes et bouclier rangés au village, capuche ajustée sans traversée de visage ou de cheveux. Windows valide aussi 5144 contrôles des prises et 5586 de rangement/capuche, dont 24 sondes GPU des zones couvertes.

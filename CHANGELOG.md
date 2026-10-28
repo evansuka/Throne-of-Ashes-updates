@@ -4,6 +4,17 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.56 — publiée le 28 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.56) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40775118692), source `899c15c`.
+
+- Nouvelles prises au repos : pouce au-dessus de l’index, doigts enroulés autour du manche, haches et épées pointées vers le sol. Mains nues et gants ; prises de combat conservées.
+- Au village, mains libres : épées au fourreau, haches à la ceinture avec protection de lame, bouclier et armes longues portés dans le dos. Les vrais objets restent équipés, avec leurs statistiques et leur durabilité ; reprise en main dans les donjons.
+- Capuche ajustée et source de cheveux/oreilles masquée dans les parties couvertes ; couture sans bande de visage. Ouverture sur les yeux et vrai profil du nez conservés.
+- Historique en jeu mis à jour ; candidate 0.14.55 suspendue avant publication au contrôle visuel final.
+
+Windows : 5144 prises avec 96 sondes GPU ; 5586 rangement/capuche avec 16 sondes des yeux et 24 de couture/couronne ; 24074 équipement, 16482 tenue et 672036 graphismes. Remplacement réel du jeu, même processus ouvert dix secondes et six récupérations réussies. Trois fichiers publics et latest retéléchargés et conformes. Comparateur natif de 128 captures, WebP sans perte et 320 combinaisons Chromium. Le nouveau test retrouve huit défauts sur le paquet 0.14.55 suspendu, puis passe sur le paquet final. Suite locale complète 0.14.55 conservée ; contrôles ciblés locaux et suite complète Windows exécutés pour 0.14.56.
+
 ## 0.14.54 — publiée le 28 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.54) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40764832181), source `8260770`.
