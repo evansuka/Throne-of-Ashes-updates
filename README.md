@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.56](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.56)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.57](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.57)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.56 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40775118692) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.57 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40799803247) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -73,3 +73,5 @@ En **0.14.52**, prises et coups des quatre héros sont affinés : garde compacte
 En **0.14.54**, les nouvelles prises montrent les doigts et le pouce autour du manche, avec les variantes de gants. Les haches au repos suivent leur vraie ancre. Windows valide aussi 5080 contrôles spécifiques, dont 48 sondes GPU sur le passage du manche derrière les doigts.
 
 En **0.14.56**, prises de repos avec le pouce au-dessus des doigts, armes et bouclier rangés au village, capuche ajustée sans traversée de visage ou de cheveux. Windows valide aussi 5144 contrôles des prises et 5586 de rangement/capuche, dont 24 sondes GPU des zones couvertes.
+
+En **0.14.57**, les quatre héros ont de nouvelles tenues et proportions, avec des poses d’accueil naturelles, un écu pour le Paladin et un bâton à deux mains. Les raccords des jambes des PNJ sont repris. Windows valide aussi 4158 contrôles des nouvelles postures/PNJ et 16 sondes GPU de texture.

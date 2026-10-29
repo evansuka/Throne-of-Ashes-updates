@@ -4,6 +4,18 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.57 — publiée le 28 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.57) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40799803247), source `1c6b316`.
+
+- Quatre héros redessinés dans huit directions : Paladin en acier sombre/or avec écu, Sorcier en vert/or, Viking tatoué en pantalon intégral et Rôdeur en cuir/tissu vert. Identités conservées.
+- Cuisses, genoux et mollets ajustés par classe, sans raccourcir les personnages ; pantalons vus de dos et raccords aux bottes repris.
+- Accueil : poses détendues, épée abaissée, bouclier devant l’avant-bras et bâton tenu à deux mains. Icône du bouclier assortie.
+- Torses dédiés pendant les animations pour supprimer les bras peints au repos sous les bras de combat ; limites UV empêchant une répétition de texture sous les pieds. Motifs centraux conservés.
+- Six PNJ audités ; raccords des genoux des cinq modèles articulés corrigés en gardant les pieds et les prises d’outils. Casque ouvert du Rôdeur élargi.
+
+Windows : 4158 contrôles des nouvelles postures/PNJ avec 16 sondes GPU de texture, 5144 prises, 5586 rangement/capuche, 24074 équipement, 16482 tenue et 672036 graphismes. Remplacement du jeu, même nouveau processus ouvert dix secondes et six récupérations réussies. Trois fichiers publics et latest retéléchargés et conformes. 133 captures natives sans perte ; comparateur Chromium 288 combinaisons. Les huit défauts UV sont retrouvés dans le premier export retenu puis absents du fichier final. Aucun installateur ; statistiques et sauvegardes conservées.
+
 ## 0.14.56 — publiée le 28 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.56) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40775118692), source `899c15c`.
