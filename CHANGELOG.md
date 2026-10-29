@@ -4,6 +4,22 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.63 — publiée le 29 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.63) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40948712664) · source `0f7472f`.
+
+- Au coffre, la pièce d’or devient le bouton d’accès à une petite fenêtre de gestion. Les commandes permanentes de dépôt et de retrait sont retirées du panneau du coffre.
+- La fenêtre permet de saisir un montant, déposer ou retirer, ou transférer toute la somme. Elle se ferme par la croix, Échap ou un clic à l’extérieur.
+- Le marchand utilise une grille d’inventaire : chaque objet occupe sa vraie largeur et hauteur en cases.
+- Onglets Armes, Armures, Bijoux et Divers pour les potions, parchemins et autres consommables. Les grands stocks restent accessibles par pages.
+- Un clic sélectionne l’objet et son prix ; un double-clic l’achète. La vente par glisser-déposer reste disponible sur la fenêtre du marchand.
+- Les objets vendus apparaissent dans leur catégorie, au prix de vente augmenté de 10 %, pour les récupérer en cas d’erreur.
+- Nouveau bouton de fermeture bronze également appliqué au commerce.
+
+Jeu autonome sans installateur. Personnages, équipement et or conservés.
+
+Windows : 270 nouveaux contrôles commerce/or, 70 coffre, 72 inventaire/or, suite graphique complète, remplacement réel et six récupérations réussies. Trois fichiers publics et latest retéléchargés conformes. Vente par vraie souris et rachat au double-clic à 110 pour une vente à 100, six captures natives et galerie vérifiées.
+
 ## 0.14.62 — publiée le 29 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.62) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40941915430) · source `0f266dd`.

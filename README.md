@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.62](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.62)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.63](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.63)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.62 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40941915430) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.63 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40948712664) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -85,3 +85,5 @@ En **0.14.60** : prochain niveau de compétence uniquement au survol du +, arc d
 En **0.14.61** : ceinture entre armure et pantalon, sac à droite de la grille (double-clic pour ouvrir), fermetures carrées et retrait des cadres intérieurs. Or déposable et retirable dans le coffre partagé, par montant ou en totalité, conservé entre les héros.
 
 En **0.14.62** : coffre dans sa fenêtre à gauche et vrai inventaire équipé à droite, boutons de fermeture bronze, or du coffre en bas à droite, emplacements d’armes de quatre cases, bijoux repositionnés, épées à leur hauteur réelle et paires de gants ouverts.
+
+En **0.14.63** : cliquer la pièce d’or au coffre ouvre la petite fenêtre de dépôt/retrait. Marchand en grille avec onglets Armes, Armures, Bijoux et Divers, achat au double-clic et vente par glisser-déposer ; rachat à +10 % conservé et fermeture bronze.
