@@ -4,6 +4,22 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.62 — publiée le 29 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.62) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40941915430) · source `0f266dd`.
+
+- Ouvrir le coffre affiche le véritable inventaire équipé à droite et une fenêtre indépendante de coffre partagé à gauche.
+- L’or du coffre apparaît en bas à droite. Dépôt, retrait et transfert des objets actualisent les deux fenêtres.
+- Boutons de fermeture assortis au cadre du jeu, avec relief bronze et croix dessinée, dans l’inventaire, Personnage, le coffre et le sac.
+- Anneaux descendus au niveau de la ceinture et amulette près du coin inférieur du casque.
+- Gants placés sous l’arme de gauche et bottes sous l’arme de droite. Emplacements des armes limités à quatre cases de hauteur.
+- Épée longue et autres épées dessinées à leur vraie hauteur en cases ; l’épée courte reste visiblement plus courte.
+- Nouveaux visuels de gants et gantelets par paire, mains ouvertes et doigts étendus vers le bas.
+
+Jeu autonome sans installateur. Personnages, équipement et or conservés.
+
+Windows : 70 nouveaux contrôles coffre/inventaire, 72 inventaire/or, suite graphique complète, remplacement réel et six récupérations réussies. Trois fichiers publics et latest retéléchargés conformes. Dans le fichier final : dépôt/retrait par vraie souris entre les fenêtres et deux refus d’écriture avec soldes rétablis ; captures natives et galerie vérifiées.
+
 ## 0.14.61 — publiée le 29 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.61) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40935680967) · source `76e2ce4`.
