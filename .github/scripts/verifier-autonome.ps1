@@ -190,6 +190,14 @@ try{
   $report['storageLayout']=$storageInfo
   Check ($storageInfo.failures.Count -eq 0 -and $storageInfo.checks -ge 65 -and $storageInfo.inventorySizes -eq 3 -and $storageInfo.realInventoryWithChest -and $storageInfo.weaponHeightCells -eq 4 -and $storageInfo.openGloveModels -eq 5 -and -not $storageInfo.playerSavesAccessed) 'Independent panels, gold mirrors, context restoration, open glove pairs, sword scale and four-cell weapons verified'
  }
+ if([Version]$version -ge [Version]'0.14.63'){
+  $commercePath=Join-Path $fixture 'commerce-layout.json'
+  $commerceText=RunGame $game ('--audio-driver Dummy -- --verify-commerce-layout="'+$commercePath+'"') 240
+  Check ($commerceText -match 'COMMERCE_01463' -and (Test-Path $commercePath)) 'Coin popup and merchant inventory grid run in exported game'
+  $commerceInfo=Get-Content $commercePath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['commerceLayout']=$commerceInfo
+  Check ($commerceInfo.failures.Count -eq 0 -and $commerceInfo.checks -ge 250 -and $commerceInfo.coinPopup -and $commerceInfo.merchantCategories -eq 4 -and $commerceInfo.catalogOffersVerified -eq 2000 -and $commerceInfo.actualDoubleClickPurchase -and -not $commerceInfo.playerSavesAccessed) 'Actual coin click, typed amounts, modal close, paged categories, double-click purchases and 10 percent buyback verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
