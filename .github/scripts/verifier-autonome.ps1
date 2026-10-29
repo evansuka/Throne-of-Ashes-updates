@@ -147,7 +147,16 @@ try{
   $styleInfo=Get-Content $stylePath -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['characterStyle']=$styleInfo
   Check ($styleInfo.nativeVersion -eq ($version+'-conversion') -and $styleInfo.failures.Count -eq 0 -and $styleInfo.checks -ge 4000 -and $styleInfo.receptionPoses -eq 128) 'Natural reception poses preserve real weapon and staff grips in eight directions'
-  Check ($styleInfo.actualGpuTextureBoundsProbes -eq 16 -and $styleInfo.npcCount -eq 6 -and $styleInfo.npcWorkingPoses -eq 120 -and $styleInfo.maxReceptionGripError -lt 0.00001 -and -not $styleInfo.playerSavesAccessed) 'Actual NPC working poses and tool anchors remain valid without player saves'
+  Check ($styleInfo.actualGpuTextureBoundsProbes -eq $(if([Version]$version -ge [Version]'0.14.58'){12}else{16}) -and $styleInfo.npcCount -eq 6 -and $styleInfo.npcWorkingPoses -eq 120 -and $styleInfo.maxReceptionGripError -lt 0.00001 -and -not $styleInfo.playerSavesAccessed) 'Actual NPC working poses and tool anchors remain valid without player saves'
+ }
+ if([Version]$version -ge [Version]'0.14.58'){
+  $retouchPath=Join-Path $fixture 'character-retouches.json'
+  $retouchText=RunGame $game ('--audio-driver Dummy -- --verify-character-retouches="'+$retouchPath+'"') 240
+  Check ($retouchText -match 'CHARACTER_RETOUCH_01458' -and (Test-Path $retouchPath)) 'Character retouches audit executes from the actual exported game'
+  $retouchInfo=Get-Content $retouchPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['characterRetouches']=$retouchInfo
+  Check ($retouchInfo.nativeVersion -eq ($version+'-conversion') -and $retouchInfo.failures.Count -eq 0 -and $retouchInfo.weaponPoses -eq 224 -and $retouchInfo.mageReceptionPoses -eq 32) 'Original cream Paladin, approved shield, upward rest weapons and genuine supporting mage hand retained'
+  Check ($retouchInfo.mageGpuCases -eq 9 -and $retouchInfo.minimumVisibleForearmFraction -ge 0.40 -and $retouchInfo.jawPixelProbes -ge 8 -and $retouchInfo.hoodEyeFits -eq 12 -and -not $retouchInfo.playerSavesAccessed) 'Actual rendered palms, forearms, profile jaw pixels and hood openings verified'
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
