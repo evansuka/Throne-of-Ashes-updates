@@ -158,6 +158,14 @@ try{
   Check ($retouchInfo.nativeVersion -eq ($version+'-conversion') -and $retouchInfo.failures.Count -eq 0 -and $retouchInfo.weaponPoses -eq 224 -and $retouchInfo.mageReceptionPoses -eq 32) 'Original cream Paladin, approved shield, upward rest weapons and genuine supporting mage hand retained'
   Check ($retouchInfo.mageGpuCases -eq 9 -and $retouchInfo.minimumVisibleForearmFraction -ge 0.40 -and $retouchInfo.jawPixelProbes -ge 8 -and $retouchInfo.hoodEyeFits -eq 12 -and $retouchInfo.hoodSilhouetteCases -eq 12 -and $retouchInfo.maxHoodHeadLeakPixels -le 8 -and -not $retouchInfo.playerSavesAccessed) 'Actual rendered palms, forearms, profile jaw pixels and hood openings verified'
  }
+ if([Version]$version -ge [Version]'0.14.59'){
+  $comfortPath=Join-Path $fixture 'gameplay-comfort.json'
+  $comfortText=RunGame $game ('--audio-driver Dummy -- --verify-gameplay-comfort="'+$comfortPath+'"') 240
+  Check ($comfortText -match 'COMFORT_01459' -and (Test-Path $comfortPath)) 'Gameplay comfort audit runs in the actual exported game'
+  $comfortInfo=Get-Content $comfortPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['gameplayComfort']=$comfortInfo
+  Check ($comfortInfo.failures.Count -eq 0 -and $comfortInfo.checks -ge 50 -and $comfortInfo.classVoices -eq 4 -and $comfortInfo.skillPreviews -eq 16 -and $comfortInfo.actualRockHulls -gt 10 -and -not $comfortInfo.playerSavesAccessed) 'Belt reserve, warcry, ALT session, previews, voices, readable loot and actual rock hulls verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
