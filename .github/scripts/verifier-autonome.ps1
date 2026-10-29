@@ -156,7 +156,7 @@ try{
   $retouchInfo=Get-Content $retouchPath -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['characterRetouches']=$retouchInfo
   Check ($retouchInfo.nativeVersion -eq ($version+'-conversion') -and $retouchInfo.failures.Count -eq 0 -and $retouchInfo.weaponPoses -eq 224 -and $retouchInfo.mageReceptionPoses -eq 32) 'Original cream Paladin, approved shield, upward rest weapons and genuine supporting mage hand retained'
-  Check ($retouchInfo.mageGpuCases -eq 9 -and $retouchInfo.minimumVisibleForearmFraction -ge 0.40 -and $retouchInfo.jawPixelProbes -ge 8 -and $retouchInfo.hoodEyeFits -eq 12 -and -not $retouchInfo.playerSavesAccessed) 'Actual rendered palms, forearms, profile jaw pixels and hood openings verified'
+  Check ($retouchInfo.mageGpuCases -eq 9 -and $retouchInfo.minimumVisibleForearmFraction -ge 0.40 -and $retouchInfo.jawPixelProbes -ge 8 -and $retouchInfo.hoodEyeFits -eq 12 -and $retouchInfo.hoodSilhouetteCases -eq 12 -and $retouchInfo.maxHoodHeadLeakPixels -le 8 -and -not $retouchInfo.playerSavesAccessed) 'Actual rendered palms, forearms, profile jaw pixels and hood openings verified'
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
