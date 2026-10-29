@@ -198,6 +198,14 @@ try{
   $report['commerceLayout']=$commerceInfo
   Check ($commerceInfo.failures.Count -eq 0 -and $commerceInfo.checks -ge 250 -and $commerceInfo.coinPopup -and $commerceInfo.merchantCategories -eq 4 -and $commerceInfo.catalogOffersVerified -eq 2000 -and $commerceInfo.actualDoubleClickPurchase -and -not $commerceInfo.playerSavesAccessed) 'Actual coin click, typed amounts, modal close, paged categories, double-click purchases and 10 percent buyback verified'
  }
+ if([Version]$version -ge [Version]'0.14.64'){
+  $refinementPath=Join-Path $fixture 'gameplay-refinement.json'
+  $refinementText=RunGame $game ('--audio-driver Dummy -- --verify-gameplay-refinement="'+$refinementPath+'"') 360
+  Check ($refinementText -match 'GAMEPLAY_REFINEMENT_01464' -and (Test-Path $refinementPath)) 'Gameplay refinements run in the actual exported Windows game'
+  $refinementInfo=Get-Content $refinementPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['gameplayRefinement']=$refinementInfo
+  Check ($refinementInfo.failures.Count -eq 0 -and $refinementInfo.checks -ge 430 -and $refinementInfo.silhouetteCases -ge 90 -and $refinementInfo.staffSupportPoses -eq 80 -and $refinementInfo.actualGpuSilhouetteFrames -eq 24 -and $refinementInfo.actualGpuSilhouetteProbes -ge 3500 -and $refinementInfo.nativeClickPick -and $refinementInfo.nativeClickPlace -and $refinementInfo.lightningWithoutTarget -and -not $refinementInfo.playerSavesAccessed) 'Real click-carry, full silhouettes, wall blocking, two-handed world staff, stat hovers, timed effects and free music verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
