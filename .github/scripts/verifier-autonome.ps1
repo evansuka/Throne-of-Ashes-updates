@@ -182,6 +182,14 @@ try{
   $report['inventoryLayout']=$inventoryInfo
   Check ($inventoryInfo.failures.Count -eq 0 -and $inventoryInfo.checks -ge 70 -and $inventoryInfo.inventorySizes -eq 3 -and $inventoryInfo.sharedGoldDiskRoundTrip -and $inventoryInfo.sharedGoldAcrossHeroes -and $inventoryInfo.oldSaveMigration -and -not $inventoryInfo.playerSavesAccessed) 'Belt position, right-side backpack, square close buttons and persisted atomic gold transfers verified'
  }
+ if([Version]$version -ge [Version]'0.14.62'){
+  $storagePath=Join-Path $fixture 'storage-layout.json'
+  $storageText=RunGame $game ('--audio-driver Dummy -- --verify-storage-layout="'+$storagePath+'"') 240
+  Check ($storageText -match 'STORAGE_01462' -and (Test-Path $storagePath)) 'Separate chest and real inventory audit runs in exported game'
+  $storageInfo=Get-Content $storagePath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['storageLayout']=$storageInfo
+  Check ($storageInfo.failures.Count -eq 0 -and $storageInfo.checks -ge 65 -and $storageInfo.inventorySizes -eq 3 -and $storageInfo.realInventoryWithChest -and $storageInfo.weaponHeightCells -eq 4 -and $storageInfo.openGloveModels -eq 5 -and -not $storageInfo.playerSavesAccessed) 'Independent panels, gold mirrors, context restoration, open glove pairs, sword scale and four-cell weapons verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
