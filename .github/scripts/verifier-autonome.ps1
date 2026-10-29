@@ -166,6 +166,14 @@ try{
   $report['gameplayComfort']=$comfortInfo
   Check ($comfortInfo.failures.Count -eq 0 -and $comfortInfo.checks -ge 50 -and $comfortInfo.classVoices -eq 4 -and $comfortInfo.skillPreviews -eq 16 -and $comfortInfo.actualRockHulls -gt 10 -and -not $comfortInfo.playerSavesAccessed) 'Belt reserve, warcry, ALT session, previews, voices, readable loot and actual rock hulls verified'
  }
+ if([Version]$version -ge [Version]'0.14.60'){
+  $compactPath=Join-Path $fixture 'compact-interface.json'
+  $compactText=RunGame $game ('--audio-driver Dummy -- --verify-compact-interface="'+$compactPath+'"') 240
+  Check ($compactText -match 'COMPACT_01460' -and (Test-Path $compactPath)) 'Compact interface and click portal run in actual exported game'
+  $compactInfo=Get-Content $compactPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['compactInterface']=$compactInfo
+  Check ($compactInfo.failures.Count -eq 0 -and $compactInfo.checks -ge 80 -and $compactInfo.skillTooltips -eq 16 -and $compactInfo.inventorySizes -eq 3 -and $compactInfo.portalClickOnly -and $compactInfo.portalBelt -and -not $compactInfo.playerSavesAccessed) 'Tooltip-only skill preview, square item scale, stone pickup and session portal from belt verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
