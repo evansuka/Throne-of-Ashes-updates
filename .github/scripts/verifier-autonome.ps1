@@ -174,6 +174,14 @@ try{
   $report['compactInterface']=$compactInfo
   Check ($compactInfo.failures.Count -eq 0 -and $compactInfo.checks -ge 80 -and $compactInfo.skillTooltips -eq 16 -and $compactInfo.inventorySizes -eq 3 -and $compactInfo.portalClickOnly -and $compactInfo.portalBelt -and -not $compactInfo.playerSavesAccessed) 'Tooltip-only skill preview, square item scale, stone pickup and session portal from belt verified'
  }
+ if([Version]$version -ge [Version]'0.14.61'){
+  $inventoryPath=Join-Path $fixture 'inventory-layout.json'
+  $inventoryText=RunGame $game ('--audio-driver Dummy -- --verify-inventory-layout="'+$inventoryPath+'"') 240
+  Check ($inventoryText -match 'INVENTORY_01461' -and (Test-Path $inventoryPath)) 'Inventory layout and shared gold audit runs in exported game'
+  $inventoryInfo=Get-Content $inventoryPath -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['inventoryLayout']=$inventoryInfo
+  Check ($inventoryInfo.failures.Count -eq 0 -and $inventoryInfo.checks -ge 70 -and $inventoryInfo.inventorySizes -eq 3 -and $inventoryInfo.sharedGoldDiskRoundTrip -and $inventoryInfo.sharedGoldAcrossHeroes -and $inventoryInfo.oldSaveMigration -and -not $inventoryInfo.playerSavesAccessed) 'Belt position, right-side backpack, square close buttons and persisted atomic gold transfers verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
