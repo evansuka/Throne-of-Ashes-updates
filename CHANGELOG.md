@@ -4,6 +4,21 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.61 — publiée le 29 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.61) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40935680967) · source `76e2ce4`.
+
+- Ceinture placée entre l’armure et le pantalon, dans la colonne centrale.
+- Suppression du cadre intérieur ajouté aux objets équipés ; les armes conservent leur vraie taille en cases.
+- Bouton de fermeture carré en bas à gauche de l’inventaire, et en bas à droite de Personnage.
+- Sac équipé à droite de la grille, centré en hauteur ; double-clic pour ouvrir son contenu. Le bouton texte « Sac à dos » est retiré.
+- Suppression du libellé et du compteur au-dessus de la grille. Quarante cases carrées, sans défilement.
+- Coffre partagé : déposer ou retirer un montant d’or, ou la totalité. Solde partagé entre les héros et conservé dans la sauvegarde. Les anciennes sauvegardes commencent avec un coffre d’or vide, sans modifier l’or porté.
+
+Jeu autonome sans installateur. Personnages et équipement conservés.
+
+Windows : 72 nouveaux contrôles inventaire/or, 86 contrôles compacts, 672036 graphiques, 24074 équipement et 16482 tenue. Remplacement réel et six récupérations réussies. Trois fichiers publics et latest retéléchargés conformes. Dans le fichier final : glisser-déposer réel, 72 contrôles et deux refus de sauvegarde avec soldes rétablis ; captures natives et galerie vérifiées.
+
 ## 0.14.60 — publiée le 29 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.60) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40929419509) · source `1ab6475`.

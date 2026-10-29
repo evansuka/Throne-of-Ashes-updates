@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.60](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.60)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.61](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.61)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.60 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40929419509) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.61 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40935680967) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -81,3 +81,5 @@ En **0.14.58**, le Paladin retrouve sa tenue crème avec le nouvel écu, le Sorc
 En **0.14.59** : butin au premier plan, ALT de session, aperçu des compétences, réserves de ceinture descendantes, Cri de guerre remplissant les ressources, bras en marche et collisions alignées sur les rochers. Pas refaits et quatre répliques de clé ; [sources sonores](CREDITS-AUDIO-01459.md).
 
 En **0.14.60** : prochain niveau de compétence uniquement au survol du +, arc de la Rôdeuse aux hanches, équipement à la même échelle carrée que le sac, bruit de pierre dédié et portail vertical à côté du héros, au clic, utilisable depuis la ceinture et limité à la session.
+
+En **0.14.61** : ceinture entre armure et pantalon, sac à droite de la grille (double-clic pour ouvrir), fermetures carrées et retrait des cadres intérieurs. Or déposable et retirable dans le coffre partagé, par montant ou en totalité, conservé entre les héros.
