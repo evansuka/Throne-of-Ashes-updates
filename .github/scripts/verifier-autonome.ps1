@@ -147,7 +147,7 @@ try{
   $styleInfo=Get-Content $stylePath -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['characterStyle']=$styleInfo
   Check ($styleInfo.nativeVersion -eq ($version+'-conversion') -and $styleInfo.failures.Count -eq 0 -and $styleInfo.checks -ge 4000 -and $styleInfo.receptionPoses -eq 128) 'Natural reception poses preserve real weapon and staff grips in eight directions'
-  Check ($styleInfo.npcCount -eq 6 -and $styleInfo.npcWorkingPoses -eq 120 -and $styleInfo.maxReceptionGripError -lt 0.00001 -and -not $styleInfo.playerSavesAccessed) 'Actual NPC working poses and tool anchors remain valid without player saves'
+  Check ($styleInfo.actualGpuTextureBoundsProbes -eq 16 -and $styleInfo.npcCount -eq 6 -and $styleInfo.npcWorkingPoses -eq 120 -and $styleInfo.maxReceptionGripError -lt 0.00001 -and -not $styleInfo.playerSavesAccessed) 'Actual NPC working poses and tool anchors remain valid without player saves'
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
