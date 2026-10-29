@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.59](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.59)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.60](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.60)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,13 +22,13 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.59 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40894853071) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.60 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40929419509) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
 ## Commandes solo
 
-Dans le chat, onglet **Système** : `/help`, `/get <nom ou identifiant de l’unique>` et `/portal <boss>`. [Liste complète des commandes](COMMANDES-SOLO.md). Les donjons se réinitialisent à l’ouverture d’une nouvelle partie ; équipement, progression et portails restent conservés.
+Dans le chat, onglet **Système** : `/help`, `/get <nom ou identifiant de l’unique>` et `/portal <boss>`. [Liste complète des commandes](COMMANDES-SOLO.md). Les donjons se réinitialisent à l’ouverture d’une nouvelle partie ; équipement, progression et portails de gardiens déverrouillés restent conservés. Les portails temporaires de retour se ferment à la sortie de partie.
 
 ## Son absent
 
@@ -79,3 +79,5 @@ En **0.14.57**, les quatre héros ont de nouvelles tenues et proportions, avec d
 En **0.14.58**, le Paladin retrouve sa tenue crème avec le nouvel écu, le Sorcier tient réellement son bâton à deux mains à l’accueil, les haches/épées pointent vers le haut au repos et les capuches sont recalées. Windows valide 561 contrôles ciblés supplémentaires.
 
 En **0.14.59** : butin au premier plan, ALT de session, aperçu des compétences, réserves de ceinture descendantes, Cri de guerre remplissant les ressources, bras en marche et collisions alignées sur les rochers. Pas refaits et quatre répliques de clé ; [sources sonores](CREDITS-AUDIO-01459.md).
+
+En **0.14.60** : prochain niveau de compétence uniquement au survol du +, arc de la Rôdeuse aux hanches, équipement à la même échelle carrée que le sac, bruit de pierre dédié et portail vertical à côté du héros, au clic, utilisable depuis la ceinture et limité à la session.

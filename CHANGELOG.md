@@ -4,6 +4,21 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.60 — publiée le 29 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.60) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40929419509) · source `1ab6475`.
+
+- Compétences : le niveau suivant apparaît uniquement au survol du « + », sans bloc supplémentaire sous la compétence.
+- Rôdeuse : arc tenu transversalement devant les hanches, main refermée sur la poignée dans le sens naturel ; transition vers le tir conservée. Armes toujours rangées au village.
+- Équipement : anneaux/amulette 1 × 1, bottes/casque/gants/sac 2 × 2, ceinture 2 × 1, torse/pantalon 2 × 3. Même échelle en cases carrées et mêmes marges d’image que dans l’inventaire.
+- Armes et boucliers : grands emplacements conservés, chaque objet dessiné à son propre encombrement en cases.
+- Ramassage d’une gemme : nouveau bruit court de pierre, distinct du tissu et des pièces.
+- Portail de retour : ouverture dans un espace libre à côté du héros, visuel vertical, traversée au clic et fermeture à la sortie de partie. Le parchemin peut être placé et utilisé dans la ceinture.
+
+Jeu autonome sans installateur. Personnages et équipement conservés.
+
+Windows : 86 nouveaux contrôles, 672036 graphismes, 24074 équipement, 16482 tenue, 561 retouches, 5144 prises et 5586 rangement/capuche. Remplacement réel et six récupérations réussies. Trois fichiers publics et latest retéléchargés conformes. Seize planches des vrais packs avant/après, interface équipée et infobulle inspectées ; comparateur Chromium sans erreur.
+
 ## 0.14.59 — publiée le 29 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.59) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40894853071) · source `506bfb9`.
