@@ -4,6 +4,17 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.58 — publiée le 29 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.58) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40880695547), source `df237bc`.
+
+- Sorcier : vraie main gauche sur le bâton et avant-bras devant le torse/cuirasse dans la pose d’accueil.
+- Paladin : tenue crème et or originale rétablie, nouvel écu conservé, torse dédié aux animations.
+- Haches et épées vers le haut au repos et en marche hors combat, avec la prise actuelle ; gestes de combat conservés.
+- Capuches recalées sur le visage et empreinte empêchant les cheveux/une seconde silhouette de visage de dépasser en vue de trois quarts. Nez et mâchoires préservés de profil.
+
+Windows : 561 contrôles ciblés avec 12 silhouettes de capuche, 4184 accueil/PNJ, 5144 prises, 5586 rangement/capuche, 24074 équipement, 16482 tenue et 672036 graphismes. Remplacement réel du jeu et même nouveau processus ouvert dix secondes, six récupérations réussies. Trois fichiers publics et latest retéléchargés et conformes. Captures natives avant/après et comparateur Chromium 280 combinaisons. Jeu autonome sans installateur ; statistiques et sauvegardes conservées.
+
 ## 0.14.57 — publiée le 28 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.57) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40799803247), source `1c6b316`.
