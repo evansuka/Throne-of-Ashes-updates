@@ -4,6 +4,26 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.59 — publiée le 29 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.59) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40894853071) · source `506bfb9`.
+
+- Les noms du butin passent devant les objets et restent cliquables.
+- Cri de guerre remplit aussi la vie et le mana aux nouveaux maximums. Coût et recharge restent requis.
+- Suppression du son de tambour joué à chaque mort ennemie.
+- Balancement des bras en déplacement ; armes, bouclier, doigts et vêtements suivent le mouvement.
+- Coffres verrouillés : « J’ai besoin d’une clé », avec quatre voix françaises distinctes selon la classe.
+- Nouveaux pas plus souples, un appui par son, adaptés au sol.
+- Collisions des murs conformes à leur roche visible ; profondeur des sprites ennemis corrigée sans modifier leur taille à l’écran.
+- Parchemins de portail : 8 % par ennemi ordinaire, un garanti sur les boss et 25 % dans les coffres.
+- ALT en bascule par défaut, conservé entre étages et fenêtres pendant la partie ; réinitialisé à la nouvelle session. Le mode maintien reste disponible dans Gameplay.
+- Fiche Personnage : bonus actuels et aperçu du niveau suivant avant d’attribuer un point.
+- Après utilisation d’une potion, les réserves de sa colonne descendent pour la remplacer.
+
+Jeu Windows autonome, sans installateur. Personnages et équipements conservés.
+
+Windows : 86 nouveaux contrôles, 672036 graphismes, 24074 équipement, 16482 tenue, 561 retouches, 5144 prises et 5586 rangement/capuche. Remplacement réel, même jeu ouvert dix secondes et six récupérations réussies. Trois fichiers publics et latest retéléchargés et conformes. 128 captures natives, 64 combinaisons Chromium et quatre MP3 vérifiés.
+
 ## 0.14.58 — publiée le 29 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.58) et [validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40880695547), source `df237bc`.

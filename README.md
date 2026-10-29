@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.58](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.58)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.59](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.59)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.58 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40880695547) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
+[Validation Windows 0.14.59 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40894853071) : 16 482 contrôles de tenue intégrée et de remplacement par les équipements, quatre restitutions exactes des pixels de base, 24 074 contrôles d’équipement porté et 672 036 graphiques. Quatre héros, huit directions, ensembles mixtes/teints/uniques ; remplacement demandé dans le jeu, nouveau processus maintenu ouvert et six cas de récupération. Les trois fichiers publics et latest sont retéléchargés et comparés aux fichiers validés ; téléchargement direct du jeu Godot, sans Setup.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -77,3 +77,5 @@ En **0.14.56**, prises de repos avec le pouce au-dessus des doigts, armes et bou
 En **0.14.57**, les quatre héros ont de nouvelles tenues et proportions, avec des poses d’accueil naturelles, un écu pour le Paladin et un bâton à deux mains. Les raccords des jambes des PNJ sont repris. Windows valide aussi 4158 contrôles des nouvelles postures/PNJ et 16 sondes GPU de texture.
 
 En **0.14.58**, le Paladin retrouve sa tenue crème avec le nouvel écu, le Sorcier tient réellement son bâton à deux mains à l’accueil, les haches/épées pointent vers le haut au repos et les capuches sont recalées. Windows valide 561 contrôles ciblés supplémentaires.
+
+En **0.14.59** : butin au premier plan, ALT de session, aperçu des compétences, réserves de ceinture descendantes, Cri de guerre remplissant les ressources, bras en marche et collisions alignées sur les rochers. Pas refaits et quatre répliques de clé ; [sources sonores](CREDITS-AUDIO-01459.md).
