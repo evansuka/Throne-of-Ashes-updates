@@ -1,0 +1,609 @@
+{
+    "version":  "0.14.64",
+    "status":  "failed",
+    "published":  false,
+    "cleanupSucceeded":  false,
+    "sourceCommit":  "40824b19cb7931dec54db88e12669253fe9ea8b2",
+    "completedUtc":  "2026-10-30T00:07:13.1023320Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40977173869",
+    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.64",
+    "portableCheck":  {
+                          "status":  "failed",
+                          "version":  "0.14.64",
+                          "noInstaller":  true,
+                          "checks":  [
+                                         "Strict release version",
+                                         "Standalone manifest matches tag",
+                                         "Immutable update URL",
+                                         "No installer in distribution",
+                                         "Safe distribution filename",
+                                         "Checksum Throne-of-Ashes-0.14.64-update.zip",
+                                         "Safe distribution filename",
+                                         "Checksum update.json",
+                                         "Safe distribution filename",
+                                         "Checksum RELEASE.md",
+                                         "Archive matches manifest",
+                                         "Executable matches manifest",
+                                         "Native executable version matches release",
+                                         "Version-specific release notes",
+                                         "Exported game verification terminates cleanly",
+                                         "Six rendered floors, five guardians and ending rewards",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded heroGraphics audit completes",
+                                         "Exported heroGraphics has no failures",
+                                         "Four classes, eight directions and complete exported pose matrix",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded heroCoordination audit completes",
+                                         "Exported heroCoordination has no failures",
+                                         "Real delayed bow release, pause, interruption and travel cancellation",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual rendered garment pixel audit completes",
+                                         "Four class outfits retain native front/back motifs in five combat poses",
+                                         "Exported game verification terminates cleanly",
+                                         "Exported itemization, commerce and repair audit completes",
+                                         "Rarity powers, physical ranges, attack speed and critical rolls verified",
+                                         "Commerce-only bottom-left prices, repairs and jewelry preservation verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Exported village, service access and NPC audit completes",
+                                         "Six NPC services, full body selection, dynamic detours and five rendered village views verified",
+                                         "Village detail budget and isolated save policy verified",
+                                         "Continuous dirt-only trails without paving or stone borders verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual rendered armor opening audit completes",
+                                         "Original native neck and arm pixels remain visible through all five armor model openings",
+                                         "All five Viking collars corrected without accessing player saves",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual worn equipment fitting audit completes",
+                                         "Four heroes retain fitted equipment across complete, mixed and unique kits",
+                                         "Open faces, opaque body coverage, native sleeves and rear accessories verified"
+                                     ],
+                          "heroGraphics":  {
+                                               "checks":  673572,
+                                               "classes":  [
+                                                               "Viking",
+                                                               "Paladin",
+                                                               "Sorcier",
+                                                               "RÃ´deur"
+                                                           ],
+                                               "directions":  8,
+                                               "failures":  0,
+                                               "firstFailures":  [
+
+                                                                 ],
+                                               "kitsPerClass":  18,
+                                               "metrics":  {
+                                                               "duplicatedGuardBodies":  0,
+                                                               "maxCombatGripError":  0.000000725121822142683,
+                                                               "maxHeadHeightError":  0.000000309348106242169,
+                                                               "maxLegShapeChange":  0.000000127315573195119,
+                                                               "maxShieldWristError":  0.000000717734963018302,
+                                                               "poses":  24192
+                                                           },
+                                               "physicalOutputOrPlayerSavesAccessed":  false,
+                                               "scope":  "Actual native transforms. Pixel appearance inspected separately in viewport captures; this does not prove anatomical quality or physical audio.",
+                                               "states":  [
+                                                              "idle",
+                                                              "walk",
+                                                              "guard",
+                                                              "guard-walk",
+                                                              "attack",
+                                                              "left",
+                                                              "skill0",
+                                                              "skill1",
+                                                              "skill2",
+                                                              "skill3"
+                                                          ],
+                                               "version":  "0.14.64-conversion"
+                                           },
+                          "heroCoordination":  {
+                                                   "checks":  14,
+                                                   "failures":  [
+
+                                                                ],
+                                                   "playerSavesAccessed":  false
+                                               },
+                          "heroGarments":  {
+                                               "actualGpuPixels":  true,
+                                               "checks":  120,
+                                               "classes":  4,
+                                               "directions":  [
+                                                                  0,
+                                                                  4
+                                                              ],
+                                               "failures":  [
+
+                                                            ],
+                                               "maxRgbDifference":  0.0,
+                                               "playerSavesAccessed":  false,
+                                               "posesPerDirection":  5,
+                                               "version":  "0.14.64-conversion"
+                                           },
+                          "itemization":  {
+                                              "attackTrials":  10000,
+                                              "captures":  [
+                                                               "itemization-fiches.png",
+                                                               "itemization-commerce.png"
+                                                           ],
+                                              "checks":  19832,
+                                              "commerceOnlyGoldBottomLeft":  true,
+                                              "criticals":  1238,
+                                              "examples":  [
+                                                               {
+                                                                   "affixes":  [
+
+                                                                               ],
+                                                                   "attackSeconds":  0.43,
+                                                                   "bonuses":  {
+
+                                                                               },
+                                                                   "criticalChance":  6.0,
+                                                                   "damage":  165.0,
+                                                                   "damageMax":  195,
+                                                                   "damageMin":  135,
+                                                                   "durability":  92.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  92,
+                                                                   "modelIndex":  1,
+                                                                   "name":  "BÃ¢ton de chÃªne ordinaire",
+                                                                   "rarity":  "normal",
+                                                                   "requirements":  {
+                                                                                        "intelligence":  21,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "staff",
+                                                                   "value":  232.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "dexterite",
+                                                                                       "tier":  3,
+                                                                                       "value":  7.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  42.0,
+                                                                                       "min":  32.0,
+                                                                                       "stat":  "attackRating",
+                                                                                       "tier":  3,
+                                                                                       "value":  41.0
+                                                                                   }
+                                                                               ],
+                                                                   "attackSeconds":  0.65,
+                                                                   "bonuses":  {
+                                                                                   "attackRating":  41.0,
+                                                                                   "dexterite":  7.0
+                                                                               },
+                                                                   "criticalChance":  5.0,
+                                                                   "damage":  263.0,
+                                                                   "damageMax":  310,
+                                                                   "damageMin":  216,
+                                                                   "durability":  126.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  126,
+                                                                   "modelIndex":  3,
+                                                                   "name":  "Arc de guerre magique",
+                                                                   "rarity":  "magic",
+                                                                   "requirements":  {
+                                                                                        "dexterite":  20,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "bow",
+                                                                   "value":  485.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "force",
+                                                                                       "tier":  3,
+                                                                                       "value":  6.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "vitalite",
+                                                                                       "tier":  3,
+                                                                                       "value":  6.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  17.0,
+                                                                                       "min":  12.0,
+                                                                                       "stat":  "foudre",
+                                                                                       "tier":  3,
+                                                                                       "value":  16.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  34.0,
+                                                                                       "min":  26.0,
+                                                                                       "stat":  "maxLife",
+                                                                                       "tier":  3,
+                                                                                       "value":  27.0
+                                                                                   }
+                                                                               ],
+                                                                   "armor":  196.0,
+                                                                   "bonuses":  {
+                                                                                   "force":  6.0,
+                                                                                   "foudre":  16.0,
+                                                                                   "maxLife":  27.0,
+                                                                                   "vitalite":  6.0
+                                                                               },
+                                                                   "durability":  156.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  156,
+                                                                   "modelIndex":  3,
+                                                                   "name":  "Armure de fer rare",
+                                                                   "rarity":  "rare",
+                                                                   "requirements":  {
+                                                                                        "force":  7,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "armor",
+                                                                   "value":  706.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  28.0,
+                                                                                       "min":  18.0,
+                                                                                       "stat":  "physicalPercent",
+                                                                                       "tier":  3,
+                                                                                       "value":  20.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  8.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "attackSpeed",
+                                                                                       "tier":  3,
+                                                                                       "value":  5.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  11.0,
+                                                                                       "min":  8.0,
+                                                                                       "stat":  "fireDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  10.0
+                                                                                   }
+                                                                               ],
+                                                                   "attackSeconds":  0.43,
+                                                                   "bonuses":  {
+                                                                                   "attackSpeed":  5.0,
+                                                                                   "fireDamage":  10.0,
+                                                                                   "physicalPercent":  20.0
+                                                                               },
+                                                                   "criticalChance":  4.0,
+                                                                   "damage":  243.0,
+                                                                   "damageMax":  287,
+                                                                   "damageMin":  199,
+                                                                   "durability":  127.0,
+                                                                   "elementalRanges":  {
+                                                                                           "fireDamage":  [
+                                                                                                              8,
+                                                                                                              12
+                                                                                                          ]
+                                                                                       },
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "legendaryEffect":  "bleed",
+                                                                   "maxDurability":  127,
+                                                                   "modelIndex":  1,
+                                                                   "name":  "Hache de combat lÃ©gendaire",
+                                                                   "rarity":  "legendary",
+                                                                   "requirements":  {
+                                                                                        "force":  20,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "axe",
+                                                                   "value":  1145.0
+                                                               }
+                                                           ],
+                                              "failures":  [
+
+                                                           ],
+                                              "families":  16,
+                                              "generatedItems":  3072,
+                                              "jewelryDoesNotWear":  true,
+                                              "legacyItemsNotRerolled":  true,
+                                              "legendaryExclusivePower":  true,
+                                              "playerSavesAccessed":  false,
+                                              "rarityAffixCounts":  {
+                                                                        "legendary":  [
+                                                                                          3,
+                                                                                          4
+                                                                                      ],
+                                                                        "magic":  [
+                                                                                      2,
+                                                                                      3
+                                                                                  ],
+                                                                        "normal":  [
+                                                                                       0,
+                                                                                       0
+                                                                                   ],
+                                                                        "rare":  [
+                                                                                     3,
+                                                                                     4
+                                                                                 ]
+                                                                    },
+                                              "version":  "0.14.64-conversion"
+                                          },
+                          "village":  {
+                                          "captures":  [
+                                                           "village-place.png",
+                                                           "village-eglise.png",
+                                                           "village-maison.png",
+                                                           "village-etang.png",
+                                                           "village-ecurie.png"
+                                                       ],
+                                          "checks":  61,
+                                          "clearedTrees":  37,
+                                          "detailMeshes":  6,
+                                          "detailPrimitives":  749,
+                                          "detailTriangles":  9740,
+                                          "dynamicNpcClearance":  1.16277301311493,
+                                          "failures":  [
+
+                                                       ],
+                                          "fullBodySelection":  true,
+                                          "newPropColliders":  14,
+                                          "playerSavesAccessed":  false,
+                                          "renderInfo":  {
+                                                             "drawCalls":  209,
+                                                             "fpsClaimed":  false,
+                                                             "primitives":  98898
+                                                         },
+                                          "roadBorderStones":  0,
+                                          "roadMeshes":  1,
+                                          "roadSurface":  "dirt",
+                                          "roadTriangles":  11356,
+                                          "routes":  [
+                                                         {
+                                                             "distance":  0.962945461273193,
+                                                             "id":  "smith",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.702344954013824,
+                                                             "id":  "fisher",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.767204225063324,
+                                                             "id":  "eleane",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.941609442234039,
+                                                             "id":  "merchant",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.909632086753845,
+                                                             "id":  "priest",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.895710825920105,
+                                                             "id":  "dyer",
+                                                             "reached":  true
+                                                         }
+                                                     ],
+                                          "version":  "0.14.64-conversion"
+                                      },
+                          "armor":  {
+                                        "actualGpuPixels":  true,
+                                        "armorModels":  5,
+                                        "captures":  [
+                                                         "armor-idle-0.png",
+                                                         "armor-idle-1.png",
+                                                         "armor-idle-2.png",
+                                                         "armor-idle-4.png",
+                                                         "armor-walk-0.png",
+                                                         "armor-walk-1.png",
+                                                         "armor-walk-2.png",
+                                                         "armor-walk-4.png",
+                                                         "armor-attack-0.png",
+                                                         "armor-attack-1.png",
+                                                         "armor-attack-2.png",
+                                                         "armor-attack-4.png"
+                                                     ],
+                                        "changedVikingCollars":  5,
+                                        "checks":  469,
+                                        "classes":  4,
+                                        "directions":  8,
+                                        "failures":  [
+
+                                                     ],
+                                        "fixtureInterpolationDisabled":  true,
+                                        "logicalViewport":  "(1280.0, 720.0)",
+                                        "playerSavesAccessed":  false,
+                                        "renderedImage":  "(1028, 578)",
+                                        "states":  [
+                                                       "idle",
+                                                       "walk",
+                                                       "attack"
+                                                   ],
+                                        "version":  "0.14.64-conversion",
+                                        "viewportCoordinatesScaled":  true
+                                    },
+                          "equipmentFit":  {
+                                               "actualGpuPixels":  true,
+                                               "bareHandsAndGloves":  true,
+                                               "captures":  [
+                                                                "equipment-fit-kit0-idle.png",
+                                                                "equipment-fit-kit0-attack.png",
+                                                                "equipment-fit-kit1-idle.png",
+                                                                "equipment-fit-kit1-attack.png",
+                                                                "equipment-fit-kit2-idle.png",
+                                                                "equipment-fit-kit2-attack.png",
+                                                                "equipment-fit-kit3-idle.png",
+                                                                "equipment-fit-kit3-attack.png",
+                                                                "equipment-fit-kit4-idle.png",
+                                                                "equipment-fit-kit4-attack.png",
+                                                                "equipment-fit-kit5-idle.png",
+                                                                "equipment-fit-kit5-attack.png",
+                                                                "equipment-fit-kit6-idle.png",
+                                                                "equipment-fit-kit6-attack.png"
+                                                            ],
+                                               "checks":  24130,
+                                               "classes":  4,
+                                               "directions":  8,
+                                               "faceBackgroundExcluded":  true,
+                                               "facePatchSize":  3,
+                                               "facePixelProbes":  192,
+                                               "failures":  [
+
+                                                            ],
+                                               "fixedRenderSize":  [
+                                                                       2560,
+                                                                       1440
+                                                                   ],
+                                               "kits":  7,
+                                               "maxMatchedFaceRgbError":  0.0,
+                                               "minFaceVisibleFraction":  0.875,
+                                               "mixedItemsAndUniques":  true,
+                                               "nativeSubViewport":  true,
+                                               "opaqueShellPixelProbes":  336,
+                                               "playerSavesAccessed":  false,
+                                               "states":  [
+                                                              "idle",
+                                                              "walk",
+                                                              "guard",
+                                                              "attack"
+                                                          ],
+                                               "version":  "0.14.64-conversion",
+                                               "viewportMsaa":  2
+                                           },
+                          "processDiagnostics":  {
+                                                     "output":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nAUDIO_FALLBACK: Windows MCI active=true parent=9464\r\nSESSION_START: version=0.14.64-conversion pid=9464 audio=Dummy device=Default\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nCAMPAGNE: Bienvenue Ã  Havrebrume. Rejoins la grotte pour entrer au donjon.\r\nGAMEPLAY_START: version=0.14.64-conversion pid=9464 hero=native-viking\r\nCAMPAGNE: Havrebrume\r\nCAMPAGNE: Le Royaume de la Vie sacrifiÃ©e Â· Ã‰TAGE 1\r\nCAMPAGNE: Les Eaux de la Mort Â· Ã‰TAGE 30\r\nCAMPAGNE: Les Vestiges du Temps brisÃ© Â· Ã‰TAGE 50\r\nCAMPAGNE: Les Fournaises de la LumiÃ¨re Â· Ã‰TAGE 70\r\nCAMPAGNE: Les Profondeurs dâ€™Aetherion Â· Ã‰TAGE 90\r\nCAMPAGNE: Les Profondeurs dâ€™Aetherion Â· Ã‰TAGE 100\r\nPRESENTATION_AUDIT: {\"actualNativeRendering\":true,\"captures\":[\"presentation-0.png\",\"presentation-1.png\",\"presentation-30.png\",\"presentation-50.png\",\"presentation-70.png\",\"presentation-90.png\",\"presentation-100.png\"],\"checks\":295,\"failures\":[\"Attack returns continuously to guard: Sorcier/0\",\"Attack returns continuously to guard: Sorcier/0\",\"Attack returns continuously to guard: Sorcier/0\",\"Attack returns continuously to guard: Sorcier/0\",\"Attack returns continuously to guard: Sorcier/0\",\"Attack returns continuously to guard: Sorcier/0\",\"Attack returns continuously to guard: Sorcier/0\",\"Attack returns continuously to guard: Sorcier/1\",\"Attack returns continuously to guard: Sorcier/1\",\"Attack returns continuously to guard: Sorcier/1\",\"Attack returns continuously to guard: Sorcier/1\",\"Attack returns continuously to guard: Sorcier/1\",\"Attack returns continuously to guard: Sorcier/1\",\"Attack returns continuously to guard: Sorcier/1\",\"Attack returns continuously to guard: Sorcier/2\",\"Attack returns continuously to guard: Sorcier/2\",\"Attack returns continuously to guard: Sorcier/2\",\"Attack returns continuously to guard: Sorcier/2\",\"Attack returns continuously to guard: Sorcier/2\",\"Attack returns continuously to guard: Sorcier/2\",\"Attack returns continuously to guard: Sorcier/2\",\"Attack returns continuously to guard: Sorcier/3\",\"Attack returns continuously to guard: Sorcier/3\",\"Attack returns continuously to guard: Sorcier/3\",\"Attack returns continuously to guard: Sorcier/3\",\"Attack returns continuously to guard: Sorcier/3\",\"Attack returns continuously to guard: Sorcier/3\",\"Attack returns continuously to guard: Sorcier/3\",\"Attack returns continuously to guard: Sorcier/4\",\"Attack returns continuously to guard: Sorcier/4\",\"Attack returns continuously to guard: Sorcier/4\",\"Attack returns continuously to guard: Sorcier/4\",\"Attack returns continuously to guard: Sorcier/4\",\"Attack returns continuously to guard: Sorcier/4\",\"Attack returns continuously to guard: Sorcier/4\",\"Attack returns continuously to guard: Sorcier/5\",\"Attack returns continuously to guard: Sorcier/5\",\"Attack returns continuously to guard: Sorcier/5\",\"Attack returns continuously to guard: Sorcier/5\",\"Attack returns continuously to guard: Sorcier/5\",\"Attack returns continuously to guard: Sorcier/5\",\"Attack returns continuously to guard: Sorcier/5\",\"Attack returns continuously to guard: Sorcier/6\",\"Attack returns continuously to guard: Sorcier/6\",\"Attack returns continuously to guard: Sorcier/6\",\"Attack returns continuously to guard: Sorcier/6\",\"Attack returns continuously to guard: Sorcier/6\",\"Attack returns continuously to guard: Sorcier/6\",\"Attack returns continuously to guard: Sorcier/6\",\"Attack returns continuously to guard: Sorcier/7\",\"Attack returns continuously to guard: Sorcier/7\",\"Attack returns continuously to guard: Sorcier/7\",\"Attack returns continuously to guard: Sorcier/7\",\"Attack returns continuously to guard: Sorcier/7\",\"Attack returns continuously to guard: Sorcier/7\",\"Attack returns continuously to guard: Sorcier/7\"],\"foliageChunks\":265,\"foliageMaterials\":4,\"levels\":[{\"depth\":1,\"mergedBatches\":47,\"mergedSources\":135,\"roomLights\":16},{\"depth\":30,\"mergedBatches\":37,\"mergedSources\":105,\"roomLights\":13},{\"depth\":50,\"mergedBatches\":32,\"mergedSources\":89,\"roomLights\":16},{\"depth\":70,\"mergedBatches\":26,\"mergedSources\":70,\"roomLights\":14},{\"depth\":90,\"mergedBatches\":31,\"mergedSources\":88,\"roomLights\":16},{\"depth\":100,\"mergedBatches\":32,\"mergedSources\":90,\"roomLights\":16}],\"lightBudgets\":[3,5,8],\"maxGuardReturnError\":1.43308508396149,\"playerSavesAccessed\":false,\"roadTriangles\":11356,\"testerFpsClaimed\":false,\"version\":\"0.14.64-conversion\"}\r\n\nWARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\nERROR: Attack returns continuously to guard: Sorcier/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/0\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/1\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/1\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/1\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/1\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/1\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/1\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/1\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/2\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/2\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/2\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/2\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/2\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/2\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/2\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/3\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/3\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/3\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/3\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/3\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/3\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/3\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/4\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/4\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/4\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/4\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/4\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/4\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/4\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/5\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/5\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/5\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/5\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/5\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/5\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/5\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/6\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/6\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/6\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/6\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/6\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/6\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/6\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/7\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/7\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/7\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/7\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/7\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/7\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\nERROR: Attack returns continuously to guard: Sorcier/7\r\n   at: push_error (core/variant/variant_utility.cpp:1023)\r\n",
+                                                     "exitCode":  2,
+                                                     "arguments":  "--audio-driver Dummy -- --verify-presentation=\"D:\\a\\_temp\\Throne essais autonomes-a46702023ff1450c83bf95769d6b9087\\presentation.json\""
+                                                 },
+                          "presentation":  {
+                                               "actualNativeRendering":  true,
+                                               "captures":  [
+                                                                "presentation-0.png",
+                                                                "presentation-1.png",
+                                                                "presentation-30.png",
+                                                                "presentation-50.png",
+                                                                "presentation-70.png",
+                                                                "presentation-90.png",
+                                                                "presentation-100.png"
+                                                            ],
+                                               "checks":  295,
+                                               "failures":  [
+                                                                "Attack returns continuously to guard: Sorcier/0",
+                                                                "Attack returns continuously to guard: Sorcier/0",
+                                                                "Attack returns continuously to guard: Sorcier/0",
+                                                                "Attack returns continuously to guard: Sorcier/0",
+                                                                "Attack returns continuously to guard: Sorcier/0",
+                                                                "Attack returns continuously to guard: Sorcier/0",
+                                                                "Attack returns continuously to guard: Sorcier/0",
+                                                                "Attack returns continuously to guard: Sorcier/1",
+                                                                "Attack returns continuously to guard: Sorcier/1",
+                                                                "Attack returns continuously to guard: Sorcier/1",
+                                                                "Attack returns continuously to guard: Sorcier/1",
+                                                                "Attack returns continuously to guard: Sorcier/1",
+                                                                "Attack returns continuously to guard: Sorcier/1",
+                                                                "Attack returns continuously to guard: Sorcier/1",
+                                                                "Attack returns continuously to guard: Sorcier/2",
+                                                                "Attack returns continuously to guard: Sorcier/2",
+                                                                "Attack returns continuously to guard: Sorcier/2",
+                                                                "Attack returns continuously to guard: Sorcier/2",
+                                                                "Attack returns continuously to guard: Sorcier/2",
+                                                                "Attack returns continuously to guard: Sorcier/2",
+                                                                "Attack returns continuously to guard: Sorcier/2",
+                                                                "Attack returns continuously to guard: Sorcier/3",
+                                                                "Attack returns continuously to guard: Sorcier/3",
+                                                                "Attack returns continuously to guard: Sorcier/3",
+                                                                "Attack returns continuously to guard: Sorcier/3",
+                                                                "Attack returns continuously to guard: Sorcier/3",
+                                                                "Attack returns continuously to guard: Sorcier/3",
+                                                                "Attack returns continuously to guard: Sorcier/3",
+                                                                "Attack returns continuously to guard: Sorcier/4",
+                                                                "Attack returns continuously to guard: Sorcier/4",
+                                                                "Attack returns continuously to guard: Sorcier/4",
+                                                                "Attack returns continuously to guard: Sorcier/4",
+                                                                "Attack returns continuously to guard: Sorcier/4",
+                                                                "Attack returns continuously to guard: Sorcier/4",
+                                                                "Attack returns continuously to guard: Sorcier/4",
+                                                                "Attack returns continuously to guard: Sorcier/5",
+                                                                "Attack returns continuously to guard: Sorcier/5",
+                                                                "Attack returns continuously to guard: Sorcier/5",
+                                                                "Attack returns continuously to guard: Sorcier/5",
+                                                                "Attack returns continuously to guard: Sorcier/5",
+                                                                "Attack returns continuously to guard: Sorcier/5",
+                                                                "Attack returns continuously to guard: Sorcier/5",
+                                                                "Attack returns continuously to guard: Sorcier/6",
+                                                                "Attack returns continuously to guard: Sorcier/6",
+                                                                "Attack returns continuously to guard: Sorcier/6",
+                                                                "Attack returns continuously to guard: Sorcier/6",
+                                                                "Attack returns continuously to guard: Sorcier/6",
+                                                                "Attack returns continuously to guard: Sorcier/6",
+                                                                "Attack returns continuously to guard: Sorcier/6",
+                                                                "Attack returns continuously to guard: Sorcier/7",
+                                                                "Attack returns continuously to guard: Sorcier/7",
+                                                                "Attack returns continuously to guard: Sorcier/7",
+                                                                "Attack returns continuously to guard: Sorcier/7",
+                                                                "Attack returns continuously to guard: Sorcier/7",
+                                                                "Attack returns continuously to guard: Sorcier/7",
+                                                                "Attack returns continuously to guard: Sorcier/7"
+                                                            ],
+                                               "foliageChunks":  265,
+                                               "foliageMaterials":  4,
+                                               "levels":  [
+                                                              {
+                                                                  "depth":  1,
+                                                                  "mergedBatches":  47,
+                                                                  "mergedSources":  135,
+                                                                  "roomLights":  16
+                                                              },
+                                                              {
+                                                                  "depth":  30,
+                                                                  "mergedBatches":  37,
+                                                                  "mergedSources":  105,
+                                                                  "roomLights":  13
+                                                              },
+                                                              {
+                                                                  "depth":  50,
+                                                                  "mergedBatches":  32,
+                                                                  "mergedSources":  89,
+                                                                  "roomLights":  16
+                                                              },
+                                                              {
+                                                                  "depth":  70,
+                                                                  "mergedBatches":  26,
+                                                                  "mergedSources":  70,
+                                                                  "roomLights":  14
+                                                              },
+                                                              {
+                                                                  "depth":  90,
+                                                                  "mergedBatches":  31,
+                                                                  "mergedSources":  88,
+                                                                  "roomLights":  16
+                                                              },
+                                                              {
+                                                                  "depth":  100,
+                                                                  "mergedBatches":  32,
+                                                                  "mergedSources":  90,
+                                                                  "roomLights":  16
+                                                              }
+                                                          ],
+                                               "lightBudgets":  [
+                                                                    3,
+                                                                    5,
+                                                                    8
+                                                                ],
+                                               "maxGuardReturnError":  1.43308508396149,
+                                               "playerSavesAccessed":  false,
+                                               "roadTriangles":  11356,
+                                               "testerFpsClaimed":  false,
+                                               "version":  "0.14.64-conversion"
+                                           },
+                          "error":  "System.Management.Automation.RuntimeException: Exported game verification terminates cleanly"
+                      }
+}
