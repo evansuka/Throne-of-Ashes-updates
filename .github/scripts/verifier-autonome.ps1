@@ -206,7 +206,7 @@ try{
   $report['gameplayRefinement']=$refinementInfo
   Check ($refinementInfo.failures.Count -eq 0 -and $refinementInfo.checks -ge 430 -and $refinementInfo.silhouetteCases -ge 90 -and $refinementInfo.staffSupportPoses -eq 80 -and $refinementInfo.actualGpuSilhouetteFrames -eq 24 -and $refinementInfo.actualGpuSilhouetteProbes -ge 3500 -and $refinementInfo.nativeClickPick -and $refinementInfo.nativeClickPlace -and $refinementInfo.lightningWithoutTarget -and -not $refinementInfo.playerSavesAccessed) 'Real click-carry, full silhouettes, wall blocking, two-handed world staff, stat hovers, timed effects and free music verified'
   if([Version]$version -ge [Version]'0.14.65'){
-   Check ($refinementInfo.staffTransitionPoses -eq 480 -and $refinementInfo.maxStaffReturnError -lt .002 -and $refinementInfo.maxStaffSupportWristError -lt .0001) 'Mage guard, all normal/unique staves, bare/gloved hands and four spells retain continuous joins'
+   Check ($refinementInfo.staffTransitionPoses -eq 480 -and $refinementInfo.unarmedMageTransitions -eq 40 -and $refinementInfo.maxStaffReturnError -lt .002 -and $refinementInfo.maxStaffSupportWristError -lt .0001) 'Mage guard, all normal/unique staves, bare/gloved hands and four spells retain continuous joins'
   }
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
