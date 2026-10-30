@@ -4,6 +4,25 @@
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
 
+## 0.14.65 — publiée le 29 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.65) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40980964282) · source `9cc13cf`.
+
+- Ceinture déroulée occupant ses deux cases ; quantités empilées plus petites, sans fond noir.
+- Prendre et poser un objet au clic, sans maintenir la souris ; double-clic, échange et annulation conservés.
+- Bâton du sorcier agrandi en jeu et prise à deux mains, avec transitions continues au repos, pendant la marche, les attaques et les compétences en donjon.
+- Survol du + des attributs : effets exacts du prochain point selon classe, équipement et arrondis.
+- Effets temporaires et durées restantes à droite du globe de mana.
+- Flèches issues de l’arc animé et collisions des tirs sur toute la silhouette visible des ennemis.
+- Boules de feu un peu plus lentes, cœur lumineux et traînée de braises.
+- Éclairs irréguliers, visibles même sans cible, avec possibilité de manquer la cible.
+- Quantité affichée dans les noms de l’or au sol.
+- Musique de combat dédiée aux donjons : Battle Theme de Flare, licence CC BY-SA 3.0, sources et crédits inclus.
+
+Jeu autonome sans installateur. Personnages, équipement et or conservés.
+
+Windows : 14725 nouveaux contrôles dont 4284 sondes de vrais pixels sur 24 vues ; 80 prises secondaires du bâton en jeu, vrai clic/pose, ancien commerce et coffre réussis. Suite graphique complète, remplacement réel et six récupérations réussis. Trois fichiers publics et latest retéléchargés conformes. Huit aperçus comparés des vrais packs et galerie vérifiés.
+
 ## 0.14.63 — publiée le 29 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.63) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/40948712664) · source `0f7472f`.
