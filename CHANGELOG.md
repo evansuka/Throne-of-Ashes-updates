@@ -1,5 +1,15 @@
 # Modifications des versions Windows
 
+## 0.14.66 — publiée le 31 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.66) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41240873459) · source `25f9172`.
+
+- Effets de soin turquoise et étincelles ascendantes ; éclats dorés distincts pour le niveau supérieur et la bénédiction.
+- Cri du Viking et frappe : ondes douces au sol, en remplacement des anneaux solides qui traversaient les personnages.
+- Effets réduits légers et budget simultané limité ; progression, compétences et sauvegardes conservées.
+
+177 nouveaux contrôles avec rendu réussis sur Windows, suite graphique complète et mise à jour autonome vérifiées. Trois téléchargements publics et latest comparés aux empreintes attendues.
+
 ## Site web — 25 octobre 2026
 
 - Nouveau fond « Throne Beneath the Blood Moon », fourni par l’utilisateur ; logo et téléchargement conservés.
