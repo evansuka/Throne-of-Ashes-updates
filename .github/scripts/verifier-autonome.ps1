@@ -218,6 +218,15 @@ try{
   $report['supportEffects']=$supportInfo
   Check ($supportInfo.checks -ge 177 -and $supportInfo.failures.Count -eq 0 -and -not $supportInfo.realUserSaveAccessed) 'Soft support effects, reduced mode, bounded bursts, pause, cleanup and actual village/dungeon rendering verified'
  }
+ if([Version]$version -ge [Version]'0.14.67'){
+  $sorcererFolder=Join-Path $fixture 'sorcerer-inventory'
+  $sorcererText=RunGame $game ('--audio-driver Dummy -- --verify-sorcerer-inventory="'+$sorcererFolder+'"') 180
+  $sorcererReport=Join-Path $sorcererFolder 'corrections.json'
+  Check ($sorcererText -match 'SORCERER_INVENTORY_01467' -and (Test-Path $sorcererReport)) 'Inventory cursor, direct gem insertion and sorcerer fixes run in the actual Windows package'
+  $sorcererInfo=Get-Content $sorcererReport -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['sorcererInventory']=$sorcererInfo
+  Check ($sorcererInfo.checks -ge 3500 -and $sorcererInfo.failures.Count -eq 0 -and $sorcererInfo.nativeGemInsertion -and $sorcererInfo.cursorPixelProbes -ge 20 -and $sorcererInfo.lightningDamageCases -ge 100 -and -not $sorcererInfo.realUserSaveAccessed) 'Actual carried pixels, original item size, atomic sockets, lightning/fire hits, wall blocking, meteor damage/pause and impact sounds verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
