@@ -1,5 +1,17 @@
 # Modifications des versions Windows
 
+## 0.14.68 — publiée le 31 octobre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.68) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41249660391) · jeu `d3f57e1`.
+
+- Objet porté par la souris visible au-dessus des fenêtres et conservant sa taille originale.
+- Sertissage direct : déposer une gemme sur un équipement avec une châsse vide.
+- Boules de feu et éclairs : visée et dégâts corrigés ; impacts de feu avec son dédié.
+- Météore imposant avec roche en fusion, traînée, onde, débris, fumée et sons de chute/explosion.
+- Infobulles périmées et états audio incomplets protégés ; effets réduits et pause conservés.
+
+3608 nouveaux contrôles Windows réussis, suite graphique complète et mise à jour/récupération validées. Trois fichiers publics et latest retéléchargés conformes. La candidate 0.14.67 a été refusée avant publication ; les corrections sont livrées en 0.14.68. Sauvegardes et équipement conservés.
+
 ## 0.14.66 — publiée le 31 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.66) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41240873459) · source `25f9172`.
