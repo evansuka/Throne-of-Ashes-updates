@@ -209,6 +209,15 @@ try{
    Check ($refinementInfo.staffTransitionPoses -eq 480 -and $refinementInfo.unarmedMageTransitions -eq 40 -and $refinementInfo.maxStaffReturnError -lt .002 -and $refinementInfo.maxStaffSupportWristError -lt .0001) 'Mage guard, all normal/unique staves, bare/gloved hands and four spells retain continuous joins'
   }
  }
+ if([Version]$version -ge [Version]'0.14.66'){
+  $supportFolder=Join-Path $fixture 'support-effects'
+  $supportText=RunGame $game ('--audio-driver Dummy -- --verify-support-effects="'+$supportFolder+'"') 180
+  $supportReport=Join-Path $supportFolder 'effets-soutien.json'
+  Check ($supportText -match 'SUPPORT_EFFECTS' -and (Test-Path $supportReport)) 'Support effects run in the exported Windows game'
+  $supportInfo=Get-Content $supportReport -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['supportEffects']=$supportInfo
+  Check ($supportInfo.checks -ge 177 -and $supportInfo.failures.Count -eq 0 -and -not $supportInfo.realUserSaveAccessed) 'Soft support effects, reduced mode, bounded bursts, pause, cleanup and actual village/dungeon rendering verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
