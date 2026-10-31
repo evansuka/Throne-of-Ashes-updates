@@ -226,6 +226,9 @@ try{
   $sorcererInfo=Get-Content $sorcererReport -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['sorcererInventory']=$sorcererInfo
   Check ($sorcererInfo.checks -ge 3500 -and $sorcererInfo.failures.Count -eq 0 -and $sorcererInfo.nativeGemInsertion -and $sorcererInfo.cursorPixelProbes -ge 20 -and $sorcererInfo.lightningDamageCases -ge 100 -and -not $sorcererInfo.realUserSaveAccessed) 'Actual carried pixels, original item size, atomic sockets, lightning/fire hits, wall blocking, meteor damage/pause and impact sounds verified'
+  if([Version]$version -ge [Version]'0.14.68'){
+   Check ($sorcererInfo.checks -ge 3608 -and $sorcererInfo.audioStatusGuards -and $sorcererInfo.tooltipGuards) 'Incomplete audio status and stale native tooltips are guarded while valid audio failures remain reported'
+  }
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
