@@ -1,5 +1,22 @@
 # Modifications des versions Windows
 
+## 0.14.70 — publiée le 1er novembre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.70) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41293595488) · jeu `dff887e`.
+
+- Bulles Essence Vivante : Vie rouge vin à gauche, mana actuelle bleue à droite, quatre compétences et potions au centre.
+- Verre, liquide animé, cadres ornés et aucun nombre dans les bulles ; remplissage fidèle de 0 à 100 %.
+- Effets temporaires à droite, pause et effets réduits conservés.
+- Ressources par classe et arbres de talents restent à développer ; mécanique, sauvegardes et touches conservées.
+
+6306 contrôles HUD et 6360 sondes GPU sur Windows ; suite complète et mise à jour/récupération réussies. Fichiers et latest retéléchargés conformes.
+
+## 0.14.69 — publiée le 1er novembre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.69) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41292445197) · jeu `2319a74`.
+
+Premier lot graphique Essence Vivante, cinq styles préparés et Vie/mana branchées. 6306 contrôles HUD et 6360 sondes GPU, suite complète, mise à jour et fichiers publics vérifiés. Disposition ajustée en 0.14.70 selon le retour reçu pendant la fin de publication.
+
 ## 0.14.68 — publiée le 31 octobre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.68) · [Validation Windows](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41249660391) · jeu `d3f57e1`.

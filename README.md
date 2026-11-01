@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.68](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.68)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.70](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.70)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.68 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41249660391) : 3608 nouveaux contrôles, dont les pixels de l’objet porté à taille réelle, le sertissage par souris, les dégâts du Sorcier et le météore. Suite graphique complète, remplacement autonome et récupération réussis. Les trois fichiers publics et latest ordinaire/sans cache ont été retéléchargés et comparés aux empreintes validées.
+[Validation Windows 0.14.70 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41293595488) : 6306 contrôles du nouveau HUD, 6360 sondes de pixels, remplissage fidèle et disposition Vie à gauche / actions au centre / ressource à droite. Suite graphique complète, remplacement autonome et récupérations réussis. Les trois fichiers publics et latest ordinaire/sans cache ont été retéléchargés et comparés aux empreintes validées.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
