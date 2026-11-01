@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "name": "Throne-of-Ashes-0.14.73-update.zip",
+      "bytes": 122104948,
+      "sha256": "02d53ca9a913cdada1468b93448d2907366622239341d5d35bc283eb1ba11db2",
+      "parts": [
+        {
+          "name": "Throne-of-Ashes-0.14.73-update.zip.part000",
+          "bytes": 16777216,
+          "sha256": "439fb02d78892b203649b252f161d9c68359230d7fc79daf4fff9cc723613bfc"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.73-update.zip.part001",
+          "bytes": 16777216,
+          "sha256": "4349cb86216f07650d0744a698c2b50f8a870cab5cad4ae59f554de39837d53a"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.73-update.zip.part002",
+          "bytes": 16777216,
+          "sha256": "14d36f22eff20c1d9335e5ac0cf37ba35f923827687ce3cc9b646f74d03cdc43"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.73-update.zip.part003",
+          "bytes": 16777216,
+          "sha256": "d4165e13ba119ac4f95d35454302f6dfe0ceef1b2d2ddf975769ebaee1b512e7"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.73-update.zip.part004",
+          "bytes": 16777216,
+          "sha256": "b0d8217a9c31e278db2a153e836c696b358ed87b27971d66a66c2db52186a1fe"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.73-update.zip.part005",
+          "bytes": 16777216,
+          "sha256": "243af1badb8e66e12fa2c30b5a14fd661b7c4d61ae10901d058f68e69011b9d3"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.73-update.zip.part006",
+          "bytes": 16777216,
+          "sha256": "f189900736a89614a3e985c47c55d3daaa5783da3d6fbbab2a64d33e707a2300"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.73-update.zip.part007",
+          "bytes": 4664436,
+          "sha256": "462c1777acb56c5f886886bf75bcc914d90fb96e657d49983adb5d21d855778d"
+        }
+      ]
+    }
+  ]
+}
