@@ -1,5 +1,17 @@
 # Modifications des versions Windows
 
+## 0.14.71 — publiée le 1er novembre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.71) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41299619169) · jeu `5c6dcbc`.
+
+- 96 talents : trois branches par classe, 48 actives, 36 passifs et 12 ultimes, un seul ultime appris par héros.
+- Page Compétences C, Personnage A ; quatre raccourcis par glisser-déposer, remplacement, retrait et recharge par compétence.
+- Rage, Mana sacrée/Prière, Mana Sorcier sans régénération de base et Concentration branchées au combat et aux bulles.
+- Anciens rangs et sauvegardes préservés, talents par héros, réinitialisation gratuite au village avec remboursement.
+- Coûts et progression en phase d’équilibrage ; soutien solo actuellement.
+
+1263 contrôles des talents réussis sur Windows, 60 actives et 36 passifs comparés en combat, sauvegardes/migration et glisser natif. Suite graphique, mise à jour/récupération et fichiers publics vérifiés.
+
 ## 0.14.70 — publiée le 1er novembre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.70) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41293595488) · jeu `dff887e`.

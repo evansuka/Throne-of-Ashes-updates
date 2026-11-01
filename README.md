@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.70](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.70)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.71](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.71)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,9 +22,17 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.70 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41293595488) : 6306 contrôles du nouveau HUD, 6360 sondes de pixels, remplissage fidèle et disposition Vie à gauche / actions au centre / ressource à droite. Suite graphique complète, remplacement autonome et récupérations réussis. Les trois fichiers publics et latest ordinaire/sans cache ont été retéléchargés et comparés aux empreintes validées.
+[Validation Windows 0.14.71 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41299619169) : 1263 nouveaux contrôles pour les 96 talents, les 60 actives et les 36 passifs, les raccourcis natifs, les ressources et les sauvegardes. Suite graphique complète, remplacement autonome et récupérations réussis. Trois fichiers publics et latest retéléchargés avec empreintes conformes.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
+
+## Arbres de compétences
+
+**C** ouvre les trois branches de la classe ; **A** ouvre Personnage, **I** Inventaire. Les touches personnalisées restent préservées et configurables dans Options. Cliquer pour apprendre, glisser une active vers les quatre raccourcis, déplacer entre cases ou retirer au clic droit pendant la configuration. Les passifs appris fonctionnent automatiquement. Un seul ultime par héros ; les autres branches restent accessibles.
+
+Les anciens rangs sont conservés et leurs compétences restent équipables. Réinitialisation gratuite au village pendant l’équilibrage : tous les points investis sont rendus, y compris les anciens rangs. Ressources de classe : Rage, Mana sacrée avec Prière, Mana sans régénération naturelle pour le Sorcier, Concentration. Vie à gauche, actions au centre, ressource à droite.
+
+Valeurs initiales : un point par talent normal, trois par ultime, niveau 10 et quatre points dans sa branche pour un ultime. Les effets de soutien concernent le héros solo ; le multijoueur natif reste à porter.
 
 ## Commandes solo
 
