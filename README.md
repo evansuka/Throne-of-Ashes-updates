@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.78](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.78)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.79](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.79)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -8,11 +8,15 @@ Télécharger [**Throne-of-Ashes.exe**](https://github.com/evansuka/Throne-of-As
 
 Utiliser ce fichier à la place de l’ancien Setup ou démarreur. Un raccourci Windows peut pointer directement vers ce jeu. Les sauvegardes et les personnages existants restent conservés au même emplacement.
 
+Le jeu démarre en **fenêtre maximisée**, avec sa barre de titre et les boutons Windows. Le plein écran reste disponible ensuite par F11 ou les Options.
+
 ## Mises à jour dans le jeu
 
 L’écran d’accueil affiche uniquement la version installée, fixée en bas à droite indépendamment du panneau des personnages. Une vérification s’effectue au démarrage : si une nouvelle version est disponible, une fenêtre propose **Faire la mise à jour** ou **Refuser**. Refuser laisse jouer sans téléchargement et sans nouvelle proposition pendant cette exécution. Une réponse reçue en partie attend le retour à l’accueil. Depuis l’accueil, ouvrir **Échap → Version** pour vérifier les mises à jour ou choisir **Mettre à jour et redémarrer** : le jeu télécharge et vérifie les fichiers, conserve une copie de secours, puis redémarre sur la nouvelle version. Une partie en cours n’est pas interrompue.
 
 Depuis 0.14.74, cliquer sur **Faire la mise à jour** lance le téléchargement dans cette même fenêtre : progression, vérification et erreurs éventuelles y restent affichées. La page Version des Options reste accessible pour déclencher une mise à jour manuelle.
+
+Depuis 0.14.79, l’annonce montre la nouvelle version, la version installée et **uniquement les nouveautés de la version proposée**, sans reprendre les versions précédentes. Le résumé reste visible pendant le téléchargement et peut être sélectionné. Les longs résumés défilent dans leur zone. Cette présentation devient disponible après installation de la 0.14.79.
 
 En cas d’échec du nouveau démarrage, la version précédente est restaurée avec un seul lancement de secours. Hors ligne, le jeu reste utilisable. La copie `.previous` à côté de l’EXE est le secours du dernier remplacement.
 
@@ -24,7 +28,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.78 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41348487779) : 94 nouveaux contrôles des sorts, du maintien de prière et des teintes, 506 contrôles Paladin et suite graphique complète. Remplacement autonome, récupérations et téléchargements publics vérifiés. Le son physique reste à confirmer sur votre PC.
+[Validation Windows 0.14.79 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41353703786) : 405 contrôles d'interface, nouveautés de la seule version cible, vrai téléchargement HTTP et mode natif maximisé avec cadre. Suite graphique, remplacement autonome et récupérations réussis. Le son physique reste à confirmer sur votre PC.
 
 Les trois fichiers publics et le flux latest, avec et sans cache, ont été retéléchargés avec des empreintes conformes au paquet testé.
 

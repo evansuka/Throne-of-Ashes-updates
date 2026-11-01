@@ -1,5 +1,15 @@
 # Modifications des versions Windows
 
+## 0.14.79 — publiée le 1er novembre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.79) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41353703786) · jeu `0b12128`.
+
+- Annonce avec version proposée, version installée et uniquement les nouveautés de la release proposée, sans historique cumulatif. Texte sélectionnable, longues notes défilantes et résumé conservé pendant le téléchargement.
+- Correction du contenu de popup qui pouvait dépasser sous la fenêtre ; statut, progression et boutons visibles dans des régions distinctes.
+- Démarrage en fenêtre maximisée avec barre de titre et boutons Windows, ancien lanceur inclus ; F11 et Options restent disponibles ensuite.
+
+405 contrôles interface, manifeste comparé aux notes et suite Windows complète réussis. Remplacement autonome, récupérations et fichiers publics vérifiés. Sauvegardes conservées. Cette interface devient disponible après installation de la 0.14.79.
+
 ## 0.14.78 — publiée le 1er novembre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.78) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41348487779) · jeu `1bea2bb`.
