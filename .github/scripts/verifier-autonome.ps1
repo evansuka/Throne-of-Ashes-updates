@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$Directory,[Parameter(Mandatory=$true)][string]$Tag)
+﻿param([Parameter(Mandatory=$true)][string]$Directory,[Parameter(Mandatory=$true)][string]$Tag)
 $ErrorActionPreference='Stop'
 $version=$Tag.TrimStart('v');$directory=(Resolve-Path $Directory).Path
 $report=[ordered]@{status='running';version=$version;noInstaller=$true;checks=@()}
