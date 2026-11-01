@@ -274,6 +274,13 @@ try{
    Check ($paladinInfo.checks -ge 506 -and $paladinInfo.auraDesigns -eq 3 -and $paladinInfo.targetlessShield -and $paladinInfo.freeAttackClasses -eq 4 -and $paladinInfo.nativeShiftClick -and $paladinInfo.debugSelectionCopy) 'Three exclusive equipped auras, real effects and persistence, targetless shield, native left Shift click across four classes and debug text selection/copy verified'
   }
  }
+ if([Version]$version -ge [Version]'0.14.78'){
+  $spellFolder=Join-Path $fixture 'spell-finishes'
+  $spellText=RunGame $game ('--audio-driver Dummy -- --verify-spell-finishes="'+$spellFolder+'"') 240
+  $spellInfo=Get-Content (Join-Path $spellFolder 'spell-finishes.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['spellFinishes']=$spellInfo
+  Check ($spellText -match 'SPELL_FINISHES' -and $spellInfo.checks -ge 94 -and $spellInfo.failures.Count -eq 0 -and $spellInfo.holdPrayer -and $spellInfo.auraAnimationPixelChanges.Count -eq 3 -and @($spellInfo.auraAnimationPixelChanges | Where-Object {$_ -le 30}).Count -eq 0 -and $spellInfo.conditionTintSources -eq 3 -and $spellInfo.conditionActorTypes -eq 2 -and $spellInfo.newSpellSounds -eq 4 -and -not $spellInfo.playerSavesAccessed) 'Native hold/release prayer orb, compact tooltips, three animated aura pixel changes, reversible poison/ice tints, real fire wall/nova/wave, shadow step, poison arrow and distinct imported PCM sounds verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
