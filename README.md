@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.71](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.71)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.72](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.72)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -22,7 +22,9 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.71 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41299619169) : 1263 nouveaux contrôles pour les 96 talents, les 60 actives et les 36 passifs, les raccourcis natifs, les ressources et les sauvegardes. Suite graphique complète, remplacement autonome et récupérations réussis. Trois fichiers publics et latest retéléchargés avec empreintes conformes.
+[Validation Windows 0.14.72 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41304767273) : 1562 contrôles des arbres et du remboursement des anciens rangs, 1557 contrôles audio PCM, suite graphique complète, remplacement autonome et récupérations réussis. Le son physique reste à confirmer sur votre PC.
+
+Les trois fichiers publics et le flux latest, avec et sans cache, ont été retéléchargés avec des empreintes conformes au paquet testé.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
@@ -30,7 +32,7 @@ Détails et validations dans [l’historique](CHANGELOG.md).
 
 **C** ouvre les trois branches de la classe ; **A** ouvre Personnage, **I** Inventaire. Les touches personnalisées restent préservées et configurables dans Options. Cliquer pour apprendre, glisser une active vers les quatre raccourcis, déplacer entre cases ou retirer au clic droit pendant la configuration. Les passifs appris fonctionnent automatiquement. Un seul ultime par héros ; les autres branches restent accessibles.
 
-Les anciens rangs sont conservés et leurs compétences restent équipables. Réinitialisation gratuite au village pendant l’équilibrage : tous les points investis sont rendus, y compris les anciens rangs. Ressources de classe : Rage, Mana sacrée avec Prière, Mana sans régénération naturelle pour le Sorcier, Concentration. Vie à gauche, actions au centre, ressource à droite.
+Les trois arbres tiennent sur une seule page sans défilement. Les anciens skills sont retirés et leurs points rendus automatiquement une seule fois ; les nouveaux talents et l'ultime déjà appris restent conservés. Réinitialisation gratuite au village pendant l’équilibrage. Ressources de classe : Rage, Mana sacrée avec Prière, Mana sans régénération naturelle pour le Sorcier, Concentration. Vie à gauche, actions au centre, ressource à droite.
 
 Valeurs initiales : un point par talent normal, trois par ultime, niveau 10 et quatre points dans sa branche pour un ultime. Les effets de soutien concernent le héros solo ; le multijoueur natif reste à porter.
 
@@ -39,6 +41,8 @@ Valeurs initiales : un point par talent normal, trois par ultime, niveau 10 et q
 Dans le chat, onglet **Système** : `/help`, `/get <nom ou identifiant de l’unique>` et `/portal <boss>`. [Liste complète des commandes](COMMANDES-SOLO.md). Les donjons se réinitialisent à l’ouverture d’une nouvelle partie ; équipement, progression et portails de gardiens déverrouillés restent conservés. Les portails temporaires de retour se ferment à la sortie de partie.
 
 ## Son absent
+
+Depuis 0.14.72, le secours Windows utilise du PCM direct et le décodage WAV/MP3 de Godot. MCI et son pilote MPEG vidéo ne sont plus utilisés. Les erreurs de périphérique restent signalées.
 
 Dans Échap → Option → Audio, cliquer sur **Réinitialiser la sortie audio**, puis **Tester les bruitages**. Le secours Windows est réellement relancé sans fermer le jeu. En secours, **Choisir la sortie Windows** permet de vérifier le périphérique par défaut ; après un changement, réinitialiser le son dans le jeu. Avec le pilote natif, le périphérique peut être choisi directement dans les Options. Le statut affiche les erreurs de lecture connues ; une sortie audible reste à confirmer sur votre PC.
 

@@ -1,5 +1,15 @@
 # Modifications des versions Windows
 
+## 0.14.72 — publiée le 1er novembre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.72) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41304767273) · jeu `6171f15`.
+
+- Secours audio Windows PCM direct, décodage WAV/MP3 dans Godot, sans MCI ni pilote MPEG vidéo.
+- Compétences sur une seule page sans défilement, anciens skills et blocs du bas retirés.
+- Anciens rangs remboursés une seule fois, nouveaux talents, ultime et progression conservés.
+
+1562 contrôles des arbres/migration, 1557 contrôles audio et suite Windows complète réussis, remplacement autonome et récupérations vérifiés. L'écoute sur les haut-parleurs du joueur reste à confirmer ; le runner sans périphérique donne un diagnostic explicite.
+
 ## 0.14.71 — publiée le 1er novembre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.71) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41299619169) · jeu `5c6dcbc`.
