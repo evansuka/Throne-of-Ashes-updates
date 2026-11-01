@@ -239,6 +239,15 @@ try{
   $report['essenceHud']=$essenceInfo
   Check ($essenceInfo.checks -ge 6200 -and $essenceInfo.failures.Count -eq 0 -and $essenceInfo.gpuPixelProbes -ge 6200 -and $essenceInfo.modes.Count -eq 5 -and -not $essenceInfo.playerSavesAccessed) 'Rendered fill heights, all five styles, full/empty endpoints, actual resource reads, compact layout, pause and reduced effects verified'
  }
+ if([Version]$version -ge [Version]'0.14.71'){
+  $talentFolder=Join-Path $fixture 'talent-trees'
+  $talentText=RunGame $game ('--audio-driver Dummy -- --verify-talent-trees="'+$talentFolder+'"') 240
+  $talentReport=Join-Path $talentFolder 'talents.json'
+  Check ($talentText -match 'TALENT_TREES' -and (Test-Path $talentReport)) 'All class talent trees run in the actual exported Windows game'
+  $talentInfo=Get-Content $talentReport -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['talentTrees']=$talentInfo
+  Check ($talentInfo.checks -ge 1263 -and $talentInfo.failures.Count -eq 0 -and $talentInfo.catalogTalents -eq 96 -and $talentInfo.branches -eq 12 -and $talentInfo.activeCombatCases -eq 60 -and $talentInfo.passiveEffectCases -eq 36 -and $talentInfo.passiveEquipRejections -eq 36 -and $talentInfo.nativeDrag -and -not $talentInfo.playerSavesAccessed) 'Talent unlocking, exclusive ultimates, every active/passive, native hotbar drag, per-hero saves, old migration, resources and prayer verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
