@@ -1,4 +1,4 @@
-﻿param([Parameter(Mandatory=$true)][string]$Directory,[Parameter(Mandatory=$true)][string]$Tag)
+param([Parameter(Mandatory=$true)][string]$Directory,[Parameter(Mandatory=$true)][string]$Tag)
 $ErrorActionPreference='Stop'
 $version=$Tag.TrimStart('v');$directory=(Resolve-Path $Directory).Path
 $report=[ordered]@{status='running';version=$version;noInstaller=$true;checks=@()}
@@ -269,7 +269,7 @@ try{
   $paladinText=RunGame $game ('--audio-driver Dummy -- --verify-paladin-finish="'+$paladinFolder+'"') 240
   $paladinInfo=Get-Content (Join-Path $paladinFolder 'paladin.json') -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['paladinFinish']=$paladinInfo
-  Check ($paladinText -match 'PALADIN_FINISH' -and $paladinInfo.checks -ge 435 -and $paladinInfo.failures.Count -eq 0 -and $paladinInfo.prayerPoses -eq 56 -and $paladinInfo.directions -eq 8 -and $paladinInfo.equipmentKits -eq 7 -and $paladinInfo.distinctAttackSounds -eq 15 -and -not $paladinInfo.playerSavesAccessed) 'Paladin shield motion/contact damage/audio, cancellation, kneeling sword grounded in eight directions and seven kits, prayer resource/interruption/stow, distinct imported attack sounds verified'
+  Check ($paladinText -match 'PALADIN_FINISH' -and $paladinInfo.checks -ge 436 -and $paladinInfo.failures.Count -eq 0 -and $paladinInfo.prayerPoses -eq 56 -and $paladinInfo.directions -eq 8 -and $paladinInfo.equipmentKits -eq 7 -and $paladinInfo.distinctAttackSounds -eq 15 -and -not $paladinInfo.playerSavesAccessed) 'Paladin shield motion/contact damage/audio, cancellation, kneeling sword grounded in eight directions and seven kits, prayer resource/interruption/stow, distinct imported attack sounds verified'
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
