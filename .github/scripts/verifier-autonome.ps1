@@ -247,6 +247,15 @@ try{
   $talentInfo=Get-Content $talentReport -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['talentTrees']=$talentInfo
   Check ($talentInfo.checks -ge 1263 -and $talentInfo.failures.Count -eq 0 -and $talentInfo.catalogTalents -eq 96 -and $talentInfo.branches -eq 12 -and $talentInfo.activeCombatCases -eq 60 -and $talentInfo.passiveEffectCases -eq 36 -and $talentInfo.passiveEquipRejections -eq 36 -and $talentInfo.nativeDrag -and -not $talentInfo.playerSavesAccessed) 'Talent unlocking, exclusive ultimates, every active/passive, native hotbar drag, per-hero saves, old migration, resources and prayer verified'
+  if([Version]$version -ge [Version]'0.14.72'){
+   Check ($talentInfo.checks -ge 1562 -and $talentInfo.singlePage -and $talentInfo.legacyRefund) 'All talents fit without scroll at three viewport sizes; old ranks refunded once and new builds preserved'
+   $pcmFolder=Join-Path $fixture 'audio-pcm'
+   $pcmText=RunGame $game ('--audio-driver Dummy -- --verify-audio-pcm="'+$pcmFolder+'"') 120
+   $pcmInfo=Get-Content (Join-Path $pcmFolder 'audio-pcm.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+   $report['audioPcm']=$pcmInfo
+   Check ($pcmText -match 'AUDIO_PCM' -and $pcmInfo.checks -ge 1557 -and $pcmInfo.failures.Count -eq 0 -and $pcmInfo.decoded.Count -eq 3 -and $pcmInfo.native.attempted -and -not $pcmInfo.playerSavesAccessed) 'WAV and MP3 decode to nonzero finite PCM with exact duration; real embedded mixer and native output attempted'
+   Check (($pcmInfo.native.available -and $pcmInfo.native.submittedBuffers -gt 3 -and $pcmInfo.native.nonzeroFrames -gt 0) -or (-not $pcmInfo.native.available -and $pcmInfo.native.error -like 'waveOut *')) 'Native PCM buffers play when a device exists, otherwise output absence is explicitly diagnosed without MCI'
+  }
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
