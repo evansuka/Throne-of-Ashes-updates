@@ -230,6 +230,15 @@ try{
    Check ($sorcererInfo.checks -ge 3608 -and $sorcererInfo.audioStatusGuards -and $sorcererInfo.tooltipGuards) 'Incomplete audio status and stale native tooltips are guarded while valid audio failures remain reported'
   }
  }
+ if([Version]$version -ge [Version]'0.14.69'){
+  $essenceFolder=Join-Path $fixture 'essence-hud'
+  $essenceText=RunGame $game ('--audio-driver Dummy -- --verify-essence-hud="'+$essenceFolder+'"') 180
+  $essenceReport=Join-Path $essenceFolder 'essence-hud.json'
+  Check ($essenceText -match 'ESSENCE_HUD' -and (Test-Path $essenceReport)) 'Living essence HUD runs in the actual exported Windows game'
+  $essenceInfo=Get-Content $essenceReport -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['essenceHud']=$essenceInfo
+  Check ($essenceInfo.checks -ge 6200 -and $essenceInfo.failures.Count -eq 0 -and $essenceInfo.gpuPixelProbes -ge 6200 -and $essenceInfo.modes.Count -eq 5 -and -not $essenceInfo.playerSavesAccessed) 'Rendered fill heights, all five styles, full/empty endpoints, actual resource reads, compact layout, pause and reduced effects verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
