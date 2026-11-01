@@ -257,6 +257,13 @@ try{
    Check (($pcmInfo.native.available -and $pcmInfo.native.submittedBuffers -gt 3 -and $pcmInfo.native.nonzeroFrames -gt 0) -or (-not $pcmInfo.native.available -and $pcmInfo.native.error -like 'waveOut *')) 'Native PCM buffers play when a device exists, otherwise output absence is explicitly diagnosed without MCI'
   }
  }
+ if([Version]$version -ge [Version]'0.14.73'){
+  $finishFolder=Join-Path $fixture 'interface-finish'
+  $finishText=RunGame $game ('--audio-driver Dummy -- --verify-interface-finish="'+$finishFolder+'"') 120
+  $finishInfo=Get-Content (Join-Path $finishFolder 'interface.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['interfaceFinish']=$finishInfo
+  Check ($finishText -match 'INTERFACE_FINISH' -and $finishInfo.checks -ge 393 -and $finishInfo.failures.Count -eq 0 -and $finishInfo.viewportSizes -eq 4 -and $finishInfo.realHttpDownload -and $finishInfo.sameDialog -and -not $finishInfo.playerSavesAccessed) 'Compact side windows keep potions and skills accessible; same-size talent page, globe hover, separate shortcuts, real HTTP progress and corrupted archive retry in original offer verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
