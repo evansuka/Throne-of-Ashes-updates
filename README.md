@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.74](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.74)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.76](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.76)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -24,17 +24,21 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.74 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41321895732) : 393 nouveaux contrôles d'interface, vrai téléchargement HTTP dans l'annonce et rejet d'une archive invalide, 1562 contrôles des arbres, suite graphique complète, remplacement autonome et récupérations réussis. Le son physique reste à confirmer sur votre PC.
+[Validation Windows 0.14.76 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41336056982) : 436 contrôles Paladin, 1562 talents, suite graphique complète, téléchargement et remplacement autonomes, récupérations réussis. Le son physique reste à confirmer sur votre PC.
 
 Les trois fichiers publics et le flux latest, avec et sans cache, ont été retéléchargés avec des empreintes conformes au paquet testé.
 
 Détails et validations dans [l’historique](CHANGELOG.md).
 
+## Paladin
+
+Le bouclier porte un vrai coup, avec dégâts et son au contact. La prière se fait à genou, épée pointe au sol. Les aptitudes ont des sons distincts.
+
 ## Arbres de compétences
 
 **C** ouvre les trois branches de la classe ; **A** ouvre Personnage, **I** Inventaire. Les touches personnalisées restent préservées et configurables dans Options. Cliquer pour apprendre, glisser une active vers les quatre raccourcis, déplacer entre cases ou retirer au clic droit pendant la configuration. Les passifs appris fonctionnent automatiquement. Un seul ultime par héros ; les autres branches restent accessibles.
 
-Les trois arbres tiennent sur une seule page sans défilement. Les anciens skills sont retirés et leurs points rendus automatiquement une seule fois ; les nouveaux talents et l'ultime déjà appris restent conservés. Réinitialisation gratuite au village pendant l’équilibrage. Ressources de classe : Rage, Mana sacrée avec Prière, Mana sans régénération naturelle pour le Sorcier, Concentration. Vie à gauche, actions au centre, ressource à droite.
+Les trois arbres utilisent toute la hauteur de la page, avec chemins de prérequis visibles. Toutes les icônes, ultimes compris, ont le format des raccourcis. Noms et descriptions apparaissent au survol. Aucun défilement. Les anciens skills sont retirés et leurs points rendus automatiquement une seule fois ; les nouveaux talents et l'ultime déjà appris restent conservés. Réinitialisation gratuite au village pendant l’équilibrage. Ressources de classe : Rage, Mana sacrée avec Prière, Mana sans régénération naturelle pour le Sorcier, Concentration. Vie à gauche, actions au centre, ressource à droite.
 
 Valeurs initiales : un point par talent normal, trois par ultime, niveau 10 et quatre points dans sa branche pour un ultime. Les effets de soutien concernent le héros solo ; le multijoueur natif reste à porter.
 

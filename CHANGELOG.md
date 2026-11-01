@@ -1,5 +1,20 @@
 # Modifications des versions Windows
 
+## 0.14.76 — publiée le 1er novembre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.76) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41336056982) · jeu `e7ed0cf`.
+
+- Vraie poussée du bouclier ; dégâts, étourdissement et son au contact à 220 ms. Annulation sans coup fantôme, geste protégé contre le clic maintenu.
+- Prière agenouillée avec la véritable épée pointe au sol ; interruptions et rangement au village conservés.
+- Quinze sons distincts pour les aptitudes du Paladin, prière et impact dédiés.
+- Arbres répartis sur la page avec chemins visibles ; toutes les icônes et ultimes au format des raccourcis, noms au survol.
+
+436 contrôles Paladin, 1562 talents et suite graphique Windows complète réussis. Remplacement autonome, récupérations et trois fichiers publics retéléchargés et vérifiés. Sauvegardes conservées ; son physique à confirmer sur le PC joueur.
+
+## 0.14.75 — non publiée
+
+Les audits du jeu ont réussi ; le contrôle textuel du bouton de mise à jour a échoué à cause du BOM UTF-8 manquant dans le script PowerShell Windows. Encodage rétabli, toutes les assertions conservées et relancées en 0.14.76. Tag et reçu d'échec conservés.
+
 ## 0.14.74 — publiée le 1er novembre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.74) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41321895732) · jeu `60b30d3`.
