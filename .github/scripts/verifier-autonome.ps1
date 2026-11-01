@@ -42,6 +42,10 @@ try{
  Check ((Get-FileHash $game -Algorithm SHA256).Hash.ToLowerInvariant() -eq $manifest.exeSha256) 'Executable matches manifest'
  Check ([Diagnostics.FileVersionInfo]::GetVersionInfo($game).FileVersion -eq ($version+'.0')) 'Native executable version matches release'
  Check ((Get-Content (Join-Path $directory 'RELEASE.md') -Raw).StartsWith("# Throne of Ashes $version")) 'Version-specific release notes'
+ if([Version]$version -ge [Version]'0.14.79'){
+  $expectedChanges=@(Get-Content (Join-Path $directory 'RELEASE.md') -Encoding UTF8 | Where-Object {$_.StartsWith('- ')} | ForEach-Object {$_.Substring(2).Trim()})
+  Check ($manifest.changes.Count -gt 0 -and ($manifest.changes | ConvertTo-Json -Compress) -eq ($expectedChanges | ConvertTo-Json -Compress)) 'Update feed carries the exact changes of this release'
+ }
  $text=RunGame $game '--audio-driver Dummy -- --verify-dungeon-biomes'
  Check ($text -match 'EXPORTED_BIOMES_OK' -and $text -match 'EXPORTED_CHRONICLES_OK') 'Six rendered floors, five guardians and ending rewards'
  if([Version]$version -ge [Version]'0.14.33'){
@@ -262,6 +266,9 @@ try{
   $finishText=RunGame $game ('--audio-driver Dummy -- --verify-interface-finish="'+$finishFolder+'" --ui-audit-only') 240
   $finishInfo=Get-Content (Join-Path $finishFolder 'interface.json') -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['interfaceFinish']=$finishInfo
+  if([Version]$version -ge [Version]'0.14.79'){
+   Check ($finishInfo.checks -ge 405 -and $finishInfo.updateNotes -and $finishInfo.decoratedMaximized) 'Versioned update notes remain visible during real HTTP download; native decorated maximized startup verified'
+  }
   Check ($finishText -match 'INTERFACE_FINISH' -and $finishInfo.checks -ge 393 -and $finishInfo.failures.Count -eq 0 -and $finishInfo.viewportSizes -eq 4 -and $finishInfo.realHttpDownload -and $finishInfo.sameDialog -and -not $finishInfo.playerSavesAccessed) 'Compact side windows keep potions and skills accessible; same-size talent page, globe hover, separate shortcuts, real HTTP progress and corrupted archive retry in original offer verified'
  }
  if([Version]$version -ge [Version]'0.14.75'){
