@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.77](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.77)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.78](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.78)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -24,7 +24,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.77 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41341896652) : 506 contrôles Paladin/auras/attaques libres/chat, 1562 talents, suite graphique complète, remplacement autonome et récupérations réussis. Le son physique reste à confirmer sur votre PC.
+[Validation Windows 0.14.78 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41348487779) : 94 nouveaux contrôles des sorts, du maintien de prière et des teintes, 506 contrôles Paladin et suite graphique complète. Remplacement autonome, récupérations et téléchargements publics vérifiés. Le son physique reste à confirmer sur votre PC.
 
 Les trois fichiers publics et le flux latest, avec et sans cache, ont été retéléchargés avec des empreintes conformes au paquet testé.
 
@@ -32,9 +32,15 @@ Détails et validations dans [l’historique](CHANGELOG.md).
 
 ## Paladin
 
-Le bouclier porte un vrai coup, avec dégâts et son au contact. La prière se fait à genou, épée pointe au sol. Les aptitudes ont des sons distincts. Le bouclier peut aussi frapper sans cible : le coup atteint un ennemi devant le héros lors du contact.
+Le bouclier porte un vrai coup, avec dégâts et son au contact. La prière se fait à genou, épée pointe au sol, en **maintenant le clic gauche sur la bulle de mana sacrée**. Relâcher arrête immédiatement la prière. L’ancienne icône de la page Compétences et ses raccourcis gratuits sont retirés. Les aptitudes ont des sons distincts. Le bouclier peut aussi frapper sans cible : le coup atteint un ennemi devant le héros lors du contact.
 
-Sanctuaire (protection), Consécration (frappes sacrées) et Vigueur (régénération) deviennent des auras automatiques dans la barre. Une seule aura à la fois : en équiper une autre remplace la précédente, sans perdre le talent appris. Chacune possède son cercle distinct sous les pieds.
+Sanctuaire (protection), Consécration (frappes sacrées) et Vigueur (régénération) deviennent des auras automatiques dans la barre. Une seule aura à la fois : en équiper une autre remplace la précédente, sans perdre le talent appris. Chacune possède son cercle distinct sous les pieds, maintenant animé même à l’arrêt : rotation et motifs internes en mouvement.
+
+## Effets de combat
+
+Le poison teinte légèrement les ennemis en vert, le froid et le gel en bleu ; les couleurs reviennent à la normale à l’expiration. Le Pas de l’ombre laisse des rémanences et possède son propre souffle sonore. La flèche empoisonnée montre une pointe et une traînée vertes.
+
+Mur de feu : ligne de flammes limitée par les obstacles. Explosion ardente : cercle de feu grandissant depuis le sorcier, avec déclenchement sur les ennemis enflammés. Vague infernale : arc de feu qui avance en cône. Sons distincts et pause respectée.
 
 ## Arbres de compétences
 

@@ -1,5 +1,17 @@
 # Modifications des versions Windows
 
+## 0.14.78 — publiée le 1er novembre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.78) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41348487779) · jeu `1bea2bb`.
+
+- Prière sacrée au maintien du clic sur la bulle, arrêt au relâchement et aux interruptions. Ancienne icône et raccourcis gratuits retirés sans perte de points.
+- Infobulles des arbres/auras et statistiques allégées ; trois auras animées à l'arrêt.
+- Teintes légères poison vert et froid/gel bleu, réversibles, pour ennemis et boss.
+- Pas de l'ombre avec silhouettes fantomatiques, vortex et souffle dédié ; flèche empoisonnée avec pointe et traînée de venin.
+- Mur transversal de flammes arrêté par les obstacles, cercle de feu grandissant depuis le sorcier et vague infernale avançant en cône. Quatre bruitages originaux distincts.
+
+94 nouveaux contrôles, 506 Paladin, 1562 arbres, 393 interface, 3608 Sorcier/inventaire, 14725 jeu et suite Windows complète réussis. Sauvegardes, remplacement autonome, récupérations et téléchargements publics vérifiés.
+
 ## 0.14.77 — publiée le 1er novembre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.77) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41341896652) · jeu `7ed8b16`.
