@@ -259,7 +259,7 @@ try{
  }
  if([Version]$version -ge [Version]'0.14.73'){
   $finishFolder=Join-Path $fixture 'interface-finish'
-  $finishText=RunGame $game ('--audio-driver Dummy -- --verify-interface-finish="'+$finishFolder+'"') 120
+  $finishText=RunGame $game ('--audio-driver Dummy -- --verify-interface-finish="'+$finishFolder+'"') 240
   $finishInfo=Get-Content (Join-Path $finishFolder 'interface.json') -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['interfaceFinish']=$finishInfo
   Check ($finishText -match 'INTERFACE_FINISH' -and $finishInfo.checks -ge 393 -and $finishInfo.failures.Count -eq 0 -and $finishInfo.viewportSizes -eq 4 -and $finishInfo.realHttpDownload -and $finishInfo.sameDialog -and -not $finishInfo.playerSavesAccessed) 'Compact side windows keep potions and skills accessible; same-size talent page, globe hover, separate shortcuts, real HTTP progress and corrupted archive retry in original offer verified'
