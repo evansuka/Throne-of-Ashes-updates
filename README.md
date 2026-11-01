@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.72](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.72)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.74](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.74)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -12,6 +12,8 @@ Utiliser ce fichier à la place de l’ancien Setup ou démarreur. Un raccourci 
 
 L’écran d’accueil affiche uniquement la version installée, fixée en bas à droite indépendamment du panneau des personnages. Une vérification s’effectue au démarrage : si une nouvelle version est disponible, une fenêtre propose **Faire la mise à jour** ou **Refuser**. Refuser laisse jouer sans téléchargement et sans nouvelle proposition pendant cette exécution. Une réponse reçue en partie attend le retour à l’accueil. Depuis l’accueil, ouvrir **Échap → Version** pour vérifier les mises à jour ou choisir **Mettre à jour et redémarrer** : le jeu télécharge et vérifie les fichiers, conserve une copie de secours, puis redémarre sur la nouvelle version. Une partie en cours n’est pas interrompue.
 
+Depuis 0.14.74, cliquer sur **Faire la mise à jour** lance le téléchargement dans cette même fenêtre : progression, vérification et erreurs éventuelles y restent affichées. La page Version des Options reste accessible pour déclencher une mise à jour manuelle.
+
 En cas d’échec du nouveau démarrage, la version précédente est restaurée avec un seul lancement de secours. Hors ligne, le jeu reste utilisable. La copie `.previous` à côté de l’EXE est le secours du dernier remplacement.
 
 ## Sauvegardes et diagnostic
@@ -22,7 +24,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.72 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41304767273) : 1562 contrôles des arbres et du remboursement des anciens rangs, 1557 contrôles audio PCM, suite graphique complète, remplacement autonome et récupérations réussis. Le son physique reste à confirmer sur votre PC.
+[Validation Windows 0.14.74 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41321895732) : 393 nouveaux contrôles d'interface, vrai téléchargement HTTP dans l'annonce et rejet d'une archive invalide, 1562 contrôles des arbres, suite graphique complète, remplacement autonome et récupérations réussis. Le son physique reste à confirmer sur votre PC.
 
 Les trois fichiers publics et le flux latest, avec et sans cache, ont été retéléchargés avec des empreintes conformes au paquet testé.
 
@@ -35,6 +37,10 @@ Détails et validations dans [l’historique](CHANGELOG.md).
 Les trois arbres tiennent sur une seule page sans défilement. Les anciens skills sont retirés et leurs points rendus automatiquement une seule fois ; les nouveaux talents et l'ultime déjà appris restent conservés. Réinitialisation gratuite au village pendant l’équilibrage. Ressources de classe : Rage, Mana sacrée avec Prière, Mana sans régénération naturelle pour le Sorcier, Concentration. Vie à gauche, actions au centre, ressource à droite.
 
 Valeurs initiales : un point par talent normal, trois par ultime, niveau 10 et quatre points dans sa branche pour un ultime. Les effets de soutien concernent le héros solo ; le multijoueur natif reste à porter.
+
+## Fenêtres et barre d'actions
+
+Les fenêtres latérales sont resserrées pour garder les potions et les quatre aptitudes accessibles au centre. Compétences et Inventaire partagent les mêmes dimensions. Le sac se trouve sous les bottes, les emplacements vides montrent seulement une silhouette sombre. Survoler une bulle affiche sa quantité actuelle/maximale. Les images des aptitudes remplissent leurs cases, avec les raccourcis juste dessous.
 
 ## Commandes solo
 

@@ -1,5 +1,20 @@
 # Modifications des versions Windows
 
+## 0.14.74 — publiée le 1er novembre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.74) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41321895732) · jeu `60b30d3`.
+
+- Téléchargement, progression et erreurs dans la fenêtre d'annonce, accès manuel dans Options conservé.
+- Fenêtres latérales resserrées selon l'aperçu validé ; Compétences au format Inventaire. Potions et aptitudes accessibles.
+- Sac sous les bottes, emplacements d'équipement sans texte avec silhouettes sombres.
+- Valeurs actuelles/maximales des bulles au survol ; images des aptitudes sur toute la case et raccourcis dessous.
+
+393 nouveaux contrôles sur quatre tailles de fenêtre, vrai téléchargement HTTP et rejet d'archive corrompue, 1562 arbres, 6306 bulles et suite Windows complète réussis. Remplacement autonome, récupérations et téléchargements publics vérifiés.
+
+## 0.14.73 — non publiée
+
+Le contrôle UI supplémentaire a dépassé son délai sur le rendu logiciel du serveur Windows. Aucun fichier de cette version n'a été activé ; reprise en 0.14.74, contrôles conservés et rendu du décor évité seulement dans le passage CI dédié à l'interface. Les audits graphiques 3D complets restent actifs. Tag et reçu d'échec conservés.
+
 ## 0.14.72 — publiée le 1er novembre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.72) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41304767273) · jeu `6171f15`.
