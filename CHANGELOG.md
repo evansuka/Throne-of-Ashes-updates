@@ -1,5 +1,17 @@
 # Modifications des versions Windows
 
+## 0.14.77 — publiée le 1er novembre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.77) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41341896652) · jeu `7ed8b16`.
+
+- Texte du chat/Debug sélectionnable et copiable ; bouton Copier pour la sélection ou l'onglet entier, nouvelles lignes sans effacer la sélection.
+- Infobulles de potions protégées contre les libellés et le JSON incomplet, sans masquer les vrais diagnostics.
+- Coup de bouclier libre sans cible, contact réel devant le héros à 220 ms, sans impact fantôme.
+- Sanctuaire, Consécration et Vigueur deviennent des auras automatiques exclusives dans les raccourcis. Trois dessins distincts, suivi des pieds, vrais bonus et nettoyage.
+- Maj gauche + clic gauche attaque sur place vers le pointeur, quatre classes, répétition à cadence normale au clic maintenu.
+
+506 contrôles spécifiques, 1562 arbres et suite Windows complète réussis. Sauvegardes et migration, remplacement autonome, récupérations et téléchargements publics vérifiés.
+
 ## 0.14.76 — publiée le 1er novembre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.76) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41336056982) · jeu `e7ed0cf`.

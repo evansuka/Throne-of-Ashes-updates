@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.76](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.76)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.77](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.77)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -24,7 +24,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.76 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41336056982) : 436 contrôles Paladin, 1562 talents, suite graphique complète, téléchargement et remplacement autonomes, récupérations réussis. Le son physique reste à confirmer sur votre PC.
+[Validation Windows 0.14.77 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41341896652) : 506 contrôles Paladin/auras/attaques libres/chat, 1562 talents, suite graphique complète, remplacement autonome et récupérations réussis. Le son physique reste à confirmer sur votre PC.
 
 Les trois fichiers publics et le flux latest, avec et sans cache, ont été retéléchargés avec des empreintes conformes au paquet testé.
 
@@ -32,7 +32,9 @@ Détails et validations dans [l’historique](CHANGELOG.md).
 
 ## Paladin
 
-Le bouclier porte un vrai coup, avec dégâts et son au contact. La prière se fait à genou, épée pointe au sol. Les aptitudes ont des sons distincts.
+Le bouclier porte un vrai coup, avec dégâts et son au contact. La prière se fait à genou, épée pointe au sol. Les aptitudes ont des sons distincts. Le bouclier peut aussi frapper sans cible : le coup atteint un ennemi devant le héros lors du contact.
+
+Sanctuaire (protection), Consécration (frappes sacrées) et Vigueur (régénération) deviennent des auras automatiques dans la barre. Une seule aura à la fois : en équiper une autre remplace la précédente, sans perdre le talent appris. Chacune possède son cercle distinct sous les pieds.
 
 ## Arbres de compétences
 
@@ -47,6 +49,10 @@ Valeurs initiales : un point par talent normal, trois par ultime, niveau 10 et q
 Les fenêtres latérales sont resserrées pour garder les potions et les quatre aptitudes accessibles au centre. Compétences et Inventaire partagent les mêmes dimensions. Le sac se trouve sous les bottes, les emplacements vides montrent seulement une silhouette sombre. Survoler une bulle affiche sa quantité actuelle/maximale. Les images des aptitudes remplissent leurs cases, avec les raccourcis juste dessous.
 
 ## Commandes solo
+
+**Maj gauche + clic gauche** : attaquer sur place vers le pointeur, même sans cible. Maintenir le clic répète à la cadence normale ; relâcher le clic ou Maj arrête la répétition.
+
+Dans le Chat, le texte est sélectionnable à la souris. **Ctrl+C** ou **Copier** récupère la sélection ; sans sélection, **Copier** récupère tout l’onglet courant, y compris les erreurs rouges du Debug.
 
 Dans le chat, onglet **Système** : `/help`, `/get <nom ou identifiant de l’unique>` et `/portal <boss>`. [Liste complète des commandes](COMMANDES-SOLO.md). Les donjons se réinitialisent à l’ouverture d’une nouvelle partie ; équipement, progression et portails de gardiens déverrouillés restent conservés. Les portails temporaires de retour se ferment à la sortie de partie.
 
