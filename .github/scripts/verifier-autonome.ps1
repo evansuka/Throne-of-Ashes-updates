@@ -270,6 +270,9 @@ try{
   $paladinInfo=Get-Content (Join-Path $paladinFolder 'paladin.json') -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['paladinFinish']=$paladinInfo
   Check ($paladinText -match 'PALADIN_FINISH' -and $paladinInfo.checks -ge 436 -and $paladinInfo.failures.Count -eq 0 -and $paladinInfo.prayerPoses -eq 56 -and $paladinInfo.directions -eq 8 -and $paladinInfo.equipmentKits -eq 7 -and $paladinInfo.distinctAttackSounds -eq 15 -and -not $paladinInfo.playerSavesAccessed) 'Paladin shield motion/contact damage/audio, cancellation, kneeling sword grounded in eight directions and seven kits, prayer resource/interruption/stow, distinct imported attack sounds verified'
+  if([Version]$version -ge [Version]'0.14.77'){
+   Check ($paladinInfo.checks -ge 506 -and $paladinInfo.auraDesigns -eq 3 -and $paladinInfo.targetlessShield -and $paladinInfo.freeAttackClasses -eq 4 -and $paladinInfo.nativeShiftClick -and $paladinInfo.debugSelectionCopy) 'Three exclusive equipped auras, real effects and persistence, targetless shield, native left Shift click across four classes and debug text selection/copy verified'
+  }
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
