@@ -264,6 +264,13 @@ try{
   $report['interfaceFinish']=$finishInfo
   Check ($finishText -match 'INTERFACE_FINISH' -and $finishInfo.checks -ge 393 -and $finishInfo.failures.Count -eq 0 -and $finishInfo.viewportSizes -eq 4 -and $finishInfo.realHttpDownload -and $finishInfo.sameDialog -and -not $finishInfo.playerSavesAccessed) 'Compact side windows keep potions and skills accessible; same-size talent page, globe hover, separate shortcuts, real HTTP progress and corrupted archive retry in original offer verified'
  }
+ if([Version]$version -ge [Version]'0.14.75'){
+  $paladinFolder=Join-Path $fixture 'paladin-finish'
+  $paladinText=RunGame $game ('--audio-driver Dummy -- --verify-paladin-finish="'+$paladinFolder+'"') 240
+  $paladinInfo=Get-Content (Join-Path $paladinFolder 'paladin.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['paladinFinish']=$paladinInfo
+  Check ($paladinText -match 'PALADIN_FINISH' -and $paladinInfo.checks -ge 435 -and $paladinInfo.failures.Count -eq 0 -and $paladinInfo.prayerPoses -eq 56 -and $paladinInfo.directions -eq 8 -and $paladinInfo.equipmentKits -eq 7 -and $paladinInfo.distinctAttackSounds -eq 15 -and -not $paladinInfo.playerSavesAccessed) 'Paladin shield motion/contact damage/audio, cancellation, kneeling sword grounded in eight directions and seven kits, prayer resource/interruption/stow, distinct imported attack sounds verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
