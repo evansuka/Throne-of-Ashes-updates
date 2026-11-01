@@ -288,6 +288,13 @@ try{
   $report['spellFinishes']=$spellInfo
   Check ($spellText -match 'SPELL_FINISHES' -and $spellInfo.checks -ge 94 -and $spellInfo.failures.Count -eq 0 -and $spellInfo.holdPrayer -and $spellInfo.auraAnimationPixelChanges.Count -eq 3 -and @($spellInfo.auraAnimationPixelChanges | Where-Object {$_ -le 30}).Count -eq 0 -and $spellInfo.conditionTintSources -eq 3 -and $spellInfo.conditionActorTypes -eq 2 -and $spellInfo.newSpellSounds -eq 4 -and -not $spellInfo.playerSavesAccessed) 'Native hold/release prayer orb, compact tooltips, three animated aura pixel changes, reversible poison/ice tints, real fire wall/nova/wave, shadow step, poison arrow and distinct imported PCM sounds verified'
  }
+ if([Version]$version -ge [Version]'0.14.80'){
+  $welcomeFolder=Join-Path $fixture 'welcome-walk'
+  $welcomeText=RunGame $game ('--audio-driver Dummy -- --verify-welcome-walk="'+$welcomeFolder+'"') 240
+  $welcomeInfo=Get-Content (Join-Path $welcomeFolder 'welcome-walk.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['welcomeWalk']=$welcomeInfo
+  Check ($welcomeText -match 'WELCOME_WALK' -and $welcomeInfo.checks -ge 32499 -and $welcomeInfo.failures.Count -eq 0 -and $welcomeInfo.receptionPoses -eq 224 -and $welcomeInfo.welcomeOnly -and $welcomeInfo.inventoryBelt -and -not $welcomeInfo.playerSavesAccessed) 'Welcome quarter-view poses, real resting arrow, knee/sole cycle and expandable inventory belt verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
