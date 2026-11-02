@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.82](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.82)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.85](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.85)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -28,7 +28,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.82 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41446074557) : 812 contrôles de présentation (96 illustrations, 61 profils, 122 flux audio), 1562 talents, 32501 accueil/marche/ceinture et suite graphique, interface, combat, remplacement autonome et récupérations. Le son physique reste à confirmer sur votre PC.
+[Validation Windows 0.14.85 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41482893665) : 104 nouveaux contrôles village/magie, suite graphique, combat, interface, sauvegardes et remplacement autonome.
 
 Les trois fichiers publics et le flux latest, avec et sans cache, ont été retéléchargés avec des empreintes conformes au paquet testé.
 
@@ -137,3 +137,12 @@ En **0.14.65** : ceinture déroulée, petites quantités sans fond, inventaire a
 - Accueil : Paladin et Sorcier de face, corps complets du Viking et de la Rôdeuse légèrement tournés vers l’intérieur ; arc incliné et flèche tenue dans la main libre.
 - Personnages : marche de profil et de dos retravaillée, jambes de profil moins fines, raccord des bottes et pantalons ajusté.
 - Inventaire : les rangées supplémentaires de la ceinture se déploient aussi avec la fenêtre ouverte ; texte d’aide du coffre retiré.
+
+## Nouveautés 0.14.85
+
+- Objets au sol : supprimés à la fin de la partie, y compris au village. Ils restent disponibles pendant les voyages de la même partie. Inventaire, équipement et coffre conservés ; une sauvegarde refusée ne supprime aucun objet. Un objet de quête non ramassé peut être retrouvé dans une prochaine partie.
+- Portail de retour : apparition progressive, vortex et étincelles pendant l’ouverture, puis fermeture animée au retour au donjon. Zone de clic stable sur toute sa hauteur dès l’ouverture. Le passage exige toujours un clic.
+- Sorcier : les neuf passifs apportent régénération de mana, récupération sur élimination, résistances, protection et contrôle, avec des icônes adaptées à leurs nouveaux effets.
+- Armure de glace remplace Mur de glace au même emplacement : points appris et raccourcis conservés. Protection de 18 secondes, ou 24 avec Carapace boréale, réduction de dégâts, résistance au froid, plaques et givre visibles.
+- Capuches : nouveaux dessins de tissu dans les huit directions, proportions affinées et visage visible ; icône d’inventaire assortie.
+- Mini-carte du village : PNJ et Blue repérés, marqueurs de quêtes disponibles et de récompenses à récupérer. Les noms des PNJ apparaissent uniquement au survol dans le village.

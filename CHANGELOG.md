@@ -1,5 +1,18 @@
 # Modifications des versions Windows
 
+## 0.14.85 — publiée le 2 novembre 2026
+
+[0.14.85 publiée](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.85), source jeu `1d9b193`, après [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41482893665). Les trois fichiers publics ont été retéléchargés et leurs SHA256 comparés au build local et aux empreintes serveur. Latest ordinaire et sans cache : 0.14.85, six nouveautés propres à cette version. Transfert nettoyé. Aucun accès aux sauvegardes personnelles. Les tentatives 0.14.83 et 0.14.84 restent non publiées ; leurs tags et reçus sont conservés.
+
+- Objets au sol : supprimés à la fin de la partie, y compris au village. Ils restent disponibles pendant les voyages de la même partie. Inventaire, équipement et coffre conservés ; une sauvegarde refusée ne supprime aucun objet. Un objet de quête non ramassé peut être retrouvé dans une prochaine partie.
+- Portail de retour : apparition progressive, vortex et étincelles pendant l’ouverture, puis fermeture animée au retour au donjon. Zone de clic stable sur toute sa hauteur dès l’ouverture. Le passage exige toujours un clic.
+- Sorcier : les neuf passifs apportent régénération de mana, récupération sur élimination, résistances, protection et contrôle, avec des icônes adaptées à leurs nouveaux effets.
+- Armure de glace remplace Mur de glace au même emplacement : points appris et raccourcis conservés. Protection de 18 secondes, ou 24 avec Carapace boréale, réduction de dégâts, résistance au froid, plaques et givre visibles.
+- Capuches : nouveaux dessins de tissu dans les huit directions, proportions affinées et visage visible ; icône d’inventaire assortie.
+- Mini-carte du village : PNJ et Blue repérés, marqueurs de quêtes disponibles et de récompenses à récupérer. Les noms des PNJ apparaissent uniquement au survol dans le village.
+
+104 nouveaux contrôles et suite Windows complète réussis ; remplacement autonome et récupérations vérifiés.
+
 ## 0.14.82 — publiée le 2 novembre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.82) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41446074557) · jeu `43a4d5e`.
