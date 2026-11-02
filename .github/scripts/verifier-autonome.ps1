@@ -316,6 +316,13 @@ try{
   $report['diagnostics']=$diagnosticInfo
   Check ($diagnosticText -match 'DIAGNOSTIC_CHECKS' -and $diagnosticInfo.checks -ge 50 -and $diagnosticInfo.failures.Count -eq 0 -and $diagnosticInfo.actualOptionButtons -and $diagnosticInfo.jsonCsvExport -and $diagnosticInfo.boundedCapture -and $diagnosticInfo.selectedHeroesFront -eq 4 -and $diagnosticInfo.diagnosticDefaultOff -and -not $diagnosticInfo.playerSavesAccessed) 'Real diagnostic options, bounded two-minute capture, numeric frame statistics, private-path redaction, JSON/CSV export, clipboard, real gameplay collection overhead, light profile and four front-facing selected heroes verified'
  }
+ if([Version]$version -ge [Version]'0.14.87'){
+  $motionFolder=Join-Path $fixture 'motion'
+  $motionText=RunGame $game ('--audio-driver Dummy -- --verify-motion="'+$motionFolder+'"') 240
+  $motionInfo=Get-Content (Join-Path $motionFolder 'motion.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['motion']=$motionInfo
+  Check ($motionText -match 'MOTION_AUDIT' -and $motionInfo.checks -ge 31000 -and $motionInfo.failures.Count -eq 0 -and $motionInfo.classes -eq 4 -and $motionInfo.directions -eq 8 -and $motionInfo.temporalRuns -eq 128 -and $motionInfo.attacks -eq 32 -and $motionInfo.cryViews -eq 8 -and $motionInfo.enemyContactCases -eq 18 -and $motionInfo.maxRenderedFootSlip -lt .004 -and $motionInfo.maxDynamicGripError -lt .0001 -and -not $motionInfo.playerSavesAccessed) 'Actual temporal native feet and weapon grips, starts/stops, teleport reset, 32 attacks and eight interruptible war cries verified; enemy curve checks are mathematical'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
