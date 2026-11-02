@@ -295,6 +295,13 @@ try{
   $report['welcomeWalk']=$welcomeInfo
   Check ($welcomeText -match 'WELCOME_WALK' -and $welcomeInfo.checks -ge 32499 -and $welcomeInfo.failures.Count -eq 0 -and $welcomeInfo.receptionPoses -eq 224 -and $welcomeInfo.welcomeOnly -and $welcomeInfo.inventoryBelt -and -not $welcomeInfo.playerSavesAccessed) 'Welcome quarter-view poses, real resting arrow, knee/sole cycle and expandable inventory belt verified'
  }
+ if([Version]$version -ge [Version]'0.14.82'){
+  $skillFolder=Join-Path $fixture 'skill-presentation'
+  $skillText=RunGame $game ('--audio-driver Dummy -- --verify-skill-presentation="'+$skillFolder+'"') 180
+  $skillInfo=Get-Content (Join-Path $skillFolder 'skill-presentation.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['skillPresentation']=$skillInfo
+  Check ($skillText -match 'SKILL_PRESENTATION_CHECKS' -and $skillInfo.checks -ge 812 -and $skillInfo.failures.Count -eq 0 -and $skillInfo.icons -eq 96 -and $skillInfo.presentationProfiles -eq 61 -and $skillInfo.uniqueSounds -ge 110 -and -not $skillInfo.playerSavesAccessed) 'Illustrated skill atlases and PCM packaged; real animation, pause, reduced effects, budgets and cleanup verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
