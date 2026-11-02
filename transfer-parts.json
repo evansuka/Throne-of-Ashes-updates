@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "name": "Throne-of-Ashes-0.14.83-update.zip",
+      "bytes": 143779472,
+      "sha256": "ce6749eb1697a3991989d97d433912f7c5a36b687191c9aeba7ba61117885772",
+      "parts": [
+        {
+          "name": "Throne-of-Ashes-0.14.83-update.zip.part000",
+          "bytes": 16777216,
+          "sha256": "b29b61ebcdf767d327a9e2cf32ca60f4f0f1474a66a75bc9ce890f32decd2b38"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.83-update.zip.part001",
+          "bytes": 16777216,
+          "sha256": "3d332e894a82c8cbfde588c7077595497d38a6ac9342f1c217d41971fbd18971"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.83-update.zip.part002",
+          "bytes": 16777216,
+          "sha256": "a69c6ae4de6c72b97b4620edc64e969421b65a565d577ca7034a33c4117b0bc8"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.83-update.zip.part003",
+          "bytes": 16777216,
+          "sha256": "e48b149836e387f5b3e70ebef763ce2566aa409de5b64eefb21753beeb9dbe64"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.83-update.zip.part004",
+          "bytes": 16777216,
+          "sha256": "03ee045ca510a6442fb6ba9a2d81947b47109013dbc31076285d00c9d62fd327"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.83-update.zip.part005",
+          "bytes": 16777216,
+          "sha256": "2babdd506356715281c2d2a1a3f6f5b005726836df71dee2e5f0a74a4ecf3348"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.83-update.zip.part006",
+          "bytes": 16777216,
+          "sha256": "fbb33771bf9451d951d0bacf6befff1344dd87fe24cd5c9faffe45075321be97"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.83-update.zip.part007",
+          "bytes": 16777216,
+          "sha256": "93163bd7175a46ab1758597f04f9027b517066193e6fc58d4c385b6e3c4941dc"
+        },
+        {
+          "name": "Throne-of-Ashes-0.14.83-update.zip.part008",
+          "bytes": 9561744,
+          "sha256": "ef1f522aa09ce80319f6729d198342f54bca3ca173b9cca1e31e2d6cafb213ee"
+        }
+      ]
+    }
+  ]
+}
