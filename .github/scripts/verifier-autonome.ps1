@@ -302,6 +302,13 @@ try{
   $report['skillPresentation']=$skillInfo
   Check ($skillText -match 'SKILL_PRESENTATION_CHECKS' -and $skillInfo.checks -ge 812 -and $skillInfo.failures.Count -eq 0 -and $skillInfo.icons -eq 96 -and $skillInfo.presentationProfiles -eq 61 -and $skillInfo.uniqueSounds -ge 110 -and -not $skillInfo.playerSavesAccessed) 'Illustrated skill atlases and PCM packaged; real animation, pause, reduced effects, budgets and cleanup verified'
  }
+ if([Version]$version -ge [Version]'0.14.83'){
+  $villageMagicFolder=Join-Path $fixture 'village-magic'
+  $villageMagicText=RunGame $game ('--audio-driver Dummy -- --verify-village-magic="'+$villageMagicFolder+'"') 240
+  $villageMagicInfo=Get-Content (Join-Path $villageMagicFolder 'village-magic.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['villageMagic']=$villageMagicInfo
+  Check ($villageMagicText -match 'VILLAGE_MAGIC_CHECKS' -and $villageMagicInfo.checks -ge 100 -and $villageMagicInfo.failures.Count -eq 0 -and $villageMagicInfo.catalogTalents -eq 96 -and $villageMagicInfo.activeAbilities -eq 60 -and $villageMagicInfo.sorcererPassives -eq 9 -and $villageMagicInfo.hoodViews -eq 32 -and $villageMagicInfo.npcMarkers -eq 7 -and $villageMagicInfo.portalLifecycle -and $villageMagicInfo.groundLootRemovedOnExit -and -not $villageMagicInfo.playerSavesAccessed) 'Actual portal lifecycle, party-end ground cleanup with save rollback, town quest/NPC markers, hover names, nine utility passives, replacement ice armour and 32 native hood views verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
