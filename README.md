@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.85](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.85)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.86](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.86)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -28,7 +28,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.85 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41482893665) : 104 nouveaux contrôles village/magie, suite graphique, combat, interface, sauvegardes et remplacement autonome.
+[Validation Windows 0.14.86 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41502037014) : 50 contrôles diagnostic, quatre héros sélectionnés de face, 507 Paladin, retouches de capuches et suite complète combat, interface, sauvegardes et mises à jour.
 
 Les trois fichiers publics et le flux latest, avec et sans cache, ont été retéléchargés avec des empreintes conformes au paquet testé.
 
@@ -146,3 +146,13 @@ En **0.14.65** : ceinture déroulée, petites quantités sans fond, inventaire a
 - Armure de glace remplace Mur de glace au même emplacement : points appris et raccourcis conservés. Protection de 18 secondes, ou 24 avec Carapace boréale, réduction de dégâts, résistance au froid, plaques et givre visibles.
 - Capuches : nouveaux dessins de tissu dans les huit directions, proportions affinées et visage visible ; icône d’inventaire assortie.
 - Mini-carte du village : PNJ et Blue repérés, marqueurs de quêtes disponibles et de récompenses à récupérer. Les noms des PNJ apparaissent uniquement au survol dans le village.
+
+## Nouveautés 0.14.86
+
+- Options → Diagnostic : affichage des FPS et test de performances de deux minutes maximum, avec courbe des temps d’image, FPS moyens et bas, décompte des saccades et résumé sélectionnable.
+- Rapport à copier ou exporter en JSON et CSV : matériel, réglages, lieu testé, temps de traitement du jeu, physique, rendu lorsque disponible, ennemis, projectiles, effets et erreurs. Les mesures indisponibles sont signalées ; les chemins personnels sont masqués. Aucun envoi automatique.
+- Options → Graphique : résolution du rendu 3D réglable sans réduire l’interface, limite 30/60/120 FPS ou sans limite, et profil léger à 75 % avec ombres et effets réduits. La qualité adaptative respecte une limite volontaire de 30 FPS.
+- Personnages déjà créés : le héros sélectionné et affiché seul est toujours de face, pour toutes les classes. Les quatre modèles présentés ensemble conservent leurs orientations distinctes.
+- Capuches : volumes et ouverture du visage agrandis pour retrouver des proportions naturelles, sans réduire la tête native. Yeux, cheveux couverts et prises des armes conservés.
+
+Pour signaler des ralentissements : Échap → OPTION → Diagnostic → DÉMARRER. Fermer les Options et reproduire le problème, puis ARRÊTER et EXPORTER JSON + CSV. Aucun envoi automatique ; le joueur choisit les fichiers à transmettre.

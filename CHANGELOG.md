@@ -1,5 +1,17 @@
 # Modifications des versions Windows
 
+## 0.14.86 — publiée le 2 novembre 2026
+
+[0.14.86 publiée](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.86), source jeu `e67f8c8`, après [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41502037014). Trois fichiers publics retéléchargés, SHA256 locaux et serveur concordants, latest normal/sans cache 0.14.86 et cinq nouveautés propres à cette version. Transfert temporaire nettoyé. Aucun accès aux sauvegardes personnelles, aucun envoi du diagnostic et aucun changement web/multijoueur.
+
+- Options → Diagnostic : affichage des FPS et test de performances de deux minutes maximum, avec courbe des temps d’image, FPS moyens et bas, décompte des saccades et résumé sélectionnable.
+- Rapport à copier ou exporter en JSON et CSV : matériel, réglages, lieu testé, temps de traitement du jeu, physique, rendu lorsque disponible, ennemis, projectiles, effets et erreurs. Les mesures indisponibles sont signalées ; les chemins personnels sont masqués. Aucun envoi automatique.
+- Options → Graphique : résolution du rendu 3D réglable sans réduire l’interface, limite 30/60/120 FPS ou sans limite, et profil léger à 75 % avec ombres et effets réduits. La qualité adaptative respecte une limite volontaire de 30 FPS.
+- Personnages déjà créés : le héros sélectionné et affiché seul est toujours de face, pour toutes les classes. Les quatre modèles présentés ensemble conservent leurs orientations distinctes.
+- Capuches : volumes et ouverture du visage agrandis pour retrouver des proportions naturelles, sans réduire la tête native. Yeux, cheveux couverts et prises des armes conservés.
+
+50 contrôles diagnostic, quatre sélections de face et suite Windows complète réussis, dont 507 Paladin, 561 retouches de personnages et 104 village/magie. Auto-remplacement et récupérations vérifiés.
+
 ## 0.14.85 — publiée le 2 novembre 2026
 
 [0.14.85 publiée](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.85), source jeu `1d9b193`, après [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41482893665). Les trois fichiers publics ont été retéléchargés et leurs SHA256 comparés au build local et aux empreintes serveur. Latest ordinaire et sans cache : 0.14.85, six nouveautés propres à cette version. Transfert nettoyé. Aucun accès aux sauvegardes personnelles. Les tentatives 0.14.83 et 0.14.84 restent non publiées ; leurs tags et reçus sont conservés.
