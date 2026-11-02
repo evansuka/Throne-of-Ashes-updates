@@ -1,5 +1,18 @@
 # Modifications des versions Windows
 
+## 0.14.87 — publiée le 2 novembre 2026
+
+[0.14.87 publiée](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.87), source jeu `b30f3e2`, après [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41540829989). EXE, archive de mise à jour et manifeste retéléchargés avec SHA256 locaux et serveur concordants ; latest ordinaire/sans cache 0.14.87, quatre nouveautés propres à cette version. Transfert temporaire nettoyé. Sauvegardes personnelles non utilisées ; format des sauvegardes et code web/multijoueur inchangés.
+
+- Déplacements des quatre classes : appuis stabilisés au sol, trajectoires de pas adoucies, cadence adaptée à l’allure et petits pas de remise en place lors de l’arrêt.
+- Postures et attaques : transferts de poids, bassin et épaules accompagnent le geste, en conservant les vrais points de prise des armes.
+- Cri de guerre du Viking : nouvelle expression du corps entier, bras levés, appui fléchi et retour progressif à la garde, y compris lors d’une interruption.
+- Ennemis : cadence accordée au déplacement et transitions de préparation et de récupération plus douces. Les silhouettes et équipements existants sont conservés.
+
+Les ennemis en robe, les quadrupèdes et les boss demandent encore des membres dessinés séparément. Le prototype de flexion qui déformait leurs vêtements a été retiré. Les visages restent peints ; cette version ne prétend pas atteindre toute la fidélité des références ni convertir les acteurs en modèles 3D.
+
+18 suites locales du paquet final et suite Windows complète réussies, dont 31150 assertions temporelles sur quatre classes/huit directions. Comparaisons natives avant/après et audit détaillé conservés.
+
 ## 0.14.86 — publiée le 2 novembre 2026
 
 [0.14.86 publiée](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.86), source jeu `e67f8c8`, après [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41502037014). Trois fichiers publics retéléchargés, SHA256 locaux et serveur concordants, latest normal/sans cache 0.14.86 et cinq nouveautés propres à cette version. Transfert temporaire nettoyé. Aucun accès aux sauvegardes personnelles, aucun envoi du diagnostic et aucun changement web/multijoueur.

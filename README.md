@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.86](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.86)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.87](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.87)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -28,7 +28,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.86 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41502037014) : 50 contrôles diagnostic, quatre héros sélectionnés de face, 507 Paladin, retouches de capuches et suite complète combat, interface, sauvegardes et mises à jour.
+[Validation Windows 0.14.87 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41540829989) : animations temporelles, prises, combat, interface, diagnostic, sauvegardes et auto-remplacement vérifiés.
 
 Les trois fichiers publics et le flux latest, avec et sans cache, ont été retéléchargés avec des empreintes conformes au paquet testé.
 
@@ -156,3 +156,12 @@ En **0.14.65** : ceinture déroulée, petites quantités sans fond, inventaire a
 - Capuches : volumes et ouverture du visage agrandis pour retrouver des proportions naturelles, sans réduire la tête native. Yeux, cheveux couverts et prises des armes conservés.
 
 Pour signaler des ralentissements : Échap → OPTION → Diagnostic → DÉMARRER. Fermer les Options et reproduire le problème, puis ARRÊTER et EXPORTER JSON + CSV. Aucun envoi automatique ; le joueur choisit les fichiers à transmettre.
+
+## Nouveautés 0.14.87
+
+- Déplacements des quatre classes : appuis stabilisés au sol, trajectoires de pas adoucies, cadence adaptée à l’allure et petits pas de remise en place lors de l’arrêt.
+- Postures et attaques : transferts de poids, bassin et épaules accompagnent le geste, en conservant les vrais points de prise des armes.
+- Cri de guerre du Viking : nouvelle expression du corps entier, bras levés, appui fléchi et retour progressif à la garde, y compris lors d’une interruption.
+- Ennemis : cadence accordée au déplacement et transitions de préparation et de récupération plus douces. Les silhouettes et équipements existants sont conservés.
+
+Les ennemis en robe, les quadrupèdes et les boss demandent encore des membres dessinés séparément. Le prototype de flexion qui déformait leurs vêtements a été retiré. Les visages restent peints ; cette version ne prétend pas atteindre toute la fidélité des références ni convertir les acteurs en modèles 3D.
