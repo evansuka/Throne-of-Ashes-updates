@@ -314,7 +314,7 @@ try{
   $diagnosticText=RunGame $game ('--audio-driver Dummy -- --verify-diagnostics="'+$diagnosticFolder+'"') 240
   $diagnosticInfo=Get-Content (Join-Path $diagnosticFolder 'diagnostics.json') -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['diagnostics']=$diagnosticInfo
-  Check ($diagnosticText -match 'DIAGNOSTIC_CHECKS' -and $diagnosticInfo.checks -ge 46 -and $diagnosticInfo.failures.Count -eq 0 -and $diagnosticInfo.actualOptionButtons -and $diagnosticInfo.jsonCsvExport -and $diagnosticInfo.boundedCapture -and $diagnosticInfo.selectedHeroesFront -eq 4 -and $diagnosticInfo.diagnosticDefaultOff -and -not $diagnosticInfo.playerSavesAccessed) 'Real diagnostic options, bounded two-minute capture, numeric frame statistics, private-path redaction, JSON/CSV export, clipboard, real gameplay collection overhead, light profile and four front-facing selected heroes verified'
+  Check ($diagnosticText -match 'DIAGNOSTIC_CHECKS' -and $diagnosticInfo.checks -ge 50 -and $diagnosticInfo.failures.Count -eq 0 -and $diagnosticInfo.actualOptionButtons -and $diagnosticInfo.jsonCsvExport -and $diagnosticInfo.boundedCapture -and $diagnosticInfo.selectedHeroesFront -eq 4 -and $diagnosticInfo.diagnosticDefaultOff -and -not $diagnosticInfo.playerSavesAccessed) 'Real diagnostic options, bounded two-minute capture, numeric frame statistics, private-path redaction, JSON/CSV export, clipboard, real gameplay collection overhead, light profile and four front-facing selected heroes verified'
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
