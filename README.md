@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.79](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.79)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.82](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.82)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
@@ -28,7 +28,7 @@ Les traces d’une mise à jour autonome se trouvent dans `%LOCALAPPDATA%\Throne
 
 ## Vérification de la distribution
 
-[Validation Windows 0.14.79 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41353703786) : 405 contrôles d'interface, nouveautés de la seule version cible, vrai téléchargement HTTP et mode natif maximisé avec cadre. Suite graphique, remplacement autonome et récupérations réussis. Le son physique reste à confirmer sur votre PC.
+[Validation Windows 0.14.82 réussie](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41446074557) : 812 contrôles de présentation (96 illustrations, 61 profils, 122 flux audio), 1562 talents, 32501 accueil/marche/ceinture et suite graphique, interface, combat, remplacement autonome et récupérations. Le son physique reste à confirmer sur votre PC.
 
 Les trois fichiers publics et le flux latest, avec et sans cache, ont été retéléchargés avec des empreintes conformes au paquet testé.
 
@@ -127,3 +127,13 @@ En **0.14.62** : coffre dans sa fenêtre à gauche et vrai inventaire équipé �
 En **0.14.63** : cliquer la pièce d’or au coffre ouvre la petite fenêtre de dépôt/retrait. Marchand en grille avec onglets Armes, Armures, Bijoux et Divers, achat au double-clic et vente par glisser-déposer ; rachat à +10 % conservé et fermeture bronze.
 
 En **0.14.65** : ceinture déroulée, petites quantités sans fond, inventaire au clic sans maintien, aperçu des attributs au survol du + et effets temporaires à droite du mana. Bâton Sorcier à deux mains au repos/en marche en donjon, départ des flèches de l’arc, tirs sur les silhouettes animées, feu ralenti et embelli, éclairs irréguliers même sans cible, quantité d’or au sol et musique de combat Flare sous CC BY-SA 3.0 avec crédits inclus.
+
+## Nouveautés 0.14.82
+
+- Compétences : 96 nouvelles icônes illustrées, lisibles dans les arbres et les raccourcis ; dimensions et commandes conservées.
+- Sons : nouvelles identités de lancement et d’impact pour les quatre classes, contacts de bouclier métalliques, glace cristalline, foudre, flèches et magie sacrée différenciés.
+- Effets : tourbillon du Viking, bannière de guerre, marteau sacré, protections, blizzard, mur de glace, tempête, pluie toxique et vrai double fantomatique équipé ; effets animés et mode atténué conservés.
+- Éclairs : les traits et rebonds suivent les cibles réellement frappées. Coûts, points, ressources, statistiques et sauvegardes préservés.
+- Accueil : Paladin et Sorcier de face, corps complets du Viking et de la Rôdeuse légèrement tournés vers l’intérieur ; arc incliné et flèche tenue dans la main libre.
+- Personnages : marche de profil et de dos retravaillée, jambes de profil moins fines, raccord des bottes et pantalons ajusté.
+- Inventaire : les rangées supplémentaires de la ceinture se déploient aussi avec la fenêtre ouverte ; texte d’aide du coffre retiré.

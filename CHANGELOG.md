@@ -1,5 +1,19 @@
 # Modifications des versions Windows
 
+## 0.14.82 — publiée le 2 novembre 2026
+
+[Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.82) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41446074557) · jeu `43a4d5e`.
+
+- Compétences : 96 nouvelles icônes illustrées, lisibles dans les arbres et les raccourcis ; dimensions et commandes conservées.
+- Sons : nouvelles identités de lancement et d’impact pour les quatre classes, contacts de bouclier métalliques, glace cristalline, foudre, flèches et magie sacrée différenciés.
+- Effets : tourbillon du Viking, bannière de guerre, marteau sacré, protections, blizzard, mur de glace, tempête, pluie toxique et vrai double fantomatique équipé ; effets animés et mode atténué conservés.
+- Éclairs : les traits et rebonds suivent les cibles réellement frappées. Coûts, points, ressources, statistiques et sauvegardes préservés.
+- Accueil : Paladin et Sorcier de face, corps complets du Viking et de la Rôdeuse légèrement tournés vers l’intérieur ; arc incliné et flèche tenue dans la main libre.
+- Personnages : marche de profil et de dos retravaillée, jambes de profil moins fines, raccord des bottes et pantalons ajusté.
+- Inventaire : les rangées supplémentaires de la ceinture se déploient aussi avec la fenêtre ouverte ; texte d’aide du coffre retiré.
+
+812 nouveaux contrôles de présentation, 1562 talents et suite Windows complète réussis. Remplacement autonome, récupérations et trois fichiers publics vérifiés. Sauvegardes conservées. 0.14.80 bloquée et 0.14.81 annulée n’ont jamais été publiées ; leurs retouches validées sont reprises ici.
+
 ## 0.14.79 — publiée le 1er novembre 2026
 
 [Release](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.79) · [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41353703786) · jeu `0b12128`.
