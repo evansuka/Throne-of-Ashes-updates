@@ -309,6 +309,13 @@ try{
   $report['villageMagic']=$villageMagicInfo
   Check ($villageMagicText -match 'VILLAGE_MAGIC_CHECKS' -and $villageMagicInfo.checks -ge 100 -and $villageMagicInfo.failures.Count -eq 0 -and $villageMagicInfo.catalogTalents -eq 96 -and $villageMagicInfo.activeAbilities -eq 60 -and $villageMagicInfo.sorcererPassives -eq 9 -and $villageMagicInfo.hoodViews -eq 32 -and $villageMagicInfo.npcMarkers -eq 7 -and $villageMagicInfo.portalLifecycle -and $villageMagicInfo.groundLootRemovedOnExit -and -not $villageMagicInfo.playerSavesAccessed) 'Actual portal lifecycle, party-end ground cleanup with save rollback, town quest/NPC markers, hover names, nine utility passives, replacement ice armour and 32 native hood views verified'
  }
+ if([Version]$version -ge [Version]'0.14.86'){
+  $diagnosticFolder=Join-Path $fixture 'diagnostics'
+  $diagnosticText=RunGame $game ('--audio-driver Dummy -- --verify-diagnostics="'+$diagnosticFolder+'"') 240
+  $diagnosticInfo=Get-Content (Join-Path $diagnosticFolder 'diagnostics.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['diagnostics']=$diagnosticInfo
+  Check ($diagnosticText -match 'DIAGNOSTIC_CHECKS' -and $diagnosticInfo.checks -ge 46 -and $diagnosticInfo.failures.Count -eq 0 -and $diagnosticInfo.actualOptionButtons -and $diagnosticInfo.jsonCsvExport -and $diagnosticInfo.boundedCapture -and $diagnosticInfo.selectedHeroesFront -eq 4 -and $diagnosticInfo.diagnosticDefaultOff -and -not $diagnosticInfo.playerSavesAccessed) 'Real diagnostic options, bounded two-minute capture, numeric frame statistics, private-path redaction, JSON/CSV export, clipboard, real gameplay collection overhead, light profile and four front-facing selected heroes verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
