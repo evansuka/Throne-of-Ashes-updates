@@ -142,7 +142,8 @@ try{
   $restInfo=Get-Content $restPath -Raw -Encoding UTF8 | ConvertFrom-Json
   $report['restEquipment']=$restInfo
   Check ($restInfo.nativeVersion -eq ($version+'-conversion') -and $restInfo.failures.Count -eq 0 -and $restInfo.villagePoses -eq 448) 'Four heroes retain their actual gear while stowed, including mixed kits and uniques'
-  Check ($restInfo.actualStartAndTravel -and $restInfo.actualGpuFaceProbes -eq 16 -and $restInfo.actualGpuCoverageProbes -eq 24 -and $restInfo.coveredHairPixels -gt 20 -and -not $restInfo.playerSavesAccessed) 'Real village/dungeon transitions draw and stow weapons without accessing player saves'
+  $expectedFaceProbes=if([Version]$version -ge [Version]'0.14.89'){24}else{16}
+  Check ($restInfo.actualStartAndTravel -and $restInfo.actualGpuFaceProbes -eq $expectedFaceProbes -and $restInfo.actualGpuCoverageProbes -eq 24 -and $restInfo.coveredHairPixels -gt 20 -and -not $restInfo.playerSavesAccessed) 'Real village/dungeon transitions draw and stow weapons without accessing player saves'
  }
  if([Version]$version -ge [Version]'0.14.57'){
   $stylePath=Join-Path $fixture 'character-style.json'
@@ -325,6 +326,9 @@ try{
  }
  if([Version]$version -ge [Version]'0.14.88'){
   Check ($motionInfo.checks -ge 54894 -and $styleInfo.checks -ge 4660 -and $welcomeInfo.checks -ge 32725) 'Fixed anatomical lengths and reachable feet in temporal hero poses, constant worker segments and equipped welcome idle verified'
+ }
+ if([Version]$version -ge [Version]'0.14.89'){
+  Check ($styleInfo.checks -ge 5514 -and $restInfo.checks -ge 5618 -and $restInfo.actualGpuFaceProbes -eq 24) 'Painted heels and boot bottoms stay above the floor; five workers preserve palm/tool contact; corpses have tapered volumes; hood preserves lower face as well as eyes'
  }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
