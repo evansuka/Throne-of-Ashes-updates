@@ -323,6 +323,9 @@ try{
   $report['motion']=$motionInfo
   Check ($motionText -match 'MOTION_AUDIT' -and $motionInfo.checks -ge 31000 -and $motionInfo.failures.Count -eq 0 -and $motionInfo.classes -eq 4 -and $motionInfo.directions -eq 8 -and $motionInfo.temporalRuns -eq 128 -and $motionInfo.attacks -eq 32 -and $motionInfo.cryViews -eq 8 -and $motionInfo.enemyContactCases -eq 18 -and $motionInfo.maxRenderedFootSlip -lt .004 -and $motionInfo.maxDynamicGripError -lt .0001 -and -not $motionInfo.playerSavesAccessed) 'Actual temporal native feet and weapon grips, starts/stops, teleport reset, 32 attacks and eight interruptible war cries verified; enemy curve checks are mathematical'
  }
+ if([Version]$version -ge [Version]'0.14.88'){
+  Check ($motionInfo.checks -ge 54894 -and $styleInfo.checks -ge 4660 -and $welcomeInfo.checks -ge 32725) 'Fixed anatomical lengths and reachable feet in temporal hero poses, constant worker segments and equipped welcome idle verified'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
