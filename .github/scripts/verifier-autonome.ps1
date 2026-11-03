@@ -330,6 +330,13 @@ try{
  if([Version]$version -ge [Version]'0.14.89'){
   Check ($styleInfo.checks -ge 5514 -and $restInfo.checks -ge 5618 -and $restInfo.actualGpuFaceProbes -eq 24) 'Painted heels and boot bottoms stay above the floor; five workers preserve palm/tool contact; corpses have tapered volumes; hood preserves lower face as well as eyes'
  }
+ if([Version]$version -ge [Version]'0.15.0'){
+  $archerFolder=Join-Path $fixture 'archer-rig'
+  $null=RunGame $game ('--audio-driver Dummy -- --verify-archer-rig="'+$archerFolder+'"') 240
+  $archerInfo=Get-Content (Join-Path $archerFolder 'archer-rig.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+  $report['archerRig']=$archerInfo
+  Check ($archerInfo.checks -ge 21202 -and $archerInfo.failures.Count -eq 0 -and $archerInfo.regions -eq 5 -and $archerInfo.directions -eq 8 -and $archerInfo.enemyPoses -eq 1720 -and $archerInfo.talentPoses -eq 1920 -and $archerInfo.maxPaintedAnchorError -lt .0001 -and $archerInfo.maxTalentWristStep -lt .16 -and -not $archerInfo.playerSavesAccessed) 'Five articulated enemy archer families and six hero archery talents preserve painted joints, projectile timing and collision without accessing player saves'
+ }
  $audio=RunGame $game '--headless -- --verify-audio-bridge' 45
  Check ($audio -match 'WINDOWS_AUDIO_BRIDGE_CHECKS') 'Embedded Windows audio bridge remains available'
  # The real game requests a self-replacement from its home-screen button.
