@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "name": "Throne-of-Ashes-0.15.0-update.zip",
+      "bytes": 148319406,
+      "sha256": "0f1205474dff49a9e25291b1da0dcc450fe58577b7c17dda05821f75826eb102",
+      "parts": [
+        {
+          "name": "Throne-of-Ashes-0.15.0-update.zip.part000",
+          "bytes": 16777216,
+          "sha256": "f7b3f9cb058c9e66f8dc4f9e47f9cdd3673c3a2393b801abcf6b9983afc1aa70"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.0-update.zip.part001",
+          "bytes": 16777216,
+          "sha256": "3d332e894a82c8cbfde588c7077595497d38a6ac9342f1c217d41971fbd18971"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.0-update.zip.part002",
+          "bytes": 16777216,
+          "sha256": "736f3969f7dd54d20e0cf36c74476493a52e22464512622e288b8cb7e4c4aa61"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.0-update.zip.part003",
+          "bytes": 16777216,
+          "sha256": "a08d4189b75a66e60a063d0190cce3ceb8ebb7308941547a73cfd3b45f4af36b"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.0-update.zip.part004",
+          "bytes": 16777216,
+          "sha256": "4fab07037eb1be9fa9c4bdbbae02adf66d806aa26fc92c67eeea8fd58d4d3c82"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.0-update.zip.part005",
+          "bytes": 16777216,
+          "sha256": "7e0066a80cbab1c61041acee5b4880c5f3f743a9dad7a16a654277cfba722808"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.0-update.zip.part006",
+          "bytes": 16777216,
+          "sha256": "8977804d4a808dc0dc98cdcc3c11f8762d43b917fc11692d542c030a845f57cb"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.0-update.zip.part007",
+          "bytes": 16777216,
+          "sha256": "950f55fc185a4aa50533ce9f365863e8b28b8dc1a905bae1240543e5e416289f"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.0-update.zip.part008",
+          "bytes": 14101678,
+          "sha256": "8d175de5adb2456ef25b564bc386858e90ed7c1d39e46077633812b826c81abb"
+        }
+      ]
+    }
+  ]
+}
