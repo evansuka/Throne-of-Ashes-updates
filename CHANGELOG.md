@@ -1,5 +1,21 @@
 # Modifications des versions Windows
 
+## 0.14.89 — publiée le 3 novembre 2026
+
+[0.14.89 publiée](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.89), source jeu `137c06e`, après [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41661022922). EXE, archive et manifeste retéléchargés avec empreintes SHA256 locales et serveur concordantes. Latest ordinaire et sans cache 0.14.89, sept nouveautés propres à cette version. Transfert temporaire nettoyé. Aucun accès aux sauvegardes personnelles ; format des sauvegardes et multijoueur web inchangés.
+
+- Bottes et jambes : suppression des morceaux de cuisse qui dépassaient et correction de la profondeur des pieds pour éviter leur disparition sous le sol.
+- Paladin : bras plié et bouclier mieux porté au repos de combat, y compris de dos et de trois quarts.
+- Accueil : prise des haches du Viking plus détendue et visage entier sous la capuche.
+- Sac à dos : portage remonté et rapproché du haut du dos, avec proportions ajustées selon la vue.
+- PNJ : épaules, coudes et poignets reconstruits pour éviter les bras retournés, en conservant les prises d’outils.
+- Éléane : la robe et les pieds ne sont plus étirés par le mouvement de marche.
+- Ennemis morts : contours arrondis et épaisseur progressive du corps, sans les grosses parois de l’ancienne extrusion.
+
+18 suites locales du paquet final et suite Windows réussies : 54894 assertions temporelles, 5514 de style, 5618 de repos dont 24 pixels de visage au rendu GPU. Six contrats web réussis.
+
+Corrections des sprites articulés existants. Les corps au sol possèdent une épaisseur progressive ; ce ne sont pas de nouveaux ragdolls. La robe conserve ses vues peintes. Aucun gain de FPS revendiqué.
+
 ## 0.14.88 — publiée le 3 novembre 2026
 
 [0.14.88 publiée](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.88), source jeu `26ca85a`, après [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41609828595). EXE, archive et manifeste retéléchargés avec empreintes SHA256 locales et serveur concordantes. Latest ordinaire et sans cache 0.14.88, quatre nouveautés propres à cette version. Transfert temporaire nettoyé. Aucun accès aux sauvegardes personnelles ; format des sauvegardes et multijoueur web inchangés.

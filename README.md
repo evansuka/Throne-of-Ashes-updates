@@ -1,6 +1,6 @@
 # Throne of Ashes — jeu Windows autonome
 
-La version **[0.14.88](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.88)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
+La version **[0.14.89](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.89)** se lance directement, sans installateur ni lanceur séparé. Le code de développement reste dans un dépôt privé.
 
 ## Télécharger et jouer
 
