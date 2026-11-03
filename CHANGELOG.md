@@ -1,5 +1,18 @@
 # Modifications des versions Windows
 
+## 0.14.88 — publiée le 3 novembre 2026
+
+[0.14.88 publiée](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.88), source jeu `26ca85a`, après [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41609828595). EXE, archive et manifeste retéléchargés avec empreintes SHA256 locales et serveur concordantes. Latest ordinaire et sans cache 0.14.88, quatre nouveautés propres à cette version. Transfert temporaire nettoyé. Aucun accès aux sauvegardes personnelles ; format des sauvegardes et multijoueur web inchangés.
+
+- Marche des quatre classes : jambes à longueur constante, bassin adapté aux appuis et foulée moins ample.
+- Raccords des bottes : les bottes restent attachées aux jambes pendant le mouvement, sans déplacement indépendant pour simuler le contact au sol.
+- PNJ du village : proportions des jambes stabilisées pendant leurs animations de travail et raccords des textures corrigés.
+- Prêtre : suppression des pièces de pantalon visibles par-dessus sa robe.
+
+18 suites locales et suite Windows réussies, dont 54894 assertions temporelles ; six contrats web réussis. Captures natives inspectées avant publication.
+
+Correction des héros et des travailleurs du village en sprites articulés. Les ennemis sur cartes entières et l’articulation indépendante des orteils restent à reprendre ; aucune conversion en modèles 3D ni gain de FPS revendiqués.
+
 ## 0.14.87 — publiée le 2 novembre 2026
 
 [0.14.87 publiée](https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.14.87), source jeu `b30f3e2`, après [Windows réussi](https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41540829989). EXE, archive de mise à jour et manifeste retéléchargés avec SHA256 locaux et serveur concordants ; latest ordinaire/sans cache 0.14.87, quatre nouveautés propres à cette version. Transfert temporaire nettoyé. Sauvegardes personnelles non utilisées ; format des sauvegardes et code web/multijoueur inchangés.
