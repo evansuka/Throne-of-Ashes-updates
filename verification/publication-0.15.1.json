@@ -1,0 +1,1211 @@
+{
+    "version":  "0.15.1",
+    "status":  "passed",
+    "published":  true,
+    "cleanupSucceeded":  true,
+    "sourceCommit":  "14b69d0a00eabdf2798dbbc90d6c1a1199f6d763",
+    "completedUtc":  "2026-11-04T07:22:36.1053005Z",
+    "workflowUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/actions/runs/41789751613",
+    "releaseUrl":  "https://github.com/evansuka/Throne-of-Ashes-updates/releases/tag/v0.15.1",
+    "portableCheck":  {
+                          "status":  "passed",
+                          "version":  "0.15.1",
+                          "noInstaller":  true,
+                          "checks":  [
+                                         "Strict release version",
+                                         "Standalone manifest matches tag",
+                                         "Immutable update URL",
+                                         "No installer in distribution",
+                                         "Safe distribution filename",
+                                         "Checksum Throne-of-Ashes-0.15.1-update.zip",
+                                         "Safe distribution filename",
+                                         "Checksum update.json",
+                                         "Safe distribution filename",
+                                         "Checksum RELEASE.md",
+                                         "Archive matches manifest",
+                                         "Executable matches manifest",
+                                         "Native executable version matches release",
+                                         "Version-specific release notes",
+                                         "Update feed carries the exact changes of this release",
+                                         "Exported game verification terminates cleanly",
+                                         "Six rendered floors, five guardians and ending rewards",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded heroGraphics audit completes",
+                                         "Exported heroGraphics has no failures",
+                                         "Four classes, eight directions and complete exported pose matrix",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded heroCoordination audit completes",
+                                         "Exported heroCoordination has no failures",
+                                         "Real delayed bow release, pause, interruption and travel cancellation",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual rendered garment pixel audit completes",
+                                         "Four class outfits retain native front/back motifs in five combat poses",
+                                         "Exported game verification terminates cleanly",
+                                         "Exported itemization, commerce and repair audit completes",
+                                         "Rarity powers, physical ranges, attack speed and critical rolls verified",
+                                         "Commerce-only bottom-left prices, repairs and jewelry preservation verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Exported village, service access and NPC audit completes",
+                                         "Six NPC services, full body selection, dynamic detours and five rendered village views verified",
+                                         "Village detail budget and isolated save policy verified",
+                                         "Continuous dirt-only trails without paving or stone borders verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual rendered armor opening audit completes",
+                                         "Original native neck and arm pixels remain visible through all five armor model openings",
+                                         "All five Viking collars corrected without accessing player saves",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual worn equipment fitting audit completes",
+                                         "Four heroes retain fitted equipment across complete, mixed and unique kits",
+                                         "Open faces, opaque body coverage, native sleeves and rear accessories verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Native terrain, biome and animation audit completes",
+                                         "Five cave regions and final room retain navigation, static details and light budgets",
+                                         "Village and six dungeon views render with shared foliage materials and bounded geometry",
+                                         "Attack recovery, hit reaction and distant AI preserve gameplay and player saves",
+                                         "Exported game verification terminates cleanly",
+                                         "Native base-outfit replacement audit completes",
+                                         "Default and worn clothing remain exclusive across four heroes and mixed kits",
+                                         "All four native default pose images restore exactly after removing dyed and unique gear",
+                                         "Real equip/remove creates no default inventory item or hidden stat bonus",
+                                         "Exported game verification terminates cleanly",
+                                         "Exported gripping-hand shader audit completes",
+                                         "Native verification flag runs before normal game startup",
+                                         "Four heroes, eight directions, visible fingers and actual shaft openings verified",
+                                         "Painted rest axes track actual hand sockets without changing the original atlas or saves",
+                                         "Exported game verification terminates cleanly",
+                                         "Native village carrying and actual zone transitions audit completes",
+                                         "Four heroes retain their actual gear while stowed, including mixed kits and uniques",
+                                         "Real village/dungeon transitions draw and stow weapons without accessing player saves",
+                                         "Exported game verification terminates cleanly",
+                                         "Character style audit executes from the actual exported game",
+                                         "Natural reception poses preserve real weapon and staff grips in eight directions",
+                                         "Actual NPC working poses and tool anchors remain valid without player saves",
+                                         "Exported game verification terminates cleanly",
+                                         "Character retouches audit executes from the actual exported game",
+                                         "Original cream Paladin, approved shield, upward rest weapons and genuine supporting mage hand retained",
+                                         "Actual rendered palms, forearms, profile jaw pixels and hood openings verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Gameplay comfort audit runs in the actual exported game",
+                                         "Belt reserve, warcry, ALT session, previews, voices, readable loot and actual rock hulls verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Compact interface and click portal run in actual exported game",
+                                         "Tooltip-only skill preview, square item scale, stone pickup and session portal from belt verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Inventory layout and shared gold audit runs in exported game",
+                                         "Belt position, right-side backpack, square close buttons and persisted atomic gold transfers verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Separate chest and real inventory audit runs in exported game",
+                                         "Independent panels, gold mirrors, context restoration, open glove pairs, sword scale and four-cell weapons verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Coin popup and merchant inventory grid run in exported game",
+                                         "Actual coin click, typed amounts, modal close, paged categories, double-click purchases and 10 percent buyback verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Gameplay refinements run in the actual exported Windows game",
+                                         "Real click-carry, full silhouettes, wall blocking, two-handed world staff, stat hovers, timed effects and free music verified",
+                                         "Mage guard, all normal/unique staves, bare/gloved hands and four spells retain continuous joins",
+                                         "Exported game verification terminates cleanly",
+                                         "Support effects run in the exported Windows game",
+                                         "Soft support effects, reduced mode, bounded bursts, pause, cleanup and actual village/dungeon rendering verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Inventory cursor, direct gem insertion and sorcerer fixes run in the actual Windows package",
+                                         "Actual carried pixels, original item size, atomic sockets, lightning/fire hits, wall blocking, meteor damage/pause and impact sounds verified",
+                                         "Incomplete audio status and stale native tooltips are guarded while valid audio failures remain reported",
+                                         "Exported game verification terminates cleanly",
+                                         "Living essence HUD runs in the actual exported Windows game",
+                                         "Rendered fill heights, all five styles, full/empty endpoints, actual resource reads, compact layout, pause and reduced effects verified",
+                                         "Exported game verification terminates cleanly",
+                                         "All class talent trees run in the actual exported Windows game",
+                                         "Talent unlocking, exclusive ultimates, every active/passive, native hotbar drag, per-hero saves, old migration, resources and prayer verified",
+                                         "All talents fit without scroll at three viewport sizes; old ranks refunded once and new builds preserved",
+                                         "Exported game verification terminates cleanly",
+                                         "WAV and MP3 decode to nonzero finite PCM with exact duration; real embedded mixer and native output attempted",
+                                         "Native PCM buffers play when a device exists, otherwise output absence is explicitly diagnosed without MCI",
+                                         "Exported game verification terminates cleanly",
+                                         "Versioned update notes remain visible during real HTTP download; native decorated maximized startup verified",
+                                         "Compact side windows keep potions and skills accessible; same-size talent page, globe hover, separate shortcuts, real HTTP progress and corrupted archive retry in original offer verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Paladin shield motion/contact damage/audio, cancellation, kneeling sword grounded in eight directions and seven kits, prayer resource/interruption/stow, distinct imported attack sounds verified",
+                                         "Three exclusive equipped auras, real effects and persistence, targetless shield, native left Shift click across four classes and debug text selection/copy verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Native hold/release prayer orb, compact tooltips, three animated aura pixel changes, reversible poison/ice tints, real fire wall/nova/wave, shadow step, poison arrow and distinct imported PCM sounds verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Welcome quarter-view poses, real resting arrow, knee/sole cycle and expandable inventory belt verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Illustrated skill atlases and PCM packaged; real animation, pause, reduced effects, budgets and cleanup verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual portal lifecycle, party-end ground cleanup with save rollback, town quest/NPC markers, hover names, nine utility passives, replacement ice armour and 32 native hood views verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Real diagnostic options, bounded two-minute capture, numeric frame statistics, private-path redaction, JSON/CSV export, clipboard, real gameplay collection overhead, light profile and four front-facing selected heroes verified",
+                                         "Exported game verification terminates cleanly",
+                                         "Actual temporal native feet and weapon grips, starts/stops, teleport reset, 32 attacks and eight interruptible war cries verified; enemy curve checks are mathematical",
+                                         "Fixed anatomical lengths and reachable feet in temporal hero poses, constant worker segments and equipped welcome idle verified",
+                                         "Painted heels and boot bottoms stay above the floor; five workers preserve palm/tool contact; corpses have tapered volumes; hood preserves lower face as well as eyes",
+                                         "Exported game verification terminates cleanly",
+                                         "Five articulated enemy archer families and six hero archery talents preserve painted joints, projectile timing and collision without accessing player saves",
+                                         "Exported game verification terminates cleanly",
+                                         "Embedded Windows audio bridge remains available",
+                                         "Actual game prepared a self-update",
+                                         "Self-update trial uses no player saves",
+                                         "Home screen displays the installed game version",
+                                         "Home screen offers the direct update action",
+                                         "Replacement helper reports its outcome",
+                                         "Self-update completed: Updated to 999.0.0",
+                                         "Old game exits for the explicit update",
+                                         "Replacement game stays open without a restart loop",
+                                         "Previous game retained as rollback backup",
+                                         "Direct download is the Godot game itself"
+                                     ],
+                          "heroGraphics":  {
+                                               "checks":  681252,
+                                               "classes":  [
+                                                               "Viking",
+                                                               "Paladin",
+                                                               "Sorcier",
+                                                               "RÃ´deur"
+                                                           ],
+                                               "directions":  8,
+                                               "failures":  0,
+                                               "firstFailures":  [
+
+                                                                 ],
+                                               "kitsPerClass":  18,
+                                               "metrics":  {
+                                                               "duplicatedGuardBodies":  0,
+                                                               "maxCombatGripError":  0.000000955535142566077,
+                                                               "maxHeadHeightError":  0.000000309348106242169,
+                                                               "maxLegShapeChange":  0.000000178813934326172,
+                                                               "maxShieldWristError":  0.000000717734963018302,
+                                                               "poses":  24192
+                                                           },
+                                               "physicalOutputOrPlayerSavesAccessed":  false,
+                                               "scope":  "Actual native transforms. Pixel appearance inspected separately in viewport captures; this does not prove anatomical quality or physical audio.",
+                                               "states":  [
+                                                              "idle",
+                                                              "walk",
+                                                              "guard",
+                                                              "guard-walk",
+                                                              "attack",
+                                                              "left",
+                                                              "skill0",
+                                                              "skill1",
+                                                              "skill2",
+                                                              "skill3"
+                                                          ],
+                                               "version":  "0.15.1-conversion"
+                                           },
+                          "heroCoordination":  {
+                                                   "checks":  14,
+                                                   "failures":  [
+
+                                                                ],
+                                                   "playerSavesAccessed":  false
+                                               },
+                          "heroGarments":  {
+                                               "actualGpuPixels":  true,
+                                               "checks":  120,
+                                               "classes":  4,
+                                               "directions":  [
+                                                                  0,
+                                                                  4
+                                                              ],
+                                               "failures":  [
+
+                                                            ],
+                                               "maxRgbDifference":  0.0,
+                                               "playerSavesAccessed":  false,
+                                               "posesPerDirection":  5,
+                                               "version":  "0.15.1-conversion"
+                                           },
+                          "itemization":  {
+                                              "attackTrials":  10000,
+                                              "captures":  [
+                                                               "itemization-fiches.png",
+                                                               "itemization-commerce.png"
+                                                           ],
+                                              "checks":  19832,
+                                              "commerceOnlyGoldBottomLeft":  true,
+                                              "criticals":  1238,
+                                              "examples":  [
+                                                               {
+                                                                   "affixes":  [
+
+                                                                               ],
+                                                                   "attackSeconds":  0.43,
+                                                                   "bonuses":  {
+
+                                                                               },
+                                                                   "criticalChance":  6.0,
+                                                                   "damage":  228.0,
+                                                                   "damageMax":  269,
+                                                                   "damageMin":  187,
+                                                                   "durability":  116.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  116,
+                                                                   "modelIndex":  3,
+                                                                   "name":  "Sceptre de cristal ordinaire",
+                                                                   "rarity":  "normal",
+                                                                   "requirements":  {
+                                                                                        "intelligence":  21,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "staff",
+                                                                   "value":  216.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  11.0,
+                                                                                       "min":  8.0,
+                                                                                       "stat":  "coldDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  10.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  11.0,
+                                                                                       "min":  8.0,
+                                                                                       "stat":  "fireDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  10.0
+                                                                                   }
+                                                                               ],
+                                                                   "attackSeconds":  0.65,
+                                                                   "bonuses":  {
+                                                                                   "coldDamage":  10.0,
+                                                                                   "fireDamage":  10.0
+                                                                               },
+                                                                   "criticalChance":  5.0,
+                                                                   "damage":  175.0,
+                                                                   "damageMax":  207,
+                                                                   "damageMin":  144,
+                                                                   "durability":  102.0,
+                                                                   "elementalRanges":  {
+                                                                                           "coldDamage":  [
+                                                                                                              8,
+                                                                                                              12
+                                                                                                          ],
+                                                                                           "fireDamage":  [
+                                                                                                              8,
+                                                                                                              12
+                                                                                                          ]
+                                                                                       },
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  102,
+                                                                   "modelIndex":  1,
+                                                                   "name":  "Arc de chasse magique",
+                                                                   "rarity":  "magic",
+                                                                   "requirements":  {
+                                                                                        "dexterite":  20,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "bow",
+                                                                   "value":  491.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  17.0,
+                                                                                       "min":  12.0,
+                                                                                       "stat":  "poison",
+                                                                                       "tier":  3,
+                                                                                       "value":  13.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  7.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "vitalite",
+                                                                                       "tier":  3,
+                                                                                       "value":  6.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  17.0,
+                                                                                       "min":  12.0,
+                                                                                       "stat":  "froid",
+                                                                                       "tier":  3,
+                                                                                       "value":  17.0
+                                                                                   }
+                                                                               ],
+                                                                   "armor":  147.0,
+                                                                   "bonuses":  {
+                                                                                   "froid":  17.0,
+                                                                                   "poison":  13.0,
+                                                                                   "vitalite":  6.0
+                                                                               },
+                                                                   "durability":  144.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "maxDurability":  144,
+                                                                   "modelIndex":  2,
+                                                                   "name":  "Cotte de mailles rare",
+                                                                   "rarity":  "rare",
+                                                                   "requirements":  {
+                                                                                        "force":  7,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "armor",
+                                                                   "value":  745.0
+                                                               },
+                                                               {
+                                                                   "affixes":  [
+                                                                                   {
+                                                                                       "max":  8.0,
+                                                                                       "min":  5.0,
+                                                                                       "stat":  "attackSpeed",
+                                                                                       "tier":  3,
+                                                                                       "value":  7.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  9.0,
+                                                                                       "min":  7.0,
+                                                                                       "stat":  "physicalDamage",
+                                                                                       "tier":  3,
+                                                                                       "value":  9.0
+                                                                                   },
+                                                                                   {
+                                                                                       "max":  42.0,
+                                                                                       "min":  32.0,
+                                                                                       "stat":  "attackRating",
+                                                                                       "tier":  3,
+                                                                                       "value":  39.0
+                                                                                   }
+                                                                               ],
+                                                                   "attackSeconds":  0.43,
+                                                                   "bonuses":  {
+                                                                                   "attackRating":  39.0,
+                                                                                   "attackSpeed":  7.0,
+                                                                                   "physicalDamage":  9.0
+                                                                               },
+                                                                   "criticalChance":  4.0,
+                                                                   "damage":  250.0,
+                                                                   "damageMax":  295,
+                                                                   "damageMin":  205,
+                                                                   "durability":  127.0,
+                                                                   "itemLevel":  50,
+                                                                   "itemizationVersion":  1,
+                                                                   "legendaryEffect":  "bleed",
+                                                                   "maxDurability":  127,
+                                                                   "modelIndex":  1,
+                                                                   "name":  "Hache de combat lÃ©gendaire",
+                                                                   "rarity":  "legendary",
+                                                                   "requirements":  {
+                                                                                        "force":  20,
+                                                                                        "level":  37
+                                                                                    },
+                                                                   "type":  "axe",
+                                                                   "value":  1140.0
+                                                               }
+                                                           ],
+                                              "failures":  [
+
+                                                           ],
+                                              "families":  16,
+                                              "generatedItems":  3072,
+                                              "jewelryDoesNotWear":  true,
+                                              "legacyItemsNotRerolled":  true,
+                                              "legendaryExclusivePower":  true,
+                                              "playerSavesAccessed":  false,
+                                              "rarityAffixCounts":  {
+                                                                        "legendary":  [
+                                                                                          3,
+                                                                                          4
+                                                                                      ],
+                                                                        "magic":  [
+                                                                                      2,
+                                                                                      3
+                                                                                  ],
+                                                                        "normal":  [
+                                                                                       0,
+                                                                                       0
+                                                                                   ],
+                                                                        "rare":  [
+                                                                                     3,
+                                                                                     4
+                                                                                 ]
+                                                                    },
+                                              "version":  "0.15.1-conversion"
+                                          },
+                          "village":  {
+                                          "captures":  [
+                                                           "village-place.png",
+                                                           "village-eglise.png",
+                                                           "village-maison.png",
+                                                           "village-etang.png",
+                                                           "village-ecurie.png"
+                                                       ],
+                                          "checks":  61,
+                                          "clearedTrees":  37,
+                                          "detailMeshes":  6,
+                                          "detailPrimitives":  749,
+                                          "detailTriangles":  9740,
+                                          "dynamicNpcClearance":  1.16277301311493,
+                                          "failures":  [
+
+                                                       ],
+                                          "fullBodySelection":  true,
+                                          "newPropColliders":  14,
+                                          "playerSavesAccessed":  false,
+                                          "renderInfo":  {
+                                                             "drawCalls":  201,
+                                                             "fpsClaimed":  false,
+                                                             "primitives":  98754
+                                                         },
+                                          "roadBorderStones":  0,
+                                          "roadMeshes":  1,
+                                          "roadSurface":  "dirt",
+                                          "roadTriangles":  11356,
+                                          "routes":  [
+                                                         {
+                                                             "distance":  0.962945461273193,
+                                                             "id":  "smith",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.702344954013824,
+                                                             "id":  "fisher",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.767204225063324,
+                                                             "id":  "eleane",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.941609442234039,
+                                                             "id":  "merchant",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.909632086753845,
+                                                             "id":  "priest",
+                                                             "reached":  true
+                                                         },
+                                                         {
+                                                             "distance":  0.895710825920105,
+                                                             "id":  "dyer",
+                                                             "reached":  true
+                                                         }
+                                                     ],
+                                          "version":  "0.15.1-conversion"
+                                      },
+                          "armor":  {
+                                        "actualGpuPixels":  true,
+                                        "armorModels":  5,
+                                        "captures":  [
+                                                         "armor-idle-0.png",
+                                                         "armor-idle-1.png",
+                                                         "armor-idle-2.png",
+                                                         "armor-idle-4.png",
+                                                         "armor-walk-0.png",
+                                                         "armor-walk-1.png",
+                                                         "armor-walk-2.png",
+                                                         "armor-walk-4.png",
+                                                         "armor-attack-0.png",
+                                                         "armor-attack-1.png",
+                                                         "armor-attack-2.png",
+                                                         "armor-attack-4.png"
+                                                     ],
+                                        "changedVikingCollars":  5,
+                                        "checks":  829,
+                                        "classes":  4,
+                                        "directions":  8,
+                                        "failures":  [
+
+                                                     ],
+                                        "fixtureInterpolationDisabled":  true,
+                                        "logicalViewport":  "(1280.0, 720.0)",
+                                        "playerSavesAccessed":  false,
+                                        "renderedImage":  "(1028, 578)",
+                                        "states":  [
+                                                       "idle",
+                                                       "walk",
+                                                       "attack"
+                                                   ],
+                                        "version":  "0.15.1-conversion",
+                                        "viewportCoordinatesScaled":  true
+                                    },
+                          "equipmentFit":  {
+                                               "actualGpuPixels":  true,
+                                               "bareHandsAndGloves":  true,
+                                               "captures":  [
+                                                                "equipment-fit-kit0-idle.png",
+                                                                "equipment-fit-kit0-attack.png",
+                                                                "equipment-fit-kit1-idle.png",
+                                                                "equipment-fit-kit1-attack.png",
+                                                                "equipment-fit-kit2-idle.png",
+                                                                "equipment-fit-kit2-attack.png",
+                                                                "equipment-fit-kit3-idle.png",
+                                                                "equipment-fit-kit3-attack.png",
+                                                                "equipment-fit-kit4-idle.png",
+                                                                "equipment-fit-kit4-attack.png",
+                                                                "equipment-fit-kit5-idle.png",
+                                                                "equipment-fit-kit5-attack.png",
+                                                                "equipment-fit-kit6-idle.png",
+                                                                "equipment-fit-kit6-attack.png"
+                                                            ],
+                                               "checks":  24186,
+                                               "classes":  4,
+                                               "directions":  8,
+                                               "faceBackgroundExcluded":  true,
+                                               "facePatchSize":  3,
+                                               "facePixelProbes":  192,
+                                               "failures":  [
+
+                                                            ],
+                                               "fixedRenderSize":  [
+                                                                       2560,
+                                                                       1440
+                                                                   ],
+                                               "kits":  7,
+                                               "maxMatchedFaceRgbError":  0.0,
+                                               "minFaceVisibleFraction":  0.875,
+                                               "mixedItemsAndUniques":  true,
+                                               "nativeSubViewport":  true,
+                                               "opaqueShellPixelProbes":  336,
+                                               "playerSavesAccessed":  false,
+                                               "states":  [
+                                                              "idle",
+                                                              "walk",
+                                                              "guard",
+                                                              "attack"
+                                                          ],
+                                               "version":  "0.15.1-conversion",
+                                               "viewportMsaa":  2
+                                           },
+                          "presentation":  {
+                                               "actualNativeRendering":  true,
+                                               "captures":  [
+                                                                "presentation-0.png",
+                                                                "presentation-1.png",
+                                                                "presentation-30.png",
+                                                                "presentation-50.png",
+                                                                "presentation-70.png",
+                                                                "presentation-90.png",
+                                                                "presentation-100.png"
+                                                            ],
+                                               "checks":  295,
+                                               "failures":  [
+
+                                                            ],
+                                               "foliageChunks":  265,
+                                               "foliageMaterials":  4,
+                                               "levels":  [
+                                                              {
+                                                                  "depth":  1,
+                                                                  "mergedBatches":  47,
+                                                                  "mergedSources":  135,
+                                                                  "roomLights":  16
+                                                              },
+                                                              {
+                                                                  "depth":  30,
+                                                                  "mergedBatches":  37,
+                                                                  "mergedSources":  105,
+                                                                  "roomLights":  13
+                                                              },
+                                                              {
+                                                                  "depth":  50,
+                                                                  "mergedBatches":  32,
+                                                                  "mergedSources":  89,
+                                                                  "roomLights":  16
+                                                              },
+                                                              {
+                                                                  "depth":  70,
+                                                                  "mergedBatches":  26,
+                                                                  "mergedSources":  70,
+                                                                  "roomLights":  14
+                                                              },
+                                                              {
+                                                                  "depth":  90,
+                                                                  "mergedBatches":  31,
+                                                                  "mergedSources":  88,
+                                                                  "roomLights":  16
+                                                              },
+                                                              {
+                                                                  "depth":  100,
+                                                                  "mergedBatches":  32,
+                                                                  "mergedSources":  90,
+                                                                  "roomLights":  16
+                                                              }
+                                                          ],
+                                               "lightBudgets":  [
+                                                                    3,
+                                                                    5,
+                                                                    8
+                                                                ],
+                                               "maxGuardReturnError":  0.000000256801968134823,
+                                               "playerSavesAccessed":  false,
+                                               "roadTriangles":  11356,
+                                               "testerFpsClaimed":  false,
+                                               "version":  "0.15.1-conversion"
+                                           },
+                          "wardrobe":  {
+                                           "actualInventoryTransactions":  true,
+                                           "baseStatBonus":  0,
+                                           "captures":  [
+                                                            "wardrobe-kit0-idle.png",
+                                                            "wardrobe-kit0-attack.png",
+                                                            "wardrobe-kit1-idle.png",
+                                                            "wardrobe-kit1-attack.png",
+                                                            "wardrobe-kit2-idle.png",
+                                                            "wardrobe-kit2-attack.png",
+                                                            "wardrobe-kit3-idle.png",
+                                                            "wardrobe-kit3-attack.png",
+                                                            "wardrobe-kit4-idle.png",
+                                                            "wardrobe-kit4-attack.png",
+                                                            "wardrobe-kit5-idle.png",
+                                                            "wardrobe-kit5-attack.png",
+                                                            "wardrobe-kit6-idle.png",
+                                                            "wardrobe-kit6-attack.png",
+                                                            "wardrobe-kit7-idle.png",
+                                                            "wardrobe-kit7-attack.png",
+                                                            "wardrobe-kit8-idle.png",
+                                                            "wardrobe-kit8-attack.png",
+                                                            "wardrobe-kit9-idle.png",
+                                                            "wardrobe-kit9-attack.png"
+                                                        ],
+                                           "checks":  16482,
+                                           "classes":  4,
+                                           "defaultInventoryItems":  0,
+                                           "directions":  8,
+                                           "exactPixelRestorations":  4,
+                                           "failures":  [
+
+                                                        ],
+                                           "fixedRenderSize":  [
+                                                                   2560,
+                                                                   1440
+                                                               ],
+                                           "kits":  10,
+                                           "nativeSubViewport":  true,
+                                           "playerSavesAccessed":  false,
+                                           "poses":  1280,
+                                           "states":  [
+                                                          "idle",
+                                                          "walk",
+                                                          "guard",
+                                                          "attack"
+                                                      ],
+                                           "version":  "0.15.1-conversion"
+                                       },
+                          "handGrips":  {
+                                            "actualGpuProbes":  96,
+                                            "checks":  5368,
+                                            "classes":  4,
+                                            "directions":  8,
+                                            "failures":  [
+
+                                                         ],
+                                            "maxHandleError":  0.000000113971964310622,
+                                            "nativeVersion":  "0.15.1-conversion",
+                                            "originalAtlasUnmodified":  true,
+                                            "playerSavesAccessed":  false,
+                                            "poses":  896
+                                        },
+                          "restEquipment":  {
+                                                "actualGpuCoverageProbes":  24,
+                                                "actualGpuFaceProbes":  24,
+                                                "actualStartAndTravel":  true,
+                                                "checks":  5618,
+                                                "classes":  4,
+                                                "coveredHairPixels":  117905,
+                                                "directions":  8,
+                                                "failures":  [
+
+                                                             ],
+                                                "kits":  7,
+                                                "nativeVersion":  "0.15.1-conversion",
+                                                "playerSavesAccessed":  false,
+                                                "villagePoses":  448
+                                            },
+                          "characterStyle":  {
+                                                 "actualGpuTextureBoundsProbes":  12,
+                                                 "captures":  [
+                                                                  "character-style-npcs-0.png",
+                                                                  "character-style-npcs-1.png",
+                                                                  "character-style-npcs-2.png",
+                                                                  "character-style-npcs-3.png",
+                                                                  "character-style-npcs-4.png",
+                                                                  "character-style-npcs-5.png",
+                                                                  "character-style-npcs-6.png",
+                                                                  "character-style-npcs-7.png"
+                                                              ],
+                                                 "checks":  7714,
+                                                 "failures":  [
+
+                                                              ],
+                                                 "maxReceptionGripError":  0.000000212343593375408,
+                                                 "nativeVersion":  "0.15.1-conversion",
+                                                 "npcCount":  6,
+                                                 "npcWorkingPoses":  120,
+                                                 "originalAtlasSha256":  "9367cc7c75606b34a6b0d482388d6cb6c4d97b0c1adf0602fbf3b94a7f600af8",
+                                                 "playerSavesAccessed":  false,
+                                                 "receptionPoses":  128
+                                             },
+                          "characterRetouches":  {
+                                                     "checks":  561,
+                                                     "failures":  [
+
+                                                                  ],
+                                                     "hoodEyeFits":  12,
+                                                     "hoodSilhouetteCases":  12,
+                                                     "jawPixelProbes":  95,
+                                                     "mageCases":  [
+                                                                       {
+                                                                           "direction":  0,
+                                                                           "eligibleForearmPixels":  523,
+                                                                           "forearmDepth":  0.77064722776413,
+                                                                           "fraction":  0.736137667304015,
+                                                                           "palmChangedPixels":  120,
+                                                                           "tier":  -1,
+                                                                           "visibleForearmPixels":  385
+                                                                       },
+                                                                       {
+                                                                           "direction":  1,
+                                                                           "eligibleForearmPixels":  455,
+                                                                           "forearmDepth":  0.767777442932129,
+                                                                           "fraction":  0.995604395604396,
+                                                                           "palmChangedPixels":  120,
+                                                                           "tier":  -1,
+                                                                           "visibleForearmPixels":  453
+                                                                       },
+                                                                       {
+                                                                           "direction":  7,
+                                                                           "eligibleForearmPixels":  408,
+                                                                           "forearmDepth":  0.976020812988281,
+                                                                           "fraction":  1.0,
+                                                                           "palmChangedPixels":  43,
+                                                                           "tier":  -1,
+                                                                           "visibleForearmPixels":  408
+                                                                       },
+                                                                       {
+                                                                           "direction":  0,
+                                                                           "eligibleForearmPixels":  422,
+                                                                           "forearmDepth":  0.933157920837402,
+                                                                           "fraction":  1.0,
+                                                                           "palmChangedPixels":  121,
+                                                                           "tier":  0,
+                                                                           "visibleForearmPixels":  422
+                                                                       },
+                                                                       {
+                                                                           "direction":  1,
+                                                                           "eligibleForearmPixels":  279,
+                                                                           "forearmDepth":  0.933157920837402,
+                                                                           "fraction":  1.0,
+                                                                           "palmChangedPixels":  121,
+                                                                           "tier":  0,
+                                                                           "visibleForearmPixels":  279
+                                                                       },
+                                                                       {
+                                                                           "direction":  7,
+                                                                           "eligibleForearmPixels":  331,
+                                                                           "forearmDepth":  0.953562676906586,
+                                                                           "fraction":  1.0,
+                                                                           "palmChangedPixels":  121,
+                                                                           "tier":  0,
+                                                                           "visibleForearmPixels":  331
+                                                                       },
+                                                                       {
+                                                                           "direction":  0,
+                                                                           "eligibleForearmPixels":  343,
+                                                                           "forearmDepth":  0.932958006858826,
+                                                                           "fraction":  0.997084548104956,
+                                                                           "palmChangedPixels":  118,
+                                                                           "tier":  3,
+                                                                           "visibleForearmPixels":  342
+                                                                       },
+                                                                       {
+                                                                           "direction":  1,
+                                                                           "eligibleForearmPixels":  289,
+                                                                           "forearmDepth":  0.932957768440247,
+                                                                           "fraction":  1.0,
+                                                                           "palmChangedPixels":  115,
+                                                                           "tier":  3,
+                                                                           "visibleForearmPixels":  289
+                                                                       },
+                                                                       {
+                                                                           "direction":  7,
+                                                                           "eligibleForearmPixels":  278,
+                                                                           "forearmDepth":  0.952652394771576,
+                                                                           "fraction":  1.0,
+                                                                           "palmChangedPixels":  118,
+                                                                           "tier":  3,
+                                                                           "visibleForearmPixels":  278
+                                                                       }
+                                                                   ],
+                                                     "mageGpuCases":  9,
+                                                     "mageReceptionPoses":  32,
+                                                     "maxHoodHeadLeakPixels":  0,
+                                                     "minimumVisibleForearmFraction":  0.736137667304015,
+                                                     "nativeVersion":  "0.15.1-conversion",
+                                                     "playerSavesAccessed":  false,
+                                                     "weaponPoses":  224
+                                                 },
+                          "gameplayComfort":  {
+                                                  "actualRockHulls":  824,
+                                                  "checks":  86,
+                                                  "classVoices":  4,
+                                                  "failures":  [
+
+                                                               ],
+                                                  "playerSavesAccessed":  false,
+                                                  "skillPreviews":  16,
+                                                  "version":  "0.15.1-conversion"
+                                              },
+                          "compactInterface":  {
+                                                   "checks":  86,
+                                                   "failures":  [
+
+                                                                ],
+                                                   "inventorySizes":  3,
+                                                   "playerSavesAccessed":  false,
+                                                   "portalBelt":  true,
+                                                   "portalClickOnly":  true,
+                                                   "skillTooltips":  16,
+                                                   "version":  "0.15.1-conversion"
+                                               },
+                          "inventoryLayout":  {
+                                                  "checks":  72,
+                                                  "failures":  [
+
+                                                               ],
+                                                  "inventorySizes":  3,
+                                                  "oldSaveMigration":  true,
+                                                  "playerSavesAccessed":  false,
+                                                  "sharedGoldAcrossHeroes":  true,
+                                                  "sharedGoldDiskRoundTrip":  true,
+                                                  "version":  "0.15.1-conversion"
+                                              },
+                          "storageLayout":  {
+                                                "checks":  70,
+                                                "failures":  [
+
+                                                             ],
+                                                "inventorySizes":  3,
+                                                "openGloveModels":  5,
+                                                "playerSavesAccessed":  false,
+                                                "realInventoryWithChest":  true,
+                                                "version":  "0.15.1-conversion",
+                                                "weaponHeightCells":  4
+                                            },
+                          "commerceLayout":  {
+                                                 "actualDoubleClickPurchase":  true,
+                                                 "catalogOffersVerified":  2000,
+                                                 "checks":  270,
+                                                 "coinPopup":  true,
+                                                 "failures":  [
+
+                                                              ],
+                                                 "merchantCategories":  4,
+                                                 "paginationMilliseconds":  231,
+                                                 "playerSavesAccessed":  false,
+                                                 "version":  "0.15.1-conversion"
+                                             },
+                          "gameplayRefinement":  {
+                                                     "actualGpuSilhouetteFrames":  24,
+                                                     "actualGpuSilhouetteProbes":  4168,
+                                                     "checks":  14616,
+                                                     "failures":  [
+
+                                                                  ],
+                                                     "lightningWithoutTarget":  true,
+                                                     "maxStaffReturnError":  0.000000240274005136598,
+                                                     "maxStaffSupportWristError":  0.000000279272569514433,
+                                                     "nativeClickPick":  true,
+                                                     "nativeClickPlace":  true,
+                                                     "playerSavesAccessed":  false,
+                                                     "silhouetteCases":  184,
+                                                     "staffSupportPoses":  80,
+                                                     "staffTransitionPoses":  480,
+                                                     "unarmedMageTransitions":  40
+                                                 },
+                          "supportEffects":  {
+                                                 "checks":  177,
+                                                 "failures":  [
+
+                                                              ],
+                                                 "realUserSaveAccessed":  false,
+                                                 "source":  "Isolated native Godot support effects, real actor meshes and shader"
+                                             },
+                          "sorcererInventory":  {
+                                                    "audioStatusGuards":  true,
+                                                    "checks":  3608,
+                                                    "cursorPixelProbes":  240,
+                                                    "failures":  [
+
+                                                                 ],
+                                                    "lightningDamageCases":  120,
+                                                    "nativeGemInsertion":  true,
+                                                    "realUserSaveAccessed":  false,
+                                                    "tooltipGuards":  true
+                                                },
+                          "essenceHud":  {
+                                             "checks":  6306,
+                                             "failures":  [
+
+                                                          ],
+                                             "fillRatios":  [
+                                                                0.0,
+                                                                0.2,
+                                                                0.4,
+                                                                0.6,
+                                                                0.8,
+                                                                1.0
+                                                            ],
+                                             "gpuPixelProbes":  6360,
+                                             "modes":  [
+                                                           "life",
+                                                           "mana",
+                                                           "rage",
+                                                           "sacred",
+                                                           "focus"
+                                                       ],
+                                             "playerSavesAccessed":  false,
+                                             "scope":  "Orb rendering and legacy fixture; class resources and talents verified separately",
+                                             "version":  "0.15.1-conversion"
+                                         },
+                          "talentTrees":  {
+                                              "activeCombatCases":  60,
+                                              "branches":  12,
+                                              "catalogTalents":  96,
+                                              "checks":  1563,
+                                              "failures":  [
+
+                                                           ],
+                                              "legacyRefund":  true,
+                                              "nativeDrag":  true,
+                                              "passiveEffectCases":  36,
+                                              "passiveEquipRejections":  36,
+                                              "playerSavesAccessed":  false,
+                                              "singlePage":  true,
+                                              "version":  "0.15.1-conversion"
+                                          },
+                          "audioPcm":  {
+                                           "checks":  1557,
+                                           "decoded":  [
+                                                           {
+                                                               "decodeMs":  2,
+                                                               "energy":  3.25426177047969,
+                                                               "frames":  22932.0,
+                                                               "sampleRate":  44100,
+                                                               "seconds":  0.52,
+                                                               "stream":  "res://assets/audio/fire-impact.wav"
+                                                           },
+                                                           {
+                                                               "decodeMs":  207,
+                                                               "energy":  3.18379041812508,
+                                                               "frames":  6350337.0,
+                                                               "sampleRate":  44100,
+                                                               "seconds":  143.998565673828,
+                                                               "stream":  "res://assets/music/menu.mp3"
+                                                           },
+                                                           {
+                                                               "decodeMs":  300,
+                                                               "energy":  2.11962258604603,
+                                                               "frames":  9040500.0,
+                                                               "sampleRate":  44100,
+                                                               "seconds":  205.0,
+                                                               "stream":  "res://assets/music/dungeon.mp3"
+                                                           }
+                                                       ],
+                                           "failures":  [
+
+                                                        ],
+                                           "native":  {
+                                                          "attempted":  true,
+                                                          "available":  false,
+                                                          "error":  "waveOut 2 : A device ID has been used that is out of range for your system.",
+                                                          "physicalSoundConfirmed":  false
+                                                      },
+                                           "playerSavesAccessed":  false,
+                                           "version":  "0.15.1-conversion"
+                                       },
+                          "interfaceFinish":  {
+                                                  "checks":  405,
+                                                  "decoratedMaximized":  true,
+                                                  "failures":  [
+
+                                                               ],
+                                                  "playerSavesAccessed":  false,
+                                                  "realHttpDownload":  true,
+                                                  "sameDialog":  true,
+                                                  "updateNotes":  true,
+                                                  "version":  "0.15.1-conversion",
+                                                  "viewportSizes":  4,
+                                                  "worldBackdropRendered":  false
+                                              },
+                          "paladinFinish":  {
+                                                "auraDesigns":  3,
+                                                "checks":  507,
+                                                "debugSelectionCopy":  true,
+                                                "directions":  8,
+                                                "distinctAttackSounds":  15,
+                                                "equipmentKits":  7,
+                                                "failures":  [
+
+                                                             ],
+                                                "freeAttackClasses":  4,
+                                                "nativeShiftClick":  true,
+                                                "physicalSoundConfirmed":  false,
+                                                "playerSavesAccessed":  false,
+                                                "prayerPoses":  56,
+                                                "targetlessShield":  true,
+                                                "version":  "0.15.1-conversion"
+                                            },
+                          "spellFinishes":  {
+                                                "auraAnimationPixelChanges":  [
+                                                                                  936,
+                                                                                  700,
+                                                                                  836
+                                                                              ],
+                                                "checks":  94,
+                                                "conditionActorTypes":  2,
+                                                "conditionTintSources":  3,
+                                                "failures":  [
+
+                                                             ],
+                                                "holdPrayer":  true,
+                                                "newSpellSounds":  4,
+                                                "physicalSoundConfirmed":  false,
+                                                "playerSavesAccessed":  false,
+                                                "version":  "0.15.1-conversion"
+                                            },
+                          "welcomeWalk":  {
+                                              "checks":  32837,
+                                              "failures":  [
+
+                                                           ],
+                                              "inventoryBelt":  true,
+                                              "playerSavesAccessed":  false,
+                                              "receptionPoses":  224,
+                                              "version":  "0.15.1-conversion",
+                                              "welcomeOnly":  true
+                                          },
+                          "skillPresentation":  {
+                                                    "checks":  812,
+                                                    "failures":  [
+
+                                                                 ],
+                                                    "icons":  96,
+                                                    "physicalAudioConfirmed":  false,
+                                                    "playerSavesAccessed":  false,
+                                                    "presentationProfiles":  61,
+                                                    "uniqueSounds":  122
+                                                },
+                          "villageMagic":  {
+                                               "activeAbilities":  60,
+                                               "catalogTalents":  96,
+                                               "checks":  104,
+                                               "failures":  [
+
+                                                            ],
+                                               "groundLootRemovedOnExit":  true,
+                                               "hoodViews":  32,
+                                               "npcMarkers":  7,
+                                               "playerSavesAccessed":  false,
+                                               "portalLifecycle":  true,
+                                               "sorcererPassives":  9
+                                           },
+                          "diagnostics":  {
+                                              "actualOptionButtons":  true,
+                                              "boundedCapture":  true,
+                                              "checks":  50,
+                                              "diagnosticDefaultOff":  true,
+                                              "failures":  [
+
+                                                           ],
+                                              "jsonCsvExport":  true,
+                                              "playerSavesAccessed":  false,
+                                              "selectedHeroesFront":  4
+                                          },
+                          "motion":  {
+                                         "attacks":  32,
+                                         "checks":  61250,
+                                         "classes":  4,
+                                         "cryViews":  8,
+                                         "directions":  8,
+                                         "dynamicPoses":  8240,
+                                         "enemyContactCases":  18,
+                                         "failures":  [
+
+                                                      ],
+                                         "maxDynamicGripError":  0.000000717734963018302,
+                                         "maxFootStep":  0.315453141927719,
+                                         "maxRenderedFootSlip":  0.000000337174782316652,
+                                         "maxTurnFootStep":  0.381862312555313,
+                                         "plantedSamples":  2624,
+                                         "playerSavesAccessed":  false,
+                                         "scope":  "Actual native transform playback; visual anatomy reviewed separately in recorded viewport sequences",
+                                         "stoppedSamples":  4608,
+                                         "temporalRuns":  128,
+                                         "turnRuns":  8
+                                     },
+                          "archerRig":  {
+                                            "checks":  21202,
+                                            "directions":  8,
+                                            "enemyPoses":  1720,
+                                            "failures":  [
+
+                                                         ],
+                                            "maxPaintedAnchorError":  0.000000140580354468511,
+                                            "maxTalentWristStep":  0.130418479442596,
+                                            "meanRigAndVisualUpdateUsec":  180.581976744186,
+                                            "playerSavesAccessed":  false,
+                                            "regions":  5,
+                                            "talentPoses":  1920
+                                        },
+                          "trial":  {
+                                        "button":  "Mettre Ã  jour et redÃ©marrer",
+                                        "oldPid":  6600,
+                                        "realPlayerSaveAccessed":  false,
+                                        "versionLabel":  "VERSION 0.15.1",
+                                        "work":  "C:/Users/runneradmin/AppData/Local/ThroneOfAshes/portable-updates/verification-6600-3972146"
+                                    },
+                          "selfUpdate":  {
+                                             "installedVersion":  "VERSION 0.15.1",
+                                             "status":  "success",
+                                             "newPid":  4052,
+                                             "oldPid":  6600,
+                                             "keptAliveSeconds":  10
+                                         },
+                          "trialOutput":  "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\r\nOpenGL API OpenGL ES 3.0 (ANGLE 2.1.1 git hash: aaebda1c5a40) - Compatibility - Using Device: Google Inc. (Microsoft) - ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33648)\r\n\r\nAUDIO_FALLBACK: Windows waveOut PCM active=true parent=6600\r\nSESSION_START: version=0.15.1-conversion pid=6600 audio=Dummy device=Default\r\nVILLAGE_READY: native 3D village, eight-direction Viking, physics, click pathfinding; web saves untouched\r\nGAME_UPDATE: Version 999.0.0 disponible.\r\nAUDIO_PCM_CACHE: menu.mp3 frames=6350337 rate=44100 decode_ms=363\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : waveOut 2 : A device ID has been used that is out of range for your system.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/6600/audio-fallback.log\r\nAUDIO_FALLBACK: Windows waveOut PCM active=true parent=6600\r\nAUDIO_PCM_CACHE: menu.mp3 frames=6350337 rate=44100 decode_ms=324\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : waveOut 2 : A device ID has been used that is out of range for your system.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/6600/audio-fallback.log\r\nAUDIO_FALLBACK: Windows waveOut PCM active=true parent=6600\r\nAUDIO_PCM_CACHE: menu.mp3 frames=6350337 rate=44100 decode_ms=333\r\nPORTABLE_TRIAL: real game requests verified replacement from home; no player saves\r\nGAME_UPDATE: PrÃ©paration du redÃ©marrageâ€¦\r\nAUDIO_FALLBACK_STOPPED: La sortie Windows refuse la lecture : waveOut 2 : A device ID has been used that is out of range for your system.; diagnostic=C:/Users/runneradmin/AppData/Local/ThroneOfAshes/audio-fallback/6600/audio-fallback.log\r\n",
+                          "trialErrors":  "WARNING: Your video card drivers seem not to support the required OpenGL 3.3 version, switching to ANGLE.\r\n   at: DisplayServerWindows (platform/windows/display_server_windows.cpp:8227)\r\n",
+                          "helperDiagnostics":  {
+                                                    "helper.ready":  "ready",
+                                                    "update.log":  "2026-11-04T07:21:24.1739007Z PREPARING; reading replacement plan\r\n2026-11-04T07:21:26.5720565Z HASHING; verifying new and current executable\r\n2026-11-04T07:21:39.0328948Z VERIFIED; waiting for the running game to close\r\n2026-11-04T07:21:40.4349482Z ACTIVATED; starting the verified game\r\n2026-11-04T07:21:43.9829010Z READY; same replacement game is alive\r\n",
+                                                    "result.json":  "{\"state\":\"success\",\"message\":\"Updated to 999.0.0\"}"
+                                                }
+                      },
+    "portableRecovery":  {
+                             "status":  "passed",
+                             "cases":  6,
+                             "checks":  [
+                                            "success: helper validates before handoff",
+                                            "Concurrent helper rejected by exclusive target lock",
+                                            "Concurrent attempt neither kills nor replaces current game",
+                                            "Concurrent helper never starts a fallback game",
+                                            "Success helper exits cleanly",
+                                            "New verified binary activated",
+                                            "Previous binary retained",
+                                            "bad-hash: rejected before game closes",
+                                            "bad-hash: original process remains alive",
+                                            "bad-hash: failure reported",
+                                            "bad-hash: old binary preserved or restored",
+                                            "outside-path: rejected before game closes",
+                                            "outside-path: original process remains alive",
+                                            "outside-path: failure reported",
+                                            "outside-path: old binary preserved or restored",
+                                            "startup-failure: helper validates before handoff",
+                                            "startup-failure: failure reported",
+                                            "startup-failure: old binary preserved or restored",
+                                            "Failed new game starts the old game once",
+                                            "Rollback never loops",
+                                            "stage-changed: helper validates before handoff",
+                                            "stage-changed: failure reported",
+                                            "stage-changed: old binary preserved or restored",
+                                            "locked-target: helper validates before handoff",
+                                            "locked-target: failure reported",
+                                            "locked-target: old binary preserved or restored"
+                                        ],
+                             "noSecuritySettingsChanged":  true
+                         }
+}
