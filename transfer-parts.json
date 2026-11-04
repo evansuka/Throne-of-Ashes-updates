@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "name": "Throne-of-Ashes-0.15.2-update.zip",
+      "bytes": 148320785,
+      "sha256": "10599bfc0d3e8a03c79311a38fc05a4cd3fd1cf30a6f1d86794c7be5c0541231",
+      "parts": [
+        {
+          "name": "Throne-of-Ashes-0.15.2-update.zip.part000",
+          "bytes": 16777216,
+          "sha256": "f4f1e5313a9f1d3be82f3800cfb1955e8cf826789f704460814c0494b2c490a7"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.2-update.zip.part001",
+          "bytes": 16777216,
+          "sha256": "85b0e2b6c162ca07db369d526b38a0bf0f6446ce2ad837510e796b57e4bf2d8d"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.2-update.zip.part002",
+          "bytes": 16777216,
+          "sha256": "f42dabfd77f0673f09fba6fe19edff927b5eafbde08044f44e0c2122e0d18a76"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.2-update.zip.part003",
+          "bytes": 16777216,
+          "sha256": "0e802ef0b983b60d48cb63fe91aa7a9052b495ff4bc6db0f6740b771d5c6d4ab"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.2-update.zip.part004",
+          "bytes": 16777216,
+          "sha256": "0f4adce29d88543c32d1e87976fbd5e3729cb264325f59f08321ecbb4822205c"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.2-update.zip.part005",
+          "bytes": 16777216,
+          "sha256": "334e83a9970021a7ddc31800ada8c3e8d31153993d684f869d8871083aece06b"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.2-update.zip.part006",
+          "bytes": 16777216,
+          "sha256": "2bf04f4a96df5597c8d453ba3ccdf28f85d31e4cbb12d0b1541e1c4d10a66c77"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.2-update.zip.part007",
+          "bytes": 16777216,
+          "sha256": "78f4903712235940b9fca63253336c49df92563512f5ad27ab357b6e237c1c8c"
+        },
+        {
+          "name": "Throne-of-Ashes-0.15.2-update.zip.part008",
+          "bytes": 14103057,
+          "sha256": "41e1715982d3fd28ed315e2da1dbbbfb6ec4ff44d3c16b554ef5dc79fe4154a3"
+        }
+      ]
+    }
+  ]
+}
